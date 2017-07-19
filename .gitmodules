@@ -1,0 +1,3 @@
+[submodule "plugins/liip/events"]
+	path = plugins/liip/events
+	url = https://github.com/repair-cafe/events-plugin.git
