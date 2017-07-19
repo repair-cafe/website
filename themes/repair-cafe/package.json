@@ -1,0 +1,19 @@
+{
+  "name": "repair-cafe",
+  "version": "1.0.0",
+  "description": "Repair-Cafe website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "repair",
+    "cafe"
+  ],
+  "author": "Team Jazz, Liip AG",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.2.1"
+  }
+}
