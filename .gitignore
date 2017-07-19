@@ -18,3 +18,5 @@ selenium.php
 
 # for netbeans
 nbproject
+
+/themes/repair-cafe/node_modules
