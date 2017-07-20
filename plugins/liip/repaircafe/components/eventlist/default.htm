@@ -1,0 +1,7 @@
+<ul>
+{% for event in __SELF__.events %}
+	<li><a href="{{ 'event-details'|page({ id: event.id }) }}">{{ event.title }}</a></li>
+{% endfor %}
+</ul>
+{% put scripts %}
+{% endput %}

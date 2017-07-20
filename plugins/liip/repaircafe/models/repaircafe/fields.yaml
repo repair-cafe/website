@@ -1,0 +1,12 @@
+fields:
+    title:
+        label: Titel
+        oc.commentPosition: ''
+        span: left
+        type: text
+    description:
+        label: 'liip.repaircafe::lang.plugin.description'
+        size: ''
+        oc.commentPosition: ''
+        span: full
+        type: richeditor

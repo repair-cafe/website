@@ -1,0 +1,10 @@
+name: Events
+form: $/liip/repaircafe/models/event/fields.yaml
+modelClass: Liip\RepairCafe\Models\Event
+defaultRedirect: liip/repaircafe/events
+create:
+    redirect: 'liip/repaircafe/events/update/:id'
+    redirectClose: liip/repaircafe/events
+update:
+    redirect: liip/repaircafe/events
+    redirectClose: liip/repaircafe/events

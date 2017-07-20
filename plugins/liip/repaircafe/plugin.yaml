@@ -1,0 +1,31 @@
+plugin:
+    name: 'liip.repaircafe::lang.plugin.name'
+    description: 'liip.repaircafe::lang.plugin.description'
+    author: Liip
+    icon: oc-icon-coffee
+    homepage: ''
+navigation:
+    main-menu-repaircafe:
+        label: 'liip.repaircafe::lang.plugin.name'
+        url: liip/repaircafe/repaircafes
+        icon: icon-coffee
+    main-menu-events:
+        label: 'Repair Events'
+        url: liip/repaircafe/events
+        icon: icon-calendar
+        sideMenu:
+            side-menu-events:
+                label: Events
+                url: liip/repaircafe/events
+                icon: icon-calendar-o
+            side-menu-tags:
+                label: Tags
+                url: liip/repaircafe/tags
+                icon: icon-tags
+permissions:
+    events.events:
+        tab: Events
+        label: Events
+    events.tags:
+        tab: Events
+        label: Tags

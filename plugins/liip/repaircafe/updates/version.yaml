@@ -1,0 +1,20 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Updated table liip_repaircafe_repaircafe'
+    - builder_table_update_liip_repaircafe_repaircafes.php
+1.0.3:
+    - 'Created table liip_repaircafe_events'
+    - builder_table_create_liip_repaircafe_events.php
+1.0.4:
+    - 'Created table liip_repaircafe_tags'
+    - builder_table_create_liip_repaircafe_tags.php
+1.0.5:
+    - 'Created table liip_repaircafe_event_tag'
+    - builder_table_create_liip_repaircafe_event_tag.php
+1.0.6:
+    - 'Updated table liip_repaircafe_events'
+    - builder_table_update_liip_repaircafe_events.php
+1.0.7:
+    - 'Created table liip_repaircafe_repaircafe_event'
+    - builder_table_create_liip_repaircafe_repaircafe_event.php

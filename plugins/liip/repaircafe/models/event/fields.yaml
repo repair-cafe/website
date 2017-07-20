@@ -1,0 +1,35 @@
+fields:
+    is_published:
+        label: Published
+        span: auto
+        type: switch
+    title:
+        label: Title
+        oc.commentPosition: ''
+        span: full
+        type: text
+    description:
+        label: Description
+        size: large
+        oc.commentPosition: ''
+        span: full
+        type: richeditor
+    start:
+        label: Start
+        oc.commentPosition: ''
+        mode: datetime
+        span: auto
+        type: datepicker
+    end:
+        label: End
+        oc.commentPosition: ''
+        mode: datetime
+        span: auto
+        type: datepicker
+    tags:
+        label: Tags
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: full
+        type: relation

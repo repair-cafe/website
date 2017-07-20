@@ -1,0 +1,10 @@
+name: Tags
+form: $/liip/repaircafe/models/tag/fields.yaml
+modelClass: Liip\RepairCafe\Models\Tag
+defaultRedirect: liip/repaircafe/tags
+create:
+    redirect: 'liip/repaircafe/tags/update/:id'
+    redirectClose: liip/repaircafe/tags
+update:
+    redirect: liip/repaircafe/tags
+    redirectClose: liip/repaircafe/tags

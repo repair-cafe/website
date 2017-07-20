@@ -1,0 +1,28 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: title
+        type: text
+        searchable: true
+    start:
+        label: start
+        type: text
+    end:
+        label: end
+        type: text
+    is_published:
+        label: is_published
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    user:
+        label: user
+        relation: user
+        select: email
+        searchable: true

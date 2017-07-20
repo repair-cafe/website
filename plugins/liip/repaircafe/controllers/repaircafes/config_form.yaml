@@ -1,0 +1,10 @@
+name: RepairCafes
+form: $/liip/repaircafe/models/repaircafe/fields.yaml
+modelClass: Liip\RepairCafe\Models\RepairCafe
+defaultRedirect: liip/repaircafe/repaircafes
+create:
+    redirect: 'liip/repaircafe/repaircafes/update/:id'
+    redirectClose: liip/repaircafe/repaircafes
+update:
+    redirect: liip/repaircafe/repaircafes
+    redirectClose: liip/repaircafe/repaircafes
