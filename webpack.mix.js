@@ -11,6 +11,11 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.setPublicPath('themes/repair-cafe/assets/')
-   .js('themes/repair-cafe/assets/js/app.js', 'js/app.min.js')
-   .sass('themes/repair-cafe/assets/sass/app.scss', 'css/app.min.css');
+mix.setPublicPath('themes/repair-cafe/assets/');
+mix.js('themes/repair-cafe/assets/js/app.js', 'js/app-compiled.js')
+    .sass('themes/repair-cafe/assets/sass/app.scss', 'css/app.min.css')
+    .combine([
+        'node_modules/jquery/dist/jquery.js',
+        'node_modules/bootstrap/dist/js/bootstrap.js',
+        'themes/repair-cafe/assets/js/app-compiled.js'
+    ], 'themes/repair-cafe/assets/js/app.min.js');
