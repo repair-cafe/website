@@ -16,6 +16,7 @@ mix.js('themes/repair-cafe/assets/js/app.js', 'js/app-compiled.js')
     .sass('themes/repair-cafe/assets/sass/app.scss', 'css/app.min.css')
     .combine([
         'node_modules/jquery/dist/jquery.js',
+        'node_modules/tether/dist/js/tether.js',
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'themes/repair-cafe/assets/js/app-compiled.js'
     ], 'themes/repair-cafe/assets/js/app.min.js');
