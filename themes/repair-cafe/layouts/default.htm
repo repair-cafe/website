@@ -11,9 +11,7 @@ description = "Default layout"
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
-        <link href="{{ [
-            'node_modules/bootstrap/dist/css/bootstrap.css'
-        ]|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/app.min.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
     <body>
@@ -34,10 +32,7 @@ description = "Default layout"
         </footer>
 
         <!-- Scripts -->
-        <script src="{{ [
-            'node_modules/jquery/dist/jquery.js',
-            'node_modules/bootstrap/dist/js/bootstrap.js'
-        ]|theme }}"></script>
+        <script src="{{ 'assets/js/app.min.js'|theme }}"></script>
         {% framework extras %}
         {% scripts %}
 
