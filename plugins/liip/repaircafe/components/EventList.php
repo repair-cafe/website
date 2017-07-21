@@ -29,5 +29,4 @@ class EventList extends ComponentBase
     {
         $this->events = Event::published()->get();
     }
-
 }

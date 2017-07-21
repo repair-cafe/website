@@ -7,11 +7,19 @@ class BuilderTableUpdateLiipRepaircafeRepaircafes extends Migration
 {
     public function up()
     {
-        Schema::rename('liip_repaircafe_repaircafe', 'liip_repaircafe_repaircafes');
+        Schema::create('liip_repaircafe_repaircafes', function($table)
+        {
+            $table->engine = 'InnoDB';
+            $table->increments('id')->unsigned();
+            $table->text('description');
+            $table->dateTime('start');
+            $table->dateTime('end');
+            $table->string('title');
+        });
     }
-    
+
     public function down()
     {
-        Schema::rename('liip_repaircafe_repaircafes', 'liip_repaircafe_repaircafe');
+        Schema::dropIfExists('liip_repaircafe_repaircafes');
     }
 }

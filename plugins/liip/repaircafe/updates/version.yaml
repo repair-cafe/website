@@ -18,3 +18,6 @@
 1.0.7:
     - 'Created table liip_repaircafe_repaircafe_event'
     - builder_table_create_liip_repaircafe_repaircafe_event.php
+1.0.8:
+    - 'Updated table liip_repaircafe_repaircafes'
+    - builder_table_update_liip_repaircafe_repaircafes_2.php
