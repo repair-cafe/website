@@ -48,3 +48,10 @@ fields:
         span: left
         placeholder: ''
         type: text
+    contacts:
+        label: 'Contact Persons'
+        oc.commentPosition: ''
+        nameFrom: firstname
+        descriptionFrom: lastname
+        span: auto
+        type: relation

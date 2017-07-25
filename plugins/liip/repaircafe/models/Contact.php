@@ -8,7 +8,7 @@ use Model;
 class Contact extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
@@ -19,6 +19,10 @@ class Contact extends Model
      * Validation
      */
     public $rules = [
+    ];
+
+    public $belongsTo =[
+        'repaircafe' => [RepairCafe::class, 'key' => 'repaircafe_id']
     ];
 
     /**

@@ -36,7 +36,7 @@ class Event extends Model
         'tags' => [Tag::class, 'table' => 'liip_repaircafe_event_tag']
     ];
     public $belongsTo = [
-        'repaircafe' => [RepairCafe::class, 'table' => 'liip_repaircafe_repaircafe_event'],
+        'repaircafe' => [RepairCafe::class],
         'user' => [User::class]
     ];
 

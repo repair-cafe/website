@@ -27,6 +27,10 @@ class RepairCafe extends Model
         'events' => [
             Event::class,
             'table' => 'liip_repaircafe_repaircafe_event'
+        ],
+        'contacts' => [
+            Contact::class,
+            'table' => 'liip_repaircafe_repaircafe_contact'
         ]
     ];
 
