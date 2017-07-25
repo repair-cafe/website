@@ -8,7 +8,7 @@ use Model;
 class RepairCafe extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
@@ -21,8 +21,13 @@ class RepairCafe extends Model
     public $rules = [
     ];
 
-    public $belongsToMany = [
-        'events' => [Event::class, 'table' => 'liip_repaircafe_events']
+
+
+    public $hasMany = [
+        'events' => [
+            Event::class,
+            'table' => 'liip_repaircafe_repaircafe_event'
+        ]
     ];
 
     /**

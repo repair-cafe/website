@@ -24,3 +24,12 @@
 1.0.9:
     - 'Updated table liip_repaircafe_repaircafes'
     - builder_table_update_liip_repaircafe_repaircafes_3.php
+1.0.10:
+    - 'Updated table liip_repaircafe_repaircafe_event'
+    - builder_table_update_liip_repaircafe_event_repaircafe.php
+1.0.11:
+    - 'Updated table liip_repaircafe_events'
+    - builder_table_update_liip_repaircafe_events_2.php
+1.0.12:
+    - 'Drop table liip_repaircafe_event_repaircafe'
+    - builder_table_delete_liip_repaircafe_event_repaircafe.php

@@ -9,6 +9,11 @@ navigation:
         label: 'liip.repaircafe::lang.plugin.name'
         url: liip/repaircafe/repaircafes
         icon: icon-coffee
+        sideMenu:
+            side-menu-repaircafe:
+                label: 'Repair Cafe'
+                url: liip/repaircafe/repaircafes
+                icon: icon-coffee
     main-menu-events:
         label: 'Repair Events'
         url: liip/repaircafe/events

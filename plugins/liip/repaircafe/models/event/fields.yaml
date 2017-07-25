@@ -33,3 +33,10 @@ fields:
         descriptionFrom: description
         span: full
         type: relation
+    repaircafe:
+        label: 'Repair Cafe'
+        oc.commentPosition: ''
+        nameFrom: title
+        descriptionFrom: description
+        span: full
+        type: relation

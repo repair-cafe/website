@@ -10,7 +10,7 @@ use October\Rain\Database\Model;
 class Event extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
@@ -36,6 +36,7 @@ class Event extends Model
         'tags' => [Tag::class, 'table' => 'liip_repaircafe_event_tag']
     ];
     public $belongsTo = [
+        'repaircafe' => [RepairCafe::class, 'table' => 'liip_repaircafe_repaircafe_event'],
         'user' => [User::class]
     ];
 
