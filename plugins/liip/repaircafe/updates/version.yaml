@@ -21,3 +21,6 @@
 1.0.8:
     - 'Updated table liip_repaircafe_repaircafes'
     - builder_table_update_liip_repaircafe_repaircafes_2.php
+1.0.9:
+    - 'Updated table liip_repaircafe_repaircafes'
+    - builder_table_update_liip_repaircafe_repaircafes_3.php
