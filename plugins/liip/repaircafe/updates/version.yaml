@@ -33,3 +33,9 @@
 1.0.12:
     - 'Drop table liip_repaircafe_event_repaircafe'
     - builder_table_delete_liip_repaircafe_event_repaircafe.php
+1.0.13:
+    - 'Updated table liip_repaircafe_repaircafes'
+    - builder_table_update_liip_repaircafe_repaircafes_4.php
+1.0.14:
+    - 'Updated table liip_repaircafe_repaircafes'
+    - builder_table_update_liip_repaircafe_repaircafes_5.php
