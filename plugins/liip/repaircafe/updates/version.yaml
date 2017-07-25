@@ -39,3 +39,6 @@
 1.0.14:
     - 'Updated table liip_repaircafe_repaircafes'
     - builder_table_update_liip_repaircafe_repaircafes_5.php
+1.0.15:
+    - 'Created table liip_repaircafe_contacts'
+    - builder_table_create_liip_repaircafe_contacts.php

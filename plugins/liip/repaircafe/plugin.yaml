@@ -14,6 +14,10 @@ navigation:
                 label: 'Repair Cafe'
                 url: liip/repaircafe/repaircafes
                 icon: icon-coffee
+            side-menu-contacts:
+                label: 'Contact Persons'
+                url: liip/repaircafe/contacts
+                icon: icon-user
     main-menu-events:
         label: 'Repair Events'
         url: liip/repaircafe/events
