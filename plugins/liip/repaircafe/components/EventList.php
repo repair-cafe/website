@@ -1,7 +1,7 @@
-<?php namespace Liip\Events\Components;
+<?php namespace Liip\Repaircafe\Components;
 
 use Cms\Classes\ComponentBase;
-use Liip\Events\Models\Event;
+use Liip\Repaircafe\Models\Event;
 
 class EventList extends ComponentBase
 {

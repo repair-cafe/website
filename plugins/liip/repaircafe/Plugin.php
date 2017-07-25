@@ -1,6 +1,6 @@
 <?php namespace Liip\RepairCafe;
 
-use Liip\Events\Components\EventList;
+use Liip\Repaircafe\Components\EventList;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
