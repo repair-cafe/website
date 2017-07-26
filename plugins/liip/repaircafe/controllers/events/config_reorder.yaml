@@ -1,4 +1,0 @@
-title: Events
-modelClass: Liip\RepairCafe\Models\Event
-toolbar:
-    buttons: reorder_toolbar

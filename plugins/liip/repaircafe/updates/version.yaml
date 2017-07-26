@@ -1,59 +1,11 @@
 1.0.1:
     - 'Initialize plugin.'
 1.0.2:
-    - 'Updated table liip_repaircafe_repaircafe'
-    - builder_table_update_liip_repaircafe_repaircafes.php
+    - 'Created table liip_repaircafe_cafes'
+    - builder_table_create_liip_repaircafe_cafes.php
 1.0.3:
-    - 'Created table liip_repaircafe_events'
-    - builder_table_create_liip_repaircafe_events.php
+    - 'Created table liip_repaircafe_links'
+    - builder_table_create_liip_repaircafe_links.php
 1.0.4:
-    - 'Created table liip_repaircafe_tags'
-    - builder_table_create_liip_repaircafe_tags.php
-1.0.5:
-    - 'Created table liip_repaircafe_event_tag'
-    - builder_table_create_liip_repaircafe_event_tag.php
-1.0.6:
-    - 'Updated table liip_repaircafe_events'
-    - builder_table_update_liip_repaircafe_events.php
-1.0.7:
-    - 'Created table liip_repaircafe_repaircafe_event'
-    - builder_table_create_liip_repaircafe_repaircafe_event.php
-1.0.8:
-    - 'Updated table liip_repaircafe_repaircafes'
-    - builder_table_update_liip_repaircafe_repaircafes_2.php
-1.0.9:
-    - 'Updated table liip_repaircafe_repaircafes'
-    - builder_table_update_liip_repaircafe_repaircafes_3.php
-1.0.10:
-    - 'Updated table liip_repaircafe_repaircafe_event'
-    - builder_table_update_liip_repaircafe_event_repaircafe.php
-1.0.11:
-    - 'Updated table liip_repaircafe_events'
-    - builder_table_update_liip_repaircafe_events_2.php
-1.0.12:
-    - 'Drop table liip_repaircafe_event_repaircafe'
-    - builder_table_delete_liip_repaircafe_event_repaircafe.php
-1.0.13:
-    - 'Updated table liip_repaircafe_repaircafes'
-    - builder_table_update_liip_repaircafe_repaircafes_4.php
-1.0.14:
-    - 'Updated table liip_repaircafe_repaircafes'
-    - builder_table_update_liip_repaircafe_repaircafes_5.php
-1.0.15:
-    - 'Created table liip_repaircafe_contacts'
-    - builder_table_create_liip_repaircafe_contacts.php
-1.0.16:
-    - 'Created table liip_repaircafe_repaircafe_contact'
-    - builder_table_create_liip_repaircafe_repaircafe_contact.php
-1.0.17:
-    - 'Updated table liip_repaircafe_contacts'
-    - builder_table_update_liip_repaircafe_contacts.php
-1.0.18:
-    - 'Updated table liip_repaircafe_contacts'
-    - builder_table_update_liip_repaircafe_contacts_2.php
-1.0.19:
-    - 'Updated table liip_repaircafe_contacts'
-    - builder_table_update_liip_repaircafe_contacts_3.php
-1.0.20:
-    - 'Updated table liip_repaircafe_contacts'
-    - builder_table_update_liip_repaircafe_contacts_4.php
+    - 'Created table liip_repaircafe_linktypes'
+    - builder_table_create_liip_repaircafe_linktypes.php

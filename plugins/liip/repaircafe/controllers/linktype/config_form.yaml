@@ -1,0 +1,10 @@
+name: LinkType
+form: $/liip/repaircafe/models/linktype/fields.yaml
+modelClass: Liip\RepairCafe\Models\LinkType
+defaultRedirect: liip/repaircafe/linktype
+create:
+    redirect: 'liip/repaircafe/linktype/update/:id'
+    redirectClose: liip/repaircafe/linktype
+update:
+    redirect: liip/repaircafe/linktype
+    redirectClose: liip/repaircafe/linktype

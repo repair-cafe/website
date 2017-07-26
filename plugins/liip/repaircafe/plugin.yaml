@@ -1,40 +1,36 @@
 plugin:
     name: 'liip.repaircafe::lang.plugin.name'
     description: 'liip.repaircafe::lang.plugin.description'
-    author: Liip
+    author: liip
     icon: oc-icon-coffee
     homepage: ''
-navigation:
-    main-menu-repaircafe:
-        label: 'liip.repaircafe::lang.plugin.name'
-        url: liip/repaircafe/repaircafes
-        icon: icon-coffee
-        sideMenu:
-            side-menu-repaircafe:
-                label: 'Repair Cafe'
-                url: liip/repaircafe/repaircafes
-                icon: icon-coffee
-            side-menu-contacts:
-                label: 'Contact Persons'
-                url: liip/repaircafe/contacts
-                icon: icon-user
-    main-menu-events:
-        label: 'Repair Events'
-        url: liip/repaircafe/events
-        icon: icon-calendar
-        sideMenu:
-            side-menu-events:
-                label: Events
-                url: liip/repaircafe/events
-                icon: icon-calendar-o
-            side-menu-tags:
-                label: Tags
-                url: liip/repaircafe/tags
-                icon: icon-tags
 permissions:
-    events.events:
-        tab: Events
-        label: Events
-    events.tags:
-        tab: Events
-        label: Tags
+    repaircafe.cafes:
+        tab: 'liip.repaircafe::lang.plugin.name'
+        label: 'liip.repaircafe::lang.permissions.cafes'
+    repaircafe.links:
+        tab: 'liip.repaircafe::lang.plugin.name'
+        label: 'liip.repaircafe::lang.permissions.links'
+    repaircafe.linktypes:
+        tab: 'liip.repaircafe::lang.plugin.name'
+        label: 'liip.repaircafe::lang.permissions.linktypes'
+navigation:
+    main-menu-coffee:
+        label: 'liip.repaircafe::lang.plugin.name'
+        url: liip/repaircafe/cafes
+        icon: icon-coffee
+        permissions:
+            - 'repaircafe.*'
+        sideMenu:
+            side-menu-cafes:
+                label: 'liip.repaircafe::lang.nav.cafes'
+                url: liip/repaircafe/cafes
+                icon: icon-coffee
+                permissions:
+                    - repaircafe.cafes
+            side-menu-linktypes:
+                label: 'liip.repaircafe::lang.nav.linktypes'
+                url: liip/repaircafe/linktype
+                icon: icon-folder
+                permissions:
+                    - repaircafe.linktypes

@@ -1,0 +1,65 @@
+tabs:
+    fields:
+        is_published:
+            label: 'liip.repaircafe::lang.cafe.is_published'
+            span: auto
+            type: switch
+            tab: 'liip.repaircafe::lang.cafe.tab.general'
+        title:
+            label: 'liip.repaircafe::lang.cafe.title'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.general'
+        slug:
+            label: 'liip.repaircafe::lang.cafe.slug'
+            oc.commentPosition: ''
+            span: auto
+            preset:
+                field: title
+                type: slug
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.general'
+        description:
+            label: 'liip.repaircafe::lang.cafe.description'
+            size: large
+            oc.commentPosition: ''
+            span: full
+            type: richeditor
+            tab: 'liip.repaircafe::lang.cafe.tab.general'
+        image:
+            label: 'liip.repaircafe::lang.cafe.image'
+            tab: 'liip.repaircafe::lang.cafe.tab.general'
+            type: fileupload
+            mode: image
+        logo:
+            label: 'liip.repaircafe::lang.cafe.logo'
+            tab: 'liip.repaircafe::lang.cafe.tab.general'
+            type: fileupload
+            mode: image
+        links:
+            span: full
+            path: $/liip/repaircafe/controllers/cafes/_links.htm
+            context:
+                - update
+                - preview
+            type: partial
+            tab: 'liip.repaircafe::lang.cafe.tab.general'
+        street:
+            label: 'liip.repaircafe::lang.cafe.street'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.address'
+        zip:
+            label: 'liip.repaircafe::lang.cafe.zip'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.address'
+        city:
+            label: 'liip.repaircafe::lang.cafe.city'
+            oc.commentPosition: ''
+            span: right
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.address'

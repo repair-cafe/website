@@ -1,0 +1,13 @@
+fields:
+    url:
+        label: 'liip.repaircafe::lang.link.url'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    linktype:
+        label: 'liip.repaircafe::lang.link.linktype'
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        type: relation

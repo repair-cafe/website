@@ -1,4 +1,0 @@
-title: RepairCafes
-modelClass: Liip\RepairCafe\Models\RepairCafe
-toolbar:
-    buttons: reorder_toolbar
