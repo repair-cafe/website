@@ -1,9 +1,9 @@
 plugin:
     name: 'liip.repaircafe::lang.plugin.name'
     description: 'liip.repaircafe::lang.plugin.description'
-    author: liip
+    author: 'Team Jazz, Liip AG'
     icon: oc-icon-coffee
-    homepage: ''
+    homepage: 'https://liip.ch'
 permissions:
     repaircafe.cafes:
         tab: 'liip.repaircafe::lang.plugin.name'
