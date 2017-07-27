@@ -63,3 +63,6 @@ tabs:
             span: right
             type: text
             tab: 'liip.repaircafe::lang.cafe.tab.address'
+        users:
+            type: partial
+            tab: 'liip.repaircafe::lang.cafe.tab.users'

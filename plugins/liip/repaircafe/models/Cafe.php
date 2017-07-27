@@ -1,5 +1,7 @@
 <?php namespace Liip\RepairCafe\Models;
 
+use Backend\Facades\BackendAuth;
+use Backend\Models\User;
 use October\Rain\Database\Model;
 use System\Models\File;
 
@@ -31,8 +33,21 @@ class Cafe extends Model
         ]
     ];
 
+    public $belongsToMany = [
+        'users' => [User::class, 'table' => 'liip_repaircafe_cafe_user']
+    ];
+
     /**
      * @var string The database table used by the model.
      */
     public $table = 'liip_repaircafe_cafes';
+
+    public function scopeByUser($query) {
+        $user = BackendAuth::getUser();
+        if(!$user->is_superuser) {
+            $query::whereHas('users', function($users) use ($user) {
+                $users->where('id', $user->id);
+            });
+        }
+    }
 }

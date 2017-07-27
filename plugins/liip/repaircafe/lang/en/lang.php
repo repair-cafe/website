@@ -11,6 +11,7 @@
             'general' => 'General',
             'adress' => 'Adress',
             'address' => 'Address',
+            'users' => 'Users',
         ],
         'slug' => 'Slug',
         'street' => 'Street',
@@ -39,5 +40,6 @@
     ],
     'relation' => [
         'link' => 'Links',
+        'user' => 'Users',
     ],
 ];
