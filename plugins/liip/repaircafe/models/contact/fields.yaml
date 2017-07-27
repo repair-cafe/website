@@ -1,0 +1,31 @@
+fields:
+    firstname:
+        label: 'liip.repaircafe::lang.contact.firstname'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    lastname:
+        label: 'liip.repaircafe::lang.contact.lastname'
+        oc.commentPosition: ''
+        span: right
+        type: text
+    email:
+        label: 'liip.repaircafe::lang.contact.email'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    phone:
+        label: 'liip.repaircafe::lang.contact.phone'
+        oc.commentPosition: ''
+        span: right
+        type: text
+    profile_picture:
+        label: 'liip.repaircafe::lang.contact.profile_picture'
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

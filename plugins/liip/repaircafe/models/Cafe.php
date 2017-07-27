@@ -28,6 +28,9 @@ class Cafe extends Model
     public $hasMany = [
         'links' => [
             Link::class
+        ],
+        'contacts' => [
+            Contact::class
         ]
     ];
 

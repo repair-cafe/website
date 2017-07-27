@@ -63,3 +63,11 @@ tabs:
             span: right
             type: text
             tab: 'liip.repaircafe::lang.cafe.tab.address'
+        contacts:
+            span: full
+            path: $/liip/repaircafe/controllers/cafes/_contacts.htm
+            context:
+                - update
+                - preview
+            type: partial
+            tab: 'liip.repaircafe::lang.cafe.tab.contacts'

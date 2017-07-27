@@ -11,7 +11,9 @@
             'general' => 'General',
             'adress' => 'Adress',
             'address' => 'Address',
+            'contacts' => 'Contacts',
         ],
+        'contacts' => 'contacts',
         'slug' => 'Slug',
         'street' => 'Street',
         'zip' => 'Zip',
@@ -39,5 +41,14 @@
     ],
     'relation' => [
         'link' => 'Links',
+        'contact' => 'Contacts',
+    ],
+    'contact' => [
+        'firstname' => 'Firstname',
+        'lastname' => 'Lastname',
+        'email' => 'Email',
+        'phone' => 'Phone',
+        'cafe_id' => 'Cafe ID',
+        'profile_picture' => 'Profile Picture',
     ],
 ];

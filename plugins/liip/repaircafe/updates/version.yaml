@@ -9,3 +9,6 @@
 1.0.4:
     - 'Created table liip_repaircafe_linktypes'
     - builder_table_create_liip_repaircafe_linktypes.php
+1.0.5:
+    - 'Created table liip_repaircafe_contacts'
+    - builder_table_create_liip_repaircafe_contacts.php
