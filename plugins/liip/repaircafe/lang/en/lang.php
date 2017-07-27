@@ -33,6 +33,7 @@
         'cafes' => 'Cafes',
         'linktypes' => 'Linktypes',
         'links' => 'Links',
+        'contacts' => 'Contacts',
     ],
     'nav' => [
         'cafes' => 'Cafes',

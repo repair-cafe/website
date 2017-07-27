@@ -14,6 +14,9 @@ permissions:
     repaircafe.linktypes:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.linktypes'
+    repaircafe.contacts:
+        tab: 'liip.repaircafe::lang.plugin.name'
+        label: 'liip.repaircafe::lang.permissions.contacts'
 navigation:
     main-menu-cafe:
         label: 'liip.repaircafe::lang.plugin.name'
