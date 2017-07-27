@@ -14,6 +14,9 @@ permissions:
     repaircafe.linktypes:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.linktypes'
+    repaircafe.categories:
+        tab: 'liip.repaircafe::lang.plugin.name'
+        label: 'liip.repaircafe::lang.permissions.categories'
     repaircafe.events:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.events'
@@ -40,3 +43,7 @@ navigation:
                 icon: icon-folder
                 permissions:
                     - repaircafe.linktypes
+            side-menu-categories:
+                label: 'liip.repaircafe::lang.nav.categories'
+                url: liip/repaircafe/categories
+                icon: icon-tag

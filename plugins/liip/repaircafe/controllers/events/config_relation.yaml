@@ -1,0 +1,8 @@
+categories:
+    label: 'liip.repaircafe::lang.relation.category'
+    view:
+        list: $/liip/repaircafe/models/category/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/liip/repaircafe/models/category/fields.yaml
+        list: $/liip/repaircafe/models/category/columns.yaml

@@ -1,6 +1,6 @@
 <?php namespace Liip\RepairCafe\Models;
 
-use Model;
+use October\Rain\Database\Model;
 
 /**
  * Model
@@ -17,6 +17,10 @@ class Event extends Model
      * Validation
      */
     public $rules = [
+    ];
+
+    public $belongsToMany = [
+        'categories' => [Category::class, 'table' => 'liip_repaircafe_event_category']
     ];
 
     /**

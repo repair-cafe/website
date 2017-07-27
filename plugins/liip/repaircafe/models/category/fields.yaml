@@ -1,0 +1,15 @@
+fields:
+    name:
+        label: 'liip.repaircafe::lang.category.name'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    slug:
+        label: 'liip.repaircafe::lang.category.slug'
+        oc.commentPosition: ''
+        span: auto
+        defaultFrom: name
+        preset:
+            field: name
+            type: slug
+        type: text

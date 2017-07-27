@@ -26,3 +26,10 @@ fields:
         mode: datetime
         span: auto
         type: datepicker
+    categories:
+        label: 'liip.repaircafe::lang.relation.categories'
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

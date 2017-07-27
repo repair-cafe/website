@@ -36,17 +36,21 @@
         'links' => 'Links',
         'events' => 'Events',
         'contacts' => 'Contacts',
+        'categories' => 'Categories',
     ],
     'nav' => [
         'cafes' => 'Cafes',
         'links' => 'Links',
         'linktypes' => 'Linktypes',
         'events' => 'Events',
+        'categories' => 'Categories',
     ],
     'relation' => [
         'link' => 'Links',
         'contact' => 'Contacts',
         'event' => 'Events',
+        'category' => 'Categories',
+        'categories' => 'Categories',
     ],
     'contact' => [
         'firstname' => 'Firstname',
@@ -64,5 +68,9 @@
         'start' => 'Start',
         'end' => 'End',
         'is_published' => 'Published',
+    ],
+    'category' => [
+        'name' => 'Name',
+        'slug' => 'Slug',
     ],
 ];
