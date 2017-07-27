@@ -37,4 +37,7 @@
         'links' => 'Links',
         'linktypes' => 'Linktypes',
     ],
+    'relation' => [
+        'link' => 'Links',
+    ],
 ];

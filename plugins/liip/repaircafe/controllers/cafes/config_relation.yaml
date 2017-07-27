@@ -1,5 +1,5 @@
 links:
-    label: Links
+    label: 'liip.repaircafe::lang.relation.link'
     view:
         list: $/liip/repaircafe/models/link/columns.yaml
         toolbarButtons: create|delete
