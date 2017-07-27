@@ -1,0 +1,54 @@
+.service-area {
+    $logo-width: 150px;
+    $logo-margin-left: 50px;
+
+    background-color: $rouge;
+    color: $white;
+
+    a {
+        color: $white;
+
+        @include hover-focus {
+            color: $gray-light;
+        }
+    }
+
+    .nav-link {
+        padding: .5rem;
+    }
+
+    .logo {
+        $rotate: -7deg;
+        display: block;
+        position: absolute;
+        z-index: 100;
+        -ms-transform: rotate($rotate); /* IE 9 */
+        -webkit-transform: rotate($rotate); /* Chrome, Safari, Opera */
+        transform: rotate($rotate);
+        margin-top: -10px;
+        margin-left: $logo-margin-left;
+
+        img {
+            width: $logo-width;
+        }
+    }
+    .language-navigation {
+        margin-left: $logo-width + $logo-margin-left + 10px;
+    }
+
+    .title {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+
+    .login {
+        padding-left: 0;
+        padding-right: 0;
+        a {
+            display: block;
+            width: 150px;
+            background-color: $rouge-bright;
+            line-height: 40px;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<nav class="navbar navbar-toggleable-md">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item {% if this.page.id == 'home' %}active{% endif %}"><a class="nav-link" href="{{ 'homepage'|page }}">Basic concepts</a></li>
+            <li class="nav-item {% if this.page.id == 'ajax' %}active{% endif %}"><a class="nav-link" href="{{ 'ajax'|page }}">AJAX framework</a></li>
+            <li class="nav-item {% if this.page.id == 'plugins' %}active{% endif %}"><a class="nav-link" href="{{ 'plugins'|page }}">Plugin components</a></li>
+        </ul>
+    </div>
+</nav>
