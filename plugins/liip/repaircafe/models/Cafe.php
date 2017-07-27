@@ -31,6 +31,9 @@ class Cafe extends Model
         ],
         'contacts' => [
             Contact::class
+        ],
+        'events' => [
+            Event::class
         ]
     ];
 

@@ -12,6 +12,7 @@
             'adress' => 'Adress',
             'address' => 'Address',
             'contacts' => 'Contacts',
+            'events' => 'Events',
         ],
         'contacts' => 'contacts',
         'slug' => 'Slug',
@@ -33,16 +34,19 @@
         'cafes' => 'Cafes',
         'linktypes' => 'Linktypes',
         'links' => 'Links',
+        'events' => 'Events',
         'contacts' => 'Contacts',
     ],
     'nav' => [
         'cafes' => 'Cafes',
         'links' => 'Links',
         'linktypes' => 'Linktypes',
+        'events' => 'Events',
     ],
     'relation' => [
         'link' => 'Links',
         'contact' => 'Contacts',
+        'event' => 'Events',
     ],
     'contact' => [
         'firstname' => 'Firstname',
@@ -53,5 +57,12 @@
         'profile_picture' => 'Profile Picture',
         'twitter' => 'Twitter',
         'facebook' => 'Facebook',
+    ],
+    'event' => [
+        'title' => 'Title',
+        'description' => 'Description',
+        'start' => 'Start',
+        'end' => 'End',
+        'is_published' => 'Published',
     ],
 ];

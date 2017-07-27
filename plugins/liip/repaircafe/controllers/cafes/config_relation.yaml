@@ -14,3 +14,11 @@ contacts:
     manage:
         form: $/liip/repaircafe/models/contact/fields.yaml
         recordsPerPage: 10
+events:
+    label: 'liip.repaircafe::lang.relation.event'
+    view:
+        list: $/liip/repaircafe/models/event/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/liip/repaircafe/models/event/fields.yaml
+        recordsPerPage: 10
