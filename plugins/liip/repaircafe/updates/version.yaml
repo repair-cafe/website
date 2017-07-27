@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table liip_repaircafe_cafes'
+    - builder_table_create_liip_repaircafe_cafes.php
+1.0.3:
+    - 'Created table liip_repaircafe_links'
+    - builder_table_create_liip_repaircafe_links.php
+1.0.4:
+    - 'Created table liip_repaircafe_linktypes'
+    - builder_table_create_liip_repaircafe_linktypes.php
