@@ -11,6 +11,7 @@ let mix = require('laravel-mix');
  |
  */
 
+mix.setResourceRoot('/themes/repair-cafe/assets/');
 mix.setPublicPath('themes/repair-cafe/assets/');
 mix.js('themes/repair-cafe/assets/js/app.js', 'js/app-compiled.js')
     .sass('themes/repair-cafe/assets/sass/app.scss', 'css/app.min.css')
