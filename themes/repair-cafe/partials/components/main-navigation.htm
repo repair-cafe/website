@@ -4,6 +4,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <a class="navbar-brand hidden-lg-up" href="{{ 'homepage'|page }}">
+            <img src="{{ 'assets/images/repair-cafe-logo.jpg'|theme }}" height="30" />
+        </a>
+
         <div class="collapse navbar-collapse" id="mainNavigationContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item {% if this.page.id == 'home' %}active{% endif %}"><a class="nav-link" href="{{ 'homepage'|page }}">Basic concepts</a></li>
