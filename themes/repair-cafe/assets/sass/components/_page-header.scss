@@ -1,0 +1,24 @@
+.page-header {
+    $page-header-image-height: 450px;
+    background-color: $gray-lighter;
+
+    .page-header-content-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .page-header-content > *:last-child {
+        margin-bottom: 0;
+    }
+
+    .page-header-image-container {
+        background-color: $gray-dark;
+    }
+    .page-header-image {
+        height: $page-header-image-height;
+        max-width: map-get($container-max-widths, xl);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
