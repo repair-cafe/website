@@ -1,3 +1,9 @@
 .page-content {
     background-color: $white;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .container > *:last-child {
+        margin-bottom: 0;
+    }
 }
