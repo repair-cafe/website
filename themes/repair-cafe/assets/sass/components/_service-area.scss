@@ -25,7 +25,9 @@
         -ms-transform: rotate($rotate); /* IE 9 */
         -webkit-transform: rotate($rotate); /* Chrome, Safari, Opera */
         transform: rotate($rotate);
-        margin-top: -10px;
+        -ms-transform-origin: top left; /* IE 9 */
+        -webkit-transform-origin: top left; /* Chrome, Safari, Opera */
+        transform-origin: top left;
         margin-left: $logo-margin-left;
 
         img {
