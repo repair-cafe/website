@@ -1,5 +1,5 @@
 .service-area {
-    $logo-width: 150px;
+    $logo-width: 130px;
     $logo-margin-left: 50px;
 
     background-color: $rouge;
@@ -29,13 +29,17 @@
         -webkit-transform-origin: top left; /* Chrome, Safari, Opera */
         transform-origin: top left;
         margin-left: $logo-margin-left;
+        background-color: white;
+        padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+        border: 1px dashed $gray-dark;
+        margin-top: -1px;
 
         img {
             width: $logo-width;
         }
     }
     .language-navigation {
-        margin-left: $logo-width + $logo-margin-left + 10px;
+        margin-left: $logo-width + $logo-margin-left + 70px;
     }
 
     .title {
