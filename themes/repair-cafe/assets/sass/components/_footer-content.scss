@@ -12,6 +12,10 @@
         }
     }
 
+    .footer-content-box > *:last-child {
+        margin-bottom: 0;
+    }
+
     .social-links a .fa-inverse {
         color: $gray;
     }
