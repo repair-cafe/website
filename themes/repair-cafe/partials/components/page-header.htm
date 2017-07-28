@@ -7,9 +7,16 @@
             </div>
         </div>
     </div>
-    {% if image is not empty %}
+    {% if image_url is not empty %}
         <div class="page-header-image-container">
-            <div class="page-header-image mx-auto" style="background-image: url('{{ image }}');"></div>
+            <div class="page-header-image-bg-container">
+                <div class="page-header-image-bg mx-auto" style="background-image: url('{{ image_url }}');"></div>
+            </div>
+            {% if image_caption is not empty %}
+                <div class="page-header-image-caption text-center">
+                    <p class="small">{{ image_caption }}</p>
+                </div>
+            {% endif %}
         </div>
     {% endif %}
 </div>

@@ -12,13 +12,23 @@
     }
 
     .page-header-image-container {
+        background-color: $white;
+    }
+
+    .page-header-image-bg-container {
         background-color: $gray-dark;
     }
-    .page-header-image {
+
+    .page-header-image-bg {
         height: $page-header-image-height;
         max-width: map-get($container-max-widths, xl);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+    }
+
+    .page-header-image-caption p {
+        margin-bottom: 0;
+        padding: .5rem;
     }
 }
