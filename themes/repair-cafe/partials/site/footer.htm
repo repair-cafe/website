@@ -1,5 +1,13 @@
 <footer id="site-footer">
-    <div>
-        <p class="muted credit">Footer</p>
+    <div class="footer-content">
+        <div class="container">
+            <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo" />
+            <div class="text-center">
+                <h2>Repair Cafe</h2>
+                {% partial 'components/footer-navigation' %}
+                <p><a href="mailto:repaircafe@konsumentenschutz.ch">repaircafe@konsumentenschutz.ch</a></p>
+                {% partial 'components/social-links' %}
+            </div>
+        </div>
     </div>
 </footer>
