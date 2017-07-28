@@ -21,7 +21,7 @@
         $rotate: -7deg;
         display: block;
         position: absolute;
-        z-index: 100;
+        z-index: $zindex-navbar + 10;
         -ms-transform: rotate($rotate); /* IE 9 */
         -webkit-transform: rotate($rotate); /* Chrome, Safari, Opera */
         transform: rotate($rotate);
