@@ -1,3 +1,8 @@
+[staticMenu mainMenu]
+code = "main"
+
+[viewBag]
+==
 <div class="main-navigation">
     <nav class="navbar navbar-light navbar-toggleable-md">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNavigationContent" aria-controls="mainNavigationContent" aria-expanded="false" aria-label="{{ 'site.header.main_navigation.toggler.label'|_ }}">
@@ -9,11 +14,7 @@
         </a>
 
         <div class="collapse navbar-collapse" id="mainNavigationContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item {% if this.page.id == 'home' %}active{% endif %}"><a class="nav-link" href="{{ 'homepage'|page }}">Basic concepts</a></li>
-                <li class="nav-item {% if this.page.id == 'ajax' %}active{% endif %}"><a class="nav-link" href="{{ 'ajax'|page }}">AJAX framework</a></li>
-                <li class="nav-item {% if this.page.id == 'plugins' %}active{% endif %}"><a class="nav-link" href="{{ 'plugins'|page }}">Plugin components</a></li>
-            </ul>
+            {% partial 'components/bootstrap4-menu' menu=mainMenu menuContainerClass='mx-auto' %}
         </div>
     </nav>
 </div>
