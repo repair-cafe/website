@@ -19,6 +19,16 @@ fields:
         oc.commentPosition: ''
         span: right
         type: text
+    facebook:
+        label: 'liip.repaircafe::lang.contact.facebook'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    twitter:
+        label: 'liip.repaircafe::lang.contact.twitter'
+        oc.commentPosition: ''
+        span: auto
+        type: text
     profile_picture:
         label: 'liip.repaircafe::lang.contact.profile_picture'
         oc.commentPosition: ''

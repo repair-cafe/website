@@ -1,0 +1,4 @@
+title: Contacts
+modelClass: Liip\RepairCafe\Models\Contact
+toolbar:
+    buttons: reorder_toolbar

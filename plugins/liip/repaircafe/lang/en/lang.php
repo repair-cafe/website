@@ -51,5 +51,7 @@
         'phone' => 'Phone',
         'cafe_id' => 'Cafe ID',
         'profile_picture' => 'Profile Picture',
+        'twitter' => 'Twitter',
+        'facebook' => 'Facebook',
     ],
 ];

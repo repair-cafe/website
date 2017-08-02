@@ -71,24 +71,24 @@ class Seeder107 extends Seeder
         }
 
         // create dummy Links
-//        $link = Link::where('id', '9994')->first();
-//        if($link == null) {
+        $link = Link::where('id', '9994')->first();
+        if($link == null) {
             $link = Link::create([
                 'id' => '9994',
                 'url' => 'flickkafihorgen',
                 'linktype_id' => '9980',
                 'cafe_id' => '9990',
             ]);
-//        }
-//        $link = Link::where('id', '9995')->first();
-//        if($link == null) {
+        }
+        $link = Link::where('id', '9995')->first();
+        if($link == null) {
             $link = Link::create([
                 'id' => '9995',
                 'url' => 'http://www.flick-kafi-horgen.ch/',
                 'linktype_id' => '9982',
                 'cafe_id' => '9990',
             ]);
-//        }
+        }
 
     }
 }

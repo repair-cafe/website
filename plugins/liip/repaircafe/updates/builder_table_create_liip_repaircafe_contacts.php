@@ -15,6 +15,8 @@ class BuilderTableCreateLiipRepaircafeContacts extends Migration
             $table->string('lastname')->nullable();
             $table->string('email');
             $table->string('phone')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
             $table->integer('cafe_id');
         });
     }

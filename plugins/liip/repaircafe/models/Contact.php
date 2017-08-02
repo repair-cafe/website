@@ -26,9 +26,9 @@ class Contact extends Model
         'profile_picture' => [File::class]
     ];
 
-//    public $belongsTo = [
-//        'cafe' => [Cafe::class]
-//    ];
+    public $belongsTo = [
+        'cafe' => [Cafe::class]
+    ];
 
     /**
      * @var string The database table used by the model.
