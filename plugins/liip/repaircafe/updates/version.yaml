@@ -15,6 +15,3 @@
 1.0.6:
     - 'Added default data'
     - seeder106.php
-1.0.7:
-    - 'Added dummy data'
-    - seeder107.php
