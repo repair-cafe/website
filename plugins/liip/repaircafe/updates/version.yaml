@@ -12,3 +12,9 @@
 1.0.5:
     - 'Created table liip_repaircafe_contacts'
     - builder_table_create_liip_repaircafe_contacts.php
+1.0.6:
+    - 'Added default data'
+    - seeder106.php
+1.0.7:
+    - 'Added dummy data'
+    - seeder107.php
