@@ -1,6 +1,15 @@
-<div id="footer">
-    <div class="container">
-        <hr />
-        <p class="muted credit">&copy; 2013 - {{ "now"|date("Y") }} Alexey Bobkov &amp; Samuel Georges.</p>
+<footer id="site-footer">
+    <div class="footer-content">
+        <div class="container">
+            <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo" />
+            <div class="footer-content-box text-center">
+                <h2>Repair Cafe</h2>
+                {% partial 'components/footer-navigation' %}
+                <p><a href="mailto:repaircafe@konsumentenschutz.ch">repaircafe@konsumentenschutz.ch</a></p>
+                {% partial 'components/social-links' %}
+            </div>
+        </div>
     </div>
-</div>
+
+    {% partial 'components/footer-newsletter' %}
+</footer>

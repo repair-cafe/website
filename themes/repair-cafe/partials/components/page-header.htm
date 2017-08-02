@@ -1,0 +1,22 @@
+<div class="page-header">
+    <div class="page-header-content-container container text-center">
+        <div class="row">
+            <div class="offset-md-2 col-md-8 page-header-content">
+                <h1>{{ title }}</h1>
+                <p class="lead">{{ lead }}</p>
+            </div>
+        </div>
+    </div>
+    {% if image_url is not empty %}
+        <div class="page-header-image-container">
+            <div class="page-header-image-bg-container">
+                <div class="page-header-image-bg mx-auto" style="background-image: url('{{ image_url }}');"></div>
+            </div>
+            {% if image_caption is not empty %}
+                <div class="page-header-image-caption text-center">
+                    <p class="small">{{ image_caption }}</p>
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>

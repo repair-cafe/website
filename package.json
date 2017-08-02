@@ -17,6 +17,7 @@
     "devDependencies": {
         "axios": "^0.16.2",
         "bootstrap": "^4.0.0-alpha.6",
+        "font-awesome": "^4.7.0",
         "jquery": "^3.2.1",
         "laravel-mix": "^1.2.2",
         "lodash": "^4.17.4",
