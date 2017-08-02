@@ -3,7 +3,7 @@
 use Seeder;
 use Liip\RepairCafe\Models\LinkType;
 
-class Seeder106 extends Seeder
+class Seeder109 extends Seeder
 {
     public function run()
     {
