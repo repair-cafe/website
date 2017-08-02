@@ -1,6 +1,7 @@
 .service-area {
     $logo-width: 130px;
     $logo-margin-left: 50px;
+    $service-area-padding-vertical: .7rem;
 
     background-color: $rouge;
     color: $white;
@@ -14,7 +15,7 @@
     }
 
     .nav-link {
-        padding: .5rem;
+        padding: $service-area-padding-vertical .5rem;
     }
 
     .logo {
@@ -43,18 +44,20 @@
     }
 
     .title {
-        padding-top: .5rem;
-        padding-bottom: .5rem;
+        padding-top: $service-area-padding-vertical;
+        padding-bottom: $service-area-padding-vertical;
     }
 
     .login {
+        text-transform: uppercase;
         padding-left: 0;
         padding-right: 0;
         a {
             display: block;
-            width: 150px;
+            width: 130px;
             background-color: $rouge-bright;
-            line-height: 40px;
+            padding-top: $service-area-padding-vertical;
+            padding-bottom: $service-area-padding-vertical;
         }
     }
 }
