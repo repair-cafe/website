@@ -1,5 +1,13 @@
 description = "Default layout"
+
+[staticPage]
+useContent = 1
+default = 0
 ==
+
+{variable name="lead_text" label="Lead Text" tab="Custom Fields" type="richeditor"}{/variable}
+{variable name="header_image" label="Header Image" tab="Custom Fields" type="mediafinder" mode="image"}{/variable}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +28,7 @@ description = "Default layout"
         {% partial 'site/header' %}
 
         <!-- Content -->
-        {% partial 'site/content' %}
+        {% partial 'site/content' header_image=header_image lead_text=lead_text %}
 
         <!-- Footer -->
         {% partial 'site/footer' %}
