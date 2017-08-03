@@ -4,13 +4,7 @@
             <a href="#" class="logo">
                 <img src="{{ 'assets/images/repair-cafe-logo.jpg'|theme }}" />
             </a>
-            <ul class="nav language-navigation">
-                {% for code, name in locales %}
-                    <li class="nav-item{{ code == activeLocale ? ' active' }}">
-                        <a class="nav-link" href="#" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">{{ code|upper }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
+            {% partial 'components/language-switcher' locales=locales activeLocale=activeLocale %}
         </div>
         <div class="col-md-6 text-center title">
             {{ 'site.header.service_area.title'|_ }}
