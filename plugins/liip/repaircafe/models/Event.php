@@ -23,6 +23,10 @@ class Event extends Model
         'categories' => [Category::class, 'table' => 'liip_repaircafe_event_category']
     ];
 
+    public $belongsTo = [
+        'cafe' => [Cafe::class]
+    ];
+
     /**
      * @var string The database table used by the model.
      */
