@@ -14,6 +14,13 @@ class Cafe extends Model
 
     protected $dates = ['deleted_at'];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['title', 'description', 'street', 'zip', 'city', 'slug', 'contacts'];
+
     /*
      * Validation
      */

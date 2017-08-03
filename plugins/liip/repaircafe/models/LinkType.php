@@ -9,6 +9,13 @@ class LinkType extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'class_name'];
+
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.

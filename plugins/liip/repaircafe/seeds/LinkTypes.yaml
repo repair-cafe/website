@@ -1,0 +1,9 @@
+-
+  name: Facebook
+  class_name: facebook-class
+-
+  name: Instagram
+  class_name: instagram-class
+-
+  name: Homepage
+  class_name: homepage-class

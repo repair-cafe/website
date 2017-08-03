@@ -10,6 +10,13 @@ class Contact extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['firstname', 'lastname', 'email', 'phone', 'facebook', 'twitter', 'cafe_id'];
+
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
