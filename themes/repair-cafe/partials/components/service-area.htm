@@ -5,15 +5,11 @@
                 <img src="{{ 'assets/images/repair-cafe-logo.jpg'|theme }}" />
             </a>
             <ul class="nav language-navigation">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">DE</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">IT</a>
-                </li>
+                {% for code, name in locales %}
+                    <li class="nav-item{{ code == activeLocale ? ' active' }}">
+                        <a class="nav-link" href="#">{{ code|upper }}</a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
         <div class="col-md-6 text-center title">
