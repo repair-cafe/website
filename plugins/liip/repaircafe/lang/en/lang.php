@@ -37,6 +37,7 @@
         'events' => 'Events',
         'contacts' => 'Contacts',
         'categories' => 'Categories',
+        'contacts' => 'Contacts',
     ],
     'nav' => [
         'cafes' => 'Cafes',
@@ -44,6 +45,7 @@
         'linktypes' => 'Linktypes',
         'events' => 'Events',
         'categories' => 'Categories',
+        'contacts' => 'Contacts',
     ],
     'relation' => [
         'link' => 'Links',
