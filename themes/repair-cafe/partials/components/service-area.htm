@@ -1,26 +1,16 @@
 <div class="service-area container-fluid hidden-md-down">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 left">
             <a href="#" class="logo">
                 <img src="{{ 'assets/images/repair-cafe-logo.jpg'|theme }}" />
             </a>
-            <ul class="nav language-navigation">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">DE</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">IT</a>
-                </li>
-            </ul>
+            {% partial 'components/language-switcher' locales=locales activeLocale=activeLocale %}
         </div>
         <div class="col-md-6 text-center title">
             {{ 'site.header.service_area.title'|_ }}
         </div>
         <div class="col-md-3 text-center login">
-            <a href="#" class="ml-auto">
+            <a href="{{ '/backend' }}" class="ml-auto">
                 {{ 'site.header.service_area.login'|_ }}
             </a>
         </div>

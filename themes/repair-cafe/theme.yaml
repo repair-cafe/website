@@ -3,4 +3,9 @@ description: 'Theme for repair-cafe.ch'
 author: 'Team Jazz, Liip AG'
 homepage: 'https://liip.ch'
 code: ''
-translate: lang/lang.yaml
+translate: config/lang.yaml
+form: config/fields.yaml
+require:
+    - Liip.RepairCafe
+    - RainLab.Translate
+    - RainLab.Pages

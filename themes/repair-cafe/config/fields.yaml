@@ -1,0 +1,25 @@
+tabs:
+    fields:
+        contact_email:
+            label: 'Kontakt Email-Adresse'
+            span: full
+            type: text
+            tab: 'Allgemein'
+        social_facebook:
+            label: 'Facebook Page'
+            span: full
+            type: text
+            default: 'https://www.facebook.com/stiftungfuerkonsumentenschutz/'
+            tab: 'Social Media'
+        social_twitter:
+            label: 'Twitter Page'
+            span: full
+            type: text
+            default: 'https://twitter.com/KonsumSchutz'
+            tab: 'Social Media'
+        social_googleplus:
+            label: 'Google+ Page'
+            span: full
+            type: text
+            default: 'https://plus.google.com/+KonsumentenschutzCh'
+            tab: 'Social Media'
