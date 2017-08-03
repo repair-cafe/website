@@ -1,5 +1,7 @@
 # Repair Café OctoberCMS Website
 
+[![Build Status](https://travis-ci.org/repair-cafe/website.svg?branch=master)](https://travis-ci.org/repair-cafe/website)
+
 ## Assets
 
 There are the following NPM tasks to generate the CSS/JS assets
