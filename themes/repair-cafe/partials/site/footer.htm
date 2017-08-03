@@ -1,8 +1,9 @@
 <footer id="site-footer">
     <div class="footer-content">
         <div class="container">
-            <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo" />
+            <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo hidden-md-down" />
             <div class="footer-content-box text-center">
+                <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo-sm hidden-lg-up" />
                 <h2>Repair Cafe</h2>
                 {% partial 'components/footer-navigation' %}
                 <p><a href="mailto:{{ this.theme.contact_email }}">{{ this.theme.contact_email }}</a></p>
