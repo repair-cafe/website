@@ -6,3 +6,11 @@ links:
     manage:
         form: $/liip/repaircafe/models/link/fields.yaml
         list: $/liip/repaircafe/models/link/columns.yaml
+users:
+    label: 'liip.repaircafe::lang.relation.user'
+    view:
+        list: ~/modules/backend/models/user/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        form: ~/modules/backend/models/user/fields.yaml
+        recordsPerPage: 10

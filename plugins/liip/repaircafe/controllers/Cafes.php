@@ -22,4 +22,8 @@ class Cafes extends Controller
         parent::__construct();
         BackendMenu::setContext('Liip.RepairCafe', 'main-menu-cafe', 'side-menu-cafes');
     }
+
+    public function listExtendQuery($query) {
+        $query->byUser();
+    }
 }
