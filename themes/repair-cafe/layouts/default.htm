@@ -27,7 +27,7 @@ forceUrl = 0
     <body>
 
         <!-- Header -->
-        {% partial 'site/header' %}
+        {% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
 
         <!-- Content -->
         {% partial 'site/content' header_image=header_image lead_text=lead_text %}

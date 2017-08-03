@@ -7,7 +7,7 @@
             <ul class="nav language-navigation">
                 {% for code, name in locales %}
                     <li class="nav-item{{ code == activeLocale ? ' active' }}">
-                        <a class="nav-link" href="#">{{ code|upper }}</a>
+                        <a class="nav-link" href="#" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">{{ code|upper }}</a>
                     </li>
                 {% endfor %}
             </ul>
