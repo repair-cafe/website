@@ -18,6 +18,10 @@
         padding: $service-area-padding-vertical .5rem;
     }
 
+    .left {
+        z-index: 100;
+    }
+
     .logo {
         $rotate: -7deg;
         display: block;
