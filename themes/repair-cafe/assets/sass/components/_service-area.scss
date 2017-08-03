@@ -43,8 +43,12 @@
             width: $logo-width;
         }
     }
-    .language-navigation {
+    .language-switcher {
         margin-left: $logo-width + $logo-margin-left + 70px;
+
+        li.active a {
+            color: $gray-light;
+        }
     }
 
     .title {
