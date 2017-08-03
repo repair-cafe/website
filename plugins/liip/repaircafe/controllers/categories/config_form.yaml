@@ -1,0 +1,10 @@
+name: Categories
+form: $/liip/repaircafe/models/category/fields.yaml
+modelClass: Liip\RepairCafe\Models\Category
+defaultRedirect: liip/repaircafe/categories
+create:
+    redirect: 'liip/repaircafe/categories/update/:id'
+    redirectClose: liip/repaircafe/categories
+update:
+    redirect: liip/repaircafe/categories
+    redirectClose: liip/repaircafe/categories

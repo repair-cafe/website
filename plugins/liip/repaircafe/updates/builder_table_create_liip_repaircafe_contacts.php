@@ -13,6 +13,8 @@ class BuilderTableCreateLiipRepaircafeContacts extends Migration
             $table->increments('id');
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
             $table->string('email');
             $table->string('phone')->nullable();
             $table->string('facebook')->nullable();

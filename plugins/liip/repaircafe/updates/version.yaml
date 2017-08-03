@@ -21,6 +21,3 @@
 1.0.8:
     - 'Created table liip_repaircafe_event_category'
     - builder_table_create_liip_repaircafe_event_category.php
-1.0.9:
-    - 'Added default data'
-    - seeder109.php

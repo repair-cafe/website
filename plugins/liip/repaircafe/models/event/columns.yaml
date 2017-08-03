@@ -1,0 +1,16 @@
+columns:
+    description:
+        label: 'liip.repaircafe::lang.event.description'
+        type: text
+    title:
+        label: 'liip.repaircafe::lang.event.title'
+        type: text
+    start:
+        label: 'liip.repaircafe::lang.event.start'
+        type: text
+    end:
+        label: 'liip.repaircafe::lang.event.end'
+        type: text
+    is_published:
+        label: 'liip.repaircafe::lang.event.is_published'
+        type: text

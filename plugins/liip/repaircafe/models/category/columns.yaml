@@ -1,0 +1,9 @@
+columns:
+    name:
+        label: 'liip.repaircafe::lang.category.name'
+        type: text
+        searchable: true
+    slug:
+        label: 'liip.repaircafe::lang.category.slug'
+        type: text
+        searchable: true

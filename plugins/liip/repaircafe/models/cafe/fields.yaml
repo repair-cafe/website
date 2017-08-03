@@ -71,3 +71,11 @@ tabs:
                 - preview
             type: partial
             tab: 'liip.repaircafe::lang.cafe.tab.contacts'
+        events:
+            span: full
+            path: $/liip/repaircafe/controllers/cafes/_events.htm
+            context:
+                - update
+                - preview
+            type: partial
+            tab: 'liip.repaircafe::lang.cafe.tab.events'
