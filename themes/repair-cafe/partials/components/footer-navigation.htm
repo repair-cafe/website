@@ -7,13 +7,9 @@ code = "footer"
     <ul class="nav footer-navigation justify-content-center">
         {% for item in footerMenu.menuItems if not item.viewBag.isHidden %}
             <li class="nav-item{{ item.isActive ? ' active' : '' }}{{ item.isChildActive ? ' child-active' : '' }} {{ item.viewBag.cssClass }}">
-                {% if item.url %}
-                    <a class="nav-link" href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
-                        {{ item.title }}
-                    </a>
-                {% else %}
-                    <span>{{ item.title }}</span>
-                {% endif %}
+                <a class="nav-link" href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
+                    {{ item.title }}
+                </a>
             </li>
         {% endfor %}
     </ul>

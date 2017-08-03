@@ -3,33 +3,21 @@
         {% for item in menu.menuItems if not item.viewBag.isHidden %}
             <li class="nav-item{{ item.isActive ? ' active' : '' }}{{ item.isChildActive ? ' child-active' : '' }} {{ item.viewBag.cssClass }}{{ item.items ? ' dropdown' : ''}}">
                 {% if item.items %}
-                    {% if item.url %}
-                        <a class="nav-link dropdown-toggle" href="{{ item.url }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ item.title }}
-                        </a>
-                    {% else %}
-                        <span>{{ item.title }}</span>
-                    {% endif %}
+                    <a class="nav-link dropdown-toggle" href="{{ item.url }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ item.title }}
+                    </a>
 
                     <div class="dropdown-menu">
                         {% for subitem in item.items if not subitem.viewBag.isHidden %}
-                            {% if subitem.url %}
-                                <a class="dropdown-item" href="{{ subitem.url }}" {{ subitem.viewBag.isExternal ? 'target="_blank"' }}>
-                                    {{ subitem.title }}
-                                </a>
-                            {% else %}
-                                <span>{{ subitem.title }}</span>
-                            {% endif %}
+                            <a class="dropdown-item" href="{{ subitem.url }}" {{ subitem.viewBag.isExternal ? 'target="_blank"' }}>
+                                {{ subitem.title }}
+                            </a>
                         {% endfor %}
                     </div>
                 {% else %}
-                    {% if item.url %}
-                        <a class="nav-link" href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
-                            {{ item.title }}
-                        </a>
-                    {% else %}
-                        <span>{{ item.title }}</span>
-                    {% endif %}
+                    <a class="nav-link" href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
+                        {{ item.title }}
+                    </a>
                 {% endif %}
             </li>
         {% endfor %}
