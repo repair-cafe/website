@@ -30,7 +30,9 @@ forceUrl = 0
         {% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
 
         <!-- Content -->
-        {% partial 'site/content' header_image=header_image header_image_caption='' lead_text=lead_text %}
+        {% placeholder page default %}
+            {% partial 'site/content' header_image=header_image header_image_caption='' lead_text=lead_text %}
+        {% endplaceholder %}
 
         <!-- Footer -->
         {% partial 'site/footer' %}
