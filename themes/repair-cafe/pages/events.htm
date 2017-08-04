@@ -9,29 +9,33 @@ localeUrl[de] = "/eventlist"
 [eventList]
 ==
 {% put page %}
-    <div class="page-header">
-        <div class="page-header-content-container container text-center">
-            <div class="page-header-content">
-                <h1>{{ 'eventlist.title'|_ }}</h1>
-                {{ form_open({ class: 'form-inline justify-content-center' }) }}
-                    <div class="has-btn-embed has-btn-embed-right mr-sm-2 mb-2 mb-sm-0">
-                        <label for="searchterm" class="sr-only">{{ 'eventlist.search.searchterm.label'|_ }}</label>
-                        <input class="form-control form-control-lg text-truncate" type="search" placeholder="{{ 'eventlist.search.searchterm.placeholder'|_ }}" id="searchterm" name="searchterm">
-                        <button type="submit" class="btn btn-embed btn-embed-lg"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <div class="events">
+        <div class="page-header">
+            <div class="page-header-content-container container text-center">
+                <div class="page-header-content row">
+                    <div class="offset-lg-2 col-lg-8">
+                        <h1>{{ 'eventlist.title'|_ }}</h1>
+                        {{ form_open({ class: 'form-inline justify-content-center' }) }}
+                            <div class="search-input-group has-btn-embed has-btn-embed-right mr-sm-2 mb-2 mb-sm-0">
+                                <label for="searchterm" class="sr-only">{{ 'eventlist.search.searchterm.label'|_ }}</label>
+                                <input class="form-control form-control-lg text-truncate" type="search" placeholder="{{ 'eventlist.search.searchterm.placeholder'|_ }}" id="searchterm" name="searchterm">
+                                <button type="submit" class="btn btn-embed btn-embed-lg"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </div>
+                            <label for="category" class="sr-only">{{ 'eventlist.search.category.label'|_ }}</label>
+                            <select class="form-control form-control-lg" id="category" name="category">
+                                <option value="1">Alle Kategorien</option>
+                                <option value="1">Velo</option>
+                                <option value="2">Handy</option>
+                            </select>
+                        {{ form_close() }}
                     </div>
-                    <label for="category" class="sr-only">{{ 'eventlist.search.category.label'|_ }}</label>
-                    <select class="form-control form-control-lg" id="category" name="category">
-                        <option value="1">Alle Kategorien</option>
-                        <option value="1">Velo</option>
-                        <option value="2">Handy</option>
-                    </select>
-                {{ form_close() }}
+                </div>
             </div>
         </div>
-    </div>
-    <div class="page-content">
-        <div class="container">
-            {% component 'eventList' %}
+        <div class="page-content">
+            <div class="container">
+                {% component 'eventList' %}
+            </div>
         </div>
     </div>
 {% endput %}
