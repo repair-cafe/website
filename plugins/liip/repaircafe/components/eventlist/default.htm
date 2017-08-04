@@ -3,17 +3,34 @@
     <h2>{{ month }}</h2>
     <ul class="list-unstyled">
         {% for event in events %}
-        <li class="media">
-            <img class="d-flex mr-3 logo" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
-            <div class="media-body">
-                <h3>{{ event.cafe.title }}: {{ event.title }}</h3>
-                {% if event.start|date('d.m.Y') == event.end|date('d.m.Y') %}
-                    <p>{{ event.start|date('d.m.Y') }}</p>
-                {% else %}
-                    <p>{{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}</p>
-                {% endif %}
-                <p>{{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}</p>
-                <p>TODO: address</p>
+        <li>
+            <div class="row">
+                <div class="col-6 media">
+                    <img class="d-flex mr-3 logo" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
+                    <div class="media-body">
+                        <h3><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}: {{ event.title }}</a></h3>
+                        {% if event.start|date('d.m.Y') == event.end|date('d.m.Y') %}
+                        <p>{{ event.start|date('d.m.Y') }}</p>
+                        {% else %}
+                        <p>{{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}</p>
+                        {% endif %}
+                        <p>{{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}</p>
+                        <p>TODO: address</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    {% for category in event.categories %}
+                        {{ category }}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <img src="http://livedoor.blogimg.jp/netouyonews/imgs/c/c/cc791ed6.jpg" class="img-fluid" />
+                </div>
+                <div class="col-6">
+                    {{ event.description|raw }}
+                </div>
             </div>
         </li>
         {% endfor %}
