@@ -15,7 +15,7 @@ localeUrl[de] = "/eventlist"
                 <div class="page-header-content row">
                     <div class="offset-lg-2 col-lg-8">
                         <h1>{{ 'eventlist.title'|_ }}</h1>
-                        {{ form_open({ class: 'form-inline justify-content-center' }) }}
+                        {{ form_open({ class: 'form-inline justify-content-center', url: url('events'), method: 'GET' }) }}
                             <div class="search-input-group has-btn-embed has-btn-embed-right mr-sm-2 mb-2 mb-sm-0">
                                 <label for="searchterm" class="sr-only">{{ 'eventlist.search.searchterm.label'|_ }}</label>
                                 <input class="form-control form-control-lg text-truncate" type="search" placeholder="{{ 'eventlist.search.searchterm.placeholder'|_ }}" id="searchterm" name="searchterm">
@@ -23,9 +23,10 @@ localeUrl[de] = "/eventlist"
                             </div>
                             <label for="category" class="sr-only">{{ 'eventlist.search.category.label'|_ }}</label>
                             <select class="form-control form-control-lg" id="category" name="category">
-                                <option value="1">Alle Kategorien</option>
-                                <option value="1">Velo</option>
-                                <option value="2">Handy</option>
+                                <option value="">Alle Kategorien</option>
+                                {% for category in eventList.categories %}
+                                    <option value="{{category.slug}}">{{category.name}}</option>
+                                {% endfor %}
                             </select>
                         {{ form_close() }}
                     </div>
