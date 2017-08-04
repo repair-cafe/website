@@ -11,6 +11,13 @@ class Event extends Model
 
     use \October\Rain\Database\Traits\SoftDelete;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['title', 'description', 'start', 'end', 'cafe_id'];
+
     protected $dates = ['deleted_at'];
 
     /*

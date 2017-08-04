@@ -1,0 +1,45 @@
+-
+  title: Flick Kafi Horgen
+  description: Der Verein ist politisch und konfessionell unabhängig, verfolgt keine kommerziellen Zwecke und erstrebt keinen Gewinn. Die Organe sind ehrenamtlich tätig.
+  street: Bergstrasse 52
+  zip: 8810
+  city: Horgen
+  slug: flick-kafi-horgen
+  contacts:
+  -
+    firstname: Urs
+    lastname: Länzlinger
+    email: urs@flick-kafi.ch
+    phone: '023456789'
+    facebook: ursfacebook
+    twitter: ursTwittert
+  -
+    firstname: Vreni
+    lastname: Rothacher
+    email: vreni@flick-kafi.ch
+    phone: '023456789'
+    facebook: vreniAufFacebook
+    twitter: vreniTwittert
+  -
+    firstname: Wolly
+    lastname: Schäfer
+    email: wolly@flick-kafi.ch
+    phone: '023456789'
+    facebook: wollyAufFacebook
+    twitter: wollyTwittert
+  events:
+  -
+    title: Nationaler Reparaturtag
+    description: Die ganze Schweiz kommt zusammen in Bern um gemeinsam alte Geräte zu reparieren.
+    start: '2017-11-13 09:30:00.00'
+    end: '2017-11-13 19:00:00.00'
+  -
+    title: 13. Flick-Kafi-Tag
+    description: Wie gewohnt in Horgen.
+    start: '2017-12-08 09:30:00.00'
+    end: '2017-12-08 19:00:00.00'
+  -
+    title: 14. Flick-Kafi-Tag
+    description: Kurz vor Weihnachten wird es zum Kaffee zusätzlich Kuchen geben.
+    start: '2017-12-18 09:30:00.00'
+    end: '2017-12-18 19:00:00.00'
