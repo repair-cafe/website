@@ -1,0 +1,52 @@
+.form-group.has-btn-embed {
+    $btn-embed-color: $gray-light !default;
+    $btn-embed-padding-x: .75rem !default;
+    $btn-embed-padding-x-sm: .5rem !default;
+    $btn-embed-padding-x-lg: 1.25rem !default;
+
+    position: relative;
+
+    &.has-btn-embed-left {
+        .form-control {
+            padding-left: $input-padding-x + (2 * $btn-embed-padding-x);
+        }
+        .form-control-sm {
+            padding-left: $input-padding-x-sm + (2 * $btn-embed-padding-x-sm);
+        }
+        .form-control-lg {
+            padding-left: $input-padding-x-lg + (2 * $btn-embed-padding-x-lg);
+        }
+    }
+    &.has-btn-embed-right {
+        .form-control {
+            padding-right: $input-padding-x + (2 * $btn-embed-padding-x);
+        }
+        .form-control-sm {
+            padding-right: $input-padding-x-sm + (2 * $btn-embed-padding-x-sm);
+        }
+        .form-control-lg {
+            padding-right: $input-padding-x-lg + (2 * $btn-embed-padding-x-lg);
+        }
+        .btn-embed {
+            right: 0;
+        }
+    }
+    .btn-embed {
+        background-color: transparent;
+        position: absolute;
+        color: $btn-embed-color;
+        padding-left: $btn-embed-padding-x;
+        padding-right: $btn-embed-padding-x;
+        cursor: pointer;
+    }
+    .btn-embed-sm {
+        font-size: $font-size-sm;
+        padding-left: $btn-embed-padding-x-sm;
+        padding-right: $btn-embed-padding-x-sm;
+    }
+    .btn-embed-lg {
+        font-size: $font-size-lg;
+        padding-left: $btn-embed-padding-x-lg;
+        padding-right: $btn-embed-padding-x-lg;
+    }
+}
