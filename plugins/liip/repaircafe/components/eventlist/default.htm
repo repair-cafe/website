@@ -1,0 +1,46 @@
+<div class="eventlist">
+    {% for month, events in __SELF__.eventsGroupedByMonth %}
+    <h2>{{ month }}</h2>
+    <ul class="list-unstyled mb-5">
+        {% for event in events %}
+        <li class="pt-3">
+            <div class="row">
+                <div class="col-md-6 media mb-3">
+                    <img class="d-flex mr-3 logo" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
+                    <div class="media-body">
+                        <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}: {{ event.title }}</a></h3>
+                        <p class="small">
+                            {% if event.start|date('d.m.Y') == event.end|date('d.m.Y') %}
+                                {{ event.start|date('d.m.Y') }}<br />
+                            {% else %}
+                                {{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}<br />
+                            {% endif %}
+                            {{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}<br />
+                            TODO: address
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <button type="button" class="close collapsed" data-toggle="collapse" data-target="#eventAdditionalInfo{{ event.id }}" aria-expanded="false" aria-controls="#eventAdditionalInfo{{ event.id }}">
+                        <i class="fa fa-chevron-toggle" aria-hidden="true"></i>
+                    </button>
+                    <ul class="list-unstyled">
+                        {% for category in event.categories %}
+                            <li>{{ category.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}">
+                <div class="col-md-6 mb-3">
+                    <img src="http://livedoor.blogimg.jp/netouyonews/imgs/c/c/cc791ed6.jpg" class="img-fluid" />
+                </div>
+                <div class="col-md-6 mb-3 small">
+                    {{ event.description|raw }}
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</div>

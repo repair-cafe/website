@@ -1,0 +1,28 @@
+.eventlist {
+    .logo {
+        width: 25%;
+    }
+
+    button.close {
+        .fa-chevron-toggle:before {
+            content: "\F077";
+        }
+        &.collapsed {
+            .fa-chevron-toggle:before {
+                content: "\F078";
+            }
+        }
+    }
+
+    .additional-info.collapse.show {
+        display: flex;
+    }
+
+    > ul {
+        border-top: dashed 1px $gray-dark;
+
+        > li {
+            border-bottom: dashed 1px $gray-dark;
+        }
+    }
+}

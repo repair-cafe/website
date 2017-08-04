@@ -12,6 +12,10 @@ class Plugin extends PluginBase
 
     public function registerComponents()
     {
+        return [
+            'Liip\RepairCafe\Components\EventList' => 'eventList',
+            'Liip\RepairCafe\Components\CafeDetail' => 'cafeDetail'
+        ];
     }
 
     public function registerSettings()
