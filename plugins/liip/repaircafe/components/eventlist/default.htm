@@ -1,8 +1,22 @@
-<ul>
-    {% for event in __SELF__.events %}
-        <li><a href="{{ 'event'|page({ id: event.id }) }}">{{ event.title }}</a></li>
+<div class="eventlist">
+    {% for month, events in __SELF__.eventsGroupedByMonth %}
+    <h2>{{ month }}</h2>
+    <ul class="list-unstyled">
+        {% for event in events %}
+        <li class="media">
+            <img class="d-flex mr-3 logo" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
+            <div class="media-body">
+                <h3>{{ event.cafe.title }}: {{ event.title }}</h3>
+                {% if event.start|date('d.m.Y') == event.end|date('d.m.Y') %}
+                    <p>{{ event.start|date('d.m.Y') }}</p>
+                {% else %}
+                    <p>{{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}</p>
+                {% endif %}
+                <p>{{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}</p>
+                <p>TODO: address</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
     {% endfor %}
-</ul>
-
-{% put scripts %}
-{% endput %}
+</div>

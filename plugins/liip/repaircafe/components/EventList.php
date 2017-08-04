@@ -13,9 +13,13 @@ class EventList extends ComponentBase
         ];
     }
 
-    // This array becomes available on the page as {{ component.events }}
-    public function events()
+    // This array becomes available on the page as {{ component.eventsGroupedByMonth }}
+    public function eventsGroupedByMonth()
     {
-        return Event::all();
+        $events = Event::all();
+        return array(
+            'August' => $events,
+            'September' => $events,
+        );
     }
 }
