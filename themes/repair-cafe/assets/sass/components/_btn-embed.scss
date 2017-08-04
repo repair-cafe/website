@@ -1,10 +1,15 @@
-.form-group.has-btn-embed {
+.has-btn-embed {
     $btn-embed-color: $gray-light !default;
     $btn-embed-padding-x: .75rem !default;
     $btn-embed-padding-x-sm: .5rem !default;
     $btn-embed-padding-x-lg: 1.25rem !default;
 
+    width: 100%;
     position: relative;
+
+    @include media-breakpoint-up(sm) {
+        width: auto;
+    }
 
     &.has-btn-embed-left {
         .form-control {
@@ -15,6 +20,9 @@
         }
         .form-control-lg {
             padding-left: $input-padding-x-lg + (2 * $btn-embed-padding-x-lg);
+        }
+        .btn-embed {
+            left: 0;
         }
     }
     &.has-btn-embed-right {
@@ -34,19 +42,17 @@
     .btn-embed {
         background-color: transparent;
         position: absolute;
+        top: 0;
         color: $btn-embed-color;
-        padding-left: $btn-embed-padding-x;
-        padding-right: $btn-embed-padding-x;
+        padding: $input-padding-y $btn-embed-padding-x;
         cursor: pointer;
     }
     .btn-embed-sm {
         font-size: $font-size-sm;
-        padding-left: $btn-embed-padding-x-sm;
-        padding-right: $btn-embed-padding-x-sm;
+        padding: $input-padding-y-sm $btn-embed-padding-x-sm;
     }
     .btn-embed-lg {
         font-size: $font-size-lg;
-        padding-left: $btn-embed-padding-x-lg;
-        padding-right: $btn-embed-padding-x-lg;
+        padding: $input-padding-y-lg $btn-embed-padding-x-lg;
     }
 }
