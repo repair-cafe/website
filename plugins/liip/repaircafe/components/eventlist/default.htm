@@ -1,9 +1,9 @@
 <div class="eventlist">
     {% for month, events in __SELF__.eventsGroupedByMonth %}
     <h2>{{ month }}</h2>
-    <ul class="list-unstyled">
+    <ul class="list-unstyled mb-5">
         {% for event in events %}
-        <li>
+        <li class="pt-3">
             <div class="row">
                 <div class="col-md-6 media mb-3">
                     <img class="d-flex mr-3 logo" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">

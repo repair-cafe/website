@@ -17,4 +17,12 @@
     .additional-info.collapse.show {
         display: flex;
     }
+
+    > ul {
+        border-top: dashed 1px $gray-dark;
+
+        > li {
+            border-bottom: dashed 1px $gray-dark;
+        }
+    }
 }
