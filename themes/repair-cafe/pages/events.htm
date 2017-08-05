@@ -18,16 +18,11 @@ localeUrl[de] = "/eventlist"
                         {{ form_open({ class: 'form-inline justify-content-center', url: url('events'), method: 'GET' }) }}
                             <div class="search-input-group has-btn-embed has-btn-embed-right mr-sm-2 mb-2 mb-sm-0">
                                 <label for="searchterm" class="sr-only">{{ 'eventlist.search.searchterm.label'|_ }}</label>
-                                <input class="form-control form-control-lg text-truncate" type="search" placeholder="{{ 'eventlist.search.searchterm.placeholder'|_ }}" id="searchterm" name="searchterm">
+                                {{ form_input( 'search', 'searchterm', input('searchterm'), { class: 'form-control form-control-lg text-truncate', placeholder: 'eventlist.search.searchterm.placeholder'|_ } ) }}
                                 <button type="submit" class="btn btn-embed btn-embed-lg"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                             <label for="category" class="sr-only">{{ 'eventlist.search.category.label'|_ }}</label>
-                            <select class="form-control form-control-lg" id="category" name="category">
-                                <option value="">Alle Kategorien</option>
-                                {% for category in eventList.categories %}
-                                    <option value="{{category.slug}}">{{category.name}}</option>
-                                {% endfor %}
-                            </select>
+                            {{ form_select( 'category', eventList.categories, input('category'), { class: 'form-control form-control-lg' } ) }}
                         {{ form_close() }}
                     </div>
                 </div>
