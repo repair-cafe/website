@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Lang;
 use Liip\RepairCafe\Models\Category;
 use Liip\RepairCafe\Models\Event;
 
@@ -21,15 +22,23 @@ class EventList extends ComponentBase
     public function eventsGroupedByMonth()
     {
         $events = $this->queryEvents();
-        return array(
-            'August' => $events,
-            'September' => $events,
-        );
+        $eventsGroupedByMonth = array();
+        foreach($events as $event) {
+            $start = new \DateTime($event->start);
+            $eventsGroupedByMonth[$start->format('Y')][$start->format('F')][] = $event;
+        }
+
+        return $eventsGroupedByMonth;
     }
 
     public function categories()
     {
-        return $this->categories;
+        $category_options = array();
+        $category_options[] = Lang::get('liip.repaircafe::component.eventlist.all_categories');
+        foreach( $this->categories as $category ) {
+            $category_options[$category->slug] = $category->name;
+        }
+        return $category_options;
     }
 
     public function onRun()
@@ -44,23 +53,30 @@ class EventList extends ComponentBase
         $searchTerm = Input::get('searchterm');
 
         if (!empty($searchTerm) && !empty($category)) {
-            $events = Event::whereHas('categories', function ($filter) use ($category) {
+            $query = Event::whereHas('categories', function ($filter) use ($category) {
                 $filter->where('slug', '=', $category);
             })
             ->where(function ($searchFilter) use ($searchTerm) {
                 $searchFilter->where('title', 'like', '%'.$searchTerm.'%')
                     ->orWhere('description', 'like', '%'.$searchTerm.'%');
-            })->get();
+            });
         } elseif (!empty($searchTerm)) {
-            $events = Event::where('title', 'like', '%'.$searchTerm.'%')
-                ->orWhere('description', 'like', '%'.$searchTerm.'%')->get();
+            $query = Event::where('title', 'like', '%'.$searchTerm.'%')
+                ->orWhere('description', 'like', '%'.$searchTerm.'%');
         } elseif (!empty($category)) {
-            $events = Event::whereHas('categories', function ($filter) use ($category) {
+            $query = Event::whereHas('categories', function ($filter) use ($category) {
                 $filter->where('slug', '=', $category);
-            })->get();
+            });
         } else {
-            $events = Event::all();
+            $query = Event::orderBy('start', 'asc'); // TODO do not order twice
         }
+
+        $query->join('liip_repaircafe_cafes', 'liip_repaircafe_events.cafe_id', '=', 'liip_repaircafe_cafes.id');
+        $query->where('liip_repaircafe_cafes.is_published', true);
+        $query->where('liip_repaircafe_events.is_published', true);
+        $query->orderBy('start', 'asc');
+        $events = $query->get();
+
         return $events;
     }
 }
