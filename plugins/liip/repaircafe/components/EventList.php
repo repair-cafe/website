@@ -23,7 +23,7 @@ class EventList extends ComponentBase
     {
         $events = $this->queryEvents();
         $eventsGroupedByMonth = array();
-        foreach($events as $event) {
+        foreach ($events as $event) {
             $start = new \DateTime($event->start);
             $eventsGroupedByMonth[$start->format('Y')][$start->format('F')][] = $event;
         }
@@ -35,7 +35,7 @@ class EventList extends ComponentBase
     {
         $category_options = array();
         $category_options[] = Lang::get('liip.repaircafe::component.eventlist.all_categories');
-        foreach( $this->categories as $category ) {
+        foreach ($this->categories as $category) {
             $category_options[$category->slug] = $category->name;
         }
         return $category_options;
