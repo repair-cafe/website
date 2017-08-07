@@ -9,8 +9,13 @@ use System\Models\File;
 class Cafe extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-
     use \October\Rain\Database\Traits\SoftDelete;
+    use \October\Rain\Database\Traits\Sluggable;
+
+    /**
+     * @var array Generate slugs for these attributes.
+     */
+    protected $slugs = ['slug' => 'name'];
 
     protected $dates = ['deleted_at'];
 
