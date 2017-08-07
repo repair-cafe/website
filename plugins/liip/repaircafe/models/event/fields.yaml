@@ -1,35 +1,75 @@
 fields:
-    is_published:
-        label: 'liip.repaircafe::lang.event.is_published'
-        span: auto
-        type: switch
-    title:
-        label: 'liip.repaircafe::lang.event.title'
-        oc.commentPosition: ''
-        span: full
-        type: text
-    description:
-        label: 'liip.repaircafe::lang.event.description'
-        size: large
-        oc.commentPosition: ''
-        span: full
-        type: richeditor
-    start:
-        label: 'liip.repaircafe::lang.event.start'
-        oc.commentPosition: ''
-        mode: datetime
-        span: auto
-        type: datepicker
-    end:
-        label: 'liip.repaircafe::lang.event.end'
-        oc.commentPosition: ''
-        mode: datetime
-        span: auto
-        type: datepicker
-    categories:
-        label: 'liip.repaircafe::lang.relation.categories'
-        oc.commentPosition: ''
-        nameFrom: name
-        descriptionFrom: description
-        span: auto
-        type: relation
+
+tabs:
+    fields:
+        is_published:
+            label: 'liip.repaircafe::lang.event.is_published'
+            span: auto
+            type: switch
+            tab: 'liip.repaircafe::lang.event.tab.general'
+        title:
+            label: 'liip.repaircafe::lang.event.title'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.event.tab.general'
+        description:
+            label: 'liip.repaircafe::lang.event.description'
+            size: large
+            oc.commentPosition: ''
+            span: full
+            type: richeditor
+            tab: 'liip.repaircafe::lang.event.tab.general'
+        start:
+            label: 'liip.repaircafe::lang.event.start'
+            oc.commentPosition: ''
+            mode: datetime
+            span: auto
+            type: datepicker
+            tab: 'liip.repaircafe::lang.event.tab.general'
+        end:
+            label: 'liip.repaircafe::lang.event.end'
+            oc.commentPosition: ''
+            mode: datetime
+            span: auto
+            type: datepicker
+            tab: 'liip.repaircafe::lang.event.tab.general'
+        categories:
+            label: 'liip.repaircafe::lang.relation.categories'
+            oc.commentPosition: ''
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'liip.repaircafe::lang.event.tab.general'
+
+        street:
+            label: 'liip.repaircafe::lang.event.street'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.event.tab.address'
+        zip:
+            label: 'liip.repaircafe::lang.event.zip'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'liip.repaircafe::lang.event.tab.address'
+        city:
+            label: 'liip.repaircafe::lang.cafe.city'
+            oc.commentPosition: ''
+            span: right
+            type: text
+            tab: 'liip.repaircafe::lang.event.tab.address'
+        longitude:
+            label: 'liip.repaircafe::lang.event.longitude'
+            oc.commentPosition: ''
+            span: auto
+            type: text
+            tab: 'liip.repaircafe::lang.event.tab.address'
+        latitude:
+            label: 'liip.repaircafe::lang.event.latitude'
+            oc.commentPosition: ''
+            span: auto
+            type: text
+            tab: 'liip.repaircafe::lang.event.tab.address'

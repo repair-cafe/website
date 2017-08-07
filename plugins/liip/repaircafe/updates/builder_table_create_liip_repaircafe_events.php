@@ -20,6 +20,11 @@ class BuilderTableCreateLiipRepaircafeEvents extends Migration
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
+            $table->string('city')->nullable();
+            $table->string('zip')->nullable();
+            $table->string('street')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
         });
     }
 

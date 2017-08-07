@@ -69,6 +69,15 @@
         'start' => 'Start',
         'end' => 'End',
         'is_published' => 'Published',
+        'street' => 'Street',
+        'zip' => 'Zip',
+        'city' => 'City',
+        'latitude' => 'Latitude',
+        'longitude' => 'Longitude',
+        'tab' => [
+            'address' => 'Address',
+            'general' => 'General',
+        ],
     ],
     'category' => [
         'name' => 'Name',
