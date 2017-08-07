@@ -1,0 +1,83 @@
+<?php return [
+    'plugin' => [
+        'name' => 'RepairCafe',
+        'description' => '',
+    ],
+    'cafe' => [
+        'id' => 'ID',
+        'title' => 'Titel',
+        'description' => 'Beschreibung',
+        'tab' => [
+            'general' => 'Allgemein',
+            'address' => 'Adresse',
+            'contacts' => 'Kontakte',
+            'events' => 'Events',
+        ],
+        'contacts' => 'Kontakte',
+        'slug' => 'Slug',
+        'street' => 'Strasse',
+        'zip' => 'PLZ',
+        'city' => 'Ort',
+        'image' => 'Bild',
+        'logo' => 'Logo',
+        'is_published' => 'Veröffentlicht',
+        'created_at' => 'Erstellt am',
+        'updated_at' => 'Aktualisiert am',
+        'deleted_at' => 'Gelöscht am',
+    ],
+    'link' => [
+        'url' => 'URL',
+        'linktype' => 'Link Type',
+    ],
+    'linktype' => [
+        'name' => 'Name',
+        'class_name' => 'Class',
+    ],
+    'permissions' => [
+        'cafes' => 'Cafes',
+        'linktypes' => 'Linktypes',
+        'links' => 'Links',
+        'events' => 'Events',
+        'contacts' => 'Kontakte',
+        'categories' => 'Kategorien',
+    ],
+    'nav' => [
+        'cafes' => 'Cafes',
+        'links' => 'Links',
+        'linktypes' => 'Linktypes',
+        'events' => 'Events',
+        'categories' => 'Kategorien',
+        'contacts' => 'Kontakte',
+    ],
+    'relation' => [
+        'links' => 'Links',
+        'contacts' => 'Kontakte',
+        'events' => 'Events',
+        'categories' => 'Kategorien',
+    ],
+    'contact' => [
+        'firstname' => 'Vorname',
+        'lastname' => 'Nachname',
+        'email' => 'Email',
+        'phone' => 'Telefonnummer',
+        'profile_picture' => 'Profilbild',
+        'twitter' => 'Twitter URL',
+        'facebook' => 'Facebook URL',
+    ],
+    'event' => [
+        'title' => 'Titel',
+        'description' => 'Beschreibung',
+        'start' => 'Start',
+        'end' => 'Ende',
+        'is_published' => 'Veröffentlicht',
+    ],
+    'category' => [
+        'name' => 'Name',
+        'slug' => 'Slug',
+    ],
+    'component' => [
+        'eventlist' => [
+            'all_categories' => 'Alle Kategorien',
+        ],
+    ],
+];
