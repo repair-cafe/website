@@ -44,6 +44,7 @@ class Event extends Model
      * Validation
      */
     public $rules = [
+        'end' => 'after:start',
     ];
 
     public $belongsToMany = [
