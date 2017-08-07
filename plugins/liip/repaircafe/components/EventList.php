@@ -61,7 +61,7 @@ class EventList extends ComponentBase
     public function onRun()
     {
         $this->categories = Category::all();
-        $this->condensed = boolval( $this->property('condensed') );
+        $this->condensed = boolval($this->property('condensed'));
     }
 
     protected function queryEvents()
@@ -89,7 +89,7 @@ class EventList extends ComponentBase
         }
 
         $query->whereHas('cafe', function ($cafe) {
-            if(!empty($this->property('cafe_slug'))) {
+            if (!empty($this->property('cafe_slug'))) {
                 $cafe->where('slug', $this->property('cafe_slug'));
             }
             $cafe->where('is_published', true);
