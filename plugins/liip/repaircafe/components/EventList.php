@@ -1,6 +1,7 @@
 <?php namespace Liip\RepairCafe\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
 use Liip\RepairCafe\Models\Category;
@@ -29,6 +30,21 @@ class EventList extends ComponentBase
         }
 
         return $eventsGroupedByMonth;
+    }
+
+    public function eventsGroupedByProximity()
+    {
+        // St. Gallen Location
+        $lat = '47.42391';
+        $lng = '9.37477';
+        $distance = 100;
+
+        $events = DB::select(
+            DB::raw('SELECT *,( 3959 * acos( cos( radians(' . $lat . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $lng . ') ) + sin( radians(' . $lat .') ) * sin( radians(latitude) ) ) ) AS distance FROM liip_repaircafe_events HAVING distance < ' . $distance . ' ORDER BY distance')
+        );
+
+        return $events;
+
     }
 
     public function categories()
