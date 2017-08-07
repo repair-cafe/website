@@ -5,7 +5,7 @@
             <div class="footer-content-box text-center">
                 <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo-sm hidden-lg-up mb-4" />
                 <h2>Repair Cafe</h2>
-                {% partial 'components/footer-navigation' %}
+                {% partial 'components/footer-navigation' localized_menucode='footer_' ~ activeLocale %}
                 <p><a href="mailto:{{ this.theme.contact_email }}">{{ this.theme.contact_email }}</a></p>
                 {% partial 'components/social-links' %}
             </div>
