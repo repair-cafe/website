@@ -8,10 +8,10 @@ columns:
         invisible: true
     start:
         label: 'liip.repaircafe::lang.event.start'
-        type: text
+        type: datetime
     end:
         label: 'liip.repaircafe::lang.event.end'
-        type: text
+        type: datetime
     is_published:
         label: 'liip.repaircafe::lang.event.is_published'
         type: switch
