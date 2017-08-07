@@ -68,12 +68,13 @@ class EventList extends ComponentBase
                 $filter->where('slug', '=', $category);
             });
         } else {
-            $query = Event::orderBy('start', 'asc'); // TODO do not order twice
+            $query = Event::query();
         }
 
-        $query->join('liip_repaircafe_cafes', 'liip_repaircafe_events.cafe_id', '=', 'liip_repaircafe_cafes.id');
-        $query->where('liip_repaircafe_cafes.is_published', true);
-        $query->where('liip_repaircafe_events.is_published', true);
+        $query->whereHas('cafe', function ($cafe) {
+            $cafe->where('is_published', true);
+        });
+        $query->where('is_published', true);
         $query->orderBy('start', 'asc');
         $events = $query->get();
 
