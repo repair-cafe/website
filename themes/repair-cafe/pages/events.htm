@@ -15,7 +15,7 @@ localeUrl[de] = "/eventlist"
                 <div class="page-header-content row">
                     <div class="offset-lg-2 col-lg-8">
                         <h1>{{ 'eventlist.title'|_ }}</h1>
-                        {{ form_open({ class: 'form-inline justify-content-center', url: url('events'), method: 'GET' }) }}
+                        {{ form_open({ class: 'form-inline justify-content-center', url: url('events'), method: 'GET', id: 'eventSearch' }) }}
                             <div class="search-input-group has-btn-embed has-btn-embed-right mr-sm-2 mb-2 mb-sm-0">
                                 <label for="searchterm" class="sr-only">{{ 'eventlist.search.searchterm.label'|_ }}</label>
                                 {{ form_input( 'search', 'searchterm', input('searchterm'), { class: 'form-control form-control-lg text-truncate', placeholder: 'eventlist.search.searchterm.placeholder'|_ } ) }}
