@@ -1,6 +1,7 @@
 <?php namespace Liip\RepairCafe\Models;
 
 use October\Rain\Database\Model;
+use RainLab\Translate\Behaviors\TranslatableModel;
 
 /**
  * Model
@@ -10,6 +11,8 @@ class Event extends Model
     use \October\Rain\Database\Traits\Validation;
 
     use \October\Rain\Database\Traits\SoftDelete;
+
+    public $implement = [TranslatableModel::class];
 
     /**
      * The attributes that are mass assignable.
@@ -27,7 +30,12 @@ class Event extends Model
         'zip',
         'city',
         'latitude',
-        'longitude'
+        'longitude',
+    ];
+
+    public $translatable = [
+        'title',
+        'description',
     ];
 
     protected $dates = ['deleted_at'];
