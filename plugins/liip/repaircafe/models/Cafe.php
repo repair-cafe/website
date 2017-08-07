@@ -24,7 +24,7 @@ class Cafe extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'description', 'street', 'zip', 'city', 'slug', 'contacts'];
+    protected $fillable = ['title', 'description', 'street', 'zip', 'city', 'slug', 'contacts', 'is_published'];
 
     /*
      * Validation
