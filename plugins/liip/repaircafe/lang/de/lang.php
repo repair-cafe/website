@@ -82,4 +82,17 @@
             'all_categories' => 'Alle Kategorien',
         ],
     ],
+    'theme' => [
+        'layout' => [
+            'default' => [
+                'variables' => [
+                    'lead_text' => 'Leadtext',
+                    'header_image' => 'Headerbild',
+                ],
+                'tab' => [
+                    'general' => 'Allgemein',
+                ],
+            ],
+        ],
+    ],
 ];
