@@ -27,8 +27,6 @@ class Seed extends Command
 
         if ($this->option('masterdata')) {
             $masterData = new MasterData();
-            $masterData->seedLinkTypeData();
-            $this->output->writeln('All LinkTypes created');
 
             $masterData->seedCategoryData();
             $this->output->writeln('All Categories created');

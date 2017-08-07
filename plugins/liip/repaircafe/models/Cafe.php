@@ -24,7 +24,21 @@ class Cafe extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'description', 'street', 'zip', 'city', 'slug', 'contacts', 'is_published'];
+    protected $fillable = [
+        'title',
+        'description',
+        'street',
+        'zip',
+        'city',
+        'slug',
+        'contacts',
+        'is_published',
+        'website_link',
+        'contact_link',
+        'facebook',
+        'twitter',
+        'instagram'
+    ];
 
     /*
      * Validation
@@ -38,9 +52,6 @@ class Cafe extends Model
     ];
 
     public $hasMany = [
-        'links' => [
-            Link::class
-        ],
         'contacts' => [
             Contact::class
         ],
