@@ -34,7 +34,7 @@ class EventList extends ComponentBase
     public function categories()
     {
         $category_options = array();
-        $category_options[] = Lang::get('liip.repaircafe::component.eventlist.all_categories');
+        $category_options[] = Lang::get('liip.repaircafe::lang.component.eventlist.all_categories');
         foreach ($this->categories as $category) {
             $category_options[$category->slug] = $category->name;
         }
