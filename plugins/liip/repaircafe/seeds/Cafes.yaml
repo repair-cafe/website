@@ -30,20 +30,85 @@
     twitter: wollyTwittert
   events:
   -
-    title: Nationaler Reparaturtag
-    description: Die ganze Schweiz kommt zusammen in Bern um gemeinsam alte Geräte zu reparieren.
+    title: 2. Schweizer Reparaturtag
+    description: Die ganze Schweiz kommt zusammen in Luzern um gemeinsam alte Geräte zu reparieren.
     start: '2017-11-13 09:30:00.00'
     end: '2017-11-13 19:00:00.00'
+    street: Reusssteg 3
+    zip: 6003
+    city: Luzern
+    latitude: 47.05048
+    longitude: 8.30635
     is_published: true
   -
     title: 13. Flick-Kafi-Tag
     description: Wie gewohnt in Horgen.
     start: '2017-12-08 09:30:00.00'
     end: '2017-12-08 19:00:00.00'
+    street: Bergstrasse 52
+    zip: 8810
+    city: Horgen
+    latitude: 47.25579
+    longitude: 8.60027
     is_published: true
   -
     title: 14. Flick-Kafi-Tag
     description: Kurz vor Weihnachten wird es zum Kaffee zusätzlich Kuchen geben.
     start: '2017-12-18 09:30:00.00'
     end: '2017-12-18 19:00:00.00'
+    street: Bergstrasse 52
+    zip: 8810
+    city: Horgen
+    latitude: 47.25579
+    longitude: 8.60027
+    is_published: true
+-
+  title: Züri Repair-Cafe
+  description: Der Verein ist politisch und konfessionell unabhängig, verfolgt keine kommerziellen Zwecke und erstrebt keinen Gewinn. Die Organe sind ehrenamtlich tätig.
+  street: Zimmerlistrasse 6
+  zip: 8004
+  city: Zürich
+  slug: zuri-repair-cafe
+  is_published: true
+  contacts:
+  -
+    firstname: Bob
+    lastname: Baumeister
+    email: bob@zuri-cafe.ch
+    phone: '023456789'
+    facebook: bobsfacebook
+    twitter: bobsTwittert
+  events:
+  -
+    title: 2. Schweizer Reparaturtag
+    description: Die ganze Schweiz kommt zusammen in Luzern um gemeinsam alte Geräte zu reparieren.
+    start: '2017-11-13 09:30:00.00'
+    end: '2017-11-13 19:00:00.00'
+    street: Reusssteg 3
+    zip: 6003
+    city: Luzern
+    latitude: 47.05048
+    longitude: 8.30635
+    is_published: true
+  -
+    title: Reparieren bei Kaffee und Kuchen
+    description: Direkt in der Zürcher Innenstadt.
+    start: '2017-12-08 09:30:00.00'
+    end: '2017-12-08 19:00:00.00'
+    street: Zimmerlistrasse 6
+    zip: 8004
+    city: Zürich
+    latitude: 47.36667
+    longitude: 8.55
+    is_published: true
+  -
+    title: Niederdörfli Reparier-Kaffee
+    description: Ausnahmsweise in der exklusiven Location im Niederdorf.
+    start: '2017-12-18 09:30:00.00'
+    end: '2017-12-18 19:00:00.00'
+    street: Zimmerlistrasse 6
+    zip: 8004
+    city: Zürich
+    latitude: 47.36667
+    longitude: 8.55
     is_published: true
