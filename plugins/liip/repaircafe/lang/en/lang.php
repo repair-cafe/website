@@ -44,9 +44,8 @@
         'contacts' => 'Contacts',
     ],
     'relation' => [
-        'contact' => 'Contacts',
-        'event' => 'Events',
-        'category' => 'Categories',
+        'contacts' => 'Contacts',
+        'events' => 'Events',
         'categories' => 'Categories',
     ],
     'contact' => [
@@ -54,7 +53,6 @@
         'lastname' => 'Lastname',
         'email' => 'Email',
         'phone' => 'Phone',
-        'cafe_id' => 'Cafe ID',
         'profile_picture' => 'Profile Picture',
         'twitter' => 'Twitter',
         'facebook' => 'Facebook',
