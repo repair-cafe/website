@@ -3,16 +3,18 @@
         <div class="row">
             <div class="offset-md-2 col-md-8 page-header-content">
                 <h1>{{ title }}</h1>
-                <div class="lead">
-                    {{ lead_text|raw }}
-                </div>
+                {% if lead_text is not empty %}
+                    <div class="lead">
+                        {{ lead_text|raw }}
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
-    {% if header_image is not empty %}
+    {% if header_image_url is not empty %}
         <div class="page-header-image-container">
             <div class="page-header-image-bg-container">
-                <div class="page-header-image-bg mx-auto" style="background-image: url('{{ header_image|media }}');"></div>
+                <div class="page-header-image-bg mx-auto" style="background-image: url('{{ header_image_url }}');"></div>
             </div>
             {% if header_image_caption is not empty %}
                 <div class="page-header-image-caption text-center">
