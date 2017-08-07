@@ -37,7 +37,6 @@
         'events' => 'Events',
         'contacts' => 'Contacts',
         'categories' => 'Categories',
-        'contacts' => 'Contacts',
     ],
     'nav' => [
         'cafes' => 'Cafes',
@@ -74,5 +73,10 @@
     'category' => [
         'name' => 'Name',
         'slug' => 'Slug',
+    ],
+    'component' => [
+        'eventlist' => [
+            'all_categories' => 'All Categories',
+        ],
     ],
 ];

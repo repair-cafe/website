@@ -5,6 +5,7 @@
   zip: 8810
   city: Horgen
   slug: flick-kafi-horgen
+  is_published: true
   contacts:
   -
     firstname: Urs
@@ -33,13 +34,16 @@
     description: Die ganze Schweiz kommt zusammen in Bern um gemeinsam alte Geräte zu reparieren.
     start: '2017-11-13 09:30:00.00'
     end: '2017-11-13 19:00:00.00'
+    is_published: true
   -
     title: 13. Flick-Kafi-Tag
     description: Wie gewohnt in Horgen.
     start: '2017-12-08 09:30:00.00'
     end: '2017-12-08 19:00:00.00'
+    is_published: true
   -
     title: 14. Flick-Kafi-Tag
     description: Kurz vor Weihnachten wird es zum Kaffee zusätzlich Kuchen geben.
     start: '2017-12-18 09:30:00.00'
     end: '2017-12-18 19:00:00.00'
+    is_published: true

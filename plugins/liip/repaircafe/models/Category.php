@@ -8,6 +8,12 @@ use October\Rain\Database\Model;
 class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Sluggable;
+
+    /**
+     * @var array Generate slugs for these attributes.
+     */
+    protected $slugs = ['slug' => 'name'];
 
     /*
      * Disable timestamps by default.

@@ -16,7 +16,7 @@ class Event extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'description', 'start', 'end', 'cafe_id'];
+    protected $fillable = ['title', 'description', 'start', 'end', 'cafe_id', 'is_published'];
 
     protected $dates = ['deleted_at'];
 
