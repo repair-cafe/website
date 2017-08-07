@@ -1,5 +1,3 @@
-fields:
-
 tabs:
     fields:
         is_published:
@@ -25,6 +23,7 @@ tabs:
             oc.commentPosition: ''
             mode: datetime
             span: auto
+            required: 1
             type: datepicker
             tab: 'liip.repaircafe::lang.event.tab.general'
         end:
@@ -42,7 +41,6 @@ tabs:
             span: auto
             type: relation
             tab: 'liip.repaircafe::lang.event.tab.general'
-
         street:
             label: 'liip.repaircafe::lang.event.street'
             oc.commentPosition: ''

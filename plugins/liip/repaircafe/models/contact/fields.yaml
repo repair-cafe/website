@@ -3,11 +3,13 @@ fields:
         label: 'liip.repaircafe::lang.contact.firstname'
         oc.commentPosition: ''
         span: left
+        required: 1
         type: text
     lastname:
         label: 'liip.repaircafe::lang.contact.lastname'
         oc.commentPosition: ''
         span: right
+        required: 1
         type: text
     email:
         label: 'liip.repaircafe::lang.contact.email'

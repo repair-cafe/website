@@ -9,12 +9,14 @@ tabs:
             label: 'liip.repaircafe::lang.cafe.title'
             oc.commentPosition: ''
             span: left
+            required: 1
             type: text
             tab: 'liip.repaircafe::lang.cafe.tab.general'
         slug:
             label: 'liip.repaircafe::lang.cafe.slug'
             oc.commentPosition: ''
             span: auto
+            required: 1
             preset:
                 field: title
                 type: slug
