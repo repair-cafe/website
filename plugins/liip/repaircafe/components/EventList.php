@@ -9,12 +9,29 @@ use Liip\RepairCafe\Models\Event;
 class EventList extends ComponentBase
 {
     private $categories;
+    public $condensed;
 
     public function componentDetails()
     {
         return [
             'name' => 'Event List',
             'description' => 'Displays a list of events.'
+        ];
+    }
+
+    public function defineProperties()
+    {
+        return [
+            'cafe_slug' => [
+                'title'             => 'Cafe Slug',
+                'description'       => 'Filter events by cafe',
+                'type'              => 'string',
+            ],
+            'condensed' => [
+                'title'             => 'Condensed style',
+                'description'       => 'More compact list style',
+                'type'              => 'checkbox',
+            ]
         ];
     }
 
@@ -43,8 +60,8 @@ class EventList extends ComponentBase
 
     public function onRun()
     {
-        $this->events = $this->queryEvents();
         $this->categories = Category::all();
+        $this->condensed = boolval($this->property('condensed'));
     }
 
     protected function queryEvents()
@@ -72,6 +89,9 @@ class EventList extends ComponentBase
         }
 
         $query->whereHas('cafe', function ($cafe) {
+            if (!empty($this->property('cafe_slug'))) {
+                $cafe->where('slug', $this->property('cafe_slug'));
+            }
             $cafe->where('is_published', true);
         });
         $query->where('is_published', true);

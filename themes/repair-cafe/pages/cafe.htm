@@ -7,5 +7,24 @@ is_hidden = 0
 localeUrl[de] = "/event"
 
 [cafeDetail]
+
+[eventList]
+cafe_slug = "{{ :slug }}"
+condensed = 1
 ==
-{% component 'cafeDetail' %}
+{% put page %}
+<div class="events">
+    {% partial 'components/page-header' title=cafeDetail.cafe.title header_image_url=cafeDetail.cafe.image.path %}
+    <div class="page-content">
+        <div class="container">
+            <div class="media mb-5">
+                <img class="d-flex mr-3 w-25" src="{{ cafeDetail.cafe.logo.path }}" alt="{{ cafeDetail.cafe.title }}">
+                <div class="media-body">
+                    {{ cafeDetail.cafe.description|raw }}
+                </div>
+            </div>
+            {% component 'eventList' %}
+        </div>
+    </div>
+</div>
+{% endput %}
