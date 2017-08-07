@@ -37,14 +37,6 @@ tabs:
             tab: 'liip.repaircafe::lang.cafe.tab.general'
             type: fileupload
             mode: image
-        links:
-            span: full
-            path: $/liip/repaircafe/controllers/cafes/_links.htm
-            context:
-                - update
-                - preview
-            type: partial
-            tab: 'liip.repaircafe::lang.cafe.tab.general'
         street:
             label: 'liip.repaircafe::lang.cafe.street'
             oc.commentPosition: ''
@@ -79,3 +71,33 @@ tabs:
                 - preview
             type: partial
             tab: 'liip.repaircafe::lang.cafe.tab.events'
+        website_link:
+            label: 'liip.repaircafe::lang.cafe.website_link'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.external_links'
+        contact_link:
+            label: 'liip.repaircafe::lang.cafe.contact_link'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.external_links'
+        facebook:
+            label: 'liip.repaircafe::lang.cafe.facebook'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.external_links'
+        twitter:
+            label: 'liip.repaircafe::lang.cafe.twitter'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.external_links'
+        instagram:
+            label: 'liip.repaircafe::lang.cafe.instagram'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.cafe.tab.external_links'

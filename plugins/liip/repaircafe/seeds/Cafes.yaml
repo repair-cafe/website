@@ -5,6 +5,11 @@
   zip: 8810
   city: Horgen
   slug: flick-kafi-horgen
+  website_link: http://www.flick-kafi-horgen.ch/
+  contact_link: http://www.flick-kafi-horgen.ch/kontakt-anfahrt
+  facebook: https://www.facebook.com/flickkafihorgen/
+  twitter: https://www.twitter.com/flickkafihorgen/
+  instagram: https://www.instagram.com/flickkafihorgen/
   is_published: true
   contacts:
   -
@@ -69,6 +74,11 @@
   zip: 8004
   city: Zürich
   slug: zuri-repair-cafe
+  website_link: http://www.zuri-repair-cafe.ch/
+  contact_link: http://www.zuri-repair-cafe.ch/kontakt
+  facebook: https://www.facebook.com/zuri-repair-cafe/
+  twitter: https://www.twitter.com/zuri-repair-cafe/
+  instagram: https://www.instagram.com/zuri-repair-cafe/
   is_published: true
   contacts:
   -

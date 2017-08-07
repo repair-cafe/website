@@ -18,6 +18,11 @@ class BuilderTableCreateLiipRepaircafeCafes extends Migration
             $table->boolean('is_published')->default(1);
             $table->string('city')->nullable();
             $table->string('zip')->nullable();
+            $table->string('website_link')->nullable();
+            $table->string('contact_link')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
