@@ -70,6 +70,15 @@
         'start' => 'Start',
         'end' => 'Ende',
         'is_published' => 'Veröffentlicht',
+        'street' => 'Strasse',
+        'zip' => 'PLZ',
+        'city' => 'Ort',
+        'latitude' => 'Latitude',
+        'longitude' => 'Longitude',
+        'tab' => [
+            'address' => 'Adresse',
+            'general' => 'Allgemein',
+        ],
     ],
     'category' => [
         'name' => 'Name',
