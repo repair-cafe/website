@@ -15,8 +15,8 @@ events:
         list: $/liip/repaircafe/models/event/columns.yaml
         toolbarButtons: create|delete
         defaultSort:
-            column: 'start'
-            direction: 'asc'
+            column: 'end'
+            direction: 'desc'
     manage:
         form: $/liip/repaircafe/models/event/fields.yaml
         recordsPerPage: 10
