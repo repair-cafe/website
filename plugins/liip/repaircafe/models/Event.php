@@ -12,7 +12,7 @@ class Event extends Model
 
     use \October\Rain\Database\Traits\SoftDelete;
 
-    // TODO: This is a workaround for an open OctoberCMS bug. See: https://github.com/rainlab/translate-plugin/issues/209
+    // TODO: Workaround for an open OctoberCMS bug. See: https://github.com/rainlab/translate-plugin/issues/209
     use \Liip\RepairCafe\Traits\TranslatableModal;
 
     public $implement = [TranslatableModel::class];
@@ -37,8 +37,8 @@ class Event extends Model
     ];
 
     public $translatable = [
-        'title',
-        'description',
+        ['title', 'index' => true],
+        ['description', 'index' => true],
     ];
 
     protected $dates = ['deleted_at'];

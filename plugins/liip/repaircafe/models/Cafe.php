@@ -44,8 +44,8 @@ class Cafe extends Model
     ];
 
     public $translatable = [
-        'title',
-        'description',
+        ['title', 'index' => true],
+        ['description', 'index' => true],
     ];
 
     /*
