@@ -1,0 +1,14 @@
+{% if street or city %}
+    {% set address_string = (street ? street : '') %}
+    {% if city and street %}
+        {% if inline %}
+            {% set address_string = address_string ~ ', ' %}
+        {% else %}
+            {% set address_string = address_string ~ '<br />' %}
+        {% endif %}
+    {% endif %}
+    {% if city %}
+        {% set address_string = address_string ~ (zip ? zip ~ ' ') ~ city %}
+    {% endif %}
+    {{ address_string|raw }}
+{% endif %}
