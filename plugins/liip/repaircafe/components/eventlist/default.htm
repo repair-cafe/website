@@ -1,45 +1,22 @@
 <div class="eventlist">
-    {% for year, months in __SELF__.eventsGroupedByMonth %}
-        {% for month, events in months %}
-        <h2>{{ month }} {{ year }}</h2>
-        <ul class="list-unstyled mb-5">
-            {% for event in events %}
-            <li class="pt-3">
-                <div class="row">
-                    {% if __SELF__.condensed %}
-                        <div class="col-md-6 mb-3">
-                            <h3 class="h5">{{ event.title ? event.title : event.cafe.title }}</h3>
-                            <p class="small">
-                                {% if event.start|date('d.m.Y') == event.end|date('d.m.Y') %}
-                                    {{ event.start|date('d.m.Y') }}
-                                {% else %}
-                                    {{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}
-                                {% endif %}
-                                {{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}
-                                {% if event.street or event.city %}
-                                    {% set address_string = (event.street ? event.street : '') %}
-                                    {% if event.city and event.street %}
-                                        {% set address_string = address_string ~ ', ' %}
-                                    {% endif %}
-                                    {% if event.city %}
-                                        {% set address_string = address_string ~ (event.zip ? event.zip ~ ' ') ~ event.city %}
-                                    {% endif %}
-                                    <br />{{ address_string }}
-                                {% endif %}
-                            </p>
-                        </div>
-                    {% else %}
-                        <div class="col-md-6 media mb-3">
-                            <img class="d-flex mr-3 w-25" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
-                            <div class="media-body">
-                                <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}{{ event.title ? ': ' ~ event.title }}</a></h3>
+    {% if __SELF__.eventsGroupedByMonth|length > 0 %}
+        {% for year, months in __SELF__.eventsGroupedByMonth %}
+            {% for month, events in months %}
+            <h2>{{ month }} {{ year }}</h2>
+            <ul class="list-unstyled mb-5">
+                {% for event in events %}
+                <li class="pt-3">
+                    <div class="row">
+                        {% if __SELF__.condensed %}
+                            <div class="col-md-6 mb-3">
+                                <h3 class="h5">{{ event.title ? event.title : event.cafe.title }}</h3>
                                 <p class="small">
                                     {% if event.start|date('d.m.Y') == event.end|date('d.m.Y') %}
                                         {{ event.start|date('d.m.Y') }}
                                     {% else %}
                                         {{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}
                                     {% endif %}
-                                    <br />{{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}
+                                    {{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}
                                     {% if event.street or event.city %}
                                         {% set address_string = (event.street ? event.street : '') %}
                                         {% if event.city and event.street %}
@@ -52,30 +29,57 @@
                                     {% endif %}
                                 </p>
                             </div>
+                        {% else %}
+                            <div class="col-md-6 media mb-3">
+                                <img class="d-flex mr-3 w-25" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
+                                <div class="media-body">
+                                    <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}{{ event.title ? ': ' ~ event.title }}</a></h3>
+                                    <p class="small">
+                                        {% if event.start|date('d.m.Y') == event.end|date('d.m.Y') %}
+                                            {{ event.start|date('d.m.Y') }}
+                                        {% else %}
+                                            {{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}
+                                        {% endif %}
+                                        <br />{{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}
+                                        {% if event.street or event.city %}
+                                            {% set address_string = (event.street ? event.street : '') %}
+                                            {% if event.city and event.street %}
+                                                {% set address_string = address_string ~ ', ' %}
+                                            {% endif %}
+                                            {% if event.city %}
+                                                {% set address_string = address_string ~ (event.zip ? event.zip ~ ' ') ~ event.city %}
+                                            {% endif %}
+                                            <br />{{ address_string }}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="col-md-6 mb-3">
+                            <button type="button" class="close collapsed" data-toggle="collapse" data-target="#eventAdditionalInfo{{ event.id }}" aria-expanded="false" aria-controls="#eventAdditionalInfo{{ event.id }}">
+                                <i class="fa fa-chevron-toggle" aria-hidden="true"></i>
+                            </button>
+                            <ul class="list-unstyled">
+                                {% for category in event.categories %}
+                                    <li>{{ category.name }}</li>
+                                {% endfor %}
+                            </ul>
                         </div>
-                    {% endif %}
-                    <div class="col-md-6 mb-3">
-                        <button type="button" class="close collapsed" data-toggle="collapse" data-target="#eventAdditionalInfo{{ event.id }}" aria-expanded="false" aria-controls="#eventAdditionalInfo{{ event.id }}">
-                            <i class="fa fa-chevron-toggle" aria-hidden="true"></i>
-                        </button>
-                        <ul class="list-unstyled">
-                            {% for category in event.categories %}
-                                <li>{{ category.name }}</li>
-                            {% endfor %}
-                        </ul>
                     </div>
-                </div>
-                <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}">
-                    <div class="col-md-6 mb-3">
-                        <img src="http://livedoor.blogimg.jp/netouyonews/imgs/c/c/cc791ed6.jpg" class="img-fluid" />
+                    <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}">
+                        <div class="col-md-6 mb-3">
+                            <img src="http://livedoor.blogimg.jp/netouyonews/imgs/c/c/cc791ed6.jpg" class="img-fluid" />
+                        </div>
+                        <div class="col-md-6 mb-3 small">
+                            {{ event.description|raw }}
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-3 small">
-                        {{ event.description|raw }}
-                    </div>
-                </div>
-            </li>
+                </li>
+                {% endfor %}
+            </ul>
             {% endfor %}
-        </ul>
         {% endfor %}
-    {% endfor %}
+    {% else %}
+        <p class="text-center">{{ 'liip.repaircafe::lang.component.eventlist.no_events_found'|trans }}</p>
+    {% endif %}
 </div>
