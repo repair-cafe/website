@@ -99,11 +99,11 @@ class EventList extends ComponentBase
             $cafe->where('is_published', true);
         });
         $query->where('is_published', true);
-        $query->where(function($query) {
+        $query->where(function ($query) {
             $query->whereNotNull('end');
             $query->where('end', '>=', DB::raw('now()'));
         });
-        $query->orWhere(function($query) {
+        $query->orWhere(function ($query) {
             $query->whereNull('end');
             $query->where('start', '>=', DB::raw('now()'));
         });
