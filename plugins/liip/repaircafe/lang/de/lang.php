@@ -96,5 +96,16 @@
                 ],
             ],
         ],
+        'fields' => [
+            'site_title' => 'Seitentitel',
+            'contact_email' => 'Kontakt Email-Adresse',
+            'social_facebook' => 'Facebook Page',
+            'social_twitter' => 'Twitter Page',
+            'social_googleplus' => 'Google+ Page',
+            'tab' => [
+                'general' => 'Allgemein',
+                'social_media' => 'Social Media',
+            ],
+        ],
     ],
 ];
