@@ -8,15 +8,24 @@
                 <div class="row">
                     {% if __SELF__.condensed %}
                         <div class="col-md-6 mb-3">
-                            <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.title ? event.title : event.cafe.title }}</a></h3>
+                            <h3 class="h5">{{ event.title ? event.title : event.cafe.title }}</h3>
                             <p class="small">
                                 {% if event.start|date('d.m.Y') == event.end|date('d.m.Y') %}
-                                    {{ event.start|date('d.m.Y') }}<br />
+                                    {{ event.start|date('d.m.Y') }}
                                 {% else %}
-                                    {{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}<br />
+                                    {{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}
                                 {% endif %}
-                                {{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}<br />
-                                TODO: address
+                                {{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}
+                                {% if event.street or event.city %}
+                                    {% set address_string = (event.street ? event.street : '') %}
+                                    {% if event.city and event.street %}
+                                        {% set address_string = address_string ~ ', ' %}
+                                    {% endif %}
+                                    {% if event.city %}
+                                        {% set address_string = address_string ~ (event.zip ? event.zip ~ ' ') ~ event.city %}
+                                    {% endif %}
+                                    <br />{{ address_string }}
+                                {% endif %}
                             </p>
                         </div>
                     {% else %}
@@ -26,12 +35,21 @@
                                 <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}{{ event.title ? ': ' ~ event.title }}</a></h3>
                                 <p class="small">
                                     {% if event.start|date('d.m.Y') == event.end|date('d.m.Y') %}
-                                        {{ event.start|date('d.m.Y') }}<br />
+                                        {{ event.start|date('d.m.Y') }}
                                     {% else %}
-                                        {{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}<br />
+                                        {{ event.start|date('d.m.Y') }} - {{ event.end|date('d.m.Y') }}
                                     {% endif %}
-                                    {{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}<br />
-                                    TODO: address
+                                    <br />{{ event.start|date('H:s') }} - {{ event.end|date('H:s') }}
+                                    {% if event.street or event.city %}
+                                        {% set address_string = (event.street ? event.street : '') %}
+                                        {% if event.city and event.street %}
+                                            {% set address_string = address_string ~ ', ' %}
+                                        {% endif %}
+                                        {% if event.city %}
+                                            {% set address_string = address_string ~ (event.zip ? event.zip ~ ' ') ~ event.city %}
+                                        {% endif %}
+                                        <br />{{ address_string }}
+                                    {% endif %}
                                 </p>
                             </div>
                         </div>
