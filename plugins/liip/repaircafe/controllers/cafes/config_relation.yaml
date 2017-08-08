@@ -3,6 +3,9 @@ contacts:
     view:
         list: $/liip/repaircafe/models/contact/columns.yaml
         toolbarButtons: create|delete
+        defaultSort:
+            column: 'firstname'
+            direction: 'asc'
     manage:
         form: $/liip/repaircafe/models/contact/fields.yaml
         recordsPerPage: 10
@@ -11,6 +14,9 @@ events:
     view:
         list: $/liip/repaircafe/models/event/columns.yaml
         toolbarButtons: create|delete
+        defaultSort:
+            column: 'start'
+            direction: 'asc'
     manage:
         form: $/liip/repaircafe/models/event/fields.yaml
         recordsPerPage: 10
