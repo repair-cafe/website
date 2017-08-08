@@ -5,6 +5,8 @@ use Liip\RepairCafe\Models\Cafe;
 
 class CafeDetail extends ComponentBase
 {
+    public $cafe;
+
     public function componentDetails()
     {
         return [
@@ -13,9 +15,11 @@ class CafeDetail extends ComponentBase
         ];
     }
 
-    // This array becomes available on the page as {{ component.cafe }}
-    public function cafe()
+    public function onRun()
     {
-        return Cafe::where('slug', $this->param('slug'))->first();
+        $this->cafe = Cafe::where('slug', $this->param('slug'))->first();
+        if (!$this->cafe || !$this->cafe->is_published) {
+            return \Response::make($this->controller->run('404'), 404);
+        }
     }
 }

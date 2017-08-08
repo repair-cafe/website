@@ -1,0 +1,19 @@
+title = 404
+url = "/404"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[fr] = "/404"
+localeUrl[it] = "/404"
+==
+{% put page %}
+    <section id="site-content">
+        {% partial 'components/page-header' title='page.404.title'|_ %}
+        <div class="page-content">
+            <div class="text-center">
+                <p class="lead">{{ 'page.404.content'|_ }}</p>
+            </div>
+        </div>
+    </section>
+{% endput %}
