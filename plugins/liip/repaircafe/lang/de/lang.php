@@ -81,6 +81,7 @@
     'component' => [
         'eventlist' => [
             'all_categories' => 'Alle Kategorien',
+            'no_events_found' => 'Keine Events für die angegebenen Suchkriterien gefunden',
         ],
     ],
     'theme' => [
