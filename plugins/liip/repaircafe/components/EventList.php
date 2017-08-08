@@ -9,6 +9,8 @@ use Liip\RepairCafe\Models\Event;
 class EventList extends ComponentBase
 {
     private $categories;
+    private $cafe_slug;
+    public $events;
     public $condensed;
 
     public function componentDetails()
@@ -38,9 +40,8 @@ class EventList extends ComponentBase
     // This array becomes available on the page as {{ component.eventsGroupedByMonth }}
     public function eventsGroupedByMonth()
     {
-        $events = $this->queryEvents();
         $eventsGroupedByMonth = array();
-        foreach ($events as $event) {
+        foreach ($this->events as $event) {
             $start = new \DateTime($event->start);
             $eventsGroupedByMonth[$start->format('Y')][$start->format('F')][] = $event;
         }
@@ -62,6 +63,8 @@ class EventList extends ComponentBase
     {
         $this->categories = Category::all();
         $this->condensed = boolval($this->property('condensed'));
+        $this->cafe_slug = $this->property('cafe_slug');
+        $this->events = $this->queryEvents();
     }
 
     protected function queryEvents()
@@ -89,8 +92,8 @@ class EventList extends ComponentBase
         }
 
         $query->whereHas('cafe', function ($cafe) {
-            if (!empty($this->property('cafe_slug'))) {
-                $cafe->where('slug', $this->property('cafe_slug'));
+            if (!empty($this->cafe_slug)) {
+                $cafe->where('slug', $this->cafe_slug);
             }
             $cafe->where('is_published', true);
         });
