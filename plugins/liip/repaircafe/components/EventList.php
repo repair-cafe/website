@@ -1,6 +1,7 @@
 <?php namespace Liip\RepairCafe\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
 use Liip\RepairCafe\Models\Category;
@@ -98,6 +99,14 @@ class EventList extends ComponentBase
             $cafe->where('is_published', true);
         });
         $query->where('is_published', true);
+        $query->where(function($query) {
+            $query->whereNotNull('end');
+            $query->where('end', '>=', DB::raw('now()'));
+        });
+        $query->orWhere(function($query) {
+            $query->whereNull('end');
+            $query->where('start', '>=', DB::raw('now()'));
+        });
         $query->orderBy('start', 'asc');
         $events = $query->get();
 
