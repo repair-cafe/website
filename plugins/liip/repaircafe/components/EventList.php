@@ -53,7 +53,7 @@ class EventList extends ComponentBase
     public function categories()
     {
         $category_options = array();
-        $category_options[] = Lang::get('liip.repaircafe::lang.component.eventlist.all_categories');
+        $category_options[] = '- ' . Lang::get('liip.repaircafe::lang.component.eventlist.all_categories') . ' -';
         foreach ($this->categories as $category) {
             $category_options[$category->slug] = $category->name;
         }
@@ -62,7 +62,7 @@ class EventList extends ComponentBase
 
     public function onRun()
     {
-        $this->categories = Category::all();
+        $this->categories = Category::orderBy('name', 'asc')->get();
         $this->condensed = boolval($this->property('condensed'));
         $this->cafe_slug = $this->property('cafe_slug');
         $this->events = $this->queryEvents();
