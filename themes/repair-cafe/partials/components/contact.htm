@@ -1,0 +1,20 @@
+{% if contact.profile_picture %}
+    <img src="{{ contact.profile_picture.path }}" class="img-fluid mb-3" />
+{% endif %}
+<h3 class="h6">{{ contact.firstname }} {{ contact.lastname }}</h3>
+{% if contact.email or contact.phone or contact.facebook or contact.twitter %}
+    <ul class="fa-ul">
+        {% if contact.email %}
+            <li><i class="fa-li fa fa-envelope-o"></i><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
+        {% endif %}
+        {% if contact.phone %}
+            <li><i class="fa-li fa fa-phone"></i><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></li>
+        {% endif %}
+        {% if contact.facebook %}
+            <li><i class="fa-li fa fa-facebook-official"></i><a href="{{ contact.facebook }}">{{ 'contact.facebook'|_ }}</a></li>
+        {% endif %}
+        {% if contact.twitter %}
+            <li><i class="fa-li fa fa-twitter"></i><a href="{{ contact.twitter }}">{{ 'contact.twitter'|_ }}</a></li>
+        {% endif %}
+    </ul>
+{% endif %}

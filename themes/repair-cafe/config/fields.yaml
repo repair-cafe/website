@@ -1,25 +1,30 @@
 tabs:
     fields:
-        contact_email:
-            label: 'Kontakt Email-Adresse'
+        site_title:
+            label: 'liip.repaircafe::lang.theme.fields.site_title'
             span: full
             type: text
-            tab: 'Allgemein'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general'
+        contact_email:
+            label: 'liip.repaircafe::lang.theme.fields.contact_email'
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general'
         social_facebook:
-            label: 'Facebook Page'
+            label: 'liip.repaircafe::lang.theme.fields.social_facebook'
             span: full
             type: text
             default: 'https://www.facebook.com/stiftungfuerkonsumentenschutz/'
-            tab: 'Social Media'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.social_media'
         social_twitter:
-            label: 'Twitter Page'
+            label: 'liip.repaircafe::lang.theme.fields.social_twitter'
             span: full
             type: text
             default: 'https://twitter.com/KonsumSchutz'
-            tab: 'Social Media'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.social_media'
         social_googleplus:
-            label: 'Google+ Page'
+            label: 'liip.repaircafe::lang.theme.fields.social_googleplus'
             span: full
             type: text
             default: 'https://plus.google.com/+KonsumentenschutzCh'
-            tab: 'Social Media'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.social_media'

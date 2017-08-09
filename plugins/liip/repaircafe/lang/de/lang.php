@@ -81,6 +81,7 @@
     'component' => [
         'eventlist' => [
             'all_categories' => 'Alle Kategorien',
+            'no_events_found' => 'Keine Events für die angegebenen Suchkriterien gefunden',
         ],
     ],
     'theme' => [
@@ -93,6 +94,17 @@
                 'tab' => [
                     'general' => 'Allgemein',
                 ],
+            ],
+        ],
+        'fields' => [
+            'site_title' => 'Seitentitel',
+            'contact_email' => 'Kontakt Email-Adresse',
+            'social_facebook' => 'Facebook Page',
+            'social_twitter' => 'Twitter Page',
+            'social_googleplus' => 'Google+ Page',
+            'tab' => [
+                'general' => 'Allgemein',
+                'social_media' => 'Social Media',
             ],
         ],
     ],
