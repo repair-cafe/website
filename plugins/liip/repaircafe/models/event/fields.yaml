@@ -41,6 +41,15 @@ tabs:
             span: auto
             type: relation
             tab: 'liip.repaircafe::lang.event.tab.general'
+        cafe:
+            label: 'liip.repaircafe::lang.relation.cafe'
+            oc.commentPosition: ''
+            select: concat(title, ' (', id, ')')
+            nameFrom: title
+            descriptionFrom: description
+            span: right
+            type: relation
+            tab: 'liip.repaircafe::lang.event.tab.general'
         street:
             label: 'liip.repaircafe::lang.event.street'
             oc.commentPosition: ''
