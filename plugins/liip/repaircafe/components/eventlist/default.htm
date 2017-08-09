@@ -35,9 +35,10 @@
                         </div>
                     </div>
                     <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}">
-                        {% if event.getStaticMapURL %}
+                        {% set static_map_url = event.getStaticMapURL %}
+                        {% if static_map_url %}
                             <div class="col-md-6 mb-3">
-                                <img src="{{ event.getStaticMapURL }}" class="img-fluid" />
+                                <img src="{{ static_map_url }}" class="img-fluid" />
                             </div>
                         {% endif %}
                         <div class="col-md-6 mb-3 small">
