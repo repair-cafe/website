@@ -34,8 +34,8 @@ class Event extends Model
     ];
 
     public $translatable = [
-        'title',
-        'description',
+        ['title', 'index' => true],
+        ['description', 'index' => true],
     ];
 
     protected $dates = ['deleted_at'];
