@@ -80,14 +80,18 @@ class Event extends Model
 
     public function getStaticMapURL()
     {
-        $api_key = Config::get('liip.repaircafe::api_key');
-        $api_url = Config::get('liip.repaircafe::static_map_api_url');
+        if (!empty($this->latitude) && !empty($this->longitude)) {
+            $api_key = Config::get('liip.repaircafe::api_key');
+            $api_url = Config::get('liip.repaircafe::static_map_api_url');
 
-        $api_url = str_replace("{API_KEY}", $api_key, $api_url);
-        $api_url = str_replace("{LATITUDE}", $this->latitude, $api_url);
-        $api_url = str_replace("{LONGITUDE}", $this->longitude, $api_url);
+            $api_url = str_replace("{API_KEY}", $api_key, $api_url);
+            $api_url = str_replace("{LATITUDE}", $this->latitude, $api_url);
+            $api_url = str_replace("{LONGITUDE}", $this->longitude, $api_url);
 
-        return $api_url;
+            return $api_url;
+        } else {
+            return null;
+        }
     }
 
     public function beforeSave()
