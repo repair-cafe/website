@@ -1,8 +1,10 @@
 <?php namespace Liip\RepairCafe\Models;
 
+use Exception;
 use October\Rain\Database\Model;
 use October\Rain\Support\Facades\Config;
 use RainLab\Translate\Behaviors\TranslatableModel;
+use GuzzleHttp\Client;
 
 /**
  * Model
@@ -98,12 +100,17 @@ class Event extends Model
                 rawurlencode($this->city)
             );
 
-            $json = file_get_contents($api_url);
-            $data = json_decode($json);
+            $client = new Client();
 
-            $this->description = $api_url;
+            try {
+                $response = $client->get($api_url);
+                $json = $response->getBody();
+                $data = json_decode($json);
+            } catch (Exception $e) {
+                // do nothing
+            }
 
-            if (property_exists($data, 'results') && count($data->results) > 0) {
+            if (!empty($data) && property_exists($data, 'results') && count($data->results) > 0) {
                 $this->latitude = $data->results[0]->locations[0]->latLng->lat;
                 $this->longitude = $data->results[0]->locations[0]->latLng->lng;
             }
