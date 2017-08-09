@@ -47,6 +47,7 @@
         'contacts' => 'Kontakte',
         'events' => 'Events',
         'categories' => 'Kategorien',
+        'cafe' => 'Cafe',
     ],
     'contact' => [
         'firstname' => 'Vorname',

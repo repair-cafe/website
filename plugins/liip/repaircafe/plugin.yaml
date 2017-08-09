@@ -31,7 +31,15 @@ navigation:
                 icon: icon-coffee
                 permissions:
                     - repaircafe.cafes
+            side-menu-events:
+                label: 'liip.repaircafe::lang.nav.events'
+                url: liip/repaircafe/events
+                icon: icon-calendar
+                permissions:
+                    - repaircafe.events
             side-menu-categories:
                 label: 'liip.repaircafe::lang.nav.categories'
                 url: liip/repaircafe/categories
                 icon: icon-tag
+                permissions:
+                    - repaircafe.categories
