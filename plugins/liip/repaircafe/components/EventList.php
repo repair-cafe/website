@@ -72,43 +72,27 @@ class EventList extends ComponentBase
     {
         $category = Input::get('category');
         $searchTerm = Input::get('searchterm');
+        $query = Db::table('liip_repaircafe_search_index_view');
 
-        if (!empty($searchTerm) && !empty($category)) {
-            $query = Event::whereHas('categories', function ($filter) use ($category) {
-                $filter->where('slug', '=', $category);
-            })
-            ->where(function ($searchFilter) use ($searchTerm) {
-                $searchFilter->where('title', 'like', '%'.$searchTerm.'%')
-                    ->orWhere('description', 'like', '%'.$searchTerm.'%');
-            });
-        } elseif (!empty($searchTerm)) {
-            $query = Event::where('title', 'like', '%'.$searchTerm.'%')
-                ->orWhere('description', 'like', '%'.$searchTerm.'%');
-        } elseif (!empty($category)) {
-            $query = Event::whereHas('categories', function ($filter) use ($category) {
-                $filter->where('slug', '=', $category);
-            });
-        } else {
-            $query = Event::query();
+        if (!empty($searchTerm)) {
+            $query->where('value', 'like', '%'.$searchTerm.'%');
+        }
+        if (!empty($category)) {
+            $query->where('category_slug', $category);
         }
 
-        $query->whereHas('cafe', function ($cafe) {
-            if (!empty($this->cafe_slug)) {
-                $cafe->where('slug', $this->cafe_slug);
-            }
-            $cafe->where('is_published', true);
-        });
-        $query->where('is_published', true);
         $query->where(function ($query) {
-            $query->whereNotNull('end');
-            $query->where('end', '>=', DB::raw('now()'));
+            $query->where('event_date', '>=', DB::raw('now()'));
         });
-        $query->orWhere(function ($query) {
-            $query->whereNull('end');
-            $query->where('start', '>=', DB::raw('now()'));
-        });
-        $query->orderBy('start', 'asc');
-        $events = $query->get();
+
+        $indexedResults = $query->distinct()->get(['event_id']);
+        $event_ids = array_map(function ($indexedResult) {
+            return $indexedResult->event_id;
+        }, $indexedResults);
+        $event_query = Event::query();
+        $event_query->whereIn($event_query->getModel()->getQualifiedKeyName(), $event_ids);
+        $event_query->orderBy('start', 'asc');
+        $events = $event_query->get();
 
         return $events;
     }
