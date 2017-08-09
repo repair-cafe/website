@@ -12,9 +12,6 @@ class Event extends Model
 
     use \October\Rain\Database\Traits\SoftDelete;
 
-    // TODO: Workaround for an open OctoberCMS bug. See: https://github.com/rainlab/translate-plugin/issues/209
-    use \Liip\RepairCafe\Traits\TranslatableModal;
-
     public $implement = [TranslatableModel::class];
 
     /**
