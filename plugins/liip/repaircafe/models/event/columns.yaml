@@ -1,4 +1,9 @@
 columns:
+    cafe_id:
+        label: 'liip.repaircafe::lang.relation.cafe'
+        type: text
+        relation: cafe
+        valueFrom: title
     title:
         label: 'liip.repaircafe::lang.event.title'
         type: text

@@ -2,6 +2,9 @@ list: $/liip/repaircafe/models/event/columns.yaml
 modelClass: Liip\RepairCafe\Models\Event
 title: Events
 noRecordsMessage: 'backend::lang.list.no_records'
+defaultSort:
+    column: 'start'
+    direction: 'desc'
 showSetup: true
 showCheckboxes: true
 toolbar:

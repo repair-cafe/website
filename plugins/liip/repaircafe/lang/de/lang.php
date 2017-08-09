@@ -81,6 +81,7 @@
     'component' => [
         'eventlist' => [
             'all_categories' => 'Alle Kategorien',
+            'cafe_detail_button' => 'Mehr über dieses Repair Café',
             'no_events_found' => 'Keine Events für die angegebenen Suchkriterien gefunden',
         ],
     ],
