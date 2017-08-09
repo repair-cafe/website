@@ -1,0 +1,12 @@
+<p class="small mb-0">
+    {% if end %}
+        {% if start|date('d.m.Y') == end|date('d.m.Y') %}
+            {{ event.start|date('d.m.Y') }}
+        {% else %}
+            {{ start|date('d.m.Y') }} - {{ end|date('d.m.Y') }}
+        {% endif %}
+        {{ start|date('H:s') }} - {{ end|date('H:s') }}
+    {% else %}
+        {{ start|date('d.m.Y') }} {{ start|date('H:s') }}
+    {% endif %}
+</p>
