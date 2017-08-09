@@ -2,8 +2,16 @@ tabs:
     fields:
         is_published:
             label: 'liip.repaircafe::lang.event.is_published'
-            span: auto
+            span: left
             type: switch
+            tab: 'liip.repaircafe::lang.event.tab.general'
+        cafe:
+            label: 'liip.repaircafe::lang.relation.cafe'
+            oc.commentPosition: ''
+            nameFrom: title
+            descriptionFrom: description
+            span: left
+            type: relation
             tab: 'liip.repaircafe::lang.event.tab.general'
         title:
             label: 'liip.repaircafe::lang.event.title'
@@ -39,15 +47,6 @@ tabs:
             nameFrom: name
             descriptionFrom: description
             span: auto
-            type: relation
-            tab: 'liip.repaircafe::lang.event.tab.general'
-        cafe:
-            label: 'liip.repaircafe::lang.relation.cafe'
-            oc.commentPosition: ''
-            select: concat(title, ' (', id, ')')
-            nameFrom: title
-            descriptionFrom: description
-            span: right
             type: relation
             tab: 'liip.repaircafe::lang.event.tab.general'
         street:
