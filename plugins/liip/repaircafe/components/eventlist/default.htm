@@ -1,8 +1,7 @@
 <div class="eventlist">
     {% if __SELF__.eventsGroupedByMonth|length > 0 %}
-        {% for year, months in __SELF__.eventsGroupedByMonth %}
-            {% for month, events in months %}
-            <h2>{{ month }} {{ year }}</h2>
+        {% for month, events in __SELF__.eventsGroupedByMonth %}
+            <h2>{{ month|localizeddate('none', 'none', activeLocale, null, 'MMMM Y') }}</h2>
             <ul class="list-unstyled mb-5">
                 {% for event in events %}
                 <li class="pt-3">
@@ -45,7 +44,6 @@
                 </li>
                 {% endfor %}
             </ul>
-            {% endfor %}
         {% endfor %}
     {% else %}
         <p class="text-center">{{ 'liip.repaircafe::lang.component.eventlist.no_events_found'|trans }}</p>

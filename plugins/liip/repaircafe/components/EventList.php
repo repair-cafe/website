@@ -44,7 +44,8 @@ class EventList extends ComponentBase
         $eventsGroupedByMonth = array();
         foreach ($this->events as $event) {
             $start = new \DateTime($event->start);
-            $eventsGroupedByMonth[$start->format('Y')][$start->format('F')][] = $event;
+            // group events by the first of each month in a certain year
+            $eventsGroupedByMonth[$start->format('Y-m-01')][] = $event;
         }
 
         return $eventsGroupedByMonth;
