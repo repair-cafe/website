@@ -7,7 +7,7 @@ categories:
         form: $/liip/repaircafe/models/category/fields.yaml
         list: $/liip/repaircafe/models/category/columns.yaml
 cafe:
-    label: 'liip.repaircafe::lang.relation.category'
+    label: 'liip.repaircafe::lang.relation.cafe'
     view:
         form: $/liip/repaircafe/cafe/fields.yaml
         toolbarButtons: link|unlink
