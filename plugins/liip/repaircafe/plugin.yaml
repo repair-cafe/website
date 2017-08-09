@@ -41,3 +41,5 @@ navigation:
                 label: 'liip.repaircafe::lang.nav.categories'
                 url: liip/repaircafe/categories
                 icon: icon-tag
+                permissions:
+                    - repaircafe.categories
