@@ -4,12 +4,11 @@
         'description' => '',
     ],
     'cafe' => [
+        'id' => 'ID',
         'title' => 'Title',
-        'is_published' => 'Published',
         'description' => 'Description',
         'tab' => [
             'general' => 'General',
-            'adress' => 'Adress',
             'address' => 'Address',
             'contacts' => 'Contacts',
             'events' => 'Events',
@@ -27,6 +26,10 @@
         'facebook' => 'Facebook',
         'twitter' => 'Twitter',
         'instagram' => 'Instagram',
+        'is_published' => 'Published',
+        'created_at' => 'Created',
+        'updated_at' => 'Last updated',
+        'deleted_at' => 'Deleted',
     ],
     'permissions' => [
         'cafes' => 'Cafes',
@@ -41,9 +44,8 @@
         'contacts' => 'Contacts',
     ],
     'relation' => [
-        'contact' => 'Contacts',
-        'event' => 'Events',
-        'category' => 'Categories',
+        'contacts' => 'Contacts',
+        'events' => 'Events',
         'categories' => 'Categories',
     ],
     'contact' => [
@@ -51,7 +53,6 @@
         'lastname' => 'Lastname',
         'email' => 'Email',
         'phone' => 'Phone',
-        'cafe_id' => 'Cafe ID',
         'profile_picture' => 'Profile Picture',
         'twitter' => 'Twitter',
         'facebook' => 'Facebook',

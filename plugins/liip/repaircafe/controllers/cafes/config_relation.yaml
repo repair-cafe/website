@@ -1,16 +1,22 @@
 contacts:
-    label: 'liip.repaircafe::lang.relation.contact'
+    label: 'liip.repaircafe::lang.relation.contacts'
     view:
         list: $/liip/repaircafe/models/contact/columns.yaml
         toolbarButtons: create|delete
+        defaultSort:
+            column: 'firstname'
+            direction: 'asc'
     manage:
         form: $/liip/repaircafe/models/contact/fields.yaml
         recordsPerPage: 10
 events:
-    label: 'liip.repaircafe::lang.relation.event'
+    label: 'liip.repaircafe::lang.relation.events'
     view:
         list: $/liip/repaircafe/models/event/columns.yaml
         toolbarButtons: create|delete
+        defaultSort:
+            column: 'start'
+            direction: 'asc'
     manage:
         form: $/liip/repaircafe/models/event/fields.yaml
         recordsPerPage: 10

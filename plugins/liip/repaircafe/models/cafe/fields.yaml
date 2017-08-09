@@ -9,12 +9,14 @@ tabs:
             label: 'liip.repaircafe::lang.cafe.title'
             oc.commentPosition: ''
             span: left
+            required: 1
             type: text
             tab: 'liip.repaircafe::lang.cafe.tab.general'
         slug:
             label: 'liip.repaircafe::lang.cafe.slug'
             oc.commentPosition: ''
             span: auto
+            required: 1
             preset:
                 field: title
                 type: slug
@@ -63,14 +65,6 @@ tabs:
                 - preview
             type: partial
             tab: 'liip.repaircafe::lang.cafe.tab.contacts'
-        events:
-            span: full
-            path: $/liip/repaircafe/controllers/cafes/_events.htm
-            context:
-                - update
-                - preview
-            type: partial
-            tab: 'liip.repaircafe::lang.cafe.tab.events'
         website_link:
             label: 'liip.repaircafe::lang.cafe.website_link'
             oc.commentPosition: ''
@@ -101,3 +95,11 @@ tabs:
             span: full
             type: text
             tab: 'liip.repaircafe::lang.cafe.tab.external_links'
+        events:
+            span: full
+            path: $/liip/repaircafe/controllers/cafes/_events.htm
+            context:
+                - update
+                - preview
+            type: partial
+            tab: 'liip.repaircafe::lang.cafe.tab.events'

@@ -13,7 +13,7 @@ class BuilderTableCreateLiipRepaircafeEvents extends Migration
             $table->increments('id');
             $table->text('description')->nullable();
             $table->string('title');
-            $table->dateTime('start')->nullable();
+            $table->dateTime('start');
             $table->dateTime('end')->nullable();
             $table->boolean('is_published')->default(0);
             $table->integer('cafe_id');

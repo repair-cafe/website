@@ -1,16 +1,17 @@
 columns:
-    description:
-        label: 'liip.repaircafe::lang.event.description'
-        type: text
     title:
         label: 'liip.repaircafe::lang.event.title'
         type: text
+    description:
+        label: 'liip.repaircafe::lang.event.description'
+        type: text
+        invisible: true
     start:
         label: 'liip.repaircafe::lang.event.start'
-        type: text
+        type: datetime
     end:
         label: 'liip.repaircafe::lang.event.end'
-        type: text
+        type: datetime
     is_published:
         label: 'liip.repaircafe::lang.event.is_published'
-        type: text
+        type: switch

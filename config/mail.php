@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'noreply@domain.tld', 'name' => 'OctoberCMS'],
+    'from' => ['address' => 'repaircafe@konsumentenschutz.ch', 'name' => 'Repair Cafe'],
 
     /*
     |--------------------------------------------------------------------------

@@ -2,6 +2,9 @@ list: $/liip/repaircafe/models/category/columns.yaml
 modelClass: Liip\RepairCafe\Models\Category
 title: Categories
 noRecordsMessage: 'backend::lang.list.no_records'
+defaultSort:
+    column: 'name'
+    direction: 'asc'
 showSetup: true
 showCheckboxes: true
 toolbar:

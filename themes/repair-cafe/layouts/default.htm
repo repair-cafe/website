@@ -5,10 +5,10 @@ useContent = 1
 default = 0
 
 [localePicker]
-forceUrl = 0
+forceUrl = 1
 ==
-{variable name="lead_text" label="Lead Text" tab="Custom Fields" type="richeditor"}{/variable}
-{variable name="header_image" label="Header Image" tab="Custom Fields" type="mediafinder" mode="image"}{/variable}
+{variable name="lead_text" label="liip.repaircafe::lang.theme.layout.default.variables.lead_text" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="richeditor"}{/variable}
+{variable name="header_image" label="liip.repaircafe::lang.theme.layout.default.variables.header_image" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="mediafinder" mode="image"}{/variable}
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,7 @@ forceUrl = 0
         {% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
 
         <!-- Content -->
-        {% placeholder page default %}
+        {% placeholder page default ignore=true  %}
             {% partial 'site/content' header_image=header_image header_image_caption='' lead_text=lead_text %}
         {% endplaceholder %}
 

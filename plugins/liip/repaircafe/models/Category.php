@@ -1,6 +1,7 @@
 <?php namespace Liip\RepairCafe\Models;
 
 use October\Rain\Database\Model;
+use RainLab\Translate\Behaviors\TranslatableModel;
 
 /**
  * Model
@@ -15,6 +16,8 @@ class Category extends Model
      */
     protected $slugs = ['slug' => 'name'];
 
+    public $implement = [TranslatableModel::class];
+
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
@@ -26,7 +29,15 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'slug'];
+    protected $fillable = [
+        'name',
+        'slug',
+    ];
+
+    public $translatable = [
+        'name',
+        'slug',
+    ];
 
     /*
      * Validation
