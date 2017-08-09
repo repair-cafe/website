@@ -1,12 +1,12 @@
 <p class="small mb-0">
     {% if end %}
-        {% if start|date('d.m.Y') == end|date('d.m.Y') %}
-            {{ event.start|date('d.m.Y') }}
+        {% if start|date('dmY') == end|date('dmY') %}
+            {{ start|localizeddate('none', 'none', activeLocale, null, 'dd. MMMM y') }}
         {% else %}
-            {{ start|date('d.m.Y') }} - {{ end|date('d.m.Y') }}
+            {{ start|localizeddate('none', 'none', activeLocale, null, 'dd. MMMM y') }} - {{ end|localizeddate('none', 'none', activeLocale, null, 'dd. MMMM y') }}
         {% endif %}
-        {{ start|date('H:s') }} - {{ end|date('H:s') }}
+        {{ start|localizeddate('none', 'none', activeLocale, null, 'HH:mm') }} - {{ end|localizeddate('none', 'none', activeLocale, null, 'HH:mm') }}
     {% else %}
-        {{ start|date('d.m.Y') }} {{ start|date('H:s') }}
+        {{ start|localizeddate('none', 'none', activeLocale, null, 'dd. MMMM y') }} {{ start|localizeddate('none', 'none', activeLocale, null, 'HH:mm') }}
     {% endif %}
 </p>
