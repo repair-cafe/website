@@ -7,7 +7,7 @@
             {% partial 'components/language-switcher' locales=locales activeLocale=activeLocale %}
         </div>
         <div class="col-md-6 text-center title">
-            {{ 'site.header.service_area.title'|_ }}
+            <a href="{{ 'index'|staticPage }}">{{ 'site.header.service_area.title'|_ }}</a>
         </div>
         <div class="col-md-3 text-center login">
             <a href="{{ '/backend' }}" class="ml-auto">
