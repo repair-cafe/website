@@ -35,9 +35,11 @@
                         </div>
                     </div>
                     <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}">
-                        <div class="col-md-6 mb-3">
-                            <img src="{{event.getStaticMapURL}}" class="img-fluid" >
-                        </div>
+                        {% if event.getStaticMapURL %}
+                            <div class="col-md-6 mb-3">
+                                <img src="{{ event.getStaticMapURL }}" class="img-fluid" />
+                            </div>
+                        {% endif %}
                         <div class="col-md-6 mb-3 small">
                             {{ event.description|raw }}
                         </div>
