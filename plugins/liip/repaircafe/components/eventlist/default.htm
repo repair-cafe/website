@@ -4,52 +4,59 @@
             <h2>{{ month|localizeddate('none', 'none', activeLocale, null, 'MMMM Y') }}</h2>
             <ul class="list-unstyled mb-5">
                 {% for event in events %}
-                <li class="pt-3">
-                    <div class="row">
-                        {% if __SELF__.condensed %}
-                            <div class="col-md-6 mb-3">
-                                <h3 class="h5">{{ event.title ? event.title : event.cafe.title }}</h3>
-                                {% partial __SELF__ ~ '::date' start=event.start end=event.end %}
-                                {% partial __SELF__ ~ '::address' street=event.street city=event.city zip=event.zip %}
-                            </div>
-                        {% else %}
-                            <div class="col-md-6 media mb-3">
-                                <img class="d-flex mr-3 w-25" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
-                                <div class="media-body">
-                                    <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}{{ event.title ? ': ' ~ event.title }}</a></h3>
+                    {% set static_map_url = event.getStaticMapURL %}
+                    {% set has_additional_information = (static_map_url and event.description is not empty) %}
+                    <li class="pt-3">
+                        <div class="row">
+                            {% if __SELF__.condensed %}
+                                <div class="col-md-6 mb-3">
+                                    <h3 class="h5">{{ event.title ? event.title : event.cafe.title }}</h3>
                                     {% partial __SELF__ ~ '::date' start=event.start end=event.end %}
                                     {% partial __SELF__ ~ '::address' street=event.street city=event.city zip=event.zip %}
                                 </div>
-                            </div>
-                        {% endif %}
-                        <div class="col-md-6 mb-3">
-                            <button type="button" class="close collapsed" data-toggle="collapse" data-target="#eventAdditionalInfo{{ event.id }}" aria-expanded="false" aria-controls="#eventAdditionalInfo{{ event.id }}">
-                                <i class="fa fa-chevron-toggle" aria-hidden="true"></i>
-                            </button>
-                            <ul class="list-unstyled">
-                                {% for category in event.categories %}
-                                    <li>{{ category.name }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}">
-                        {% set static_map_url = event.getStaticMapURL %}
-                        {% if static_map_url %}
+                            {% else %}
+                                <div class="col-md-6 media mb-3">
+                                    <img class="d-flex mr-3 w-25" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
+                                    <div class="media-body">
+                                        <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}{{ event.title ? ': ' ~ event.title }}</a></h3>
+                                        {% partial __SELF__ ~ '::date' start=event.start end=event.end %}
+                                        {% partial __SELF__ ~ '::address' street=event.street city=event.city zip=event.zip %}
+                                    </div>
+                                </div>
+                            {% endif %}
                             <div class="col-md-6 mb-3">
-                                <img src="{{ static_map_url }}" class="img-fluid" />
-                            </div>
-                        {% endif %}
-                        <div class="col-md-6 mb-3 small">
-                            <div class="mb-3">
-                                {{ event.description|raw }}
-                            </div>
-                            <div>
-                                <a class="btn btn-primary" href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}" role="button">{{ 'liip.repaircafe::lang.component.eventlist.cafe_detail_button'|trans }}</a>
+                                {% if has_additional_information %}
+                                    <button type="button" class="close collapsed" data-toggle="collapse" data-target="#eventAdditionalInfo{{ event.id }}" aria-expanded="false" aria-controls="#eventAdditionalInfo{{ event.id }}">
+                                        <i class="fa fa-chevron-toggle" aria-hidden="true"></i>
+                                    </button>
+                                {% endif %}
+                                <ul class="list-unstyled">
+                                    {% for category in event.categories %}
+                                        <li>{{ category.name }}</li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                </li>
+                        {% if has_additional_information %}
+                            <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}">
+                                {% if static_map_url %}
+                                    <div class="col-md-6 mb-3">
+                                        <img src="{{ static_map_url }}" class="img-fluid" />
+                                    </div>
+                                {% endif %}
+                                <div class="col-md-6 mb-3 small">
+                                    <div class="mb-3">
+                                        {{ event.description|raw }}
+                                    </div>
+                                    {% if not __SELF__.condensed %}
+                                        <div>
+                                            <a class="btn btn-primary" href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}" role="button">{{ 'liip.repaircafe::lang.component.eventlist.cafe_detail_button'|trans }}</a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </li>
                 {% endfor %}
             </ul>
         {% endfor %}
