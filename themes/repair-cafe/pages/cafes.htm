@@ -14,14 +14,14 @@ is_hidden = 0
                         <h1>{{ 'eventlist.title'|_ }}</h1>
                         {{ form_open({ url: 'cafes'|page, method: 'GET', id: 'eventSearch' }) }}
                             <div class="row">
-                                <div class="form-group col-md-8 pr-md-1">
+                                <div class="form-group col-md-8 pr-md-1 mb-2 mb-0">
                                     <div class="has-btn-embed has-btn-embed-right">
                                         <label for="searchterm" class="sr-only">{{ 'eventlist.search.searchterm.label'|_ }}</label>
                                         {{ form_input( 'search', 'searchterm', input('searchterm'), { class: 'form-control form-control-lg text-truncate', placeholder: 'eventlist.search.searchterm.placeholder'|_ } ) }}
                                         <button type="submit" class="btn btn-embed btn-embed-lg"><i class="fa fa-search" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4 pl-md-1">
+                                <div class="form-group col-md-4 pl-md-1 mb-0">
                                     <label for="category" class="sr-only">{{ 'eventlist.search.category.label'|_ }}</label>
                                     {{ form_select( 'category', eventList.categories, input('category'), { class: 'form-control form-control-lg' } ) }}
                                 </div>
