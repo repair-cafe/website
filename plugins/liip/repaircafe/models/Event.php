@@ -94,6 +94,20 @@ class Event extends Model
         }
     }
 
+    public function getExternalMapURL()
+    {
+        if (!empty($this->latitude) && !empty($this->longitude)) {
+            $external_map_url = Config::get('liip.repaircafe::external_map_url');
+
+            $external_map_url = str_replace("{LATITUDE}", $this->latitude, $external_map_url);
+            $external_map_url = str_replace("{LONGITUDE}", $this->longitude, $external_map_url);
+
+            return $external_map_url;
+        } else {
+            return null;
+        }
+    }
+
     public function beforeSave()
     {
         if ((empty($this->latitude) && empty($this->longitude)) &&

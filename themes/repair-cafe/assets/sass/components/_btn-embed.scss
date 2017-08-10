@@ -4,12 +4,7 @@
     $btn-embed-padding-x-sm: .5rem !default;
     $btn-embed-padding-x-lg: 1.25rem !default;
 
-    width: 100%;
     position: relative;
-
-    @include media-breakpoint-up(sm) {
-        width: auto;
-    }
 
     &.has-btn-embed-left {
         .form-control {

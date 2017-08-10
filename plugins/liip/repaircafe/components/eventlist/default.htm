@@ -41,7 +41,7 @@
                             <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}">
                                 {% if static_map_url %}
                                     <div class="col-md-6 mb-3">
-                                        <img src="{{ static_map_url }}" class="img-fluid" />
+                                        <a href="{{ event.getExternalMapURL }}" target="_blank"><img src="{{ static_map_url }}" class="img-fluid" /></a>
                                     </div>
                                 {% endif %}
                                 <div class="col-md-6 mb-3 small">
