@@ -16,7 +16,11 @@
                                 </div>
                             {% else %}
                                 <div class="col-md-6 media mb-3">
-                                    <img class="d-flex mr-3 w-25" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
+                                    {% if event.cafe.logo is not empty %}
+                                        <img class="d-flex mr-3 w-25" src="{{ event.cafe.logo.path }}" alt="{{ event.cafe.title }}">
+                                    {% elseif this.theme.repair_cafe_default_logo is not empty %}
+                                        <img class="d-flex mr-3 w-25" src="{{ this.theme.repair_cafe_default_logo|media }}" alt="{{ event.cafe.title }}">
+                                    {% endif%}
                                     <div class="media-body">
                                         <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}{{ event.title ? ': ' ~ event.title }}</a></h3>
                                         {% partial __SELF__ ~ '::date' start=event.start end=event.end %}

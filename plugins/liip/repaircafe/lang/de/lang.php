@@ -100,12 +100,15 @@
         'fields' => [
             'site_title' => 'Seitentitel',
             'contact_email' => 'Kontakt Email-Adresse',
+            'repair_cafe_default_image' => 'Standard Repair Café Bild',
+            'repair_cafe_default_logo' => 'Standard Repair Café Logo',
             'social_facebook' => 'Facebook Page',
             'social_twitter' => 'Twitter Page',
             'social_googleplus' => 'Google+ Page',
             'tab' => [
                 'general' => 'Allgemein',
                 'social_media' => 'Social Media',
+                'default_content' => 'Standardcontent',
             ],
         ],
     ],
