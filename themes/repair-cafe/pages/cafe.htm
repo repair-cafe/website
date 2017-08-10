@@ -11,12 +11,21 @@ condensed = 1
 ==
 {% put page %}
 <div class="events">
-    {% partial 'components/page-header' title=cafeDetail.cafe.title header_image_url=cafeDetail.cafe.image.path %}
+    {% if cafeDetail.cafe.image is not empty %}
+        {% set header_image_url = cafeDetail.cafe.image.path %}
+    {% elseif this.theme.repair_cafe_default_image is not empty %}
+        {% set header_image_url = this.theme.repair_cafe_default_image|media %}
+    {% endif%}
+    {% partial 'components/page-header' title=cafeDetail.cafe.title header_image_url=header_image_url %}
     <div class="page-content">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-3">
-                    <img class="img-fluid" src="{{ cafeDetail.cafe.logo.path }}" alt="{{ cafeDetail.cafe.title }}">
+                    {% if cafeDetail.cafe.logo is not empty %}
+                        <img class="img-fluid" src="{{ cafeDetail.cafe.logo.path }}" alt="{{ cafeDetail.cafe.title }}">
+                    {% elseif this.theme.repair_cafe_default_logo is not empty %}
+                        <img class="img-fluid" src="{{ this.theme.repair_cafe_default_logo|media }}" alt="{{ cafeDetail.cafe.title }}">
+                    {% endif%}
                 </div>
                 <div class="col-md-9">
                     {{ cafeDetail.cafe.description|raw }}

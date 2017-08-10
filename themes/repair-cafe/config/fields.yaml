@@ -10,6 +10,18 @@ tabs:
             span: full
             type: text
             tab: 'liip.repaircafe::lang.theme.fields.tab.general'
+        repair_cafe_default_image:
+            label: 'liip.repaircafe::lang.theme.fields.repair_cafe_default_image'
+            span: left
+            type: mediafinder
+            mode: image
+            tab: 'liip.repaircafe::lang.theme.fields.tab.default_content'
+        repair_cafe_default_logo:
+            label: 'liip.repaircafe::lang.theme.fields.repair_cafe_default_logo'
+            span: right
+            type: mediafinder
+            mode: image
+            tab: 'liip.repaircafe::lang.theme.fields.tab.default_content'
         social_facebook:
             label: 'liip.repaircafe::lang.theme.fields.social_facebook'
             span: full
