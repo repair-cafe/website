@@ -15,6 +15,8 @@ condensed = 1
         {% set header_image_url = cafeDetail.cafe.image.path %}
     {% elseif this.theme.repair_cafe_default_image is not empty %}
         {% set header_image_url = this.theme.repair_cafe_default_image|media %}
+    {% else %}
+        {% set header_image_url = null %}
     {% endif%}
     {% partial 'components/page-header' title=cafeDetail.cafe.title header_image_url=header_image_url %}
     <div class="page-content">
