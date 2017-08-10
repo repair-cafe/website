@@ -1,5 +1,6 @@
 <?php namespace Liip\RepairCafe\Seeds;
 
+use Illuminate\Database\QueryException;
 use Liip\RepairCafe\Models\Cafe;
 use Liip\RepairCafe\Models\Category;
 use Liip\RepairCafe\Models\Contact;
@@ -39,7 +40,11 @@ class Cafes
                 foreach ($cafe_model->events as $event_model) {
                     $categories = Category::all();
                     $last = count($categories)-1;
-                    $event_model->categories()->attach($categories[ rand(0, $last) ]);
+                    try {
+                        $event_model->categories()->attach($categories[ rand(0, $last) ]);
+                    } catch (QueryException $ex) {
+                        // do nothing when the same category is added twice and proceed
+                    }
                 }
             }
         }
