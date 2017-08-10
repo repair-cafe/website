@@ -86,6 +86,10 @@ class EventList extends ComponentBase
             $query->where('event_date', '>=', DB::raw('now()'));
         });
 
+        if (!empty($this->cafe_slug)) {
+            $query->where('cafe_slug', $this->cafe_slug);
+        }
+
         $indexedResults = $query->distinct()->get(['event_id']);
         $event_ids = array_map(function ($indexedResult) {
             return $indexedResult->event_id;
