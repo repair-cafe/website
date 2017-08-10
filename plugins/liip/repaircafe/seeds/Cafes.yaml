@@ -17,22 +17,22 @@
     lastname: Länzlinger
     email: urs@flick-kafi.ch
     phone: '023456789'
-    facebook: ursfacebook
-    twitter: ursTwittert
+    facebook: https://www.facebook.com/ursfacebook
+    twitter: https://www.twitter.com/ursTwittert
   -
     firstname: Vreni
     lastname: Rothacher
     email: vreni@flick-kafi.ch
     phone: '023456789'
-    facebook: vreniAufFacebook
-    twitter: vreniTwittert
+    facebook: https://www.facebook.com/vreniAufFacebook
+    twitter: https://www.twitter.com/vreniTwittert
   -
     firstname: Wolly
     lastname: Schäfer
     email: wolly@flick-kafi.ch
     phone: '023456789'
-    facebook: wollyAufFacebook
-    twitter: wollyTwittert
+    facebook: https://www.facebook.com/wollyAufFacebook
+    twitter: https://www.twitter.com/wollyTwittert
   events:
   -
     title: 2. Schweizer Reparaturtag
@@ -86,8 +86,8 @@
     lastname: Baumeister
     email: bob@zuri-cafe.ch
     phone: '023456789'
-    facebook: bobsfacebook
-    twitter: bobsTwittert
+    facebook: https://www.facebook.com/bobsfacebook
+    twitter: https://www.twitter.com/bobsTwittert
   events:
   -
     title: 2. Schweizer Reparaturtag
