@@ -1,4 +1,5 @@
 {% if street or city %}
+    <h2 class="h5">{{ 'page.cafe.address'|_ }}</h2>
     {% set address_string = (street ? street : '') %}
     {% if city and street %}
         {% if inline %}
