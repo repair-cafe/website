@@ -23,7 +23,6 @@ condensed = 1
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <h2 class="h5">{{ 'page.cafe.address'|_ }}</h2>
                             {% partial 'components/address' street=cafeDetail.cafe.street zip=cafeDetail.cafe.zip city=cafeDetail.cafe.city inline=false %}
                         </div>
                         <div class="col-md-6 mb-3">
@@ -49,18 +48,20 @@ condensed = 1
                             {% endif %}
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <h2 class="h5">{{ 'page.cafe.contacts'|_ }}</h2>
-                            <div class="row">
-                                {% for contact in cafeDetail.cafe.contacts %}
-                                    <div class="col-lg-4 col-md-6">
-                                        {% partial 'components/contact' contact=contact %}
-                                    </div>
-                                {% endfor %}
+                    {% if cafeDetail.cafe.contacts|length > 0 %}
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <h2 class="h5">{{ 'page.cafe.contacts'|_ }}</h2>
+                                <div class="row">
+                                    {% for contact in cafeDetail.cafe.contacts %}
+                                        <div class="col-lg-4 col-md-6">
+                                            {% partial 'components/contact' contact=contact %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% component 'eventList' %}

@@ -32,7 +32,8 @@
                                 {% endif %}
                                 <ul class="list-unstyled">
                                     {% for category in event.categories %}
-                                        <li>{{ category.name }}</li>
+                                        {# find better solution for link creation #}
+                                        <li><a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>

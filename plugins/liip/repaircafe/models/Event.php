@@ -51,7 +51,11 @@ class Event extends Model
     ];
 
     public $belongsToMany = [
-        'categories' => [Category::class, 'table' => 'liip_repaircafe_event_category']
+        'categories' => [
+            Category::class,
+            'table' => 'liip_repaircafe_event_category',
+            'order' => 'name asc',
+        ],
     ];
 
     public $belongsTo = [
