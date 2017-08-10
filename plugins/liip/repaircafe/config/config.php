@@ -16,7 +16,7 @@ return [
     'geocoding_api_url' => 'http://open.mapquestapi.com/geocoding/v1/address?key={API_KEY}&street={STREET}&city={CITY}&postalCode={ZIP}&country={COUNTRY}',
     'static_map_api_url' => 'https://www.mapquestapi.com/staticmap/v5/map?key={API_KEY}&size=540,360&scalebar=false&zoom=17&locations={LATITUDE},{LONGITUDE}',
     'country' => 'ch',
-    'external_map_url' => 'https://www.google.com/maps/search/?api=1&query={LATITUDE},{LONGITUDE}',
+    'external_map_url' => 'https://www.google.com/maps/search/?api=1&query={QUERY}',
     'events_per_page' => 15,
 
 ];

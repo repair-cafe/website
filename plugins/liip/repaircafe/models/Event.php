@@ -103,13 +103,28 @@ class Event extends Model
         if (!empty($this->latitude) && !empty($this->longitude)) {
             $external_map_url = Config::get('liip.repaircafe::external_map_url');
 
-            $external_map_url = str_replace("{LATITUDE}", $this->latitude, $external_map_url);
-            $external_map_url = str_replace("{LONGITUDE}", $this->longitude, $external_map_url);
+            $external_map_url = str_replace("{QUERY}", rawurlencode($this->getFormattedAddress()), $external_map_url);
 
             return $external_map_url;
         } else {
             return null;
         }
+    }
+
+    public function getFormattedAddress()
+    {
+        $formattedAddress = '';
+
+        if (!empty($this->street) || !empty($this->city)) {
+            $formattedAddress = ($this->street ? $this->street : '');
+            if ($this->city && $this->street) {
+                $formattedAddress .= ', ';
+            }
+            if ($this->city) {
+                $formattedAddress .= ($this->zip ? $this->zip . ' ' : '') . $this->city;
+            }
+        }
+        return $formattedAddress;
     }
 
     public function beforeSave()
