@@ -1,4 +1,4 @@
-<ul class="nav language-switcher">
+<ul class="nav language-switcher flex-nowrap">
     {% for code, name in locales %}
         <li class="nav-item{{ code == activeLocale ? ' active' }}">
             <a class="nav-link" href="#" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'" title="{{ name }}">{{ code|upper }}</a>

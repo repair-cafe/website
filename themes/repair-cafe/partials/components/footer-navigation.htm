@@ -4,7 +4,7 @@ code = {{ localized_menucode }}
 [viewBag]
 ==
 {% if footerMenu.menuItems %}
-    <ul class="nav footer-navigation flex-wrap justify-content-center mb-3">
+    <ul class="nav footer-navigation justify-content-center mb-3">
         {% for item in footerMenu.menuItems if not item.viewBag.isHidden %}
             <li class="nav-item{{ item.isActive ? ' active' : '' }}{{ item.isChildActive ? ' child-active' : '' }} {{ item.viewBag.cssClass }}">
                 <a class="nav-link" href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
