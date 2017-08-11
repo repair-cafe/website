@@ -44,10 +44,12 @@
     }
     .btn-embed-sm {
         font-size: $font-size-sm;
+        line-height: $line-height-sm;
         padding: $input-btn-padding-y-sm $btn-embed-padding-x-sm;
     }
     .btn-embed-lg {
         font-size: $font-size-lg;
+        line-height: $line-height-lg;
         padding: $input-btn-padding-y-lg $btn-embed-padding-x-lg;
     }
 }
