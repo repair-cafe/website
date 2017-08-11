@@ -1,9 +1,9 @@
 <footer id="site-footer">
     <div class="footer-content">
         <div class="container">
-            <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo hidden-md-down" />
+            <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo d-none d-md-block" />
             <div class="footer-content-box text-center">
-                <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo-sm hidden-lg-up mb-4" />
+                <img src="{{ 'assets/images/konsumentenschutz-logo.png'|theme }}" class="logo-sm d-md-none mb-4" />
                 <h2>Repair Cafe</h2>
                 {% partial 'components/footer-navigation' localized_menucode='footer_' ~ activeLocale %}
                 <p><a href="mailto:{{ this.theme.contact_email }}">{{ this.theme.contact_email }}</a></p>
