@@ -1,11 +1,13 @@
 <?php namespace Liip\RepairCafe\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
 use Liip\RepairCafe\Models\Category;
 use Liip\RepairCafe\Models\Event;
+use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 
 class EventList extends ComponentBase
 {
@@ -13,6 +15,7 @@ class EventList extends ComponentBase
     private $cafe_slug;
     public $events;
     public $condensed;
+    public $boostrap_four_presenter;
 
     public function componentDetails()
     {
@@ -73,6 +76,7 @@ class EventList extends ComponentBase
     {
         $category = Input::get('category');
         $searchTerm = Input::get('searchterm');
+        $eventsPerPage = Config::get('liip.repaircafe::events_per_page', 15);
         $query = Db::table('liip_repaircafe_search_index_view');
 
         if (!empty($searchTerm)) {
@@ -97,7 +101,9 @@ class EventList extends ComponentBase
         $event_query = Event::query();
         $event_query->whereIn($event_query->getModel()->getQualifiedKeyName(), $event_ids);
         $event_query->orderBy('start', 'asc');
-        $events = $event_query->get();
+        $events = $event_query->paginate($eventsPerPage);
+        $events->appends(['category' => $category, 'searchterm' => $searchTerm]);
+        $this->boostrap_four_presenter = new BootstrapFourPresenter($events);
 
         return $events;
     }

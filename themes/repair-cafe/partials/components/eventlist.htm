@@ -2,7 +2,7 @@
     {% if eventList.eventsGroupedByMonth|length > 0 %}
         {% for month, events in eventList.eventsGroupedByMonth %}
             <h2>{{ month|localizeddate('none', 'none', activeLocale, null, 'MMMM Y') }}</h2>
-            <ul class="list-unstyled mb-5">
+            <ul class="events list-unstyled mb-5">
                 {% for event in events %}
                     {% set static_map_url = event.getStaticMapURL %}
                     {% set has_additional_information = (static_map_url and event.description is not empty) %}
@@ -65,6 +65,7 @@
                 {% endfor %}
             </ul>
         {% endfor %}
+        {{ eventList.events.render(eventList.boostrap_four_presenter)|raw }}
     {% else %}
         <p class="text-center">{{ 'eventlist.no_events_found'|_ }}</p>
     {% endif %}
