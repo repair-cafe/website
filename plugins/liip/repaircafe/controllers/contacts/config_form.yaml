@@ -1,4 +1,4 @@
-name: Contacts
+name: Contact
 form: $/liip/repaircafe/models/contact/fields.yaml
 modelClass: Liip\RepairCafe\Models\Contact
 defaultRedirect: liip/repaircafe/contacts

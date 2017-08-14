@@ -1,4 +1,4 @@
-name: Events
+name: Event
 form: $/liip/repaircafe/models/event/fields.yaml
 modelClass: Liip\RepairCafe\Models\Event
 defaultRedirect: liip/repaircafe/events

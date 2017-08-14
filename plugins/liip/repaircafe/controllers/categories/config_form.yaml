@@ -1,4 +1,4 @@
-name: Categories
+name: Category
 form: $/liip/repaircafe/models/category/fields.yaml
 modelClass: Liip\RepairCafe\Models\Category
 defaultRedirect: liip/repaircafe/categories
