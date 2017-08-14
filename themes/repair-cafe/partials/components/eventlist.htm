@@ -1,6 +1,6 @@
 <div class="eventlist">
-    {% if __SELF__.eventsGroupedByMonth|length > 0 %}
-        {% for month, events in __SELF__.eventsGroupedByMonth %}
+    {% if eventList.eventsGroupedByMonth|length > 0 %}
+        {% for month, events in eventList.eventsGroupedByMonth %}
             <h2>{{ month|localizeddate('none', 'none', activeLocale, null, 'MMMM Y') }}</h2>
             <ul class="list-unstyled mb-5">
                 {% for event in events %}
@@ -8,11 +8,11 @@
                     {% set has_additional_information = (static_map_url and event.description is not empty) %}
                     <li class="pt-3">
                         <div class="row">
-                            {% if __SELF__.condensed %}
+                            {% if eventList.condensed %}
                                 <div class="col-md-6 mb-3">
                                     <h3 class="h5">{{ event.title ? event.title : event.cafe.title }}</h3>
-                                    {% partial __SELF__ ~ '::date' start=event.start end=event.end %}
-                                    {% partial __SELF__ ~ '::address' street=event.street city=event.city zip=event.zip %}
+                                    {% partial 'components/date' start=event.start end=event.end %}
+                                    {% partial 'components/address' street=event.street city=event.city zip=event.zip %}
                                 </div>
                             {% else %}
                                 <div class="col-md-6 media mb-3">
@@ -23,8 +23,8 @@
                                     {% endif%}
                                     <div class="media-body">
                                         <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}{{ event.title ? ': ' ~ event.title }}</a></h3>
-                                        {% partial __SELF__ ~ '::date' start=event.start end=event.end %}
-                                        {% partial __SELF__ ~ '::address' street=event.street city=event.city zip=event.zip %}
+                                        {% partial 'components/date' start=event.start end=event.end %}
+                                        {% partial 'components/address' street=event.street city=event.city zip=event.zip %}
                                     </div>
                                 </div>
                             {% endif %}
@@ -36,7 +36,7 @@
                                 {% endif %}
                                 <ul class="list-unstyled">
                                     {% for category in event.categories %}
-                                        {# find better solution for link creation #}
+                                        {# TODO find better solution for link creation #}
                                         <li><a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
@@ -53,9 +53,9 @@
                                     <div class="mb-3">
                                         {{ event.description|raw }}
                                     </div>
-                                    {% if not __SELF__.condensed %}
+                                    {% if not eventList.condensed %}
                                         <div>
-                                            <a class="btn btn-outline-primary" href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}" role="button">{{ 'liip.repaircafe::lang.component.eventlist.cafe_detail_button'|trans }}</a>
+                                            <a class="btn btn-outline-primary" href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}" role="button">{{ 'eventlist.cafe_detail_button'|_ }}</a>
                                         </div>
                                     {% endif %}
                                 </div>
@@ -66,6 +66,6 @@
             </ul>
         {% endfor %}
     {% else %}
-        <p class="text-center">{{ 'liip.repaircafe::lang.component.eventlist.no_events_found'|trans }}</p>
+        <p class="text-center">{{ 'eventlist.no_events_found'|_ }}</p>
     {% endif %}
 </div>
