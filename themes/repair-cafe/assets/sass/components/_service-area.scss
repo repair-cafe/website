@@ -10,7 +10,7 @@
         color: $white;
 
         @include hover-focus {
-            color: $gray-light;
+            color: $gray-600;
         }
     }
 
@@ -36,7 +36,7 @@
         margin-left: $logo-margin-left;
         background-color: white;
         padding: 2.5rem 1.5rem 2.5rem 1.5rem;
-        border: 1px dashed $gray-dark;
+        border: 1px dashed $gray-900;
         margin-top: -1px;
 
         img {
@@ -47,7 +47,7 @@
         margin-left: $logo-width + $logo-margin-left + 70px;
 
         li.active a {
-            color: $gray-light;
+            color: $gray-600;
         }
     }
 
