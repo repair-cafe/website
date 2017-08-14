@@ -1,5 +1,5 @@
 .has-btn-embed {
-    $btn-embed-color: $gray-light !default;
+    $btn-embed-color: $gray-600 !default;
     $btn-embed-padding-x: .75rem !default;
     $btn-embed-padding-x-sm: .5rem !default;
     $btn-embed-padding-x-lg: 1.25rem !default;
@@ -8,13 +8,13 @@
 
     &.has-btn-embed-left {
         .form-control {
-            padding-left: $input-padding-x + (2 * $btn-embed-padding-x);
+            padding-left: $input-btn-padding-x + (2 * $btn-embed-padding-x);
         }
         .form-control-sm {
-            padding-left: $input-padding-x-sm + (2 * $btn-embed-padding-x-sm);
+            padding-left: $input-btn-padding-x-sm + (2 * $btn-embed-padding-x-sm);
         }
         .form-control-lg {
-            padding-left: $input-padding-x-lg + (2 * $btn-embed-padding-x-lg);
+            padding-left: $input-btn-padding-x-lg + (2 * $btn-embed-padding-x-lg);
         }
         .btn-embed {
             left: 0;
@@ -22,13 +22,13 @@
     }
     &.has-btn-embed-right {
         .form-control {
-            padding-right: $input-padding-x + (2 * $btn-embed-padding-x);
+            padding-right: $input-btn-padding-x + (2 * $btn-embed-padding-x);
         }
         .form-control-sm {
-            padding-right: $input-padding-x-sm + (2 * $btn-embed-padding-x-sm);
+            padding-right: $input-btn-padding-x-sm + (2 * $btn-embed-padding-x-sm);
         }
         .form-control-lg {
-            padding-right: $input-padding-x-lg + (2 * $btn-embed-padding-x-lg);
+            padding-right: $input-btn-padding-x-lg + (2 * $btn-embed-padding-x-lg);
         }
         .btn-embed {
             right: 0;
@@ -39,15 +39,17 @@
         position: absolute;
         top: 0;
         color: $btn-embed-color;
-        padding: $input-padding-y $btn-embed-padding-x;
+        padding: $input-btn-padding-y $btn-embed-padding-x;
         cursor: pointer;
     }
     .btn-embed-sm {
         font-size: $font-size-sm;
-        padding: $input-padding-y-sm $btn-embed-padding-x-sm;
+        line-height: $line-height-sm;
+        padding: $input-btn-padding-y-sm $btn-embed-padding-x-sm;
     }
     .btn-embed-lg {
         font-size: $font-size-lg;
-        padding: $input-padding-y-lg $btn-embed-padding-x-lg;
+        line-height: $line-height-lg;
+        padding: $input-btn-padding-y-lg $btn-embed-padding-x-lg;
     }
 }

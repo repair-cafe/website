@@ -1,5 +1,5 @@
 .footer-content {
-    background-color: $gray;
+    background-color: $gray-700;
     padding-top: 2rem;
     padding-bottom: 2rem;
     color: $white;
@@ -8,7 +8,7 @@
         color: $white;
 
         @include hover-focus {
-            color: $gray-light;
+            color: $gray-600;
         }
     }
 
@@ -17,7 +17,7 @@
     }
 
     .social-links a .fa-inverse {
-        color: $gray;
+        color: $gray-700;
     }
 
     .logo {
