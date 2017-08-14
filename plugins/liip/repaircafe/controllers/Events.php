@@ -2,6 +2,12 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Redirect;
+use Liip\RepairCafe\Models\Cafe;
+use Liip\RepairCafe\Models\Event;
+use October\Rain\Support\Facades\Flash;
 
 class Events extends Controller
 {
@@ -23,5 +29,51 @@ class Events extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Liip.RepairCafe', 'main-menu-cafe', 'side-menu-events');
+    }
+
+    public function onDuplicate()
+    {
+        $original_event_id = Input::get('event_id');
+        $original_cafe_id = Input::get('cafe_id');
+
+        $original_event_model = Event::find($original_event_id);
+        $cafe_model = Cafe::find($original_cafe_id);
+
+        if ($original_event_model && $cafe_model) {
+            $original_category_ids = [];
+            foreach ($original_event_model->categories()->get() as $category) {
+                array_push($original_category_ids, $category->id);
+            }
+
+            // create new model with copied data
+            $event_model = new Event();
+            $event_model->cafe_id = $original_cafe_id;
+            $event_model->description = $original_event_model->description;
+            $event_model->title = $original_event_model->title;
+            $event_model->start = $original_event_model->start;
+            $event_model->end = $original_event_model->end;
+            $event_model->street = $original_event_model->street;
+            $event_model->zip = $original_event_model->zip;
+            $event_model->city = $original_event_model->city;
+            $event_model->latitude = $original_event_model->latitude;
+            $event_model->longitude = $original_event_model->longitude;
+            $event_model->save();
+
+            // save relations
+            $cafe_model->events[] = $event_model;
+            $event_model->categories()->attach($original_category_ids);
+
+            $event_id = $event_model->getAttribute('id');
+            Flash::success(Lang::get(
+                'liip.repaircafe::lang.event.duplicate_success',
+                ['eventname' => Lang::get($event_model->title)]
+            ));
+            return Redirect::to('/backend/liip/repaircafe/events/update/' . $event_id);
+        } else {
+            Flash::error(Lang::get(
+                'liip.repaircafe::lang.event.duplicate_error',
+                ['eventname' => $original_event_model->title]
+            ));
+        }
     }
 }
