@@ -51,6 +51,20 @@ class EventList extends ComponentBase
         return $eventsGroupedByMonth;
     }
 
+    public function eventsGroupedByProximity()
+    {
+        // St. Gallen Location
+        $lat = '47.42391';
+        $lng = '9.37477';
+        $distance = 100;
+
+        $events = DB::select(
+            DB::raw('SELECT *,( 3959 * acos( cos( radians(' . $lat . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $lng . ') ) + sin( radians(' . $lat .') ) * sin( radians(latitude) ) ) ) AS distance FROM liip_repaircafe_events HAVING distance < ' . $distance . ' ORDER BY distance')  # noqa
+        );
+
+        return $events;
+    }
+
     public function categories()
     {
         $category_options = array();
