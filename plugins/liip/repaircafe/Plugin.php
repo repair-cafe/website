@@ -37,7 +37,8 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function localizeddateFormatted($date, $format, $locale = '') {
+    public function localizeddateFormatted($date, $format, $locale = '')
+    {
         if (function_exists('twig_localized_date_filter')) {
             if (empty($locale)) {
                 $translate = Translator::instance();
