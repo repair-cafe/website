@@ -34,10 +34,9 @@ class Events extends Controller
     public function onDuplicate()
     {
         $original_event_id = Input::get('event_id');
-        $original_cafe_id = Input::get('cafe_id');
 
         $original_event_model = Event::find($original_event_id);
-        $cafe_model = Cafe::find($original_cafe_id);
+        $cafe_model = $original_event_model->cafe();
 
         if ($original_event_model && $cafe_model) {
             $original_category_ids = [];
@@ -47,7 +46,7 @@ class Events extends Controller
 
             // create new model with copied data
             $event_model = new Event();
-            $event_model->cafe_id = $original_cafe_id;
+            $event_model->cafe_id = $original_event_model->cafe_id;
             $event_model->description = $original_event_model->description;
             $event_model->title = $original_event_model->title;
             $event_model->start = $original_event_model->start;

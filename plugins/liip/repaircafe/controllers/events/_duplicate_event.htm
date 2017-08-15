@@ -3,7 +3,7 @@
     data-request="onDuplicate"
     data-request-confirm="<?= e(trans('liip.repaircafe::lang.event.duplicate_selected_confirm', ['eventname' => $this->widget->form->model->title])) ?>"
     data-trigger-action="enable"
-    data-request-data="event_id: '<?= $this->widget->form->model->id ?>', cafe_id: '<?= $this->widget->form->model->cafe_id ?>'"
+    data-request-data="event_id: '<?= $this->widget->form->model->id ?>'"
     data-stripe-load-indicator>
     <?= e(trans('liip.repaircafe::lang.event.duplicate_selected')) ?>
 </button>
