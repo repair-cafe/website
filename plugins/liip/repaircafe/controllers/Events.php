@@ -39,11 +39,6 @@ class Events extends Controller
         $cafe_model = $original_event_model->cafe();
 
         if ($original_event_model && $cafe_model) {
-            $original_category_ids = [];
-            foreach ($original_event_model->categories()->get() as $category) {
-                array_push($original_category_ids, $category->id);
-            }
-
             // create new model with copied data
             $event_model = new Event();
             $event_model->cafe_id = $original_event_model->cafe_id;
@@ -60,7 +55,9 @@ class Events extends Controller
 
             // save relations
             $cafe_model->events[] = $event_model;
-            $event_model->categories()->attach($original_category_ids);
+            foreach ($original_event_model->categories()->get() as $category) {
+                $event_model->categories()->attach($category);
+            }
 
             $event_id = $event_model->getAttribute('id');
             Flash::success(Lang::get(
