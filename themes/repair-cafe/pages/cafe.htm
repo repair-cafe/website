@@ -34,7 +34,11 @@ condensed = 1
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            {% partial 'components/address' street=cafeDetail.cafe.street zip=cafeDetail.cafe.zip city=cafeDetail.cafe.city inline=false %}
+                            {% set formatted_address = cafeDetail.cafe.getFormattedAddress %}
+                            {% if formatted_address is not empty %}
+                                <h2 class="h5">{{ 'page.cafe.address'|_ }}</h2>
+                                <p>{{ formatted_address|raw }}</p>
+                            {% endif %}
                         </div>
                         <div class="col-md-6 mb-3">
                             {% if cafeDetail.cafe.website_link or cafeDetail.cafe.contact_link or cafeDetail.cafe.facebook or cafeDetail.cafe.twitter or cafeDetail.cafe.instagram %}

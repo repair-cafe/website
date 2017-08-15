@@ -72,4 +72,20 @@ class Cafe extends Model
      * @var string The database table used by the model.
      */
     public $table = 'liip_repaircafe_cafes';
+
+    public function getFormattedAddress()
+    {
+        $formattedAddress = '';
+
+        if (!empty($this->street) || !empty($this->city)) {
+            $formattedAddress = ($this->street ? $this->street : '');
+            if ($this->city && $this->street) {
+                $formattedAddress .= '<br />';
+            }
+            if ($this->city) {
+                $formattedAddress .= ($this->zip ? $this->zip . ' ' : '') . $this->city;
+            }
+        }
+        return $formattedAddress;
+    }
 }
