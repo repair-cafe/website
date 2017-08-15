@@ -127,6 +127,14 @@ class Event extends Model
         return $formattedAddress;
     }
 
+    public function getTitle($condensed = false) {
+        if ($condensed) {
+            return $this->title ? $this->title : $this->cafe->title;
+        } else {
+            return $this->cafe->title . ( $this->title ? ': ' . $this->title : '' );
+        }
+    }
+
     public function beforeSave()
     {
         if ((empty($this->latitude) && empty($this->longitude)) &&
