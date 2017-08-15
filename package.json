@@ -23,5 +23,9 @@
         "lodash": "^4.17.4",
         "popper.js": "^1.11.1",
         "vue": "^2.4.1"
+    },
+    "dependencies": {
+        "leaflet": "^1.2.0",
+        "leaflet.markercluster": "^1.0.6"
     }
 }
