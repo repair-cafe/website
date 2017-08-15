@@ -1,15 +1,10 @@
 {% if street or city %}
-    <h2 class="h5">{{ 'page.cafe.address'|_ }}</h2>
     {% set address_string = (street ? street : '') %}
     {% if city and street %}
-        {% if inline %}
-            {% set address_string = address_string ~ ', ' %}
-        {% else %}
-            {% set address_string = address_string ~ '<br />' %}
-        {% endif %}
+        {% set address_string = address_string ~ ', ' %}
     {% endif %}
     {% if city %}
         {% set address_string = address_string ~ (zip ? zip ~ ' ') ~ city %}
     {% endif %}
-    {{ address_string|raw }}
+    <p class="small mb-0">{{ address_string }}</p>
 {% endif %}

@@ -5,6 +5,8 @@ de:
     eventlist.search.searchterm.label: 'Suchbegriff'
     eventlist.search.searchterm.placeholder: 'Suchbegriff...'
     eventlist.title: 'Finde ein Repair Café'
+    eventlist.no_events_found: 'Keine Events für die angegebenen Suchkriterien gefunden'
+    eventlist.cafe_detail_button: 'Mehr über dieses Repair Café'
     page.404.content: 'Ups! Da ist etwas schief gelaufen.'
     page.404.title: 'Seite nicht gefunden'
     page.cafe.address: 'Adresse'

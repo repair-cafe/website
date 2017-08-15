@@ -14,7 +14,7 @@
         display: flex;
     }
 
-    > ul {
+    > ul.events {
         border-top: dashed 1px $gray-900;
 
         > li {

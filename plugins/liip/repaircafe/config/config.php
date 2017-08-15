@@ -17,5 +17,6 @@ return [
     'static_map_api_url' => 'https://www.mapquestapi.com/staticmap/v5/map?key={API_KEY}&size=540,360&scalebar=false&zoom=17&locations={LATITUDE},{LONGITUDE}',
     'country' => 'ch',
     'external_map_url' => 'https://www.google.com/maps/search/?api=1&query={LATITUDE},{LONGITUDE}',
+    'events_per_page' => 15,
 
 ];
