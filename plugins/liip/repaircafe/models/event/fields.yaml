@@ -36,18 +36,18 @@ tabs:
             tab: 'liip.repaircafe::lang.event.tab.general'
         start:
             label: 'liip.repaircafe::lang.event.start'
-            oc.commentPosition: ''
             mode: datetime
             span: auto
             required: 1
             type: datepicker
+            commentAbove: 'liip.repaircafe::lang.event.comments.start'
             tab: 'liip.repaircafe::lang.event.tab.general'
         end:
             label: 'liip.repaircafe::lang.event.end'
-            oc.commentPosition: ''
             mode: datetime
             span: auto
             type: datepicker
+            commentAbove: 'liip.repaircafe::lang.event.comments.end'
             tab: 'liip.repaircafe::lang.event.tab.general'
         categories:
             label: 'liip.repaircafe::lang.relation.categories'

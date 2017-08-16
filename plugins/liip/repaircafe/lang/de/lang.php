@@ -83,6 +83,10 @@
         'messages' => [
             'geocoding_error' => 'Die Adresse konnte leider nicht in eine gültige Geolocation (Latitude/Longitude) umgewandelt werden.',
         ],
+        'comments' => [
+            'start' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
+            'end' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
+        ],
     ],
     'category' => [
         'name' => 'Name',

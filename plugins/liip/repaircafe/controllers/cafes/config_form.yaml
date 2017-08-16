@@ -1,4 +1,4 @@
-name: Cafes
+name: Cafe
 form: $/liip/repaircafe/models/cafe/fields.yaml
 modelClass: Liip\RepairCafe\Models\Cafe
 defaultRedirect: liip/repaircafe/cafes
