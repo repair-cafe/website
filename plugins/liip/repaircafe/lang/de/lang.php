@@ -77,6 +77,9 @@
         'duplicate_selected_confirm' => 'Möchten Sie ":eventname" wirklich kopieren?',
         'duplicate_success' => '":eventname" wurde erfolgreich kopiert.',
         'duplicate_error' => 'Kopieren von ":eventname" ist fehlgeschlagen.',
+        'messages' => [
+            'geocoding_error' => 'Die Adresse konnte leider nicht in eine gültige Geolocation (Latitude/Longitude) umgewandelt werden.'
+        ],
     ],
     'category' => [
         'name' => 'Name',

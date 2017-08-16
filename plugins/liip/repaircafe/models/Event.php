@@ -1,10 +1,12 @@
 <?php namespace Liip\RepairCafe\Models;
 
 use Exception;
+use Illuminate\Support\Facades\Lang;
 use October\Rain\Database\Model;
 use October\Rain\Support\Facades\Config;
+use October\Rain\Support\Facades\Flash;
 use RainLab\Translate\Behaviors\TranslatableModel;
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleClient;
 
 /**
  * Model
@@ -67,17 +69,15 @@ class Event extends Model
      */
     public $table = 'liip_repaircafe_events';
 
-    private function getGeocodingApiEndpoint($street, $zip, $city)
+    public function getGeocodingApiEndpoint($address)
     {
-        $api_key = Config::get('liip.repaircafe::api_key');
         $api_url = Config::get('liip.repaircafe::geocoding_api_url');
-        $country = Config::get('liip.repaircafe::country');
+        $api_key = Config::get('liip.repaircafe::googlemaps_geocoding_api_key');
+        $region = Config::get('liip.repaircafe::region');
 
         $api_url = str_replace("{API_KEY}", $api_key, $api_url);
-        $api_url = str_replace("{STREET}", $street, $api_url);
-        $api_url = str_replace("{CITY}", $city, $api_url);
-        $api_url = str_replace("{ZIP}", $zip, $api_url);
-        $api_url = str_replace("{COUNTRY}", $country, $api_url);
+        $api_url = str_replace("{ADDRESS}", rawurlencode($address), $api_url);
+        $api_url = str_replace("{REGION}", $region, $api_url);
 
         return $api_url;
     }
@@ -161,25 +161,22 @@ class Event extends Model
     {
         if ((empty($this->latitude) && empty($this->longitude)) &&
         ($this->street && $this->zip && $this->city)) {
-            $api_url = $this->getGeocodingApiEndpoint(
-                rawurlencode($this->street),
-                rawurlencode($this->zip),
-                rawurlencode($this->city)
-            );
+            $api_url = $this->getGeocodingApiEndpoint($this->getFormattedAddress());
 
-            $client = new Client();
-
+            $client = new GuzzleClient();
             try {
                 $response = $client->get($api_url);
                 $json = $response->getBody();
-                $data = json_decode($json);
-            } catch (Exception $e) {
-                // do nothing
-            }
+                $data = json_decode($json, true);
 
-            if (!empty($data) && property_exists($data, 'results') && count($data->results) > 0) {
-                $this->latitude = $data->results[0]->locations[0]->latLng->lat;
-                $this->longitude = $data->results[0]->locations[0]->latLng->lng;
+                if (!empty($data) && array_key_exists('results', $data) && count($data['results']) > 0) {
+                    $this->latitude = $data['results'][0]['geometry']['location']['lat'];
+                    $this->longitude = $data['results'][0]['geometry']['location']['lng'];
+                } else {
+                    Flash::warning(Lang::get('liip.repaircafe::lang.event.messages.geocoding_error'));
+                }
+            } catch (Exception $e) {
+                Flash::warning(Lang::get('liip.repaircafe::lang.event.messages.geocoding_error'));
             }
         }
     }
