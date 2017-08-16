@@ -94,12 +94,12 @@ class Plugin extends PluginBase
 
             $form->addTabFields([
                 'cafes' => [
-                    'label'   => 'Cafe',
-                    'comment' => 'Associate this user with a cafe.',
+                    'label'   => 'liip.repaircafe::lang.user.tab.cafe_label',
+                    'comment' => 'liip.repaircafe::lang.user.tab.cafe_comment',
                     'type' => 'relation',
                     'list' => '$/liip/repaircafe/models/cafe/columns.yaml',
                     'nameFrom' => 'title',
-                    'tab' => 'repaircafes'
+                    'tab' => 'liip.repaircafe::lang.user.tab.cafes'
                 ],
             ]);
         });
