@@ -7,6 +7,6 @@
         {% endif %}
         {{ start|localizeddate_formatted('HH:mm') }} - {{ end|localizeddate_formatted('HH:mm') }}
     {% else %}
-        {{ start|localizeddate_formatted('dd. MMMM y') }} {{ start|localizeddate_formatted('HH:mm') }}
+        {{ start|localizeddate_formatted('dd. MMMM y HH:mm') }}
     {% endif %}
 </p>
