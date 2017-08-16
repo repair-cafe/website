@@ -25,7 +25,9 @@
         "vue": "^2.4.1"
     },
     "dependencies": {
+        "jquery.easing": "^1.4.1",
         "leaflet": "^1.2.0",
+        "leaflet.locatecontrol": "^0.62.0",
         "leaflet.markercluster": "^1.0.6"
     }
 }
