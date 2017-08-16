@@ -5,7 +5,6 @@ $( document ).ready(function() {
 
     // Smooth scrolling when clicking links with smooth-scroll class (requires jquery.easing plugin)
     $('a.smooth-scroll').bind('click', function(event) {
-        console.log('bla');
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
