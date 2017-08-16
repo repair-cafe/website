@@ -69,7 +69,7 @@ class Event extends Model
      */
     public $table = 'liip_repaircafe_events';
 
-    public function getGeocodingApiEndpoint($address)
+    private function getGeocodingApiEndpoint($address)
     {
         $api_url = Config::get('liip.repaircafe::geocoding_api_url');
         $api_key = Config::get('liip.repaircafe::googlemaps_geocoding_api_key');
