@@ -87,6 +87,13 @@
             'addressfinder' => 'Dieses Feld dient lediglich zum Suchen und automatisierten Vervollständigen der Addressfelder.',
         ],
     ],
+    'user' => [
+        'tab' => [
+            'cafes' => 'Repair Cafés',
+            'cafe_label' => 'Repair Cafés',
+            'cafe_comment' => 'Wählen Sie Cafés aus, die dieser User sehen und bearbeiten darf.',
+        ],
+    ],
     'category' => [
         'name' => 'Name',
         'slug' => 'Slug',
