@@ -144,4 +144,15 @@ class Event extends Model
 
         return $query;
     }
+
+    public function getCafeOptions()
+    {
+        $cafes = Cafe::query()->authorized()->get();
+        $form = [];
+        foreach ($cafes as $cafe) {
+            $form[$cafe->id] = $cafe->title;
+        }
+
+        return $form;
+    }
 }
