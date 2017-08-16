@@ -1,6 +1,9 @@
 <?php namespace Liip\RepairCafe;
 
+use Backend\Models\User as BackendUserModel;
+use Backend\Controllers\Users as BackendUsersController;
 use Liip\RepairCafe\Console\Seed;
+use Liip\RepairCafe\Models\Cafe;
 use RainLab\Translate\Classes\Translator;
 use System\Classes\PluginBase;
 
@@ -64,5 +67,33 @@ class Plugin extends PluginBase
         }
 
         return $date;
+    }
+
+    public function boot()
+    {
+        BackendUserModel::extend(function ($model) {
+            $model->belongsToMany['cafes'] = [
+                Cafe::class,
+                'table' => 'liip_repaircafe_cafe_user'
+            ];
+        });
+
+        BackendUsersController::extendFormFields(function ($form, $model, $context) {
+
+            if (!$model instanceof BackendUserModel) {
+                return;
+            }
+
+            $form->addTabFields([
+                'cafes' => [
+                    'label'   => 'Cafe',
+                    'comment' => 'Associate this user with a cafe.',
+                    'type' => 'relation',
+                    'list' => '$/liip/repaircafe/models/cafe/columns.yaml',
+                    'nameFrom' => 'title',
+                    'tab' => 'repaircafes'
+                ],
+            ]);
+        });
     }
 }
