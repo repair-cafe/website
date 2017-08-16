@@ -62,7 +62,7 @@ class Events extends Controller
             $event_id = $event_model->getAttribute('id');
             Flash::success(Lang::get(
                 'liip.repaircafe::lang.event.duplicate_success',
-                ['eventname' => Lang::get($event_model->title)]
+                ['eventname' => $event_model->title]
             ));
             return Redirect::to('/backend/liip/repaircafe/events/update/' . $event_id);
         } else {
