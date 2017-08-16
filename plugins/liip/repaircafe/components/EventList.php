@@ -16,6 +16,7 @@ class EventList extends ComponentBase
     public $events;
     public $condensed;
     public $boostrap_four_presenter;
+    public $mapboxAccessToken;
 
     public function componentDetails()
     {
@@ -64,12 +65,40 @@ class EventList extends ComponentBase
         return $category_options;
     }
 
+    public function eventsForMap()
+    {
+        $eventsForMap = [];
+        foreach ($this->events as $event) {
+            $categories = array_map(function ($category) {
+                return [
+                    'name' => $category['name'],
+                    'slug' => $category['slug'],
+                ];
+            }, $event->categories->toArray());
+            $eventsForMap[] = array(
+                'id' => $event->id,
+                'title' => $event->getTitle(),
+                'date' => $event->getFormattedDate(),
+                'address' => $event->getFormattedAddress(),
+                'latitude' => $event->latitude,
+                'longitude' => $event->longitude,
+                'categories' => $categories,
+            );
+        }
+        return \json_encode($eventsForMap);
+    }
+
     public function onRun()
     {
+        // set current locale
+        $localeCode = Lang::getLocale();
+        setlocale(LC_TIME, $localeCode . '_' . strtoupper($localeCode) . '.UTF-8');
+
         $this->categories = Category::orderBy('name', 'asc')->get();
         $this->condensed = boolval($this->property('condensed'));
         $this->cafe_slug = $this->property('cafe_slug');
         $this->events = $this->queryEvents();
+        $this->mapboxAccessToken = Config::get('liip.repaircafe::mapbox_access_token');
     }
 
     protected function queryEvents()

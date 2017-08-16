@@ -1,0 +1,43 @@
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+    background-color: transparent;
+    div {
+        background-color: theme-color("primary");
+    }
+}
+
+/* IE 6-8 fallback colors */
+.leaflet-oldie {
+    .marker-cluster-small,
+    .marker-cluster-medium,
+    .marker-cluster-large {
+        background-color: transparent;
+        div {
+            background-color: theme-color("primary");
+        }
+    }
+}
+
+.marker-cluster {
+    background-clip: padding-box;
+    border-radius: 20px;
+    line-height: 30px;
+
+    div {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+        margin-top: 5px;
+
+        text-align: center;
+        border-radius: 15px;
+        font-family: $font-family-base;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    span {
+        line-height: 30px;
+    }
+}

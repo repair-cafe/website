@@ -18,5 +18,6 @@ return [
     'country' => 'ch',
     'external_map_url' => 'https://www.google.com/maps/search/?api=1&query={QUERY}',
     'events_per_page' => 15,
+    'mapbox_access_token' => 'pk.eyJ1IjoicmVwYWlyY2FmZSIsImEiOiJjajZkZHNzemYxdnF3MnFxdjRkcXNrZmFjIn0.O_xC8sZLXDPo611ei0PLFA',
 
 ];

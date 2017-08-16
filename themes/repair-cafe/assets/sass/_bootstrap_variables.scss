@@ -102,9 +102,6 @@ $colors: (
     white: $white,
     gray: $gray-600,
     gray-dark: $gray-800,
-    rouge: $rouge,
-    rouge-bright: $rouge-bright,
-    dark-sky-blue: $dark-sky-blue
 ) !default;
 
 $theme-colors: (
@@ -115,7 +112,10 @@ $theme-colors: (
     warning: $yellow,
     danger: $red,
     light: $gray-100,
-    dark: $gray-800
+    dark: $gray-800,
+    rouge: $rouge,
+    rouge-bright: $rouge-bright,
+    dark-sky-blue: $dark-sky-blue
 ) !default;
 
 // Set a specific jump point for requesting color jumps

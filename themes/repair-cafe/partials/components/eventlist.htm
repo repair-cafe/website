@@ -7,11 +7,11 @@
                     {% set static_map_url = event.getStaticMapURL %}
                     {% set has_additional_information = (static_map_url and event.description is not empty) %}
                     {% set formatted_address = event.getFormattedAddress %}
-                    <li class="pt-3">
+                    <li class="pt-3" id="event{{ event.id }}">
                         <div class="row">
                             {% if eventList.condensed %}
                                 <div class="col-md-6 mb-3">
-                                    <h3 class="h5">{{ event.title ? event.title : event.cafe.title }}</h3>
+                                    <h3 class="h5">{{ event.getTitle(eventList.condensed) }}</h3>
                                     {% partial 'components/date' start=event.start end=event.end %}
                                     {% if formatted_address is not empty %}
                                         <p class="small mb-0">{{ formatted_address }}</p>
@@ -25,7 +25,7 @@
                                         <img class="d-flex mr-3 w-25" src="{{ this.theme.repair_cafe_default_logo|media }}" alt="{{ event.cafe.title }}">
                                     {% endif%}
                                     <div class="media-body">
-                                        <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.cafe.title }}{{ event.title ? ': ' ~ event.title }}</a></h3>
+                                        <h3 class="h5"><a href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}">{{ event.getTitle }}</a></h3>
                                         {% partial 'components/date' start=event.start end=event.end %}
                                         {% if formatted_address is not empty %}
                                             <p class="small mb-0">{{ formatted_address }}</p>

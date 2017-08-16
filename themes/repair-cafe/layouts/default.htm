@@ -21,8 +21,8 @@ forceUrl = 1
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="Team Jazz, Liip AG">
         <link rel="icon" type="image/png" href="{{ 'assets/images/repair-cafe-logo.jpg'|theme }}">
-        <link href="{{ 'assets/css/app.min.css'|theme }}" rel="stylesheet">
         {% styles %}
+        <link href="{{ 'assets/css/app.min.css'|theme }}" rel="stylesheet">
     </head>
     <body>
 
@@ -38,9 +38,10 @@ forceUrl = 1
         {% partial 'site/footer' %}
 
         <!-- Scripts -->
+        <script src="{{ 'assets/js/jquery.min.js'|theme }}"></script>
+        {% scripts %}
         <script src="{{ 'assets/js/app.min.js'|theme }}"></script>
         {% framework extras %}
-        {% scripts %}
 
     </body>
 </html>

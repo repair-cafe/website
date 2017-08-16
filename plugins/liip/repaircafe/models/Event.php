@@ -127,6 +127,36 @@ class Event extends Model
         return $formattedAddress;
     }
 
+    public function getFormattedDate()
+    {
+        $formattedDate = '';
+        $startDate = new \DateTime($this->start);
+        if (!empty($this->end)) {
+            $endDate = new \DateTime($this->end);
+            if ($startDate->format('dmY') === $endDate->format('dmY')) {
+                $formattedDate .= strftime('%d.%m.%Y', $startDate->getTimestamp());
+            } else {
+                $formattedDate .= strftime('%d.%m.%Y', $startDate->getTimestamp());
+                $formattedDate .= ' - ' . strftime('%d.%m.%Y', $endDate->getTimestamp());
+            }
+            $formattedDate .= ' ' . strftime('%H:%M', $startDate->getTimestamp());
+            $formattedDate .= ' - ' . strftime('%H:%M', $endDate->getTimestamp());
+        } else {
+            $formattedDate .= strftime('%d.%m.%Y %H:%M', $startDate->getTimestamp());
+        }
+
+        return $formattedDate;
+    }
+
+    public function getTitle($condensed = false)
+    {
+        if ($condensed) {
+            return $this->title ? $this->title : $this->cafe->title;
+        } else {
+            return $this->cafe->title . ( $this->title ? ': ' . $this->title : '' );
+        }
+    }
+
     public function beforeSave()
     {
         if ((empty($this->latitude) && empty($this->longitude)) &&
