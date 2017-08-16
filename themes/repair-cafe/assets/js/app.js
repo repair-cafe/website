@@ -11,4 +11,13 @@ $( document ).ready(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+
+    // lazy load static map images on collapse show
+    $('.additional-info.collapse').on('show.bs.collapse', function () {
+        var eventId = $(this).data('eventId');
+        var image = $('img[data-lazy-load-event-id=' + eventId + ']');
+        if(image) {
+            image.attr('src', image.data('lazyLoadSrc'));
+        }
+    })
 });

@@ -36,10 +36,10 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}">
+                        <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}" data-event-id="{{ event.id }}">
                             {% if static_map_url %}
                                 <div class="col-md-6 mb-3">
-                                    <a href="{{ event.getExternalMapURL }}" target="_blank"><img src="{{ static_map_url }}" class="img-fluid" /></a>
+                                    <a href="{{ event.getExternalMapURL }}" target="_blank"><img src="http://via.placeholder.com/1080x500" data-lazy-load-src="{{ static_map_url }}" data-lazy-load-event-id="{{ event.id }}" class="img-fluid" /></a>
                                 </div>
                             {% endif %}
                             <div class="col-md-6 mb-3 small">
