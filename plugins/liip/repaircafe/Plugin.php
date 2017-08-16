@@ -76,6 +76,14 @@ class Plugin extends PluginBase
                 Cafe::class,
                 'table' => 'liip_repaircafe_cafe_user'
             ];
+
+            $model->addDynamicMethod('hasRole', function($role) use ($model) {
+                return $model->groups()->whereName($role)->exists();
+            });
+
+            $model->addDynamicMethod('isAdmin', function() use ($model) {
+                return $model->hasRole('owners');
+            });
         });
 
         BackendUsersController::extendFormFields(function ($form, $model, $context) {
