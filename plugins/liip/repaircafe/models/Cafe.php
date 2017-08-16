@@ -86,10 +86,11 @@ class Cafe extends Model
     {
         $user = BackendAuth::getUser();
 
-        $query->whereHas('users', function ($user_query) use ($user) {
-            $user_query->where('user_id', $user->id);
-        });
-
+        if (!$user->isAdmin()) {
+            $query->whereHas('users', function ($user_query) use ($user) {
+                $user_query->where('user_id', $user->id);
+            });
+        }
         return $query;
     }
 
