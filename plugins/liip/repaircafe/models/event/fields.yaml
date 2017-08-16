@@ -5,6 +5,14 @@ tabs:
             span: left
             type: switch
             tab: 'liip.repaircafe::lang.event.tab.general'
+        duplicateEvent:
+            span: auto
+            path: $/liip/repaircafe/controllers/events/_duplicate_event.htm
+            context:
+                - update
+                - preview
+            type: partial
+            tab: 'liip.repaircafe::lang.event.tab.general'
         cafe:
             label: 'liip.repaircafe::lang.relation.cafe'
             oc.commentPosition: ''

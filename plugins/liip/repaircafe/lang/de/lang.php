@@ -73,6 +73,10 @@
             'address' => 'Adresse',
             'general' => 'Allgemein',
         ],
+        'duplicate_selected' => 'Eine Kopie dieses Events erstellen',
+        'duplicate_selected_confirm' => 'Möchten Sie ":eventname" wirklich kopieren?',
+        'duplicate_success' => '":eventname" wurde erfolgreich kopiert.',
+        'duplicate_error' => 'Kopieren von ":eventname" ist fehlgeschlagen.',
     ],
     'category' => [
         'name' => 'Name',
