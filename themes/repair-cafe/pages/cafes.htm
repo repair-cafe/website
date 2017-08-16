@@ -40,6 +40,11 @@ is_hidden = 0
                     repaircafe['config'] = {
                         'mapboxAccessToken': '{{ eventList.mapboxAccessToken }}'
                     };
+                    repaircafe['labels'] = {
+                        'date': '{{ "eventlist.map.date"|_ }}',
+                        'address': '{{ "eventlist.map.address"|_ }}',
+                        'categoryTitle': '{{ "eventlist.map.category_title"|_ }}'
+                    };
                 </script>
                 {% partial 'components/eventlist' eventList=eventList %}
             </div>

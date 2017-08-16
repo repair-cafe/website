@@ -36,8 +36,12 @@ $( document ).ready(function() {
 
                 var popupContent = '';
                 popupContent += '<h2 class="h6"><a href="#event' + repaircafe.events[i].id + '" class="smooth-scroll">' + repaircafe.events[i].title + '</a></h2>';
-                popupContent += '<p>' + repaircafe.events[i].date + '<br />' + repaircafe.events[i].address + '</p>';
+                popupContent += '<p>';
+                popupContent += repaircafe.labels.date + ': ' + repaircafe.events[i].date + '<br />';
+                popupContent += repaircafe.labels.address + ': ' + repaircafe.events[i].address;
+                popupContent += '</p>';
                 if(repaircafe.events[i].categories.length > 0) {
+                    popupContent += '<h3 class="h6">' + repaircafe.labels.categoryTitle + '</h3>';
                     popupContent += '<ul>';
                     for(var j = 0; j < repaircafe.events[i].categories.length; j++) {
                         popupContent += '<li>' + repaircafe.events[i].categories[j].name + '</li>';
