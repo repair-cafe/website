@@ -7,7 +7,7 @@ is_hidden = 0
 ==
 {% put page %}
     <div class="events">
-        <div class="page-header">
+        <div class="page-header disable-map">
             <div class="page-header-content-container container text-center">
                 <div class="page-header-content row justify-content-center">
                     <div class="col-lg-8">
@@ -31,10 +31,22 @@ is_hidden = 0
                 </div>
             </div>
         </div>
-        <div class="page-content">
+        <div id="eventsMap"></div>
+        <div class="page-content disable-map">
             <div class="container">
+                <script type="text/javascript">
+                    var repaircafe = {};
+                    repaircafe['events'] = {{ eventList.eventsForMap|raw }};
+                    repaircafe['config'] = {
+                        'mapboxAccessToken': '{{ eventList.mapboxAccessToken }}'
+                    };
+                </script>
                 {% partial 'components/eventlist' eventList=eventList %}
             </div>
         </div>
     </div>
+{% endput %}
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ 'assets/js/events-map.min.js'|theme }}"></script>
 {% endput %}

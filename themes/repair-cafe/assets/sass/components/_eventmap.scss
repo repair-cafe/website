@@ -1,0 +1,17 @@
+@import "~leaflet/dist/leaflet.css";
+@import "~leaflet.markercluster/dist/MarkerCluster.css";
+@import "MarkerCluster.RepairCafe";
+@import "~leaflet.locatecontrol/dist/L.Control.Locate.css";
+
+$events-map-height: 400px;
+
+#eventsMap {
+    height: $events-map-height;
+}
+
+.leaflet-popup-content {
+    p {
+        margin-top: 0;
+        margin-bottom: .3rem;
+    }
+}
