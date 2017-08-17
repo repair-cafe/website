@@ -1,11 +1,10 @@
 <?php namespace Liip\RepairCafe\Controllers;
 
 use Backend\Classes\Controller;
-use BackendMenu;
+use Backend\Facades\BackendMenu;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
-use Liip\RepairCafe\Models\Cafe;
 use Liip\RepairCafe\Models\Event;
 use October\Rain\Support\Facades\Flash;
 
