@@ -14,15 +14,15 @@ forceUrl = 1
 
 {% partial 'site/html-header' %}
 
-        <!-- Header -->
-        {% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
+<!-- Header -->
+{% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
 
-        <!-- Content -->
-        {% placeholder page default ignore=true  %}
-            {% partial 'site/content' header_image=header_image header_image_caption='' lead_text=lead_text %}
-        {% endplaceholder %}
+<!-- Content -->
+{% placeholder page default ignore=true  %}
+    {% partial 'site/content' header_image=header_image header_image_caption='' lead_text=lead_text %}
+{% endplaceholder %}
 
-        <!-- Footer -->
-        {% partial 'site/footer' %}
+<!-- Footer -->
+{% partial 'site/footer' %}
 
 {% partial 'site/html-footer' %}
