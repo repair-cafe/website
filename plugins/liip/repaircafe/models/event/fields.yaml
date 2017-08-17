@@ -40,14 +40,14 @@ tabs:
             span: auto
             required: 1
             type: datepicker
-            commentAbove: 'liip.repaircafe::lang.event.comments.start'
+            comment: 'liip.repaircafe::lang.event.comments.start'
             tab: 'liip.repaircafe::lang.event.tab.general'
         end:
             label: 'liip.repaircafe::lang.event.end'
             mode: datetime
             span: auto
             type: datepicker
-            commentAbove: 'liip.repaircafe::lang.event.comments.end'
+            comment: 'liip.repaircafe::lang.event.comments.end'
             tab: 'liip.repaircafe::lang.event.tab.general'
         categories:
             label: 'liip.repaircafe::lang.relation.categories'
