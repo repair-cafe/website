@@ -20,7 +20,8 @@ class Plugin extends PluginBase
     {
         return [
             'Liip\RepairCafe\Components\EventList' => 'eventList',
-            'Liip\RepairCafe\Components\CafeDetail' => 'cafeDetail'
+            'Liip\RepairCafe\Components\CategoryList' => 'categoryList',
+            'Liip\RepairCafe\Components\CafeDetail' => 'cafeDetail',
         ];
     }
 
