@@ -103,6 +103,8 @@
                 'variables' => [
                     'lead_text' => 'Leadtext',
                     'header_image' => 'Headerbild',
+                    'call_to_action_text' => 'Call-to-action Text',
+                    'call_to_action_url' => 'Call-to-action Link',
                 ],
                 'tab' => [
                     'general' => 'Allgemein',

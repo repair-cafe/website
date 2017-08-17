@@ -8,6 +8,9 @@
                         {{ lead_text|raw }}
                     </div>
                 {% endif %}
+                {% if call_to_action_text is not empty and call_to_action_url is not empty %}
+                    <p><a href="{{ call_to_action_url }}" class="btn btn-outline-primary">{{ call_to_action_text }}</a></p>
+                {% endif %}
             </div>
         </div>
     </div>
