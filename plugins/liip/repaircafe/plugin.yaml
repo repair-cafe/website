@@ -17,6 +17,9 @@ permissions:
     repaircafe.contacts:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.contacts'
+    repaircafe.news:
+        tab: 'liip.repaircafe::lang.plugin.name'
+        label: 'liip.repaircafe::lang.permissions.news'
 navigation:
     main-menu-cafe:
         label: 'liip.repaircafe::lang.plugin.name'
@@ -43,3 +46,9 @@ navigation:
                 icon: icon-tag
                 permissions:
                     - repaircafe.categories
+    main-menu-news:
+        label: 'liip.repaircafe::lang.nav.news'
+        url: liip/repaircafe/news
+        icon: icon-bullhorn
+        permissions:
+            - repaircafe.news

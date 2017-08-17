@@ -1,0 +1,30 @@
+columns:
+    id:
+        label: 'liip.repaircafe::lang.news.id'
+        type: number
+    title:
+        label: 'liip.repaircafe::lang.news.title'
+        type: text
+    slug:
+        label: 'liip.repaircafe::lang.news.slug'
+        type: text
+        invisible: true
+    lead:
+        label: 'liip.repaircafe::lang.news.lead'
+        type: text
+        invisible: true
+    content:
+        label: 'liip.repaircafe::lang.news.content'
+        type: text
+        invisible: true
+    publish_date:
+        label: 'liip.repaircafe::lang.news.publish_date'
+        type: date
+    created_at:
+        label: 'liip.repaircafe::lang.news.created_at'
+        type: datetime
+        invisible: true
+    updated_at:
+        label: 'liip.repaircafe::lang.news.updated_at'
+        type: datetime
+        invisible: false
