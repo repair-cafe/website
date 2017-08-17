@@ -6,6 +6,12 @@ $( document ).ready(function() {
 
     // Initialize events map
     if(document.getElementById('eventsMap') && mapboxAccessToken !== '') {
+        if(repaircafe.events.length === 0) {
+            return;
+        } else {
+            $('#eventsMap').show();
+        }
+
         var eventsMap = L.map('eventsMap', {
             dragging: false,
             touchZoom: false,
