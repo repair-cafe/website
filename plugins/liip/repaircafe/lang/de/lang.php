@@ -79,13 +79,11 @@
         'duplicate_error' => 'Kopieren von ":eventname" ist fehlgeschlagen.',
         'comments' => [
             'longitude' => 'Longitude und Latitude werden, sofern diese Felder leer gelassen werden, beim Speichern automatisch aus der Adresse generiert. Falls die Koordinaten nicht stimmen können diese manuell überschrieben werden. Um die Koordinaten manuell zu generieren kann folgende Webseite verwendet werden <a href="http://www.latlong.net/" target="_blank">http://www.latlong.net/</a>.',
+            'start' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
+            'end' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
         ],
         'messages' => [
             'geocoding_error' => 'Die Adresse konnte leider nicht in eine gültige Geolocation (Latitude/Longitude) umgewandelt werden.',
-        ],
-        'comments' => [
-            'start' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
-            'end' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
         ],
     ],
     'category' => [
