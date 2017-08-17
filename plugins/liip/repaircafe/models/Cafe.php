@@ -65,6 +65,13 @@ class Cafe extends Model
      */
     public $table = 'liip_repaircafe_cafes';
 
+    /**
+     * Only load published cafes.
+     */
+    public function scopePublished($query) {
+        return $query->where('is_published', true);
+    }
+
     public function getFormattedAddress()
     {
         $formattedAddress = '';
