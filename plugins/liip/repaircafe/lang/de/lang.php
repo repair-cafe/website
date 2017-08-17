@@ -91,9 +91,6 @@
         'slug' => 'Slug',
     ],
     'component' => [
-        'eventlist' => [
-            'all_categories' => 'Alle Kategorien',
-        ],
         'categorylist' => [
             'all_categories' => 'Alle Kategorien',
         ],

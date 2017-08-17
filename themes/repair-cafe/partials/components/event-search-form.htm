@@ -10,7 +10,7 @@
     {% if showCategories|default %}
         <div class="form-group col-md-4 pl-md-1 mb-0">
             <label for="category" class="sr-only">{{ 'eventsearch.category.label'|_ }}</label>
-            {{ form_select( 'category', eventList.categories, input('category'), { class: 'form-control form-control-lg' } ) }}
+            {{ form_select( 'category', categories, input('category'), { class: 'form-control form-control-lg' } ) }}
         </div>
     {% endif %}
 </div>

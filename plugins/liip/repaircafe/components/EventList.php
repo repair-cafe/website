@@ -5,13 +5,11 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
-use Liip\RepairCafe\Models\Category;
 use Liip\RepairCafe\Models\Event;
 use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 
 class EventList extends ComponentBase
 {
-    private $categories;
     private $cafe_slug;
     public $events;
     public $condensed;
@@ -55,16 +53,6 @@ class EventList extends ComponentBase
         return $eventsGroupedByMonth;
     }
 
-    public function categories()
-    {
-        $category_options = array();
-        $category_options[] = '- ' . Lang::get('liip.repaircafe::lang.component.eventlist.all_categories') . ' -';
-        foreach ($this->categories as $category) {
-            $category_options[$category->slug] = $category->name;
-        }
-        return $category_options;
-    }
-
     public function eventsForMap()
     {
         $eventsForMap = [];
@@ -94,7 +82,6 @@ class EventList extends ComponentBase
         $localeCode = Lang::getLocale();
         setlocale(LC_TIME, $localeCode . '_' . strtoupper($localeCode) . '.UTF-8');
 
-        $this->categories = Category::orderBy('name', 'asc')->get();
         $this->condensed = boolval($this->property('condensed'));
         $this->cafe_slug = $this->property('cafe_slug');
         $this->events = $this->queryEvents();

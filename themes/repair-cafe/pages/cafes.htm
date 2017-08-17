@@ -4,6 +4,8 @@ layout = "default"
 is_hidden = 0
 
 [eventList]
+
+[categoryList]
 ==
 {% put page %}
     <div class="events">
@@ -12,7 +14,7 @@ is_hidden = 0
                 <div class="page-header-content row justify-content-center">
                     <div class="col-lg-8">
                         <h1>{{ 'eventlist.title'|_ }}</h1>
-                        {% partial 'components/event-search-form' showCategories=true %}
+                        {% partial 'components/event-search-form' showCategories=true categories=categoryList.categoryOptions %}
                     </div>
                 </div>
             </div>
