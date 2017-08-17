@@ -21,7 +21,7 @@
 
     .page-header-image-bg {
         height: $page-header-image-height;
-        max-width: map-get($container-max-widths, xl);
+        max-width: map-get($container-max-widths, xl) - $grid-gutter-width;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
