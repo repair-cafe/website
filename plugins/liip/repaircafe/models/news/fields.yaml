@@ -25,6 +25,12 @@ fields:
         span: right
         required: 1
         type: dropdown
+    lead:
+        label: 'liip.repaircafe::lang.news.lead'
+        size: medium
+        oc.commentPosition: ''
+        span: full
+        type: richeditor
     content:
         label: 'liip.repaircafe::lang.news.content'
         size: large
