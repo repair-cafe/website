@@ -5,4 +5,24 @@ is_hidden = 0
 
 [newsList]
 ==
-{{ newsList.getNews }}
+{% put page %}
+<div class="events">
+    <div class="page-header">
+        <div class="page-header-content-container container text-center">
+            <div class="page-header-content row justify-content-center">
+                <div class="col-lg-8">
+                    <h1>{{ 'newslist.title'|_ }}</h1>
+                    <div class="lead">
+                        {{ 'newslist.lead'|_ }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            {% partial 'components/newslist' news=newsList.getNews bootstrap_four_presenter=newsList.bootstrap_four_presenter %}
+        </div>
+    </div>
+</div>
+{% endput %}
