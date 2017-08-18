@@ -30,7 +30,9 @@ condensed = 1
                     {% endif%}
                 </div>
                 <div class="col-md-9">
-                    {{ cafeDetail.cafe.description|raw }}
+                    <div class="richeditor-content">
+                        {{ cafeDetail.cafe.description|raw }}
+                    </div>
 
                     <div class="row">
                         <div class="col-md-6 mb-3">

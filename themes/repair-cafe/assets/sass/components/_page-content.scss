@@ -6,7 +6,9 @@
     .container > *:last-child {
         margin-bottom: 0;
     }
+}
 
+.richeditor-content {
     // Responsive images when content width is too small
     img {
         max-width: 100%;
