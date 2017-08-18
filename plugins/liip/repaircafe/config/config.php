@@ -17,6 +17,7 @@ return [
     'region' => 'ch',
     'external_map_url' => 'https://www.google.com/maps/search/?api=1&query={QUERY}',
     'events_per_page' => 15,
+    'news_per_page' => 9,
     'mapbox_access_token' => 'pk.eyJ1IjoicmVwYWlyY2FmZSIsImEiOiJjajZkZHNzemYxdnF3MnFxdjRkcXNrZmFjIn0.O_xC8sZLXDPo611ei0PLFA',
     'googlemaps_geocoding_api_key' => 'AIzaSyChkCF-3LE8cmW8pN2ROSXmtHOIkg1hkbY',
 

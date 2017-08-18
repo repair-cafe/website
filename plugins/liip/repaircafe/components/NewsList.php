@@ -1,12 +1,15 @@
 <?php namespace Liip\RepairCafe\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
 use Liip\RepairCafe\Models\News;
+use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 
 class NewsList extends ComponentBase
 {
-    public $news;
+    private $news;
+    public $boostrap_four_presenter;
 
     public function componentDetails()
     {
@@ -22,7 +25,10 @@ class NewsList extends ComponentBase
         $localeCode = Lang::getLocale();
         setlocale(LC_TIME, $localeCode . '_' . strtoupper($localeCode) . '.UTF-8');
 
-        $this->news = News::published()->currentLocale()->orderBy('publish_date', 'desc')->get();
+        $newsPerPage = Config::get('liip.repaircafe::news_per_page', 9);
+        $news = News::published()->currentLocale()->orderBy('publish_date', 'desc')->paginate($newsPerPage);
+        $this->boostrap_four_presenter = new BootstrapFourPresenter($news);
+        $this->news = $news;
     }
 
     public function getNews()
