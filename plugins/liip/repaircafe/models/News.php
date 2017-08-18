@@ -17,6 +17,20 @@ class News extends Model
     protected $slugs = ['slug' => 'name'];
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title',
+        'slug',
+        'locale',
+        'lead',
+        'content',
+        'publish_date',
+    ];
+
+    /**
      * @var string The database table used by the model.
      */
     public $table = 'liip_repaircafe_news';
