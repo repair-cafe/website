@@ -23,7 +23,7 @@
                 </li>
             {% endfor %}
         </ul>
-        {{ news.render(boostrap_four_presenter)|raw }}
+        {{ news.render(bootstrap_four_presenter)|raw }}
     {% else %}
         <p class="text-center">{{ 'newslist.no_news_found'|_ }}</p>
     {% endif %}
