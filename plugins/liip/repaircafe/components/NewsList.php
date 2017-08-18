@@ -9,7 +9,7 @@ use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 class NewsList extends ComponentBase
 {
     private $news;
-    public $boostrap_four_presenter;
+    public $bootstrap_four_presenter;
 
     public function componentDetails()
     {
@@ -27,7 +27,7 @@ class NewsList extends ComponentBase
 
         $newsPerPage = Config::get('liip.repaircafe::news_per_page', 9);
         $news = News::published()->currentLocale()->orderBy('publish_date', 'desc')->paginate($newsPerPage);
-        $this->boostrap_four_presenter = new BootstrapFourPresenter($news);
+        $this->bootstrap_four_presenter = new BootstrapFourPresenter($news);
         $this->news = $news;
     }
 
