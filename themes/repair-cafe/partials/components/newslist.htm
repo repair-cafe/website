@@ -9,7 +9,7 @@
                                 {% if news_entry.image is not empty %}
                                     <img class="img-fluid" src="{{ news_entry.image|media }}" alt="{{ news_entry.title }}">
                                 {% elseif this.theme.news_default_image is not empty %}
-                                    <img cclass="img-fluid" src="{{ this.theme.news_default_image|media }}" alt="{{ news_entry.title }}">
+                                    <img class="img-fluid" src="{{ this.theme.news_default_image|media }}" alt="{{ news_entry.title }}">
                                 {% endif%}
                             </div>
                             <div class="col-6">

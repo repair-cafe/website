@@ -22,6 +22,18 @@ tabs:
             type: mediafinder
             mode: image
             tab: 'liip.repaircafe::lang.theme.fields.tab.default_content'
+        news_default_image:
+            label: 'liip.repaircafe::lang.theme.fields.news_default_image'
+            span: left
+            type: mediafinder
+            mode: image
+            tab: 'liip.repaircafe::lang.theme.fields.tab.default_content'
+        contact_default_image:
+            label: 'liip.repaircafe::lang.theme.fields.contact_default_image'
+            span: right
+            type: mediafinder
+            mode: image
+            tab: 'liip.repaircafe::lang.theme.fields.tab.default_content'
         social_facebook:
             label: 'liip.repaircafe::lang.theme.fields.social_facebook'
             span: full
