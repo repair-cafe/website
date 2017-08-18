@@ -41,7 +41,7 @@ class News extends Model
     ];
 
     /**
-     * Scope a query to only include popular users.
+     * Only load news in current locale.
      */
     public function scopeCurrentLocale($query)
     {
@@ -50,7 +50,7 @@ class News extends Model
     }
 
     /**
-     * Scope a query to only include popular users.
+     * Only load published news.
      */
     public function scopePublished($query)
     {
