@@ -43,7 +43,7 @@ class NewsList extends ComponentBase
         $this->max_items = $this->property('max_items');
 
         $newsQuery = News::published()->currentLocale()->orderBy('publish_date', 'desc');
-        if(!empty($this->max_items)) {
+        if (!empty($this->max_items)) {
             $news = $newsQuery->take(intval($this->max_items))->get();
         } else {
             $news = $newsQuery->paginate($newsPerPage);

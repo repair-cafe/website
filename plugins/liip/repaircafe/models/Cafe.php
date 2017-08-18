@@ -68,7 +68,8 @@ class Cafe extends Model
     /**
      * Only load published cafes.
      */
-    public function scopePublished($query) {
+    public function scopePublished($query)
+    {
         return $query->where('is_published', true);
     }
 
