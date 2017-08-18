@@ -9,6 +9,11 @@ columns:
         label: 'liip.repaircafe::lang.news.slug'
         type: text
         invisible: true
+    locale_id:
+        label: 'liip.repaircafe::lang.relation.locale'
+        type: text
+        relation: locale
+        valueFrom: name
     lead:
         label: 'liip.repaircafe::lang.news.lead'
         type: text

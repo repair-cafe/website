@@ -1,8 +1,7 @@
 <?php namespace Liip\RepairCafe\Models;
 
 use Model;
-use System\Models\File;
-use RainLab\Translate\Models\Locale as LocaleModel;
+use RainLab\Translate\Models\Locale;
 
 /**
  * Model
@@ -24,7 +23,7 @@ class News extends Model
     protected $fillable = [
         'title',
         'slug',
-        'locale',
+        'locale_id',
         'lead',
         'content',
         'publish_date',
@@ -35,8 +34,7 @@ class News extends Model
      */
     public $table = 'liip_repaircafe_news';
 
-    public function getLocaleOptions($value, $formData)
-    {
-        return LocaleModel::listEnabled();
-    }
+    public $belongsTo = [
+        'locale' => [Locale::class]
+    ];
 }

@@ -50,6 +50,7 @@
         'events' => 'Events',
         'categories' => 'Kategorien',
         'cafe' => 'Cafe',
+        'locale' => 'Sprache',
     ],
     'contact' => [
         'firstname' => 'Vorname',
@@ -130,7 +131,6 @@
         'id' => 'ID',
         'title' => 'Titel',
         'publish_date' => 'Publikationsdatum',
-        'locale' => 'Sprache',
         'slug' => 'Slug',
         'lead' => 'Leadtext',
         'content' => 'Inhalt',

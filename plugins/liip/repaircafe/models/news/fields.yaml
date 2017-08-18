@@ -20,11 +20,12 @@ fields:
         span: left
         type: datepicker
     locale:
-        label: 'liip.repaircafe::lang.news.locale'
+        label: 'liip.repaircafe::lang.relation.locale'
         oc.commentPosition: ''
+        nameFrom: name
         span: right
         required: 1
-        type: dropdown
+        type: relation
     lead:
         label: 'liip.repaircafe::lang.news.lead'
         size: medium

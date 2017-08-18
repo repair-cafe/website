@@ -13,7 +13,7 @@ class BuilderTableCreateLiipRepaircafeNews extends Migration
             $table->increments('id')->unsigned();
             $table->string('title', 255);
             $table->string('slug', 255);
-            $table->string('locale', 255);
+            $table->integer('locale_id');
             $table->text('lead')->nullable();
             $table->text('content')->nullable();
             $table->date('publish_date')->nullable();
