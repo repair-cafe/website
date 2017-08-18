@@ -14,8 +14,10 @@
                             </div>
                             <div class="col-6">
                                 <h3 class="h5"><a href="{{ 'news'|page({ slug: news_entry.slug }) }}">{{ news_entry.title }}</a></h3>
+                                <p class="small">{{ news_entry.publish_date|localizeddate_formatted('cccc, dd. MMMM y') }}</p>
                                 <div class="richeditor-content">
-                                    {{ news_entry.content|raw }}
+                                    {% set text_length = (loop.index == 1 ? 500 : 200) %}
+                                    {{ html_strip(news_entry.lead|raw)|truncate(text_length) }}
                                 </div>
                             </div>
                         </div>
