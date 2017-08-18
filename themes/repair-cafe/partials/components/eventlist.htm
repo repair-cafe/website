@@ -42,7 +42,7 @@
                                 <ul class="list-unstyled">
                                     {% for category in event.categories %}
                                         {# TODO find better solution for link creation #}
-                                        <li><a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">{{ category.name }}</a></li>
+                                        <li><a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">{{ category.name }}<span class="sr-only">{{ category.description }}</span></a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
