@@ -46,7 +46,9 @@ class News extends Model
     public function scopeCurrentLocale($query)
     {
         $currentLocale = Lang::getLocale();
-        return $query->where('locale', '=', $currentLocale);
+        return $query->whereHas('locale', function ($query) use ($currentLocale) {
+            $query->where('code', $currentLocale);
+        });
     }
 
     /**
