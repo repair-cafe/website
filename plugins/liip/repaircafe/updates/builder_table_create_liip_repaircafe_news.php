@@ -17,7 +17,7 @@ class BuilderTableCreateLiipRepaircafeNews extends Migration
             $table->text('lead')->nullable();
             $table->text('content')->nullable();
             $table->date('publish_date')->nullable();
-            $table->string('image', 255);
+            $table->string('image', 255)->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
