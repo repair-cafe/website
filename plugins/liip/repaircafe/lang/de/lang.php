@@ -91,6 +91,7 @@
     'category' => [
         'name' => 'Name',
         'slug' => 'Slug',
+        'description' => 'Beschreibung',
     ],
     'component' => [
         'eventlist' => [
