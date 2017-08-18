@@ -31,6 +31,8 @@ class Seed extends Command
 
             $masterData->seedCategoryData();
             $this->output->writeln('All Categories created');
+            $masterData->seedLocaleData();
+            $this->output->writeln('All Locales created');
         }
 
         if ($this->option('dummydata')) {
