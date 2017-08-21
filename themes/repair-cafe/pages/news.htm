@@ -1,0 +1,27 @@
+title = "News"
+url = "/news/:slug"
+layout = "default"
+is_hidden = 0
+
+[newsDetail]
+==
+{% put page %}
+{% set news = newsDetail.news %}
+<div class="news">
+    {% if news.image is not empty %}
+        {% set header_image_url = news.image|media %}
+    {% else %}
+        {% set header_image_url = null %}
+    {% endif%}
+    {% partial 'components/page-header' title=news.title title_addition=news.publish_date|localizeddate_formatted('cccc, dd. MMMM y') lead_text=news.lead header_image_url=header_image_url %}
+    <div class="page-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    {{ news.content|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endput %}

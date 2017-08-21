@@ -1,5 +1,7 @@
 <?php namespace Liip\RepairCafe\Models;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Lang;
 use Model;
 use RainLab\Translate\Models\Locale;
 
@@ -37,4 +39,23 @@ class News extends Model
     public $belongsTo = [
         'locale' => [Locale::class]
     ];
+
+    /**
+     * Only load news in current locale.
+     */
+    public function scopeCurrentLocale($query)
+    {
+        $currentLocale = Lang::getLocale();
+        return $query->whereHas('locale', function ($query) use ($currentLocale) {
+            $query->where('code', $currentLocale);
+        });
+    }
+
+    /**
+     * Only load published news.
+     */
+    public function scopePublished($query)
+    {
+        return $query->whereNotNull('publish_date')->where('publish_date', '<=', Carbon::now());
+    }
 }

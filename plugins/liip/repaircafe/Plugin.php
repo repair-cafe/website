@@ -22,6 +22,8 @@ class Plugin extends PluginBase
             'Liip\RepairCafe\Components\EventList' => 'eventList',
             'Liip\RepairCafe\Components\CategoryList' => 'categoryList',
             'Liip\RepairCafe\Components\CafeDetail' => 'cafeDetail',
+            'Liip\RepairCafe\Components\NewsList' => 'newsList',
+            'Liip\RepairCafe\Components\NewsDetail' => 'newsDetail',
         ];
     }
 

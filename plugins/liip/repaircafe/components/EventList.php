@@ -13,7 +13,7 @@ class EventList extends ComponentBase
     private $cafe_slug;
     public $events;
     public $condensed;
-    public $boostrap_four_presenter;
+    public $bootstrap_four_presenter;
     public $mapboxAccessToken;
 
     public function componentDetails()
@@ -119,7 +119,7 @@ class EventList extends ComponentBase
         $event_query->orderBy('start', 'asc');
         $events = $event_query->paginate($eventsPerPage);
         $events->appends(['category' => $category, 'searchterm' => $searchTerm]);
-        $this->boostrap_four_presenter = new BootstrapFourPresenter($events);
+        $this->bootstrap_four_presenter = new BootstrapFourPresenter($events);
 
         return $events;
     }

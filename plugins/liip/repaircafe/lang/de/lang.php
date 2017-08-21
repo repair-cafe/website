@@ -118,6 +118,8 @@
             'contact_email' => 'Kontakt Email-Adresse',
             'repair_cafe_default_image' => 'Standard Repair Café Bild',
             'repair_cafe_default_logo' => 'Standard Repair Café Logo',
+            'news_default_image' => 'Standard News Bild',
+            'contact_default_image' => 'Standard Kontakt Bild',
             'social_facebook' => 'Facebook Page',
             'social_twitter' => 'Twitter Page',
             'social_googleplus' => 'Google+ Page',
