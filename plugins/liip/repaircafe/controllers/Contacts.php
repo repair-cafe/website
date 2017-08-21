@@ -1,8 +1,7 @@
 <?php namespace Liip\RepairCafe\Controllers;
 
-use Backend\Behaviors\RelationController;
 use Backend\Classes\Controller;
-use BackendMenu;
+use Backend\Facades\BackendMenu;
 
 class Contacts extends Controller
 {

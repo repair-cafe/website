@@ -1,7 +1,7 @@
 <?php namespace Liip\RepairCafe\Controllers;
 
 use Backend\Classes\Controller;
-use BackendMenu;
+use Backend\Facades\BackendMenu;
 
 class Categories extends Controller
 {

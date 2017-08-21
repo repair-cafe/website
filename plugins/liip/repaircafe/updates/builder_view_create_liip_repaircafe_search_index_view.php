@@ -14,10 +14,6 @@ class BuilderViewCreateLiipRepaircafeSearchIndexView extends Migration
             select e2.id as event_id, CONCAT_WS(" ", e2.description, e2.street, e2.city, e2.zip) as "value", COALESCE(e2.end, e2.start) as event_date, e2.is_published, e2.cafe_id from liip_repaircafe_events e2
             UNION
             select e3.id as event_id, CONCAT_WS(" ", c.title, c.description) as "value", COALESCE(e3.end, e3.start) as event_date, e3.is_published, e3.cafe_id from liip_repaircafe_cafes c inner join liip_repaircafe_events e3 on e3.cafe_id = c.id
-            UNION
-            select e4.id as event_id, t1.value as "value", COALESCE(e4.end, e4.start) as event_date, e4.is_published, e4.cafe_id from rainlab_translate_indexes t1 inner join liip_repaircafe_events e4 on e4.id = t1.model_id and t1.model_type = "Liip\\\\RepairCafe\\\\Models\\\\Event"
-            UNION
-            select e5.id as event_id, t2.value as "value", COALESCE(e5.end, e5.start) as event_date, e5.is_published, e5.cafe_id from rainlab_translate_indexes t2 inner join liip_repaircafe_cafes c2 on c2.id = t2.model_id and t2.model_type = "Liip\\\\RepairCafe\\\\Models\\\\Cafe" inner join liip_repaircafe_events e5 on e5.cafe_id = c2.id; 
         ');
 
         DB::statement('

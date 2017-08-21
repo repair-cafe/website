@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Lang;
 use October\Rain\Database\Model;
 use October\Rain\Support\Facades\Config;
 use October\Rain\Support\Facades\Flash;
-use RainLab\Translate\Behaviors\TranslatableModel;
 use GuzzleHttp\Client as GuzzleClient;
 
 /**
@@ -16,8 +15,6 @@ class Event extends Model
     use \October\Rain\Database\Traits\Validation;
 
     use \October\Rain\Database\Traits\SoftDelete;
-
-    public $implement = [TranslatableModel::class];
 
     /**
      * The attributes that are mass assignable.
@@ -36,11 +33,6 @@ class Event extends Model
         'city',
         'latitude',
         'longitude',
-    ];
-
-    public $translatable = [
-        ['title', 'index' => true],
-        ['description', 'index' => true],
     ];
 
     protected $dates = ['deleted_at'];

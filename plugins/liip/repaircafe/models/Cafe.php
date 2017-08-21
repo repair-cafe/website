@@ -1,7 +1,6 @@
 <?php namespace Liip\RepairCafe\Models;
 
 use October\Rain\Database\Model;
-use RainLab\Translate\Behaviors\TranslatableModel;
 use System\Models\File;
 
 /**
@@ -19,8 +18,6 @@ class Cafe extends Model
     protected $slugs = ['slug' => 'name'];
 
     protected $dates = ['deleted_at'];
-
-    public $implement = [TranslatableModel::class];
 
     /**
      * The attributes that are mass assignable.
@@ -41,11 +38,6 @@ class Cafe extends Model
         'facebook',
         'twitter',
         'instagram',
-    ];
-
-    public $translatable = [
-        ['title', 'index' => true],
-        ['description', 'index' => true],
     ];
 
     /*
