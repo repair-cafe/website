@@ -1,0 +1,14 @@
+list: $/liip/repaircafe/models/news/columns.yaml
+modelClass: Liip\RepairCafe\Models\News
+title: News
+noRecordsMessage: 'backend::lang.list.no_records'
+defaultSort:
+    column: publish_date
+    direction: desc
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'liip/repaircafe/news/update/:id'

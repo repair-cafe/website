@@ -1,7 +1,7 @@
 <?php return [
     'plugin' => [
         'name' => 'RepairCafe',
-        'description' => '',
+        'description' => 'Repair Cafés organisieren',
     ],
     'cafe' => [
         'id' => 'ID',
@@ -36,18 +36,21 @@
         'events' => 'Events',
         'contacts' => 'Kontakte',
         'categories' => 'Kategorien',
+        'news' => 'News',
     ],
     'nav' => [
         'cafes' => 'Cafes',
         'events' => 'Events',
         'categories' => 'Kategorien',
         'contacts' => 'Kontakte',
+        'news' => 'News',
     ],
     'relation' => [
         'contacts' => 'Kontakte',
         'events' => 'Events',
         'categories' => 'Kategorien',
         'cafe' => 'Cafe',
+        'locale' => 'Sprache',
     ],
     'contact' => [
         'firstname' => 'Vorname',
@@ -124,5 +127,16 @@
                 'default_content' => 'Standardcontent',
             ],
         ],
+    ],
+    'news' => [
+        'id' => 'ID',
+        'title' => 'Titel',
+        'publish_date' => 'Publikationsdatum',
+        'slug' => 'Slug',
+        'lead' => 'Leadtext',
+        'content' => 'Inhalt',
+        'image' => 'Bild',
+        'created_at' => 'Erstellt am',
+        'updated_at' => 'Aktualisiert am',
     ],
 ];

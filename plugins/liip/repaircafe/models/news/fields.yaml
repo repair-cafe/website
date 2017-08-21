@@ -1,0 +1,45 @@
+fields:
+    title:
+        label: 'liip.repaircafe::lang.news.title'
+        oc.commentPosition: ''
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: 'liip.repaircafe::lang.news.slug'
+        oc.commentPosition: ''
+        span: right
+        required: 1
+        preset:
+            field: title
+            type: slug
+        type: text
+    publish_date:
+        label: 'liip.repaircafe::lang.news.publish_date'
+        mode: date
+        span: left
+        type: datepicker
+    locale:
+        label: 'liip.repaircafe::lang.relation.locale'
+        oc.commentPosition: ''
+        nameFrom: name
+        span: right
+        required: 1
+        type: relation
+    lead:
+        label: 'liip.repaircafe::lang.news.lead'
+        size: medium
+        oc.commentPosition: ''
+        span: full
+        type: richeditor
+    content:
+        label: 'liip.repaircafe::lang.news.content'
+        size: large
+        oc.commentPosition: ''
+        span: full
+        type: richeditor
+    image:
+        label: 'liip.repaircafe::lang.news.image'
+        span: left
+        type: mediafinder
+        mode: image

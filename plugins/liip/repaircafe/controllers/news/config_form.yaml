@@ -1,0 +1,10 @@
+name: News
+form: $/liip/repaircafe/models/news/fields.yaml
+modelClass: Liip\RepairCafe\Models\News
+defaultRedirect: liip/repaircafe/news
+create:
+    redirect: 'liip/repaircafe/news/update/:id'
+    redirectClose: liip/repaircafe/news
+update:
+    redirect: liip/repaircafe/news
+    redirectClose: liip/repaircafe/news

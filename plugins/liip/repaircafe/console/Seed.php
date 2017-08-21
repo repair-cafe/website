@@ -1,6 +1,7 @@
 <?php namespace Liip\RepairCafe\Console;
 
 use Illuminate\Console\Command;
+use Liip\RepairCafe\Seeds\NewsSeed;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Liip\RepairCafe\Seeds\Cafes;
@@ -30,12 +31,17 @@ class Seed extends Command
 
             $masterData->seedCategoryData();
             $this->output->writeln('All Categories created');
+            $masterData->seedLocaleData();
+            $this->output->writeln('All Locales created');
         }
 
         if ($this->option('dummydata')) {
             $cafes = new Cafes();
             $cafes->seedCafeData();
             $this->output->writeln('All Cafes created');
+            $cafes = new NewsSeed();
+            $cafes->seedNewsData();
+            $this->output->writeln('All News created');
         }
     }
 

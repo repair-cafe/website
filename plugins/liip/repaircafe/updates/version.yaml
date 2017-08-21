@@ -16,5 +16,8 @@
     - 'Created table liip_repaircafe_event_category'
     - builder_table_create_liip_repaircafe_event_category.php
 1.0.7:
+    - 'Created table liip_repaircafe_news'
+    - builder_table_create_liip_repaircafe_news.php
+1.0.8:
     - 'Create search index view'
     - builder_view_create_liip_repaircafe_search_index_view.php
