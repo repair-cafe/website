@@ -92,8 +92,6 @@ tabs:
             oc.commentPosition: ''
             span: auto
             type: text
-            comment: 'liip.repaircafe::lang.event.comments.longitude'
-            commentHtml: true
             tab: 'liip.repaircafe::lang.event.tab.address'
         latitude:
             label: 'liip.repaircafe::lang.event.latitude'
