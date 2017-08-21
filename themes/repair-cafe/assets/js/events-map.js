@@ -41,7 +41,7 @@ $( document ).ready(function() {
                 );
 
                 var popupContent = '';
-                popupContent += '<h2 class="h6"><a href="#event' + repaircafe.events[i].id + '" class="smooth-scroll">' + repaircafe.events[i].title + '</a></h2>';
+                popupContent += '<h2 class="h6"><a href="#event' + repaircafe.events[i].id + '" class="smooth-scroll" data-event-id="' + repaircafe.events[i].id + '">' + repaircafe.events[i].title + '</a></h2>';
                 popupContent += '<p>';
                 popupContent += repaircafe.labels.date + ': ' + repaircafe.events[i].date + '<br />';
                 popupContent += repaircafe.labels.address + ': ' + repaircafe.events[i].address;
@@ -79,6 +79,23 @@ $( document ).ready(function() {
                 [46.128802, 5.955620] // West
             ]);
         }
+
+        // Popup content gets generated each time the popup is opened -> we need to attach smoothscrolling behaviour each time a popup opens
+        eventsMap.on('popupopen', function (e) {
+            // Smooth scrolling when clicking links with smooth-scroll class (requires jquery.easing plugin)
+            $('.leaflet-popup-content a.smooth-scroll').bind('click', function(event) {
+                var $anchor = $(this);
+
+                // open additional event info
+                var eventId = $anchor.data('eventId');
+                $('#eventAdditionalInfo' + eventId).collapse('show');
+
+                $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top
+                }, 1500, 'easeInOutExpo');
+                event.preventDefault();
+            });
+        });
 
         // Responsive map clicks
         // enable touch and click on map
