@@ -17,7 +17,7 @@
                                     {% endif%}
                                 {% endif %}
                                 <div class="{{ eventList.condensed == false ? 'media-body' }}">
-                                    <h3 class="h5"><a href="#eventAdditionalInfo{{ event.id }}" data-toggle="collapse" aria-expanded="false" aria-controls="#eventAdditionalInfo{{ event.id }}">{{ event.getTitle }}</a></h3>
+                                    <h3 class="h5">{{ event.getTitle }}</h3>
                                     {% partial 'components/date' start=event.start end=event.end %}
                                     {% if formatted_address is not empty %}
                                         <p class="small mb-0"><a href="{{ event.getExternalMapURL }}" target="_blank">{{ formatted_address }}</a></p>
