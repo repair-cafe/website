@@ -1,0 +1,63 @@
+description = "Homepage layout"
+
+[staticPage]
+useContent = 1
+default = 0
+
+[localePicker]
+forceUrl = 1
+
+[categoryList]
+==
+<?php
+use Liip\RepairCafe\Models\Cafe;
+
+function onStart()
+{
+    $this['repair_cafe_count'] = Cafe::where('is_published', 1)->count();
+}
+?>
+==
+{variable name="lead_text" label="liip.repaircafe::lang.theme.layout.default.variables.lead_text" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="richeditor"}{/variable}
+{variable name="call_to_action_text" label="liip.repaircafe::lang.theme.layout.default.variables.call_to_action_text" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="text" span="left"}{/variable}
+{variable name="call_to_action_url" label="liip.repaircafe::lang.theme.layout.default.variables.call_to_action_url" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="text" span="right"}{/variable}
+{variable name="header_image" label="liip.repaircafe::lang.theme.layout.default.variables.header_image" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="mediafinder" mode="image" span="left"}{/variable}
+
+{% partial 'site/html-header' %}
+
+<!-- Header -->
+{% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
+
+<!-- Content -->
+<section id="site-content">
+    {% partial 'components/page-header' title='homepage.title'|__(repair_cafe_count, { repair_cafe_count: repair_cafe_count }) lead_text=lead_text header_image_url=(header_image ? header_image|media) header_image_caption=header_image_caption %}
+    <div class="page-content">
+        <section class="container mb-5">
+            <h2>{{ 'homepage.category_list.title'|_ }}</h2>
+            <ul class="list-unstyled row">
+                {% for category in categoryList.categories %}
+                    <li class="col-md-4 col-sm-6"><a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="bg-light py-5 mb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-8 text-center">
+                        <h2>{{ 'homepage.search.title'|_ }}</h2>
+                        {% partial 'components/event-search-form' %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <h2>{{ 'homepage.news.title'|_ }}</h2>
+            TODO: List news entries here
+        </section>
+    </div>
+</section>
+
+<!-- Footer -->
+{% partial 'site/footer' %}
+
+{% partial 'site/html-footer' %}

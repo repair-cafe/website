@@ -8,40 +8,21 @@ default = 0
 forceUrl = 1
 ==
 {variable name="lead_text" label="liip.repaircafe::lang.theme.layout.default.variables.lead_text" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="richeditor"}{/variable}
-{variable name="header_image" label="liip.repaircafe::lang.theme.layout.default.variables.header_image" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="mediafinder" mode="image"}{/variable}
+{variable name="call_to_action_text" label="liip.repaircafe::lang.theme.layout.default.variables.call_to_action_text" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="text" span="left"}{/variable}
+{variable name="call_to_action_url" label="liip.repaircafe::lang.theme.layout.default.variables.call_to_action_url" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="text" span="right"}{/variable}
+{variable name="header_image" label="liip.repaircafe::lang.theme.layout.default.variables.header_image" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="mediafinder" mode="image" span="left"}{/variable}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{{ this.theme.site_title ? this.theme.site_title : 'Repair Café' }} - {{ this.page.title }}</title>
-        <meta name="description" content="{{ this.page.meta_description }}">
-        <meta name="title" content="{{ this.page.meta_title }}">
-        <meta name="author" content="Team Jazz, Liip AG">
-        <link rel="icon" type="image/png" href="{{ 'assets/images/repair-cafe-logo.jpg'|theme }}">
-        {% styles %}
-        <link href="{{ 'assets/css/app.min.css'|theme }}" rel="stylesheet">
-    </head>
-    <body>
+{% partial 'site/html-header' %}
 
-        <!-- Header -->
-        {% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
+<!-- Header -->
+{% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
 
-        <!-- Content -->
-        {% placeholder page default ignore=true  %}
-            {% partial 'site/content' header_image=header_image header_image_caption='' lead_text=lead_text %}
-        {% endplaceholder %}
+<!-- Content -->
+{% placeholder page default ignore=true  %}
+    {% partial 'site/content' header_image=header_image header_image_caption='' lead_text=lead_text %}
+{% endplaceholder %}
 
-        <!-- Footer -->
-        {% partial 'site/footer' %}
+<!-- Footer -->
+{% partial 'site/footer' %}
 
-        <!-- Scripts -->
-        <script src="{{ 'assets/js/jquery.min.js'|theme }}"></script>
-        {% scripts %}
-        <script src="{{ 'assets/js/app.min.js'|theme }}"></script>
-        {% framework extras %}
-
-    </body>
-</html>
+{% partial 'site/html-footer' %}

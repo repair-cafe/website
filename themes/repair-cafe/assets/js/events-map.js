@@ -6,6 +6,12 @@ $( document ).ready(function() {
 
     // Initialize events map
     if(document.getElementById('eventsMap') && mapboxAccessToken !== '') {
+        if(repaircafe.events.length === 0) {
+            return;
+        } else {
+            $('#eventsMap').show();
+        }
+
         var eventsMap = L.map('eventsMap', {
             dragging: false,
             touchZoom: false,
@@ -60,7 +66,10 @@ $( document ).ready(function() {
         var eventMarkerBounds = eventMarkers.getBounds();
         // Check if bounds are valid (false if no marker is set)
         if(eventMarkerBounds.isValid()) {
-            eventsMap.fitBounds(eventMarkers.getBounds());
+            eventsMap.fitBounds(
+                eventMarkers.getBounds(),
+                { padding: [10, 10] }
+            );
         } else {
             // set zoom to fit whole Switzerland
             eventsMap.fitBounds([
