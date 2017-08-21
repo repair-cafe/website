@@ -1,6 +1,6 @@
 <div class="newslist">
     {% if news|length > 0 %}
-        <ul class="list-unstyled mb-5 row">
+        <ul class="list-unstyled row">
             {% for news_entry in news %}
                 <li class="{{ loop.index == 1 ? 'col-12' : 'col-sm-6' }} news" id="news{{ news.id }}">
                     <div class="news-container py-5">

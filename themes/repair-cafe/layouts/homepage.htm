@@ -8,6 +8,9 @@ default = 0
 forceUrl = 1
 
 [categoryList]
+
+[newsList]
+max_items = 3
 ==
 <?php
 use Liip\RepairCafe\Models\Cafe;
@@ -52,7 +55,8 @@ function onStart()
         </section>
         <section class="container">
             <h2>{{ 'homepage.news.title'|_ }}</h2>
-            TODO: List news entries here
+            {% partial 'components/newslist' news=newsList.getNews %}
+            <p class="text-center"><a class="btn btn-outline-secondary" href="{{ 'newslist'|page }}" role="button">{{ 'homepage.news.show_more_btn'|_ }}</a></p>
         </section>
     </div>
 </section>

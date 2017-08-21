@@ -13,6 +13,7 @@ de:
     homepage.title: ':repair_cafe_count Repair Café in der Schweiz|:repair_cafe_count Repair Cafés in der Schweiz'
     homepage.category_list.title: 'Was reparieren wir?'
     homepage.search.title: 'Finde ein Repair Café'
+    homepage.news.show_more_btn: 'Alle Neuigkeiten'
     homepage.news.title: 'Aktuelles'
     newslist.lead: 'Lorem ipsum dolor sit amet, ad usu quaeque commune prodesset, id solet principes sit. Lorem interpretaris et nec. Nec ne possim invidunt repudiandae. Nam luptatum singulis ad, ut sit ullum molestie. Esse nibh qui ne, ei minim vivendum facilisis vis.'
     newslist.no_news_found: 'Momentan gibt es keine neuen Nachrichten'
