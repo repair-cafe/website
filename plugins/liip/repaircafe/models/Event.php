@@ -77,10 +77,10 @@ class Event extends Model
     public function getStaticMapURL()
     {
         if (!empty($this->latitude) && !empty($this->longitude)) {
-            $access_tocen = Config::get('liip.repaircafe::mapbox_access_token');
+            $access_token = Config::get('liip.repaircafe::mapbox_access_token');
             $api_url = Config::get('liip.repaircafe::static_map_api_url');
 
-            $api_url = str_replace("{ACCESS_TOKEN}", $access_tocen, $api_url);
+            $api_url = str_replace("{ACCESS_TOKEN}", $access_token, $api_url);
             $api_url = str_replace("{LATITUDE}", $this->latitude, $api_url);
             $api_url = str_replace("{LONGITUDE}", $this->longitude, $api_url);
 
