@@ -14,3 +14,7 @@
 @import "components/eventlist";
 @import "components/eventmap";
 @import "components/newslist";
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
