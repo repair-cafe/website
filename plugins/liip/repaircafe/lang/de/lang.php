@@ -89,6 +89,7 @@
     'category' => [
         'name' => 'Name',
         'slug' => 'Slug',
+        'description' => 'Beschreibung',
     ],
     'component' => [
         'categorylist' => [

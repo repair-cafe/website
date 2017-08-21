@@ -1,24 +1,32 @@
 -
   name: Velos
   slug: velos
+  description: Velos, Mofas und weitere 2-Räder
 -
   name: Schmuck
   slug: schmuck
+  description: Alles was funkelt und glänzt
 -
   name: Elektro allgemein
   slug: elektro
+  description: Dinge die Strom benötigen
 -
   name: Haushaltsgeräte
   slug: haushaltsgeraete
+  description: Alles für den Haushalt
 -
   name: Unterhaltungselektronik
   slug: unterhaltungselektronik
+  description: Alles was Spass macht
 -
   name: Computer
   slug: computer
+  description: Computer, Notebooks und Periferie
 -
   name: Handy und Tablet
   slug: handy-und-tablet
+  description: Alles rund um die Mobilgeräte
 -
   name: Textilien
   slug: textilien
+  description: Nähen, Stricken, usw.

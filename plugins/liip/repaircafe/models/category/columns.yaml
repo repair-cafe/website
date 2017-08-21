@@ -3,8 +3,11 @@ columns:
         label: 'liip.repaircafe::lang.category.name'
         type: text
         searchable: true
-        width: '100%'
     slug:
         label: 'liip.repaircafe::lang.category.slug'
+        type: text
+        searchable: true
+    description:
+        label: 'liip.repaircafe::lang.category.description'
         type: text
         searchable: true
