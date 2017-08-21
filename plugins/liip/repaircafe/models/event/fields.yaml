@@ -57,6 +57,18 @@ tabs:
             span: auto
             type: relation
             tab: 'liip.repaircafe::lang.event.tab.general'
+        addressfinder:
+            label: 'liip.repaircafe::lang.event.addressfinder'
+            comment: 'liip.repaircafe::lang.event.comments.addressfinder'
+            type: addressfinder
+            countryRestriction: 'ch'
+            fieldMap:
+                latitude: latitude
+                longitude: longitude
+                city: city
+                zip: zip
+                street: street
+            tab: 'liip.repaircafe::lang.event.tab.address'
         street:
             label: 'liip.repaircafe::lang.event.street'
             oc.commentPosition: ''
@@ -80,8 +92,6 @@ tabs:
             oc.commentPosition: ''
             span: auto
             type: text
-            comment: 'liip.repaircafe::lang.event.comments.longitude'
-            commentHtml: true
             tab: 'liip.repaircafe::lang.event.tab.address'
         latitude:
             label: 'liip.repaircafe::lang.event.latitude'

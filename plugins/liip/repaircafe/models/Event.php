@@ -61,19 +61,6 @@ class Event extends Model
      */
     public $table = 'liip_repaircafe_events';
 
-    private function getGeocodingApiEndpoint($address)
-    {
-        $api_url = Config::get('liip.repaircafe::geocoding_api_url');
-        $api_key = Config::get('liip.repaircafe::googlemaps_geocoding_api_key');
-        $region = Config::get('liip.repaircafe::region');
-
-        $api_url = str_replace("{API_KEY}", $api_key, $api_url);
-        $api_url = str_replace("{ADDRESS}", rawurlencode($address), $api_url);
-        $api_url = str_replace("{REGION}", $region, $api_url);
-
-        return $api_url;
-    }
-
     public function getStaticMapURL()
     {
         if (!empty($this->latitude) && !empty($this->longitude)) {
@@ -146,30 +133,6 @@ class Event extends Model
             return $this->title ? $this->title : $this->cafe->title;
         } else {
             return $this->cafe->title . ( $this->title ? ': ' . $this->title : '' );
-        }
-    }
-
-    public function beforeSave()
-    {
-        if ((empty($this->latitude) && empty($this->longitude)) &&
-        ($this->street && $this->zip && $this->city)) {
-            $api_url = $this->getGeocodingApiEndpoint($this->getFormattedAddress());
-
-            $client = new GuzzleClient();
-            try {
-                $response = $client->get($api_url);
-                $json = $response->getBody();
-                $data = json_decode($json, true);
-
-                if (!empty($data) && array_key_exists('results', $data) && count($data['results']) > 0) {
-                    $this->latitude = $data['results'][0]['geometry']['location']['lat'];
-                    $this->longitude = $data['results'][0]['geometry']['location']['lng'];
-                } else {
-                    Flash::warning(Lang::get('liip.repaircafe::lang.event.messages.geocoding_error'));
-                }
-            } catch (Exception $e) {
-                Flash::warning(Lang::get('liip.repaircafe::lang.event.messages.geocoding_error'));
-            }
         }
     }
 }
