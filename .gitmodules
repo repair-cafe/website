@@ -10,3 +10,6 @@
 [submodule "plugins/vojtasvoboda/twigextensions"]
 	path = plugins/vojtasvoboda/twigextensions
 	url = https://github.com/vojtasvoboda/oc-twigextensions-plugin.git
+[submodule "plugins/rainlab/location"]
+	path = plugins/rainlab/location
+	url = https://github.com/repair-cafe/location-plugin.git
