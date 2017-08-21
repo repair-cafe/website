@@ -1,5 +1,15 @@
 .eventlist {
     button.close {
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+        color: $link-color;
+
+        @include hover-focus {
+            color: $link-hover-color;
+        }
+
         .fa-chevron-toggle:before {
             content: "\F077";
         }
@@ -15,10 +25,10 @@
     }
 
     > ul.events {
-        border-top: dashed 1px $gray-900;
+        border-top: solid 1px $hr-border-color;
 
         > li {
-            border-bottom: dashed 1px $gray-900;
+            border-bottom: solid 1px $hr-border-color;
         }
     }
 }
