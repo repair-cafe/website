@@ -32,14 +32,19 @@ function onStart()
 {% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
 
 <!-- Content -->
-<section id="site-content">
+<section id="site-content" class="home">
     {% partial 'components/page-header' title='homepage.title'|__(repair_cafe_count, { repair_cafe_count: repair_cafe_count }) lead_text=lead_text header_image_url=(header_image ? header_image|media) header_image_caption=header_image_caption %}
     <div class="page-content">
         <section class="container mb-5">
             <h2>{{ 'homepage.category_list.title'|_ }}</h2>
             <ul class="list-unstyled row">
                 {% for category in categoryList.categories %}
-                    <li class="col-md-4 col-sm-6"><a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">{{ category.name }}</a></li>
+                    <li class="col-lg-4 col-md-6 mb-3">
+                        <a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">
+                            <img src="{{ ('assets/images/categories/icon-' ~ category.slug ~ '.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/categories/icon-' ~ category.slug ~ '@2x.png')|theme }}'" class="category-logo mr-2" title="{{ category.name ~ ': ' ~ category.description }}" />
+                            {{ category.name }}
+                        </a>
+                    </li>
                 {% endfor %}
             </ul>
         </section>

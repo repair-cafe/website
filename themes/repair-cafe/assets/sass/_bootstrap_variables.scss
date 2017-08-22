@@ -50,26 +50,26 @@
 //
 
 $white:  #fff !default;
-$gray-100: #f7f7f9 !default;
+//$gray-100: #f7f7f9 !default;
 $gray-200: #f3f3f3 !default;
 //$gray-300: #dee2e6 !default;
 //$gray-400: #ced4da !default;
 //$gray-500: #adb5bd !default;
-$gray-600: #b9b7ba !default;
+$gray-600: #b9b6ba !default;
 $gray-700: #4a4a4a !default;
-$gray-800: #343a40 !default;
+//$gray-800: #343a40 !default;
 $gray-900: #292929 !default;
 $black:  #000 !default;
 
 $grays: (
-    100: $gray-100,
+    //100: $gray-100,
     200: $gray-200,
     //300: $gray-300,
     //400: $gray-400,
     //500: $gray-500,
     600: $gray-600,
     700: $gray-700,
-    800: $gray-800,
+    //800: $gray-800,
     900: $gray-900
 ) !default;
 
@@ -86,9 +86,9 @@ $cyan:    #17a2b8 !default;
 
 $rouge: #961a29 !default;
 $rouge-bright: #b72032 !default;
-$dark-sky-blue: #4cabe5 !default;
+$dark-sky-blue: #1975ae !default;
 
-$colors: (
+/* $colors: (
     blue: $blue,
     indigo: $indigo,
     purple: $purple,
@@ -101,21 +101,21 @@ $colors: (
     cyan: $cyan,
     white: $white,
     gray: $gray-600,
-    gray-dark: $gray-800,
-) !default;
+    gray-dark: $gray-900,
+) !default; */
 
 $theme-colors: (
     primary: $dark-sky-blue,
-    secondary: $gray-600,
+    secondary: $gray-700,
     success: $green,
     info: $cyan,
     warning: $yellow,
     danger: $red,
     light: $gray-200,
-    dark: $gray-800,
+    dark: $gray-700,
     rouge: $rouge,
     rouge-bright: $rouge-bright,
-    dark-sky-blue: $dark-sky-blue
+    dark-sky-blue: $dark-sky-blue,
 ) !default;
 
 // Set a specific jump point for requesting color jumps
@@ -179,7 +179,7 @@ $link-hover-decoration: none !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom: 1rem;
+$paragraph-margin-bottom: .75rem;
 
 
 // Grid breakpoints
@@ -222,11 +222,11 @@ $grid-gutter-width: 30px !default;
 //
 // Define common padding and border radius sizes and more.
 
-$line-height-lg:         1.5 !default;
-$line-height-sm:         1.5 !default;
+$line-height-lg:         1.6 !default;
+$line-height-sm:         1.6 !default;
 
 $border-width: 2px !default;
-$border-color: $gray-200 !default;
+$border-color: $gray-600 !default;
 
 $border-radius:          .25rem !default;
 $border-radius-lg:       .3rem !default;
@@ -250,28 +250,28 @@ $font-family-sans-serif: "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple C
 $font-family-monospace:  "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
 
-$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base: 1.125rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:   1.25rem !default;
-$font-size-sm:   .875rem !default;
+$font-size-sm:   1rem !default;
 
 $font-weight-light: 300 !default;
 $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
 
 $font-weight-base: $font-weight-normal !default;
-$line-height-base: 1.5 !default;
+$line-height-base: 1.6 !default;
 
-$h1-font-size: 2.5rem !default;
-$h2-font-size: 2rem !default;
-$h3-font-size: 1.75rem !default;
-$h4-font-size: 1.5rem !default;
-$h5-font-size: 1.25rem !default;
+$h1-font-size: 2.1875rem !default; // 35px
+$h2-font-size: 1.5625rem !default;
+$h3-font-size: 1.3125rem !default;
+$h4-font-size: 1.125rem !default;
+$h5-font-size: 1rem !default;
 $h6-font-size: 1rem !default;
 
-$headings-margin-bottom: ($spacer / 2) !default;
+$headings-margin-bottom: $spacer !default;
 $headings-font-family:   inherit !default;
 $headings-font-weight:   700 !default;
-$headings-line-height:   1.1 !default;
+$headings-line-height:   1.4 !default;
 $headings-color:         inherit !default;
 
 $display1-size: 6rem !default;
@@ -295,7 +295,7 @@ $text-muted: $gray-600 !default;
 $blockquote-small-color:  $gray-600 !default;
 $blockquote-font-size:    ($font-size-base * 1.25) !default;
 
-$hr-border-color: rgba($black,.1) !default;
+$hr-border-color: $border-color !default;
 $hr-border-width: $border-width !default;
 
 $mark-padding: .2em !default;
@@ -365,7 +365,7 @@ $btn-border-radius:              $border-radius !default;
 $btn-border-radius-lg:           $border-radius-lg !default;
 $btn-border-radius-sm:           $border-radius-sm !default;
 
-$btn-transition:                 background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$btn-transition:                 none !default;
 
 
 // Forms
@@ -518,7 +518,7 @@ $dropdown-box-shadow:            0 .5rem 1rem rgba($black,.175) !default;
 
 $dropdown-link-color:            $gray-900 !default;
 $dropdown-link-hover-color:      darken($gray-900, 5%) !default;
-$dropdown-link-hover-bg:         $gray-100 !default;
+$dropdown-link-hover-bg:         $gray-200 !default;
 
 $dropdown-link-active-color:     $component-active-color !default;
 $dropdown-link-active-bg:        $component-active-bg !default;
@@ -767,7 +767,7 @@ $list-group-border-radius:       $border-radius !default;
 $list-group-item-padding-y:      .75rem !default;
 $list-group-item-padding-x:      1.25rem !default;
 
-$list-group-hover-bg:                 $gray-100 !default;
+$list-group-hover-bg:                 $gray-200 !default;
 $list-group-active-color:             $component-active-color !default;
 $list-group-active-bg:                $component-active-bg !default;
 $list-group-active-border-color:      $list-group-active-bg !default;
@@ -848,7 +848,7 @@ $code-font-size:              90% !default;
 $code-padding-y:              .2rem !default;
 $code-padding-x:              .4rem !default;
 $code-color:                  #bd4147 !default;
-$code-bg:                     $gray-100 !default;
+$code-bg:                     $gray-200 !default;
 
 $kbd-color:                   $white !default;
 $kbd-bg:                      $gray-900 !default;

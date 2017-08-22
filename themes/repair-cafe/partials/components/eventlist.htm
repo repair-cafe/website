@@ -17,7 +17,7 @@
                                     {% endif%}
                                 {% endif %}
                                 <div class="{{ eventList.condensed == false ? 'media-body' }}">
-                                    <h3 class="h5"><a href="#eventAdditionalInfo{{ event.id }}" data-toggle="collapse" aria-expanded="false" aria-controls="#eventAdditionalInfo{{ event.id }}">{{ event.getTitle }}</a></h3>
+                                    <h3 class="h5">{{ event.getTitle }}</h3>
                                     {% partial 'components/date' start=event.start end=event.end %}
                                     {% if formatted_address is not empty %}
                                         <p class="small mb-0"><a href="{{ event.getExternalMapURL }}" target="_blank">{{ formatted_address }}</a></p>
@@ -25,13 +25,17 @@
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <button type="button" class="close collapsed" data-toggle="collapse" data-target="#eventAdditionalInfo{{ event.id }}" aria-expanded="false" aria-controls="#eventAdditionalInfo{{ event.id }}">
-                                    <i class="fa fa-chevron-toggle" aria-hidden="true"></i>
-                                </button>
-                                <ul class="list-unstyled">
+                                <a class="btn btn-link pull-right additional-info-toggle collapsed" data-toggle="collapse" href="#eventAdditionalInfo{{ event.id }}" aria-expanded="false" aria-controls="eventAdditionalInfo{{ event.id }}">
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </a>
+                                <ul class="list-inline categories">
                                     {% for category in event.categories %}
-                                        {# TODO find better solution for link creation #}
-                                        <li><a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">{{ category.name }}<span class="sr-only">{{ category.description }}</span></a></li>
+                                        <li class="list-inline-item mb-2">
+                                            {# TODO find better solution for link creation #}
+                                            <a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">
+                                                <img src="{{ ('assets/images/categories/icon-' ~ category.slug ~ '.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/categories/icon-' ~ category.slug ~ '@2x.png')|theme }}'" class="category-logo" title="{{ category.name ~ ': ' ~ category.description }}" />
+                                            </a>
+                                        </li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -39,7 +43,12 @@
                         <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}" data-event-id="{{ event.id }}">
                             {% if static_map_url %}
                                 <div class="col-md-6 mb-3">
-                                    <a href="{{ event.getExternalMapURL }}" target="_blank"><img src="http://via.placeholder.com/1080x500" data-lazy-load-src="{{ static_map_url }}" data-lazy-load-event-id="{{ event.id }}" class="img-fluid" /></a>
+                                    <div class="static-map">
+                                        <a href="{{ event.getExternalMapURL }}" target="_blank">
+                                            <img src="{{ 'assets/images/placeholder-map@2x.jpg'|theme }}" data-lazy-load-src="{{ static_map_url }}" data-lazy-load-event-id="{{ event.id }}" class="img-fluid" />
+                                        </a>
+                                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw" data-lazy-load-event-id="{{ event.id }}"></i>
+                                    </div>
                                 </div>
                             {% endif %}
                             <div class="col-md-6 mb-3 small">

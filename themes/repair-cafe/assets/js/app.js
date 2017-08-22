@@ -16,6 +16,10 @@ $( document ).ready(function() {
     $('.additional-info.collapse').on('show.bs.collapse', function () {
         var eventId = $(this).data('eventId');
         var image = $('img[data-lazy-load-event-id=' + eventId + ']:not(.loaded)');
+        var loadingSpinner = $('i.fa-spinner[data-lazy-load-event-id=' + eventId + ']');
+        if(loadingSpinner.length > 0) {
+            loadingSpinner.hide();
+        }
         if(image.length > 0) {
             image.addClass('loaded');
             image.attr('src', image.data('lazyLoadSrc'));

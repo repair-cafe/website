@@ -1,9 +1,10 @@
-// Imports
 @import "fonts";
 @import "~bootstrap/scss/functions";
 @import "bootstrap_variables";
 @import "bootstrap";
+@import "type";
 
+@import "layouts/home";
 @import "components/service-area";
 @import "components/main-navigation";
 @import "components/page-header";
@@ -14,3 +15,7 @@
 @import "components/eventlist";
 @import "components/eventmap";
 @import "components/newslist";
+
+html {
+    -webkit-font-smoothing: antialiased;
+}

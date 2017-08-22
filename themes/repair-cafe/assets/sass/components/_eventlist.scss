@@ -1,11 +1,22 @@
 .eventlist {
-    button.close {
-        .fa-chevron-toggle:before {
-            content: "\F077";
+    .category-logo {
+        width: 40px;
+    }
+
+    .additional-info-toggle {
+        font-size: 1rem;
+        margin-top: -8px;
+
+        .fa {
+            transform: scale(1, -1);
+            transition-duration: .3s;
+            transform-origin: center;
         }
         &.collapsed {
-            .fa-chevron-toggle:before {
-                content: "\F078";
+            .fa {
+                transform: none;
+                transition-duration: .3s;
+                transform-origin: center;
             }
         }
     }
@@ -15,10 +26,22 @@
     }
 
     > ul.events {
-        border-top: dashed 1px $gray-900;
+        border-top: solid 1px $hr-border-color;
 
         > li {
-            border-bottom: dashed 1px $gray-900;
+            border-bottom: solid 1px $hr-border-color;
+        }
+    }
+
+    .static-map {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .fa-spinner {
+            position: absolute;
+            color: theme-color("primary");
         }
     }
 }
