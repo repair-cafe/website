@@ -39,7 +39,12 @@
                         <div class="row additional-info collapse" id="eventAdditionalInfo{{ event.id }}" data-event-id="{{ event.id }}">
                             {% if static_map_url %}
                                 <div class="col-md-6 mb-3">
-                                    <a href="{{ event.getExternalMapURL }}" target="_blank"><img src="http://via.placeholder.com/1080x500" data-lazy-load-src="{{ static_map_url }}" data-lazy-load-event-id="{{ event.id }}" class="img-fluid" /></a>
+                                    <div class="static-map">
+                                        <a href="{{ event.getExternalMapURL }}" target="_blank">
+                                            <img src="{{ 'assets/images/placeholder-map@2x.jpg'|theme }}" data-lazy-load-src="{{ static_map_url }}" data-lazy-load-event-id="{{ event.id }}" class="img-fluid" />
+                                        </a>
+                                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw" data-lazy-load-event-id="{{ event.id }}"></i>
+                                    </div>
                                 </div>
                             {% endif %}
                             <div class="col-md-6 mb-3 small">
