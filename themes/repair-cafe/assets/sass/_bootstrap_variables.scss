@@ -268,7 +268,7 @@ $h4-font-size: 1.125rem !default;
 $h5-font-size: 1rem !default;
 $h6-font-size: 1rem !default;
 
-$headings-margin-bottom: ($spacer / 2) !default;
+$headings-margin-bottom: $spacer !default;
 $headings-font-family:   inherit !default;
 $headings-font-weight:   700 !default;
 $headings-line-height:   1.4 !default;
