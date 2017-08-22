@@ -48,13 +48,14 @@ class BootstrapFourPresenter implements PresenterContract
     /**
      * Convert the URL window into Bootstrap HTML.
      *
+     * @param string $containerClass Additional container class.
      * @return string
      */
-    public function render()
+    public function render($containerClass = '')
     {
         if ($this->hasPages()) {
             return sprintf(
-                '<ul class="pagination">%s %s %s</ul>',
+                '<ul class="pagination' . ( !empty($containerClass) ? ' ' . $containerClass : '' ) .'">%s %s %s</ul>',
                 $this->getPreviousButton(),
                 $this->getLinks(),
                 $this->getNextButton()
