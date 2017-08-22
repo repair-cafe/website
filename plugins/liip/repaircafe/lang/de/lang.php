@@ -84,7 +84,7 @@
         'comments' => [
             'start' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
             'end' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
-            'addressfinder' => 'Dieses Feld dient lediglich zum Suchen und automatisierten Vervollständigen der Addressfelder. Der Wert wird nicht in die Datenbank gespeichert.',
+            'addressfinder' => 'Dieses Feld dient lediglich zum Suchen und automatisierten Vervollständigen der Addressfelder.',
         ],
     ],
     'category' => [
