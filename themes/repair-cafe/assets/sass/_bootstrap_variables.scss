@@ -594,7 +594,7 @@ $navbar-light-toggler-border-color: rgba($black,.1) !default;
 
 // Pagination
 
-$pagination-padding-y:                .5rem !default;
+$pagination-padding-y:                .35rem !default;
 $pagination-padding-x:                .75rem !default;
 $pagination-padding-y-sm:             .25rem !default;
 $pagination-padding-x-sm:             .5rem !default;
@@ -604,12 +604,12 @@ $pagination-line-height:              1.25 !default;
 
 $pagination-color:                     $link-color !default;
 $pagination-bg:                        $white !default;
-$pagination-border-width:              $border-width !default;
-$pagination-border-color:              #ddd !default;
+$pagination-border-width:              1px !default;
+$pagination-border-color:              theme-color("primary") !default;
 
-$pagination-hover-color:               $link-hover-color !default;
-$pagination-hover-bg:                  $gray-200 !default;
-$pagination-hover-border-color:        #ddd !default;
+$pagination-hover-color:               $white !default;
+$pagination-hover-bg:                  theme-color("primary") !default;
+$pagination-hover-border-color:        theme-color("primary") !default;
 
 $pagination-active-color:              $white !default;
 $pagination-active-bg:                 theme-color("primary") !default;
