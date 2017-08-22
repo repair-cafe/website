@@ -21,7 +21,7 @@ is_hidden = 0
     </div>
     <div class="page-content">
         <div class="container">
-            {% partial 'components/newslist' news=newsList.getNews bootstrap_four_presenter=newsList.bootstrap_four_presenter %}
+            {% partial 'components/newslist' news=newsList.getNews newsPaginator=newsList.newsPaginator %}
         </div>
     </div>
 </div>
