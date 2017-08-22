@@ -28,10 +28,14 @@
                                 <a class="btn btn-link pull-right additional-info-toggle collapsed" data-toggle="collapse" href="#eventAdditionalInfo{{ event.id }}" aria-expanded="false" aria-controls="eventAdditionalInfo{{ event.id }}">
                                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                 </a>
-                                <ul class="list-unstyled">
+                                <ul class="list-inline categories">
                                     {% for category in event.categories %}
-                                        {# TODO find better solution for link creation #}
-                                        <li><a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">{{ category.name }}<span class="sr-only">{{ category.description }}</span></a></li>
+                                        <li class="list-inline-item mb-2">
+                                            {# TODO find better solution for link creation #}
+                                            <a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">
+                                                <img src="{{ ('assets/images/categories/icon-' ~ category.slug ~ '.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/categories/icon-' ~ category.slug ~ '@2x.png')|theme }}'" class="category-image" title="{{ category.name ~ ': ' ~ category.description }}" />
+                                            </a>
+                                        </li>
                                     {% endfor %}
                                 </ul>
                             </div>
