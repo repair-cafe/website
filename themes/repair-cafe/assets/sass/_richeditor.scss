@@ -3,11 +3,11 @@
      * Text
      */
     .oc-text-gray {
-        color: #AAA !important;
+        color: $gray-600 !important;
     }
     .oc-text-bordered {
-        border-top: solid 1px #222;
-        border-bottom: solid 1px #222;
+        border-top: solid 1px $hr-border-color;
+        border-bottom: solid 1px $hr-border-color;
         padding: 10px 0;
     }
     .oc-text-spaced {
@@ -21,7 +21,7 @@
      * Links
      */
     a.oc-link-strong {
-        font-weight: 700;
+        font-weight: $font-weight-bold;
     }
     a.oc-link-green {
         color: green;
@@ -35,7 +35,7 @@
         border-style: dashed;
     }
     table.oc-alternate-rows tbody tr:nth-child(2n) {
-        background: #f5f5f5;
+        background: $gray-200;
     }
 
     /*
@@ -58,7 +58,7 @@
         background-clip: padding-box;
     }
     img.oc-img-bordered {
-        border: solid 10px #CCC;
+        border: solid 10px $gray-600;
         box-sizing: content-box;
     }
 
