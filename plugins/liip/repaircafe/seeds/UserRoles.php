@@ -34,7 +34,6 @@ class UserRoles
                 'permissions' => [
                     'repaircafe.cafes' => true,
                     'repaircafe.events' => true,
-                    'repaircafe.contacts' => true,
                     'repaircafe.main' => true,
                 ],
                 'is_new_user_default' => true
@@ -68,7 +67,6 @@ class UserRoles
                     'rainlab.pages.manage_menus' => true,
                     'repaircafe.news' => true,
                     'repaircafe.events' => true,
-                    'repaircafe.contacts' => true,
                     'repaircafe.categories' => true,
                     'repaircafe.cafes' => true,
                 ],

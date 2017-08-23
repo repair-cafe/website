@@ -14,9 +14,6 @@ permissions:
     liip.repaircafe.events:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.events'
-    liip.repaircafe.contacts:
-        tab: 'liip.repaircafe::lang.plugin.name'
-        label: 'liip.repaircafe::lang.permissions.contacts'
     liip.repaircafe.news:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.news'

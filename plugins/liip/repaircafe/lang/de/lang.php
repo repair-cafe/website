@@ -34,7 +34,6 @@
     'permissions' => [
         'cafes' => 'Cafes',
         'events' => 'Events',
-        'contacts' => 'Kontakte',
         'categories' => 'Kategorien',
         'news' => 'News',
     ],
