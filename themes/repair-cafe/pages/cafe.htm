@@ -22,66 +22,47 @@ condensed = 1
     <div class="page-content">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 mb-3">
+                <div class="col-md-2 mb-3">
                     {% if cafeDetail.cafe.logo is not empty %}
                         <img class="img-fluid" src="{{ cafeDetail.cafe.logo.path }}" alt="{{ cafeDetail.cafe.title }}">
                     {% elseif this.theme.repair_cafe_default_logo is not empty %}
                         <img class="img-fluid" src="{{ this.theme.repair_cafe_default_logo|media }}" alt="{{ cafeDetail.cafe.title }}">
                     {% endif%}
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-6 mb-3">
                     <div class="richeditor-content">
                         {{ cafeDetail.cafe.description|raw }}
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            {% set formatted_address = cafeDetail.cafe.getFormattedAddress %}
-                            {% if formatted_address is not empty %}
-                                <h2 class="h5">{{ 'page.cafe.address'|_ }}</h2>
-                                <p>{{ formatted_address|raw }}</p>
-                            {% endif %}
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            {% if cafeDetail.cafe.website_link or cafeDetail.cafe.contact_link or cafeDetail.cafe.facebook or cafeDetail.cafe.twitter or cafeDetail.cafe.instagram %}
-                                <h2 class="h5">{{ 'page.cafe.external_links'|_ }}</h2>
-                                <ul class="fa-ul">
-                                    {% if cafeDetail.cafe.website_link %}
-                                        <li><i class="fa-li fa fa-home"></i><a href="{{ cafeDetail.cafe.website_link }}">{{ 'page.cafe.website_link'|_ }}</a></li>
-                                    {% endif %}
-                                    {% if cafeDetail.cafe.contact_link %}
-                                        <li><i class="fa-li fa fa-pencil-square-o"></i><a href="{{ cafeDetail.cafe.contact_link }}">{{ 'page.cafe.contact_link'|_ }}</a></li>
-                                    {% endif %}
-                                    {% if cafeDetail.cafe.facebook %}
-                                        <li><i class="fa-li fa fa-facebook-official"></i><a href="{{ cafeDetail.cafe.facebook }}">{{ 'page.cafe.facebook'|_ }}</a></li>
-                                    {% endif %}
-                                    {% if cafeDetail.cafe.twitter %}
-                                        <li><i class="fa-li fa fa-twitter"></i><a href="{{ cafeDetail.cafe.twitter }}">{{ 'page.cafe.twitter'|_ }}</a></li>
-                                    {% endif %}
-                                    {% if cafeDetail.cafe.instagram %}
-                                        <li><i class="fa-li fa fa-instagram"></i><a href="{{ cafeDetail.cafe.instagram }}">{{ 'page.cafe.instagram'|_ }}</a></li>
-                                    {% endif %}
-                                </ul>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% if cafeDetail.cafe.contacts|length > 0 %}
-                        <div class="row">
-                            <div class="col-12 mb-3">
-                                <h2 class="h5">{{ 'page.cafe.contacts'|_ }}</h2>
-                                <div class="row">
-                                    {% for contact in cafeDetail.cafe.contacts %}
-                                        <div class="col-lg-4 col-md-6">
-                                            {% partial 'components/contact' contact=contact %}
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-md-4 mb-3">
+                    {% set formatted_address = cafeDetail.cafe.getFormattedAddress %}
+                    {% if formatted_address or cafeDetail.cafe.website_link or cafeDetail.cafe.contact_link or cafeDetail.cafe.facebook or cafeDetail.cafe.twitter or cafeDetail.cafe.instagram %}
+                    <ul class="fa-ul">
+                        {% if formatted_address %}
+                            <li><i class="fa-li fa fa-home"></i><a href="{{ cafeDetail.cafe.getExternalMapURL }}">{{ formatted_address }}</a></li>
+                        {% endif %}
+                        {% if cafeDetail.cafe.website_link %}
+                            <li><i class="fa-li fa fa-globe"></i><a href="{{ cafeDetail.cafe.website_link }}" class="break-word">{{ cafeDetail.cafe.website_link }}</a></li>
+                        {% endif %}
+                        {% if cafeDetail.cafe.contact_link %}
+                            <li><i class="fa-li fa fa-pencil-square-o"></i><a href="{{ cafeDetail.cafe.contact_link }}">{{ 'page.cafe.contact_link'|_ }}</a></li>
+                        {% endif %}
+                        {% if cafeDetail.cafe.facebook %}
+                            <li><i class="fa-li fa fa-facebook-official"></i><a href="{{ cafeDetail.cafe.facebook }}">{{ 'page.cafe.facebook'|_ }}</a></li>
+                        {% endif %}
+                        {% if cafeDetail.cafe.twitter %}
+                            <li><i class="fa-li fa fa-twitter"></i><a href="{{ cafeDetail.cafe.twitter }}">{{ 'page.cafe.twitter'|_ }}</a></li>
+                        {% endif %}
+                        {% if cafeDetail.cafe.instagram %}
+                            <li><i class="fa-li fa fa-instagram"></i><a href="{{ cafeDetail.cafe.instagram }}">{{ 'page.cafe.instagram'|_ }}</a></li>
+                        {% endif %}
+                    </ul>
                     {% endif %}
                 </div>
             </div>
             {% partial 'components/eventlist' eventList=eventList %}
+            {% partial 'components/contacts' contacts=cafeDetail.cafe.contacts %}
         </div>
     </div>
 </div>

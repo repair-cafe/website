@@ -7,7 +7,7 @@
 {% if contact.email or contact.phone or contact.facebook or contact.twitter %}
     <ul class="fa-ul">
         {% if contact.email %}
-            <li><i class="fa-li fa fa-envelope-o"></i><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
+            <li><i class="fa-li fa fa-envelope-o"></i><a href="mailto:{{ contact.email }}" class="break-word">{{ contact.email }}</a></li>
         {% endif %}
         {% if contact.phone %}
             <li><i class="fa-li fa fa-phone"></i><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></li>
