@@ -10,7 +10,7 @@ cafe_slug = "{{ :slug }}"
 condensed = 1
 ==
 {% put page %}
-<div class="events">
+<div class="cafe">
     {% if cafeDetail.cafe.image is not empty %}
         {% set header_image_url = cafeDetail.cafe.image.path %}
     {% elseif this.theme.repair_cafe_default_image is not empty %}
@@ -38,7 +38,7 @@ condensed = 1
                 <div class="col-md-4 mb-3">
                     {% set formatted_address = cafeDetail.cafe.getFormattedAddress %}
                     {% if formatted_address or cafeDetail.cafe.website_link or cafeDetail.cafe.contact_link or cafeDetail.cafe.facebook or cafeDetail.cafe.twitter or cafeDetail.cafe.instagram %}
-                    <ul class="fa-ul">
+                    <ul class="fa-ul small">
                         {% if formatted_address %}
                             <li><i class="fa-li fa fa-home"></i><a href="{{ cafeDetail.cafe.getExternalMapURL }}">{{ formatted_address }}</a></li>
                         {% endif %}

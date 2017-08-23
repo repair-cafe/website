@@ -1,22 +1,25 @@
-{% if contact.profile_picture %}
-    <img src="{{ contact.profile_picture.path }}" class="img-fluid mb-3" />
-{% elseif this.theme.contact_default_image is not empty %}
-    <img class="img-fluid" src="{{ this.theme.contact_default_image|media }}">
-{% endif %}
-<h3 class="h6">{{ contact.firstname }} {{ contact.lastname }}</h3>
-{% if contact.email or contact.phone or contact.facebook or contact.twitter %}
-    <ul class="fa-ul">
-        {% if contact.email %}
-            <li><i class="fa-li fa fa-envelope-o"></i><a href="mailto:{{ contact.email }}" class="break-word">{{ contact.email }}</a></li>
-        {% endif %}
-        {% if contact.phone %}
-            <li><i class="fa-li fa fa-phone"></i><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></li>
-        {% endif %}
-        {% if contact.facebook %}
-            <li><i class="fa-li fa fa-facebook-official"></i><a href="{{ contact.facebook }}">{{ 'contact.facebook'|_ }}</a></li>
-        {% endif %}
-        {% if contact.twitter %}
-            <li><i class="fa-li fa fa-twitter"></i><a href="{{ contact.twitter }}">{{ 'contact.twitter'|_ }}</a></li>
-        {% endif %}
-    </ul>
-{% endif %}
+<div class="contact">
+    {% if contact.profile_picture %}
+        {% set profile_picture_src = contact.profile_picture.path %}
+    {% else %}
+        {% set profile_picture_src = 'assets/images/placeholder-contact@2x.jpg'|theme %}
+    {% endif %}
+    <img src="{{ profile_picture_src }}" class="img-fluid rounded-circle mb-3 profile-picture" />
+    <h3 class="h6">{{ contact.firstname }} {{ contact.lastname }}</h3>
+    {% if contact.email or contact.phone or contact.facebook or contact.twitter %}
+        <ul class="fa-ul small">
+            {% if contact.email %}
+                <li><i class="fa-li fa fa-envelope-o"></i><a href="mailto:{{ contact.email }}" class="break-word">{{ contact.email }}</a></li>
+            {% endif %}
+            {% if contact.phone %}
+                <li><i class="fa-li fa fa-phone"></i><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></li>
+            {% endif %}
+            {% if contact.facebook %}
+                <li><i class="fa-li fa fa-facebook-official"></i><a href="{{ contact.facebook }}">{{ 'contact.facebook'|_ }}</a></li>
+            {% endif %}
+            {% if contact.twitter %}
+                <li><i class="fa-li fa fa-twitter"></i><a href="{{ contact.twitter }}">{{ 'contact.twitter'|_ }}</a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
+</div>
