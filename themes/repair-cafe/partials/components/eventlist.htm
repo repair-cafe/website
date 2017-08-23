@@ -1,7 +1,8 @@
 <div class="eventlist">
+    <h2>{{ 'eventlist.title'|_ }}</h2>
     {% if eventList.eventsGroupedByMonth|length > 0 %}
         {% for month, events in eventList.eventsGroupedByMonth %}
-            <h2>{{ month|localizeddate_formatted('MMMM Y') }}</h2>
+            <h3>{{ month|localizeddate_formatted('MMMM Y') }}</h3>
             <ul class="events list-unstyled mb-5">
                 {% for event in events %}
                     {% set static_map_url = event.getStaticMapURL %}
@@ -17,7 +18,7 @@
                                     {% endif%}
                                 {% endif %}
                                 <div class="{{ eventList.condensed == false ? 'media-body' }}">
-                                    <h3 class="h5">{{ event.getTitle }}</h3>
+                                    <h4 class="h5">{{ event.getTitle }}</h4>
                                     {% partial 'components/date' start=event.start end=event.end %}
                                     {% if formatted_address is not empty %}
                                         <p class="small mb-0"><a href="{{ event.getExternalMapURL }}" target="_blank">{{ formatted_address }}</a></p>
@@ -68,6 +69,6 @@
         {% endfor %}
         {{ eventList.eventPaginator.render('justify-content-center')|raw }}
     {% else %}
-        <p class="text-center">{{ 'eventlist.no_events_found'|_ }}</p>
+        <p>{{ 'eventlist.no_events_found'|_ }}</p>
     {% endif %}
 </div>

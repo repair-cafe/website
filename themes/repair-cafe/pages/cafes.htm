@@ -13,7 +13,7 @@ is_hidden = 0
             <div class="page-header-content-container container text-center py-5">
                 <div class="page-header-content row justify-content-center">
                     <div class="col-lg-8">
-                        <h1>{{ 'eventlist.title'|_ }}</h1>
+                        <h1>{{ 'cafes.title'|_ }}</h1>
                         {% partial 'components/event-search-form' showCategories=true categories=categoryList.categoryOptions %}
                     </div>
                 </div>
@@ -29,9 +29,9 @@ is_hidden = 0
                         'mapboxAccessToken': '{{ eventList.mapboxAccessToken }}'
                     };
                     repaircafe['labels'] = {
-                        'date': '{{ "eventlist.map.date"|_ }}',
-                        'address': '{{ "eventlist.map.address"|_ }}',
-                        'categoryTitle': '{{ "eventlist.map.category_title"|_ }}'
+                        'date': '{{ "cafes.map.date"|_ }}',
+                        'address': '{{ "cafes.map.address"|_ }}',
+                        'categoryTitle': '{{ "cafes.map.category_title"|_ }}'
                     };
                 </script>
                 {% partial 'components/eventlist' eventList=eventList %}
