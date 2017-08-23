@@ -2,15 +2,15 @@ columns:
     firstname:
         label: 'liip.repaircafe::lang.contact.firstname'
         type: text
-        searchable: true
+        searchable: false
     lastname:
         label: 'liip.repaircafe::lang.contact.lastname'
         type: text
-        searchable: true
+        searchable: false
     email:
         label: 'liip.repaircafe::lang.contact.email'
         type: text
-        searchable: true
+        searchable: false
     phone:
         label: 'liip.repaircafe::lang.contact.phone'
         type: text

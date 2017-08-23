@@ -5,7 +5,8 @@ columns:
     title:
         label: 'liip.repaircafe::lang.cafe.title'
         type: text
-        width: '100%'
+        searchable: true
+        width: 100%
     description:
         label: 'liip.repaircafe::lang.cafe.description'
         type: text

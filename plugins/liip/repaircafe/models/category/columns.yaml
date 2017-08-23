@@ -6,8 +6,8 @@ columns:
     slug:
         label: 'liip.repaircafe::lang.category.slug'
         type: text
-        searchable: true
+        searchable: false
     description:
         label: 'liip.repaircafe::lang.category.description'
         type: text
-        searchable: true
+        searchable: false
