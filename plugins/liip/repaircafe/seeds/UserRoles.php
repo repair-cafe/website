@@ -60,9 +60,17 @@ class UserRoles
                 'code' => 'contentManager',
                 'description' => 'Members of this group can see and edit cms-content.',
                 'permissions' => [
-                    'rainlab.pages.manage_content' => true,
+                    'cms.manage_themes' => true,
+                    'media.manage_media' => true,
+                    'rainlab.pages.manage_pages' => true,
                     'rainlab.pages.access_snippets' => true,
+                    'rainlab.pages.manage_content' => true,
+                    'rainlab.pages.manage_menus' => true,
                     'repaircafe.news' => true,
+                    'repaircafe.events' => true,
+                    'repaircafe.contacts' => true,
+                    'repaircafe.categories' => true,
+                    'repaircafe.cafes' => true,
                 ],
                 'is_new_user_default' => false
             ]);
