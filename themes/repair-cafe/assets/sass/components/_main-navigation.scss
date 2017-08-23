@@ -15,6 +15,10 @@
             padding: ($spacer / 2) $spacer;
         }
 
+        .navbar-brand img {
+            height: 30px;
+        }
+
         @include media-breakpoint-up(lg) {
             min-height: 120px;
 

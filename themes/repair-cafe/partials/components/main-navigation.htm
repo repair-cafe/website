@@ -6,7 +6,7 @@ code = {{ localized_menucode }}
 <div class="main-navigation">
     <nav class="navbar navbar-light navbar-expand-lg">
         <a class="navbar-brand d-lg-none" href="{{ 'homepage'|page }}">
-            <img src="{{ 'assets/images/repair-cafe-logo.jpg'|theme }}" height="30" />
+            <img src="{{ ('assets/images/repair-cafe-logo-' ~ activeLocale ~ '.jpg')|theme }}" />
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigationContent" aria-controls="mainNavigationContent" aria-expanded="false" aria-label="{{ 'site.header.main_navigation.toggler.label'|_ }}">
