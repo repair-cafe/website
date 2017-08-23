@@ -1,0 +1,12 @@
+<div class="navbar-service-area container-fluid d-lg-none">
+    <div class="row">
+        <div class="col-6">
+            {% partial 'components/language-switcher' locales=locales activeLocale=activeLocale %}
+        </div>
+        <div class="col-6 text-center login">
+            <a href="{{ '/backend' }}" class="ml-auto">
+                {{ 'site.header.service_area.login'|_ }}
+            </a>
+        </div>
+    </div>
+</div>
