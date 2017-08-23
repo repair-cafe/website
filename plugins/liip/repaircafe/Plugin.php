@@ -81,8 +81,8 @@ class Plugin extends PluginBase
                 return $model->groups()->whereName($role)->exists();
             });
 
-            $model->addDynamicMethod('isAdmin', function () use ($model) {
-                return $model->hasRole('owners');
+            $model->addDynamicMethod('isRepairCafeAdmin', function () use ($model) {
+                return $model->hasRole('owners') || $model->hasRole('contentManager');
             });
         });
 

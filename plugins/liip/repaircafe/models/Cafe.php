@@ -87,7 +87,7 @@ class Cafe extends Model
     {
         $user = BackendAuth::getUser();
 
-        if (!$user->isAdmin()) {
+        if (!$user->isRepairCafeAdmin()) {
             $query->whereHas('users', function ($user_query) use ($user) {
                 $user_query->where('user_id', $user->id);
             });
@@ -97,13 +97,13 @@ class Cafe extends Model
 
     public function beforeCreate()
     {
-        $user = BackendAuth::getUser();
+        /*$user = BackendAuth::getUser();
 
-        if (!$user->isAdmin()) {
-//            TODO: this action still sends a success-message, though it does not create a cafe
+        if (!$user->isRepairCafeAdmin()) {
+            // TODO: this action still sends a success-message, though it does not create a cafe
             Flash::error('You are not allowed. Nice try.');
             return false;
-        }
+        }*/
     }
 
     public function getFormattedAddress()
