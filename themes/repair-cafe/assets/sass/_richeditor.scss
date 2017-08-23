@@ -1,0 +1,70 @@
+.richeditor-content {
+    /*
+     * Text
+     */
+    .oc-text-gray {
+        color: $gray-600 !important;
+    }
+    .oc-text-bordered {
+        border-top: solid 1px $hr-border-color;
+        border-bottom: solid 1px $hr-border-color;
+        padding: 10px 0;
+    }
+    .oc-text-spaced {
+        letter-spacing: 1px;
+    }
+    .oc-text-uppercase {
+        text-transform: uppercase;
+    }
+
+    /*
+     * Links
+     */
+    a.oc-link-strong {
+        font-weight: $font-weight-bold;
+    }
+    a.oc-link-green {
+        color: green;
+    }
+
+    /*
+     * Table
+     */
+    table.oc-dashed-borders td,
+    table.oc-dashed-borders th {
+        border-style: dashed;
+    }
+    table.oc-alternate-rows tbody tr:nth-child(2n) {
+        background: $gray-200;
+    }
+
+    /*
+     * Table cell
+     */
+    table td.oc-cell-highlighted,
+    table th.oc-cell-highlighted {
+        border: 1px double red;
+    }
+    table td.oc-cell-thick-border,
+    table th.oc-cell-thick-border {
+        border-width: 2px;
+    }
+
+    /*
+     * Images
+     */
+    img.oc-img-rounded {
+        border-radius: 100%;
+        background-clip: padding-box;
+    }
+    img.oc-img-bordered {
+        border: solid 10px $gray-600;
+        box-sizing: content-box;
+    }
+
+    // Responsive images when content width is too small
+    img {
+        max-width: 100%;
+        height: auto !important;
+    }
+}

@@ -13,3 +13,6 @@
 [submodule "plugins/rainlab/location"]
 	path = plugins/rainlab/location
 	url = https://github.com/repair-cafe/location-plugin.git
+[submodule "plugins/krisawzm/embed"]
+	path = plugins/krisawzm/embed
+	url = https://github.com/kalfheim/embed-plugin.git
