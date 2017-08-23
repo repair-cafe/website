@@ -9,7 +9,7 @@ use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 class NewsList extends ComponentBase
 {
     private $news;
-    public $bootstrap_four_presenter;
+    public $newsPaginator;
     private $max_items;
 
     public function componentDetails()
@@ -47,7 +47,7 @@ class NewsList extends ComponentBase
             $news = $newsQuery->take(intval($this->max_items))->get();
         } else {
             $news = $newsQuery->paginate($newsPerPage);
-            $this->bootstrap_four_presenter = new BootstrapFourPresenter($news);
+            $this->newsPaginator = new BootstrapFourPresenter($news);
         }
         $this->news = $news;
     }

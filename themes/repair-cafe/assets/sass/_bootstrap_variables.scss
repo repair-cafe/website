@@ -564,8 +564,8 @@ $nav-pills-link-active-bg:    $component-active-bg !default;
 
 // Navbar
 
-$navbar-padding-y:                  ($spacer / 2) !default;
-$navbar-padding-x:                  $spacer !default;
+$navbar-padding-y:                  0 !default;
+$navbar-padding-x:                  0 !default;
 
 $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
@@ -590,12 +590,12 @@ $navbar-light-hover-color:          $link-color !default;
 $navbar-light-active-color:         $link-color !default;
 $navbar-light-disabled-color:       rgba($black,.3) !default;
 $navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-light-toggler-border-color: rgba($black,.1) !default;
+$navbar-light-toggler-border-color: transparent !default;
 
 // Pagination
 
-$pagination-padding-y:                .5rem !default;
-$pagination-padding-x:                .75rem !default;
+$pagination-padding-y:                .55rem !default;
+$pagination-padding-x:                .9rem !default;
 $pagination-padding-y-sm:             .25rem !default;
 $pagination-padding-x-sm:             .5rem !default;
 $pagination-padding-y-lg:             .75rem !default;
@@ -604,12 +604,12 @@ $pagination-line-height:              1.25 !default;
 
 $pagination-color:                     $link-color !default;
 $pagination-bg:                        $white !default;
-$pagination-border-width:              $border-width !default;
-$pagination-border-color:              #ddd !default;
+$pagination-border-width:              1px !default;
+$pagination-border-color:              theme-color("primary") !default;
 
-$pagination-hover-color:               $link-hover-color !default;
-$pagination-hover-bg:                  $gray-200 !default;
-$pagination-hover-border-color:        #ddd !default;
+$pagination-hover-color:               $white !default;
+$pagination-hover-bg:                  theme-color("primary") !default;
+$pagination-hover-border-color:        theme-color("primary") !default;
 
 $pagination-active-color:              $white !default;
 $pagination-active-bg:                 theme-color("primary") !default;

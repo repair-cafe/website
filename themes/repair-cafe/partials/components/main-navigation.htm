@@ -14,6 +14,7 @@ code = {{ localized_menucode }}
         </button>
 
         <div class="collapse navbar-collapse" id="mainNavigationContent">
+            {% partial 'components/navbar-service-area' locales=locales activeLocale=activeLocale %}
             {% partial 'components/bootstrap4-menu' menu=mainMenu menuContainerClass='mx-auto' %}
         </div>
     </nav>

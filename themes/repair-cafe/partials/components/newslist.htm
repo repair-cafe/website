@@ -1,6 +1,6 @@
 <div class="newslist">
     {% if news|length > 0 %}
-        <ul class="list-unstyled row">
+        <ul class="list-unstyled row mb-5">
             {% for news_entry in news %}
                 <li class="{{ loop.index == 1 ? 'col-12' : 'col-sm-6' }} news" id="news{{ news.id }}">
                     <div class="news-container py-5">
@@ -8,12 +8,12 @@
                             <div class="col-6">
                                 {% if news_entry.image is not empty %}
                                     <img class="img-fluid" src="{{ news_entry.image|media }}" alt="{{ news_entry.title }}">
-                                {% elseif this.theme.news_default_image is not empty %}
-                                    <img class="img-fluid" src="{{ this.theme.news_default_image|media }}" alt="{{ news_entry.title }}">
+                                {% else %}
+                                    <img class="img-fluid" src="{{ 'assets/images/placeholder-news@2x.png'|theme }}" alt="{{ news_entry.title }}">
                                 {% endif%}
                             </div>
                             <div class="col-6">
-                                <h3 class="{{ loop.index == 1 ? 'h4' : 'h5' }}"><a href="{{ 'news'|page({ slug: news_entry.slug }) }}">{{ news_entry.title }}</a></h3>
+                                <h3 class="{{ loop.index == 1 ? 'h4' : 'h5' }} mb-0"><a href="{{ 'news'|page({ slug: news_entry.slug }) }}">{{ news_entry.title }}</a></h3>
                                 <p class="text-muted small">{{ news_entry.publish_date|localizeddate_formatted('cccc, dd. MMMM y') }}</p>
                                 <div class="richeditor-content{{ loop.index == 1 ? '' : ' small' }}">
                                     {% set text = (news_entry.lead is not empty ? news_entry.lead : news_entry.content) %}
@@ -26,8 +26,8 @@
                 </li>
             {% endfor %}
         </ul>
-        {% if news.render|default is not empty and bootstrap_four_presenter|default is not empty %}
-            {{ news.render(bootstrap_four_presenter)|raw }}
+        {% if newsPaginator|default is not empty %}
+            {{ newsPaginator.render('justify-content-center')|raw }}
         {% endif %}
     {% else %}
         <p class="text-center">{{ 'newslist.no_news_found'|_ }}</p>

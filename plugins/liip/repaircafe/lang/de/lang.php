@@ -84,7 +84,7 @@
         'comments' => [
             'start' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
             'end' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
-            'addressfinder' => 'Dieses Feld dient lediglich zum Suchen und automatisierten Vervollständigen der Addressfelder. Der Wert wird nicht in die Datenbank gespeichert.',
+            'addressfinder' => 'Dieses Feld dient lediglich zum Suchen und automatisierten Vervollständigen der Addressfelder.',
         ],
     ],
     'category' => [
@@ -116,7 +116,6 @@
             'contact_email' => 'Kontakt Email-Adresse',
             'repair_cafe_default_image' => 'Standard Repair Café Bild',
             'repair_cafe_default_logo' => 'Standard Repair Café Logo',
-            'news_default_image' => 'Standard News Bild',
             'contact_default_image' => 'Standard Kontakt Bild',
             'social_facebook' => 'Facebook Page',
             'social_twitter' => 'Twitter Page',
