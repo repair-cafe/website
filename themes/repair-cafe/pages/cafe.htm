@@ -38,26 +38,26 @@ condensed = 1
                 <div class="col-md-4 mb-3">
                     {% set formatted_address = cafeDetail.cafe.getFormattedAddress %}
                     {% if formatted_address or cafeDetail.cafe.website_link or cafeDetail.cafe.contact_link or cafeDetail.cafe.facebook or cafeDetail.cafe.twitter or cafeDetail.cafe.instagram %}
-                    <ul class="fa-ul small">
-                        {% if formatted_address %}
-                            <li><i class="fa-li fa fa-home"></i><a href="{{ cafeDetail.cafe.getExternalMapURL }}">{{ formatted_address }}</a></li>
-                        {% endif %}
-                        {% if cafeDetail.cafe.website_link %}
-                            <li><i class="fa-li fa fa-globe"></i><a href="{{ cafeDetail.cafe.website_link }}" class="break-word">{{ cafeDetail.cafe.website_link }}</a></li>
-                        {% endif %}
-                        {% if cafeDetail.cafe.contact_link %}
-                            <li><i class="fa-li fa fa-pencil-square-o"></i><a href="{{ cafeDetail.cafe.contact_link }}">{{ 'page.cafe.contact_link'|_ }}</a></li>
-                        {% endif %}
-                        {% if cafeDetail.cafe.facebook %}
-                            <li><i class="fa-li fa fa-facebook-official"></i><a href="{{ cafeDetail.cafe.facebook }}">{{ 'page.cafe.facebook'|_ }}</a></li>
-                        {% endif %}
-                        {% if cafeDetail.cafe.twitter %}
-                            <li><i class="fa-li fa fa-twitter"></i><a href="{{ cafeDetail.cafe.twitter }}">{{ 'page.cafe.twitter'|_ }}</a></li>
-                        {% endif %}
-                        {% if cafeDetail.cafe.instagram %}
-                            <li><i class="fa-li fa fa-instagram"></i><a href="{{ cafeDetail.cafe.instagram }}">{{ 'page.cafe.instagram'|_ }}</a></li>
-                        {% endif %}
-                    </ul>
+                        <ul class="fa-ul small">
+                            {% if formatted_address %}
+                                <li><i class="fa-li fa fa-home"></i><a href="{{ cafeDetail.cafe.getExternalMapURL }}">{{ formatted_address }}</a></li>
+                            {% endif %}
+                            {% if cafeDetail.cafe.website_link %}
+                                <li><i class="fa-li fa fa-globe"></i><a href="{{ cafeDetail.cafe.website_link }}" class="break-word">{{ cafeDetail.cafe.website_link }}</a></li>
+                            {% endif %}
+                            {% if cafeDetail.cafe.contact_link %}
+                                <li><i class="fa-li fa fa-pencil-square-o"></i><a href="{{ cafeDetail.cafe.contact_link }}">{{ 'page.cafe.contact_link'|_ }}</a></li>
+                            {% endif %}
+                            {% if cafeDetail.cafe.facebook %}
+                                <li><i class="fa-li fa fa-facebook-official"></i><a href="{{ cafeDetail.cafe.facebook }}">{{ 'page.cafe.facebook'|_ }}</a></li>
+                            {% endif %}
+                            {% if cafeDetail.cafe.twitter %}
+                                <li><i class="fa-li fa fa-twitter"></i><a href="{{ cafeDetail.cafe.twitter }}">{{ 'page.cafe.twitter'|_ }}</a></li>
+                            {% endif %}
+                            {% if cafeDetail.cafe.instagram %}
+                                <li><i class="fa-li fa fa-instagram"></i><a href="{{ cafeDetail.cafe.instagram }}">{{ 'page.cafe.instagram'|_ }}</a></li>
+                            {% endif %}
+                        </ul>
                     {% endif %}
                 </div>
             </div>
