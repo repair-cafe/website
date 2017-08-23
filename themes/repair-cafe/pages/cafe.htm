@@ -22,16 +22,25 @@ condensed = 1
     <div class="page-content">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 mb-3">
-                    {% if cafeDetail.cafe.logo is not empty %}
-                        <img class="img-fluid" src="{{ cafeDetail.cafe.logo.path }}" alt="{{ cafeDetail.cafe.title }}">
-                    {% elseif this.theme.repair_cafe_default_logo is not empty %}
-                        <img class="img-fluid" src="{{ this.theme.repair_cafe_default_logo|media }}" alt="{{ cafeDetail.cafe.title }}">
-                    {% endif%}
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="richeditor-content">
-                        {{ cafeDetail.cafe.description|raw }}
+                <div class="col-md-8 mb-3">
+                    <div class="row">
+                        {% if cafeDetail.cafe.logo is not empty %}
+                            {% set cafe_logo = cafeDetail.cafe.logo.path %}
+                        {% elseif this.theme.repair_cafe_default_logo is not empty %}
+                            {% set cafe_logo = this.theme.repair_cafe_default_logo|media %}
+                        {% endif %}
+
+                        {% if cafe_logo|default %}
+                            <div class="col-3 col-lg-2">
+                                <img class="img-fluid" src="{{ cafe_logo }}" alt="{{ cafeDetail.cafe.title }}">
+                            </div>
+                        {% endif %}
+
+                        <div class="col-9 col-lg-10">
+                            <div class="richeditor-content">
+                                {{ cafeDetail.cafe.description|raw }}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
