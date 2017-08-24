@@ -2,7 +2,6 @@
 
 use Backend\Facades\BackendAuth;
 use October\Rain\Database\Model;
-use October\Rain\Support\Facades\Flash;
 use System\Models\File;
 use Backend\Models\User as BackendUserModel;
 
@@ -94,17 +93,6 @@ class Cafe extends Model
         }
 
         return $query;
-    }
-
-    public function beforeCreate()
-    {
-        $user = BackendAuth::getUser();
-
-        if (!$user->isAdmin()) {
-//            TODO: this action still sends a success-message, though it does not create a cafe
-            Flash::error('You are not allowed. Nice try.');
-            return false;
-        }
     }
 
     public function getFormattedAddress()

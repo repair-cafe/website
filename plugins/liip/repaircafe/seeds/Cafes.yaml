@@ -11,6 +11,8 @@
   twitter: https://www.twitter.com/flickkafihorgen/
   instagram: https://www.instagram.com/flickkafihorgen/
   is_published: true
+  image: image_horgen.jpg
+  logo: logo_horgen.png
   contacts:
   -
     firstname: Urs
@@ -26,6 +28,7 @@
     phone: '023456789'
     facebook: https://www.facebook.com/vreniAufFacebook
     twitter: https://www.twitter.com/vreniTwittert
+    profile_picture: 7.jpg
   -
     firstname: Wolly
     lastname: Schäfer
@@ -33,6 +36,7 @@
     phone: '023456789'
     facebook: https://www.facebook.com/wollyAufFacebook
     twitter: https://www.twitter.com/wollyTwittert
+    profile_picture: 44.jpg
   events:
   -
     title: 2. Schweizer Reparaturtag
@@ -80,6 +84,8 @@
   twitter: https://www.twitter.com/zuri-repair-cafe/
   instagram: https://www.instagram.com/zuri-repair-cafe/
   is_published: true
+  image: image_zurich.jpg
+  logo: logo_zurich.png
   contacts:
   -
     firstname: Bob
@@ -88,6 +94,7 @@
     phone: '023456789'
     facebook: https://www.facebook.com/bobsfacebook
     twitter: https://www.twitter.com/bobsTwittert
+    profile_picture: 47.jpg
   events:
   -
     title: 2. Schweizer Reparaturtag
