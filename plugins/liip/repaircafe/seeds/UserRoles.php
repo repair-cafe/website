@@ -32,9 +32,8 @@ class UserRoles
                 'code' => 'repaircafeOrganisator',
                 'description' => 'Members of this group can see and edit repair-cafes they are assigned to.',
                 'permissions' => [
-                    'repaircafe.cafes' => true,
-                    'repaircafe.events' => true,
-                    'repaircafe.main' => true,
+                    'liip.repaircafe.cafes' => true,
+                    'liip.repaircafe.events' => true,
                 ],
                 'is_new_user_default' => true
             ]);
@@ -65,10 +64,10 @@ class UserRoles
                     'rainlab.pages.access_snippets' => true,
                     'rainlab.pages.manage_content' => true,
                     'rainlab.pages.manage_menus' => true,
-                    'repaircafe.news' => true,
-                    'repaircafe.events' => true,
-                    'repaircafe.categories' => true,
-                    'repaircafe.cafes' => true,
+                    'liip.repaircafe.news' => true,
+                    'liip.repaircafe.events' => true,
+                    'liip.repaircafe.categories' => true,
+                    'liip.repaircafe.cafes' => true,
                 ],
                 'is_new_user_default' => false
             ]);
