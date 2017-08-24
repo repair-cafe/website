@@ -17,6 +17,9 @@ permissions:
     liip.repaircafe.news:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.news'
+    liip.repaircafe.settings:
+        tab: 'liip.repaircafe::lang.plugin.name'
+        label: 'liip.repaircafe::lang.permissions.settings'
 navigation:
     main-menu-cafe:
         label: 'liip.repaircafe::lang.plugin.name'

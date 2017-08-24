@@ -36,6 +36,7 @@
         'events' => 'Events',
         'categories' => 'Kategorien',
         'news' => 'News',
+        'settings' => 'Einstellungen',
     ],
     'nav' => [
         'cafes' => 'Cafes',
