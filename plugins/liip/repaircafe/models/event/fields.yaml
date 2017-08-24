@@ -18,7 +18,6 @@ tabs:
             oc.commentPosition: ''
             nameFrom: title
             descriptionFrom: id
-            list: $/liip/repaircafe/models/cafe/columns.yaml
             span: left
             type: dropdown
             tab: 'liip.repaircafe::lang.event.tab.general'

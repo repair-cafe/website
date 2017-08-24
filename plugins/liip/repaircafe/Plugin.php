@@ -87,7 +87,6 @@ class Plugin extends PluginBase
         });
 
         BackendUsersController::extendFormFields(function ($form, $model, $context) {
-
             if (!$model instanceof BackendUserModel) {
                 return;
             }

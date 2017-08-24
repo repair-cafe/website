@@ -92,6 +92,7 @@ class Cafe extends Model
                 $user_query->where('user_id', $user->id);
             });
         }
+
         return $query;
     }
 
