@@ -16,18 +16,17 @@
     "license": "ISC",
     "devDependencies": {
         "axios": "^0.16.2",
+        "laravel-mix": "^1.2.2",
+        "lodash": "^4.17.4"
+    },
+    "dependencies": {
         "bootstrap": "^4.0.0-beta",
         "font-awesome": "^4.7.0",
         "jquery": "^3.2.1",
-        "laravel-mix": "^1.2.2",
-        "lodash": "^4.17.4",
-        "popper.js": "^1.11.1",
-        "vue": "^2.4.1"
-    },
-    "dependencies": {
         "jquery.easing": "^1.4.1",
         "leaflet": "^1.2.0",
         "leaflet.locatecontrol": "^0.62.0",
-        "leaflet.markercluster": "^1.0.6"
+        "leaflet.markercluster": "^1.0.6",
+        "popper.js": "^1.11.1"
     }
 }

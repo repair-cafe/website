@@ -155,7 +155,6 @@
             'social_googleplus' => 'Google+ Page',
             'tab' => [
                 'general' => 'Allgemein',
-                'social_media' => 'Social Media',
                 'default_content' => 'Standardcontent',
             ],
         ],
