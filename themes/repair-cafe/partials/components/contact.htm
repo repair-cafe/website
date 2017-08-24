@@ -1,6 +1,6 @@
 <div class="contact">
     {% if contact.profile_picture %}
-        {% set profile_picture_src = contact.profile_picture.path %}
+        {% set profile_picture_src = contact.profile_picture.getThumb(200,200,'crop') %}
     {% else %}
         {% set profile_picture_src = 'assets/images/placeholder-contact@2x.jpg'|theme %}
     {% endif %}
