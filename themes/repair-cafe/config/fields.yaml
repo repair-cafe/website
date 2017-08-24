@@ -4,6 +4,7 @@ tabs:
             label: 'liip.repaircafe::lang.theme.fields.contact_email'
             span: full
             type: text
+            default: 'repaircafe@konsumentenschutz.ch'
             tab: 'liip.repaircafe::lang.theme.fields.tab.general'
         social_facebook:
             label: 'liip.repaircafe::lang.theme.fields.social_facebook'
