@@ -16,3 +16,6 @@
 [submodule "plugins/krisawzm/embed"]
 	path = plugins/krisawzm/embed
 	url = https://github.com/kalfheim/embed-plugin.git
+[submodule "plugins/excodus/translateextended"]
+	path = plugins/excodus/translateextended
+	url = https://github.com/Excodus/oc-translate-extended.git

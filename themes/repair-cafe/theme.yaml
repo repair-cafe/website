@@ -12,3 +12,4 @@ require:
     - RainLab.Location
     - VojtaSvoboda.TwigExtensions
     - Krisawzm.Embed
+    - Excodus.TranslateExtended
