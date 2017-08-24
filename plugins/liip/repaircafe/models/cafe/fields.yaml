@@ -29,15 +29,17 @@ tabs:
             span: full
             type: richeditor
             tab: 'liip.repaircafe::lang.cafe.tab.general'
-        image:
-            label: 'liip.repaircafe::lang.cafe.image'
-            tab: 'liip.repaircafe::lang.cafe.tab.general'
-            type: fileupload
-            mode: image
         logo:
             label: 'liip.repaircafe::lang.cafe.logo'
             tab: 'liip.repaircafe::lang.cafe.tab.general'
             type: fileupload
+            span: left
+            mode: image
+        image:
+            label: 'liip.repaircafe::lang.cafe.image'
+            tab: 'liip.repaircafe::lang.cafe.tab.general'
+            type: fileupload
+            span: right
             mode: image
         street:
             label: 'liip.repaircafe::lang.cafe.street'
