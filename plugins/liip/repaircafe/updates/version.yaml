@@ -21,3 +21,6 @@
 1.0.8:
     - 'Create search index view'
     - builder_view_create_liip_repaircafe_search_index_view.php
+1.0.9:
+    - 'Created table liip_repaircafe_cafe_user'
+    - builder_table_create_liip_repaircafe_cafe_user.php

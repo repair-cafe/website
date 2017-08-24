@@ -17,9 +17,9 @@ tabs:
             label: 'liip.repaircafe::lang.relation.cafe'
             oc.commentPosition: ''
             nameFrom: title
-            descriptionFrom: description
+            descriptionFrom: id
             span: left
-            type: relation
+            type: dropdown
             tab: 'liip.repaircafe::lang.event.tab.general'
         title:
             label: 'liip.repaircafe::lang.event.title'

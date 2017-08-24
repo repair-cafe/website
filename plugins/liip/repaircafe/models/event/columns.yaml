@@ -7,6 +7,7 @@ columns:
     title:
         label: 'liip.repaircafe::lang.event.title'
         type: text
+        searchable: true
     description:
         label: 'liip.repaircafe::lang.event.description'
         type: text

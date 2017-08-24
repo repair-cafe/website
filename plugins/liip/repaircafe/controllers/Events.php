@@ -71,4 +71,14 @@ class Events extends Controller
             ));
         }
     }
+
+    public function listExtendQuery($query)
+    {
+        return $query->authorized();
+    }
+
+    public function formExtendQuery($query)
+    {
+        return $query->authorized();
+    }
 }

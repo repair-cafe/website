@@ -34,9 +34,9 @@
     'permissions' => [
         'cafes' => 'Cafes',
         'events' => 'Events',
-        'contacts' => 'Kontakte',
         'categories' => 'Kategorien',
         'news' => 'News',
+        'settings' => 'Einstellungen',
     ],
     'nav' => [
         'cafes' => 'Cafes',
@@ -85,6 +85,13 @@
             'start' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
             'end' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
             'addressfinder' => 'Dieses Feld dient lediglich zum Suchen und automatisierten Vervollständigen der Addressfelder.',
+        ],
+    ],
+    'user' => [
+        'tab' => [
+            'cafes' => 'Repair Cafés',
+            'cafe_label' => 'Repair Cafés',
+            'cafe_comment' => 'Wählen Sie Cafés aus, die dieser User sehen und bearbeiten darf.',
         ],
     ],
     'category' => [

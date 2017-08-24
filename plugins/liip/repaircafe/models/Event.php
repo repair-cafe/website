@@ -1,6 +1,7 @@
 <?php namespace Liip\RepairCafe\Models;
 
 use October\Rain\Database\Model;
+use Backend\Facades\BackendAuth;
 
 /**
  * Model
@@ -129,5 +130,31 @@ class Event extends Model
         } else {
             return $this->cafe->title . ( $this->title ? ': ' . $this->title : '' );
         }
+    }
+
+    public function scopeAuthorized($query)
+    {
+        $user = BackendAuth::getUser();
+
+        if (!$user->isRepairCafeAdmin()) {
+            $query->whereHas('cafe', function ($cafe_query) use ($user) {
+                $cafe_query->whereHas('users', function ($user_query) use ($user) {
+                    $user_query->where('user_id', $user->id);
+                });
+            });
+        }
+
+        return $query;
+    }
+
+    public function getCafeOptions()
+    {
+        $cafes = Cafe::query()->authorized()->get();
+        $form = [];
+        foreach ($cafes as $cafe) {
+            $form[$cafe->id] = $cafe->title;
+        }
+
+        return $form;
     }
 }

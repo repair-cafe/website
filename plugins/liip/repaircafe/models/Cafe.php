@@ -1,7 +1,9 @@
 <?php namespace Liip\RepairCafe\Models;
 
+use Backend\Facades\BackendAuth;
 use October\Rain\Database\Model;
 use System\Models\File;
+use Backend\Models\User as BackendUserModel;
 
 /**
  * Model
@@ -60,6 +62,13 @@ class Cafe extends Model
         ]
     ];
 
+    public $belongsToMany = [
+        'users' => [
+            BackendUserModel::class,
+            'table' => 'liip_repaircafe_cafe_user'
+        ]
+    ];
+
     /**
      * @var string The database table used by the model.
      */
@@ -71,6 +80,19 @@ class Cafe extends Model
     public function scopePublished($query)
     {
         return $query->where('is_published', true);
+    }
+
+    public function scopeAuthorized($query)
+    {
+        $user = BackendAuth::getUser();
+
+        if (!$user->isRepairCafeAdmin()) {
+            $query->whereHas('users', function ($user_query) use ($user) {
+                $user_query->where('user_id', $user->id);
+            });
+        }
+
+        return $query;
     }
 
     public function getFormattedAddress()
