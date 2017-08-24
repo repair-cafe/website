@@ -80,7 +80,7 @@ class Event extends Model
         if (!empty($this->getFormattedAddress())) {
             $external_map_url = Settings::get('external_map_url', '');
 
-            $external_map_url = str_replace("{QUERY}", rawurlencode($this->getFormattedAddress()), $external_map_url);
+            $external_map_url = str_replace("{ADDRESS}", rawurlencode($this->getFormattedAddress()), $external_map_url);
         }
         return $external_map_url;
     }
