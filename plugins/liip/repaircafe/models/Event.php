@@ -70,6 +70,7 @@ class Event extends Model
             $api_url = str_replace("{ACCESS_TOKEN}", $access_token, $api_url);
             $api_url = str_replace("{LATITUDE}", $this->latitude, $api_url);
             $api_url = str_replace("{LONGITUDE}", $this->longitude, $api_url);
+            $api_url = str_replace("{PIN_COLOR}", '4cabe5', $api_url);
 
             return $api_url;
         } else {

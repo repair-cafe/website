@@ -138,4 +138,17 @@
         'created_at' => 'Erstellt am',
         'updated_at' => 'Aktualisiert am',
     ],
+    'settings' => [
+        'label' => 'Repair Café Einstellungen',
+        'description' => 'Konfiguriere das Repair Café Plugin',
+        'static_map_api_url' => 'URL zur Generierung des Static Map Images',
+        'external_map_url' => 'URL zum externen Map-Dienst',
+        'mapbox_access_token' => 'Mapbox Access Token',
+        'events_per_page' => 'Anzahl Events pro Seite',
+        'news_per_page' => 'Anzahl News pro Seite',
+        'comments' => [
+            'static_map_api_url' => 'Muss folgende Parameter beinhalten: {PIN_COLOR}, {LONGITUDE}, {LATITUDE}, {ACCESS_TOKEN}',
+            'external_map_url' => 'Muss folgende Parameter beinhalten: {QUERY}',
+        ],
+    ],
 ];

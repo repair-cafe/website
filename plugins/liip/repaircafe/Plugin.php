@@ -29,6 +29,18 @@ class Plugin extends PluginBase
 
     public function registerSettings()
     {
+        return [
+            'settings' => [
+                'label'       => 'liip.repaircafe::lang.settings.label',
+                'description' => 'liip.repaircafe::lang.settings.description',
+                'category'    => 'system::lang.system.categories.misc',
+                'icon'        => 'icon-coffee',
+                'class'       => 'Liip\RepairCafe\Models\Settings',
+                'order'       => 500,
+                'keywords'    => 'repaircafe reperatur',
+                'permissions' => ['liip.repaircafe.settings']
+            ]
+        ];
     }
 
     public function registerMarkupTags()
