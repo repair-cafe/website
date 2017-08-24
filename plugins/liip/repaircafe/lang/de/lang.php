@@ -173,8 +173,8 @@
         'events_per_page' => 'Anzahl Events pro Seite',
         'news_per_page' => 'Anzahl News pro Seite',
         'comments' => [
-            'static_map_api_url' => 'Muss folgende Parameter beinhalten: {PIN_COLOR}, {LONGITUDE}, {LATITUDE}, {ACCESS_TOKEN}',
-            'external_map_url' => 'Muss folgende Parameter beinhalten: {QUERY}',
+            'static_map_api_url' => 'Die URL kann folgende Parameter beinhalten: {PIN_COLOR}, {LONGITUDE}, {LATITUDE}, {ACCESS_TOKEN}',
+            'external_map_url' => 'Die URL kann folgende Parameter beinhalten: {ADDRESS}',
         ],
     ],
 ];
