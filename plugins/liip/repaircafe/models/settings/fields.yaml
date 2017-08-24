@@ -1,0 +1,23 @@
+fields:
+    static_map_api_url:
+        label: 'liip.repaircafe::lang.settings.static_map_api_url'
+        span: full
+        type: text
+        comment: 'liip.repaircafe::lang.settings.comments.static_map_api_url'
+    external_map_url:
+        label: 'liip.repaircafe::lang.settings.external_map_url'
+        span: full
+        type: text
+        comment: 'liip.repaircafe::lang.settings.comments.external_map_url'
+    mapbox_access_token:
+        label: 'liip.repaircafe::lang.settings.mapbox_access_token'
+        span: full
+        type: text
+    events_per_page:
+        label: 'liip.repaircafe::lang.settings.events_per_page'
+        span: left
+        type: number
+    news_per_page:
+        label: 'liip.repaircafe::lang.settings.news_per_page'
+        span: right
+        type: number

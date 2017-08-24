@@ -14,7 +14,7 @@ class Cafes extends Controller
     public $relationConfig = 'config_relation.yaml';
 
     public $requiredPermissions = [
-        'repaircafe.cafes'
+        'liip.repaircafe.cafes'
     ];
 
     public function __construct()

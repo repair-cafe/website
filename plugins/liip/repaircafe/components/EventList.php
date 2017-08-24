@@ -1,16 +1,17 @@
 <?php namespace Liip\RepairCafe\Components;
 
 use Cms\Classes\ComponentBase;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
 use Liip\RepairCafe\Models\Event;
+use Liip\RepairCafe\Models\Settings;
 use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 
 class EventList extends ComponentBase
 {
     private $cafe_slug;
+    private $events_per_page;
     public $events;
     public $condensed;
     public $eventPaginator;
@@ -28,14 +29,21 @@ class EventList extends ComponentBase
     {
         return [
             'cafe_slug' => [
-                'title'             => 'Cafe Slug',
-                'description'       => 'Filter events by cafe',
+                'title'             => 'liip.repaircafe::lang.component.eventlist.properties.cafe_slug.title',
+                'description'       => 'liip.repaircafe::lang.component.eventlist.properties.cafe_slug.description',
                 'type'              => 'string',
             ],
             'condensed' => [
-                'title'             => 'Condensed style',
-                'description'       => 'More compact list style',
+                'title'             => 'liip.repaircafe::lang.component.eventlist.properties.condensed.title',
+                'description'       => 'liip.repaircafe::lang.component.eventlist.properties.condensed.description',
                 'type'              => 'checkbox',
+            ],
+            'events_per_page' => [
+                'title'             => 'liip.repaircafe::lang.component.eventlist.properties.events_per_page.title',
+                'description'       => 'liip.repaircafe::lang.component.eventlist.properties.events_per_page.description',
+                'type'              => 'string',
+                'validationPattern' => '^[0-9]+$',
+                'validationMessage' => 'liip.repaircafe::lang.component.eventlist.properties.events_per_page.validationMessage',
             ]
         ];
     }
@@ -83,16 +91,17 @@ class EventList extends ComponentBase
         setlocale(LC_TIME, $localeCode . '_' . strtoupper($localeCode) . '.UTF-8');
 
         $this->condensed = boolval($this->property('condensed'));
+        $this->events_per_page = intval($this->property('events_per_page'));
         $this->cafe_slug = $this->property('cafe_slug');
         $this->events = $this->queryEvents();
-        $this->mapboxAccessToken = Config::get('liip.repaircafe::mapbox_access_token');
+        $this->mapboxAccessToken = Settings::get('mapbox_access_token', '');
     }
 
     protected function queryEvents()
     {
         $category = Input::get('category');
         $searchTerm = Input::get('searchterm');
-        $eventsPerPage = Config::get('liip.repaircafe::events_per_page', 15);
+        $eventsPerPage = (!empty($this->events_per_page) ? $this->events_per_page : Settings::get('events_per_page', 15));
         $query = Db::table('liip_repaircafe_search_index_view');
 
         if (!empty($searchTerm)) {

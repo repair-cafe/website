@@ -16,7 +16,7 @@ class Contacts extends Controller
     public $reorderConfig = 'config_reorder.yaml';
 
     public $requiredPermissions = [
-        'repaircafe.contacts'
+        'liip.repaircafe.contacts'
     ];
 
     public function __construct()

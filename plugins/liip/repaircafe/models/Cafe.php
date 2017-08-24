@@ -1,6 +1,5 @@
 <?php namespace Liip\RepairCafe\Models;
 
-use Illuminate\Support\Facades\Config;
 use October\Rain\Database\Model;
 use System\Models\File;
 
@@ -95,9 +94,9 @@ class Cafe extends Model
         $external_map_url = '';
 
         if (!empty($this->getFormattedAddress())) {
-            $external_map_url = Config::get('liip.repaircafe::external_map_url');
+            $external_map_url = Settings::get('external_map_url', '');
 
-            $external_map_url = str_replace("{QUERY}", rawurlencode($this->getFormattedAddress()), $external_map_url);
+            $external_map_url = str_replace("{ADDRESS}", rawurlencode($this->getFormattedAddress()), $external_map_url);
         }
         return $external_map_url;
     }

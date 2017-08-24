@@ -11,7 +11,7 @@ class News extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'repaircafe.news'
+        'liip.repaircafe.news'
     ];
 
     public function __construct()

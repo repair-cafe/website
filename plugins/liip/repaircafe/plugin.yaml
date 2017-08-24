@@ -5,19 +5,19 @@ plugin:
     icon: oc-icon-coffee
     homepage: 'https://liip.ch'
 permissions:
-    repaircafe.cafes:
+    liip.repaircafe.cafes:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.cafes'
-    repaircafe.categories:
+    liip.repaircafe.categories:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.categories'
-    repaircafe.events:
+    liip.repaircafe.events:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.events'
-    repaircafe.contacts:
+    liip.repaircafe.contacts:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.contacts'
-    repaircafe.news:
+    liip.repaircafe.news:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.news'
 navigation:
@@ -26,29 +26,29 @@ navigation:
         url: liip/repaircafe/cafes
         icon: icon-coffee
         permissions:
-            - 'repaircafe.*'
+            - 'liip.repaircafe.*'
         sideMenu:
             side-menu-cafes:
                 label: 'liip.repaircafe::lang.nav.cafes'
                 url: liip/repaircafe/cafes
                 icon: icon-coffee
                 permissions:
-                    - repaircafe.cafes
+                    - liip.repaircafe.cafes
             side-menu-events:
                 label: 'liip.repaircafe::lang.nav.events'
                 url: liip/repaircafe/events
                 icon: icon-calendar
                 permissions:
-                    - repaircafe.events
+                    - liip.repaircafe.events
             side-menu-categories:
                 label: 'liip.repaircafe::lang.nav.categories'
                 url: liip/repaircafe/categories
                 icon: icon-tag
                 permissions:
-                    - repaircafe.categories
+                    - liip.repaircafe.categories
     main-menu-news:
         label: 'liip.repaircafe::lang.nav.news'
         url: liip/repaircafe/news
         icon: icon-bullhorn
         permissions:
-            - repaircafe.news
+            - liip.repaircafe.news

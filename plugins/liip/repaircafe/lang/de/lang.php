@@ -93,6 +93,32 @@
         'description' => 'Beschreibung',
     ],
     'component' => [
+        'eventlist' => [
+            'properties' => [
+                'cafe_slug' => [
+                    'title' => 'Cafe Slug',
+                    'description' => 'Falls der Cafe Slug gesetzt ist, werden nur Events von diesem Cafe angezeigt.',
+                ],
+                'condensed' => [
+                    'title' => 'Kompaktes Template',
+                    'description' => 'Kompaktes Template verwenden.',
+                ],
+                'events_per_page' => [
+                    'title' => 'Anzahl Events pro Seite',
+                    'description' => 'Definiert wieviele Events pro Seite angezeigt werden sollen.',
+                    'validationMessage' => 'Für die Anzahl Events pro Seite sind nur Zahlen erlaubt.',
+                ],
+            ],
+        ],
+        'newslist' => [
+            'properties' => [
+                'max_items' => [
+                    'title' => 'Maximale Anzahl an News-Einträgen',
+                    'description' => 'Definiert wieviele News-Einträge maximal angezeigt werden sollen.',
+                    'validationMessage' => 'Für die Maximale Anzahl an News-Einträgen sind nur Zahlen erlaubt.',
+                ],
+            ],
+        ],
         'categorylist' => [
             'all_categories' => 'Alle Kategorien',
         ],
@@ -137,5 +163,18 @@
         'image' => 'Bild',
         'created_at' => 'Erstellt am',
         'updated_at' => 'Aktualisiert am',
+    ],
+    'settings' => [
+        'label' => 'Repair Café Einstellungen',
+        'description' => 'Konfiguriere das Repair Café Plugin',
+        'static_map_api_url' => 'URL zur Generierung des Static Map Images',
+        'external_map_url' => 'URL zum externen Map-Dienst',
+        'mapbox_access_token' => 'Mapbox Access Token',
+        'events_per_page' => 'Anzahl Events pro Seite',
+        'news_per_page' => 'Anzahl News pro Seite',
+        'comments' => [
+            'static_map_api_url' => 'Die URL kann folgende Parameter beinhalten: {PIN_COLOR}, {LONGITUDE}, {LATITUDE}, {ACCESS_TOKEN}',
+            'external_map_url' => 'Die URL kann folgende Parameter beinhalten: {ADDRESS}',
+        ],
     ],
 ];
