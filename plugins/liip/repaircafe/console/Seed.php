@@ -5,7 +5,7 @@ use Liip\RepairCafe\Seeds\NewsSeed;
 use Liip\RepairCafe\Seeds\UserRoles;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Liip\RepairCafe\Seeds\Cafes;
+use Liip\RepairCafe\Seeds\CafesSeed;
 use Liip\RepairCafe\Seeds\MasterData;
 
 class Seed extends Command
@@ -45,7 +45,7 @@ class Seed extends Command
         }
 
         if ($this->option('dummydata')) {
-            $cafes = new Cafes();
+            $cafes = new CafesSeed();
             $cafes->seedCafeData();
             $this->output->writeln('All Cafes created');
             $cafes = new NewsSeed();
