@@ -11,6 +11,7 @@ use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 class EventList extends ComponentBase
 {
     private $cafe_slug;
+    private $events_per_page;
     public $events;
     public $condensed;
     public $eventPaginator;
@@ -90,6 +91,7 @@ class EventList extends ComponentBase
         setlocale(LC_TIME, $localeCode . '_' . strtoupper($localeCode) . '.UTF-8');
 
         $this->condensed = boolval($this->property('condensed'));
+        $this->events_per_page = intval($this->property('events_per_page'));
         $this->cafe_slug = $this->property('cafe_slug');
         $this->events = $this->queryEvents();
         $this->mapboxAccessToken = Settings::get('mapbox_access_token', '');
@@ -99,7 +101,7 @@ class EventList extends ComponentBase
     {
         $category = Input::get('category');
         $searchTerm = Input::get('searchterm');
-        $eventsPerPage = Settings::get('events_per_page', 15);
+        $eventsPerPage = (!empty($this->events_per_page) ? $this->events_per_page : Settings::get('events_per_page', 15));
         $query = Db::table('liip_repaircafe_search_index_view');
 
         if (!empty($searchTerm)) {
