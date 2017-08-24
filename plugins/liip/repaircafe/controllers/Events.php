@@ -21,7 +21,7 @@ class Events extends Controller
     public $reorderConfig = 'config_reorder.yaml';
 
     public $requiredPermissions = [
-        'repaircafe.events'
+        'liip.repaircafe.events'
     ];
 
     public function __construct()

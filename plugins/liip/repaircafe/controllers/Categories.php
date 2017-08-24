@@ -16,7 +16,7 @@ class Categories extends Controller
     public $reorderConfig = 'config_reorder.yaml';
 
     public $requiredPermissions = [
-        'repaircafe.categories'
+        'liip.repaircafe.categories'
     ];
 
     public function __construct()
