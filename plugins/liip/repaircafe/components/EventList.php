@@ -28,14 +28,21 @@ class EventList extends ComponentBase
     {
         return [
             'cafe_slug' => [
-                'title'             => 'Cafe Slug',
-                'description'       => 'Filter events by cafe',
+                'title'             => 'liip.repaircafe::lang.component.eventlist.properties.cafe_slug.title',
+                'description'       => 'liip.repaircafe::lang.component.eventlist.properties.cafe_slug.description',
                 'type'              => 'string',
             ],
             'condensed' => [
-                'title'             => 'Condensed style',
-                'description'       => 'More compact list style',
+                'title'             => 'liip.repaircafe::lang.component.eventlist.properties.condensed.title',
+                'description'       => 'liip.repaircafe::lang.component.eventlist.properties.condensed.description',
                 'type'              => 'checkbox',
+            ],
+            'events_per_page' => [
+                'title'             => 'liip.repaircafe::lang.component.eventlist.properties.events_per_page.title',
+                'description'       => 'liip.repaircafe::lang.component.eventlist.properties.events_per_page.description',
+                'type'              => 'string',
+                'validationPattern' => '^[0-9]+$',
+                'validationMessage' => 'liip.repaircafe::lang.component.eventlist.properties.events_per_page.validationMessage',
             ]
         ];
     }

@@ -24,11 +24,11 @@ class NewsList extends ComponentBase
     {
         return [
             'max_items' => [
-                'title'             => 'Max Items',
-                'description'       => 'Maximum items which should be shown',
+                'title'             => 'liip.repaircafe::lang.component.newslist.properties.max_items.title',
+                'description'       => 'liip.repaircafe::lang.component.newslist.properties.max_items.description',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'The Max Items property can contain only numeric symbols'
+                'validationMessage' => 'liip.repaircafe::lang.component.newslist.properties.max_items.validationMessage',
             ],
         ];
     }

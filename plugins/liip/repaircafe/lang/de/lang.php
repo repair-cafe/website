@@ -93,6 +93,32 @@
         'description' => 'Beschreibung',
     ],
     'component' => [
+        'eventlist' => [
+            'properties' => [
+                'cafe_slug' => [
+                    'title' => 'Cafe Slug',
+                    'description' => 'Falls der Cafe Slug gesetzt ist, werden nur Events von diesem Cafe angezeigt.',
+                ],
+                'condensed' => [
+                    'title' => 'Kompaktes Template',
+                    'description' => 'Kompaktes Template verwenden.',
+                ],
+                'events_per_page' => [
+                    'title' => 'Anzahl Events pro Seite',
+                    'description' => 'Definiert wieviele Events pro Seite angezeigt werden sollen.',
+                    'validationMessage' => 'Für die Anzahl Events pro Seite sind nur Zahlen erlaubt.',
+                ],
+            ],
+        ],
+        'newslist' => [
+            'properties' => [
+                'max_items' => [
+                    'title' => 'Maximale Anzahl an News-Einträgen',
+                    'description' => 'Definiert wieviele News-Einträge maximal angezeigt werden sollen.',
+                    'validationMessage' => 'Für die Maximale Anzahl an News-Einträgen sind nur Zahlen erlaubt.',
+                ],
+            ],
+        ],
         'categorylist' => [
             'all_categories' => 'Alle Kategorien',
         ],
