@@ -68,6 +68,7 @@ class EventList extends ComponentBase
             $categories = array_map(function ($category) {
                 return [
                     'name' => $category['name'],
+                    'description' => $category['description'],
                     'slug' => $category['slug'],
                 ];
             }, $event->categories->toArray());
