@@ -29,6 +29,8 @@ class Seed extends Command
         if ($this->option('masterdata')) {
             $masterData = new MasterData();
 
+            $masterData->seedSettingsData();
+            $this->output->writeln('All Settings set');
             $masterData->seedCategoryData();
             $this->output->writeln('All Categories created');
             $masterData->seedLocaleData();
