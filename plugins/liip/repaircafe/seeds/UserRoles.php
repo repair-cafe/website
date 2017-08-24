@@ -60,14 +60,18 @@ class UserRoles
                 'permissions' => [
                     'cms.manage_themes' => true,
                     'media.manage_media' => true,
+                    'system.manage_mail_templates' => true,
                     'rainlab.pages.manage_pages' => true,
                     'rainlab.pages.access_snippets' => true,
                     'rainlab.pages.manage_content' => true,
                     'rainlab.pages.manage_menus' => true,
+                    'rainlab.translate.manage_messages' => true,
+                    'krisawzm.embed.settings' => true,
                     'liip.repaircafe.news' => true,
                     'liip.repaircafe.events' => true,
                     'liip.repaircafe.categories' => true,
                     'liip.repaircafe.cafes' => true,
+                    'liip.repaircafe.settings' => true,
                 ],
                 'is_new_user_default' => false
             ]);
