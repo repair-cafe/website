@@ -65,7 +65,6 @@ class UserRoles
                     'rainlab.pages.access_snippets' => true,
                     'rainlab.pages.manage_content' => true,
                     'rainlab.pages.manage_menus' => true,
-                    'rainlab.translate.manage_messages' => true,
                     'krisawzm.embed.settings' => true,
                     'liip.repaircafe.news' => true,
                     'liip.repaircafe.events' => true,

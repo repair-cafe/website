@@ -42,15 +42,15 @@ $( document ).ready(function() {
 
                 var popupContent = '';
                 popupContent += '<h2 class="h6"><a href="#event' + repaircafe.events[i].id + '" class="smooth-scroll" data-event-id="' + repaircafe.events[i].id + '">' + repaircafe.events[i].title + '</a></h2>';
-                popupContent += '<p>';
-                popupContent += repaircafe.labels.date + ': ' + repaircafe.events[i].date + '<br />';
-                popupContent += repaircafe.labels.address + ': ' + repaircafe.events[i].address;
-                popupContent += '</p>';
+                popupContent += '<p>' + repaircafe.events[i].date + '</p>';
+                popupContent += '<p>' + repaircafe.events[i].address + '</p>';
                 if(repaircafe.events[i].categories.length > 0) {
-                    popupContent += '<h3 class="h6">' + repaircafe.labels.categoryTitle + '</h3>';
-                    popupContent += '<ul>';
+                    popupContent += '<ul class="list-inline my-2">';
                     for(var j = 0; j < repaircafe.events[i].categories.length; j++) {
-                        popupContent += '<li>' + repaircafe.events[i].categories[j].name + '</li>';
+                        var category = repaircafe.events[i].categories[j];
+                        popupContent += '<li class="list-inline-item mb-2">';
+                        popupContent += '<img src="/themes/repair-cafe/assets/images/categories/icon-' + category.slug + '.svg" onerror="this.onerror=null;this.src=\'/themes/repair-cafe/assets/images/categories/icon-' + category.slug + '@2x.png\'" class="category-logo" title="' + category.name + ': ' + category.description + '" />';
+                        popupContent += '</li>';
                     }
                     popupContent += '</ul>';
                 }
