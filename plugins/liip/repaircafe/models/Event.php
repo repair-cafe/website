@@ -1,11 +1,6 @@
 <?php namespace Liip\RepairCafe\Models;
 
-use Exception;
-use Illuminate\Support\Facades\Lang;
 use October\Rain\Database\Model;
-use October\Rain\Support\Facades\Config;
-use October\Rain\Support\Facades\Flash;
-use GuzzleHttp\Client as GuzzleClient;
 
 /**
  * Model
@@ -64,8 +59,8 @@ class Event extends Model
     public function getStaticMapURL()
     {
         if (!empty($this->latitude) && !empty($this->longitude)) {
-            $access_token = Config::get('liip.repaircafe::mapbox_access_token');
-            $api_url = Config::get('liip.repaircafe::static_map_api_url');
+            $access_token = Settings::get('mapbox_access_token', '');
+            $api_url = Settings::get('static_map_api_url', '');
 
             $api_url = str_replace("{ACCESS_TOKEN}", $access_token, $api_url);
             $api_url = str_replace("{LATITUDE}", $this->latitude, $api_url);
@@ -83,7 +78,7 @@ class Event extends Model
         $external_map_url = '';
 
         if (!empty($this->getFormattedAddress())) {
-            $external_map_url = Config::get('liip.repaircafe::external_map_url');
+            $external_map_url = Settings::get('external_map_url', '');
 
             $external_map_url = str_replace("{QUERY}", rawurlencode($this->getFormattedAddress()), $external_map_url);
         }

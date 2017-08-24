@@ -1,11 +1,11 @@
 <?php namespace Liip\RepairCafe\Components;
 
 use Cms\Classes\ComponentBase;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
 use Liip\RepairCafe\Models\Event;
+use Liip\RepairCafe\Models\Settings;
 use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 
 class EventList extends ComponentBase
@@ -85,14 +85,14 @@ class EventList extends ComponentBase
         $this->condensed = boolval($this->property('condensed'));
         $this->cafe_slug = $this->property('cafe_slug');
         $this->events = $this->queryEvents();
-        $this->mapboxAccessToken = Config::get('liip.repaircafe::mapbox_access_token');
+        $this->mapboxAccessToken = Settings::get('mapbox_access_token', '');
     }
 
     protected function queryEvents()
     {
         $category = Input::get('category');
         $searchTerm = Input::get('searchterm');
-        $eventsPerPage = Config::get('liip.repaircafe::events_per_page', 15);
+        $eventsPerPage = Settings::get('events_per_page', 15);
         $query = Db::table('liip_repaircafe_search_index_view');
 
         if (!empty($searchTerm)) {
