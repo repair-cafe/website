@@ -2,7 +2,6 @@
 
 use Backend\Facades\BackendAuth;
 use October\Rain\Database\Model;
-use October\Rain\Support\Facades\Flash;
 use System\Models\File;
 use Backend\Models\User as BackendUserModel;
 
