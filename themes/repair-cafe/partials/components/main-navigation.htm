@@ -6,7 +6,11 @@ code = {{ localized_menucode }}
 <div class="main-navigation">
     <nav class="navbar navbar-light navbar-expand-lg">
         <a class="navbar-brand d-lg-none" href="{{ 'homepage'|page }}">
-            <img src="{{ 'assets/images/repair-cafe-logo.jpg'|theme }}" height="30" />
+            {% if activeLocale == 'fr' or activeLocale == 'it' %}
+                <img src="{{ ('assets/images/repair-cafe-logo-' ~ activeLocale ~ '@2x.jpg')|theme }}" />
+            {% else %}
+                <img src="{{ ('assets/images/repair-cafe-logo-mobile-de.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/repair-cafe-logo-mobile-de@2x.png')|theme }}'" />
+            {% endif %}
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigationContent" aria-controls="mainNavigationContent" aria-expanded="false" aria-label="{{ 'site.header.main_navigation.toggler.label'|_ }}">

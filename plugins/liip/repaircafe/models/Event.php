@@ -79,15 +79,14 @@ class Event extends Model
 
     public function getExternalMapURL()
     {
-        if (!empty($this->latitude) && !empty($this->longitude)) {
+        $external_map_url = '';
+
+        if (!empty($this->getFormattedAddress())) {
             $external_map_url = Config::get('liip.repaircafe::external_map_url');
 
             $external_map_url = str_replace("{QUERY}", rawurlencode($this->getFormattedAddress()), $external_map_url);
-
-            return $external_map_url;
-        } else {
-            return null;
         }
+        return $external_map_url;
     }
 
     public function getFormattedAddress()
