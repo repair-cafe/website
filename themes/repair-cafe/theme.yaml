@@ -9,3 +9,6 @@ require:
     - Liip.RepairCafe
     - RainLab.Translate
     - RainLab.Pages
+    - RainLab.Location
+    - VojtaSvoboda.TwigExtensions
+    - Krisawzm.Embed
