@@ -44,13 +44,13 @@ class Contact extends Model
 
     public function getFullName()
     {
-        if(!empty($this->firstname) && !empty($this->lastname)) {
+        if (!empty($this->firstname) && !empty($this->lastname)) {
             return $this->firstname . ' ' . $this->lastname;
         }
-        if(!empty($this->firstname)) {
+        if (!empty($this->firstname)) {
             return $this->firstname;
         }
-        if(!empty($this->lastname)) {
+        if (!empty($this->lastname)) {
             return $this->lastname;
         }
         return '';
