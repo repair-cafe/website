@@ -4,8 +4,8 @@
     {% else %}
         {% set profile_picture_src = 'assets/images/placeholder-contact@2x.jpg'|theme %}
     {% endif %}
-    <img src="{{ profile_picture_src }}" class="img-fluid rounded-circle mb-3 profile-picture" />
-    <h3 class="h6">{{ contact.firstname }} {{ contact.lastname }}</h3>
+    <img src="{{ profile_picture_src }}" class="img-fluid rounded-circle mb-3 profile-picture" alt="{{ contact.getFullName }}" />
+    <h3 class="h6">{{ contact.getFullName }}</h3>
     {% if contact.email or contact.phone or contact.facebook or contact.twitter %}
         <ul class="fa-ul small">
             {% if contact.email %}
