@@ -7,9 +7,9 @@ code = {{ localized_menucode }}
     <nav class="navbar navbar-light navbar-expand-lg">
         <a class="navbar-brand d-lg-none" href="{{ 'homepage'|page }}">
             {% if activeLocale == 'fr' or activeLocale == 'it' %}
-                <img src="{{ ('assets/images/repair-cafe-logo-' ~ activeLocale ~ '@2x.jpg')|theme }}" />
+                <img src="{{ ('assets/images/repair-cafe-logo-' ~ activeLocale ~ '@2x.jpg')|theme }}" alt="{{ 'site.header.repair_cafe_logo'|_ }}" />
             {% else %}
-                <img src="{{ ('assets/images/repair-cafe-logo-mobile-de.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/repair-cafe-logo-mobile-de@2x.png')|theme }}'" />
+                <img src="{{ ('assets/images/repair-cafe-logo-mobile-de.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/repair-cafe-logo-mobile-de@2x.png')|theme }}'" alt="{{ 'site.header.repair_cafe_logo'|_ }}" />
             {% endif %}
         </a>
 
