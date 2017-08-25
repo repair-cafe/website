@@ -5,7 +5,7 @@ code = {{ localized_menucode }}
 ==
 <div class="main-navigation">
     <nav class="navbar navbar-light navbar-expand-lg">
-        <a class="navbar-brand d-lg-none" href="{{ 'homepage'|page }}">
+        <a class="navbar-brand d-lg-none" href="{{ 'index'|staticPage }}">
             {% if activeLocale == 'fr' or activeLocale == 'it' %}
                 <img src="{{ ('assets/images/repair-cafe-logo-' ~ activeLocale ~ '@2x.jpg')|theme }}" alt="{{ 'site.header.repair_cafe_logo'|_ }}" />
             {% else %}
