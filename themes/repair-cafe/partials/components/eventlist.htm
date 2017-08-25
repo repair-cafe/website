@@ -21,7 +21,7 @@
                                     <h4 class="h5">{{ event.getTitle }}</h4>
                                     {% partial 'components/date' start=event.start end=event.end %}
                                     {% if formatted_address is not empty %}
-                                        <p class="small mb-0"><a href="{{ event.getExternalMapURL }}" target="_blank">{{ formatted_address }}</a></p>
+                                        <p class="small mb-0"><a href="{{ event.getExternalMapURL }}" target="_blank" rel="noopener">{{ formatted_address }}</a></p>
                                     {% endif %}
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                             {% if static_map_url %}
                                 <div class="col-md-6 mb-3">
                                     <div class="static-map">
-                                        <a href="{{ event.getExternalMapURL }}" target="_blank">
+                                        <a href="{{ event.getExternalMapURL }}" target="_blank" rel="noopener">
                                             <img src="{{ 'assets/images/placeholder-map@2x.jpg'|theme }}" data-lazy-load-src="{{ static_map_url }}" data-lazy-load-event-id="{{ event.id }}" class="img-fluid" />
                                         </a>
                                         <i class="fa fa-spinner fa-pulse fa-3x fa-fw" data-lazy-load-event-id="{{ event.id }}"></i>
