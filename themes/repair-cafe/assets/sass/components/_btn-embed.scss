@@ -1,8 +1,8 @@
 .has-btn-embed {
-    $btn-embed-color: $gray-600 !default;
-    $btn-embed-padding-x: .75rem !default;
-    $btn-embed-padding-x-sm: .5rem !default;
-    $btn-embed-padding-x-lg: 1.25rem !default;
+    $btn-embed-color: $input-placeholder-color !default;
+    $btn-embed-padding-x: $input-btn-padding-x !default;
+    $btn-embed-padding-x-sm: $input-btn-padding-x-sm !default;
+    $btn-embed-padding-x-lg: $input-btn-padding-x-lg !default;
 
     position: relative;
 
@@ -39,17 +39,19 @@
         position: absolute;
         top: 0;
         color: $btn-embed-color;
+        font-size: $font-size-base;
+        line-height: $input-btn-line-height;
         padding: $input-btn-padding-y $btn-embed-padding-x;
         cursor: pointer;
     }
     .btn-embed-sm {
         font-size: $font-size-sm;
-        line-height: $line-height-sm;
+        line-height: $input-btn-line-height-sm;
         padding: $input-btn-padding-y-sm $btn-embed-padding-x-sm;
     }
     .btn-embed-lg {
         font-size: $font-size-lg;
-        line-height: $line-height-lg;
+        line-height: $input-btn-line-height-lg;
         padding: $input-btn-padding-y-lg $btn-embed-padding-x-lg;
     }
 }
