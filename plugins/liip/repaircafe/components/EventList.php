@@ -95,7 +95,7 @@ class EventList extends ComponentBase
         $this->events_per_page = intval($this->property('events_per_page'));
         $this->cafe_slug = $this->property('cafe_slug');
         $this->events = $this->queryEvents();
-        $this->mapboxAccessToken = Settings::get('mapbox_access_token', '');
+        $this->mapboxAccessToken = \json_encode(Settings::get('mapbox_access_token', ''));
     }
 
     protected function queryEvents()
