@@ -10,6 +10,7 @@ de:
     eventlist.title: 'Zukünftige Events'
     eventlist.no_events_found: 'Keine zukünftigen Events gefunden'
     eventlist.cafe_detail_button: 'Mehr über dieses Repair Café'
+    eventlist.open_external_map: 'Externen Kartendienst öffnen'
     homepage.title: ':repair_cafe_count Repair Café in der Schweiz|:repair_cafe_count Repair Cafés in der Schweiz'
     homepage.category_list.title: 'Was reparieren wir?'
     homepage.search.title: 'Finde ein Repair Café'
