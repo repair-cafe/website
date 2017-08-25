@@ -41,7 +41,7 @@ function onStart()
                 {% for category in categoryList.categories %}
                     <li class="col-lg-4 col-md-6 mb-3">
                         <a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">
-                            <img src="{{ ('assets/images/categories/icon-' ~ category.slug ~ '.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/categories/icon-' ~ category.slug ~ '@2x.png')|theme }}'" class="category-logo mr-2" title="{{ category.name ~ ': ' ~ category.description }}" />
+                            <img src="{{ ('assets/images/categories/icon-' ~ category.slug ~ '.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/categories/icon-' ~ category.slug ~ '@2x.png')|theme }}'" class="category-logo mr-2" title="{{ category.name ~ ': ' ~ category.description }}" alt="{{ category.name ~ ': ' ~ category.description }}" />
                             {{ category.name }}
                         </a>
                     </li>

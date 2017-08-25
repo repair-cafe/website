@@ -34,7 +34,7 @@
                                         <li class="list-inline-item mb-2">
                                             {# TODO find better solution for link creation #}
                                             <a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">
-                                                <img src="{{ ('assets/images/categories/icon-' ~ category.slug ~ '.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/categories/icon-' ~ category.slug ~ '@2x.png')|theme }}'" class="category-logo" title="{{ category.name ~ ': ' ~ category.description }}" />
+                                                <img src="{{ ('assets/images/categories/icon-' ~ category.slug ~ '.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/categories/icon-' ~ category.slug ~ '@2x.png')|theme }}'" class="category-logo" title="{{ category.name ~ ': ' ~ category.description }}" alt="{{ category.name ~ ': ' ~ category.description }}" />
                                             </a>
                                         </li>
                                     {% endfor %}
