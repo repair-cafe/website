@@ -6,6 +6,7 @@ de:
     eventsearch.searchterm.placeholder: 'Suchbegriff...'
     eventsearch.submit.label: 'Jetzt suchen'
     cafes.title: 'Finde ein Repair Café'
+    eventlist.additional_info_toggle: 'Zusätzliche Informationen auf-/zuklappen'
     eventlist.title: 'Zukünftige Events'
     eventlist.no_events_found: 'Keine zukünftigen Events gefunden'
     eventlist.cafe_detail_button: 'Mehr über dieses Repair Café'
