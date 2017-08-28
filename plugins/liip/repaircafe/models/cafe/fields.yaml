@@ -35,12 +35,14 @@ tabs:
             type: fileupload
             span: left
             mode: image
+            comment: 'liip.repaircafe::lang.cafe.comments.logo'
         image:
             label: 'liip.repaircafe::lang.cafe.image'
             tab: 'liip.repaircafe::lang.cafe.tab.general'
             type: fileupload
             span: right
             mode: image
+            comment: 'liip.repaircafe::lang.cafe.comments.image'
         street:
             label: 'liip.repaircafe::lang.cafe.street'
             oc.commentPosition: ''

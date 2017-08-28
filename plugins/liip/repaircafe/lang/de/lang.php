@@ -30,6 +30,10 @@
         'created_at' => 'Erstellt am',
         'updated_at' => 'Aktualisiert am',
         'deleted_at' => 'Gelöscht am',
+        'comments' => [
+            'image' => 'Die optimale Bildgrösse beträgt 1110x450px, die Dateigrösse ist auf 1MB begrenzt',
+            'logo' => 'Die optimale Bildgrösse beträgt 250x250px, die Dateigrösse ist auf 512KB begrenzt',
+        ],
     ],
     'permissions' => [
         'cafes' => 'Cafes',
@@ -60,6 +64,9 @@
         'profile_picture' => 'Profilbild',
         'twitter' => 'Twitter URL',
         'facebook' => 'Facebook URL',
+        'comments' => [
+            'profile_picture' => 'Die optimale Bildgrösse beträgt 200x200px, die Dateigrösse ist auf 512KB begrenzt',
+        ],
     ],
     'event' => [
         'title' => 'Titel',
@@ -82,8 +89,8 @@
         'duplicate_success' => '":eventname" wurde erfolgreich kopiert.',
         'duplicate_error' => 'Kopieren von ":eventname" ist fehlgeschlagen.',
         'comments' => [
-            'start' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
-            'end' => 'Bitte geben Sie bei Eingabe eines Datums auch eine Uhrzeit ein, da ansonsten automatisch die jetzige Uhrzeit gesetzt wird.',
+            'start' => 'Falls die Zeit nicht angegeben wird, wird automatisch die aktuelle Uhrzeit gesetzt.',
+            'end' => 'Falls die Zeit nicht angegeben wird, wird automatisch die aktuelle Uhrzeit gesetzt.',
             'addressfinder' => 'Dieses Feld dient lediglich zum Suchen und automatisierten Vervollständigen der Addressfelder.',
         ],
     ],
@@ -142,6 +149,9 @@
                 'tab' => [
                     'general' => 'Allgemein',
                 ],
+                'comments' => [
+                    'header_image' => 'Die optimale Bildgrösse beträgt 1110x450px, die Dateigrösse ist auf 1MB begrenzt',
+                ],
             ],
         ],
         'fields' => [
@@ -169,6 +179,9 @@
         'image' => 'Bild',
         'created_at' => 'Erstellt am',
         'updated_at' => 'Aktualisiert am',
+        'comments' => [
+            'image' => 'Die optimale Bildgrösse beträgt 1110x450px, die Dateigrösse ist auf 1MB begrenzt',
+        ],
     ],
     'settings' => [
         'label' => 'Repair Café Einstellungen',

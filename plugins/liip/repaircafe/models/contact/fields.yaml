@@ -41,3 +41,4 @@ fields:
             extension: auto
         span: auto
         type: fileupload
+        comment: 'liip.repaircafe::lang.contact.comments.profile_picture'
