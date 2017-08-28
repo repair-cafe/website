@@ -13,3 +13,4 @@ before_script: git reset --hard HEAD
 
 script:
   - scripts/phpcs.sh
+  - scripts/phpunit.sh
