@@ -43,3 +43,4 @@ fields:
         span: left
         type: mediafinder
         mode: image
+        comment: 'liip.repaircafe::lang.news.comments.image'
