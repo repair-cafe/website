@@ -3,14 +3,14 @@
     <div class="form-group{{ showCategories|default ? ' col-md-8 pr-md-1 mb-2' : ' col-12' }}">
         <div class="has-btn-embed has-btn-embed-right">
             <label for="searchterm" class="sr-only">{{ 'eventsearch.searchterm.label'|_ }}</label>
-            {{ form_input( 'search', 'searchterm', input('searchterm'), { class: 'form-control form-control-lg text-truncate', placeholder: 'eventsearch.searchterm.placeholder'|_ } ) }}
-            <button type="submit" class="btn btn-embed btn-embed-lg"><i class="fa fa-search" aria-hidden="true"></i></button>
+            {{ form_input( 'search', 'searchterm', input('searchterm'), { class: 'form-control text-truncate', placeholder: 'eventsearch.searchterm.placeholder'|_ } ) }}
+            <button type="submit" class="btn btn-embed"><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
     </div>
     {% if showCategories|default %}
         <div class="form-group col-md-4 pl-md-1 mb-0">
             <label for="category" class="sr-only">{{ 'eventsearch.category.label'|_ }}</label>
-            {{ form_select( 'category', categories, input('category'), { class: 'form-control form-control-lg' } ) }}
+            {{ form_select( 'category', categories, input('category'), { class: 'form-control' } ) }}
         </div>
     {% endif %}
 </div>

@@ -17,11 +17,13 @@ $( document ).ready(function() {
         var eventId = $(this).data('eventId');
         var image = $('img[data-lazy-load-event-id=' + eventId + ']:not(.loaded)');
         var loadingSpinner = $('i.fa-spinner[data-lazy-load-event-id=' + eventId + ']');
-        if(loadingSpinner.length > 0) {
-            loadingSpinner.hide();
-        }
         if(image.length > 0) {
-            image.addClass('loaded');
+            image.on('load', function() {
+                image.addClass('loaded');
+                if(loadingSpinner.length > 0) {
+                    loadingSpinner.hide();
+                }
+            });
             image.attr('src', image.data('lazyLoadSrc'));
         }
     });

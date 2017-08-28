@@ -37,7 +37,7 @@ function onStart()
     <div class="page-content">
         <section class="container mb-5">
             <h2>{{ 'homepage.category_list.title'|_ }}</h2>
-            <ul class="list-unstyled row">
+            <ul class="list-unstyled row categories">
                 {% for category in categoryList.categories %}
                     <li class="col-lg-4 col-md-6 mb-3">
                         <a href="{{ 'cafes'|page ~ '?category=' ~ category.slug }}">
