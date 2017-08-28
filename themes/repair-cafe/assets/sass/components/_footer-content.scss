@@ -1,6 +1,5 @@
 .footer-content {
     color: $white;
-    font-weight: $font-weight-bold;
 
     a {
         color: $white;
@@ -12,6 +11,10 @@
 
     .footer-content-box > *:last-child {
         margin-bottom: 0;
+    }
+
+    .footer-navigation {
+        font-weight: $font-weight-bold;
     }
 
     .social-links a .fa-inverse {
