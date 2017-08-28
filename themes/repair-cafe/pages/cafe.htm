@@ -12,28 +12,31 @@ events_per_page = 5
 ==
 {% put page %}
 <div class="cafe">
+    {% set header_image_url = '' %}
+    {% set header_image_caption = '' %}
     {% if cafeDetail.cafe.image is not empty %}
         {% set header_image_url = cafeDetail.cafe.image.path %}
+        {% set header_image_caption = cafeDetail.cafe.image.title %}
     {% elseif this.theme.repair_cafe_default_image is not empty %}
         {% set header_image_url = this.theme.repair_cafe_default_image|media %}
-    {% else %}
-        {% set header_image_url = null %}
     {% endif%}
-    {% partial 'components/page-header' title=cafeDetail.cafe.title header_image_url=header_image_url %}
+    {% partial 'components/page-header' title=cafeDetail.cafe.title header_image_url=header_image_url header_image_caption=header_image_caption %}
     <div class="page-content">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mb-3">
                     <div class="row">
+                        {% set cafe_logo_alt = '' %}
                         {% if cafeDetail.cafe.logo is not empty %}
                             {% set cafe_logo = cafeDetail.cafe.logo.path %}
+                            {% set cafe_logo_alt = cafeDetail.cafe.logo.title %}
                         {% elseif this.theme.repair_cafe_default_logo is not empty %}
                             {% set cafe_logo = this.theme.repair_cafe_default_logo|media %}
                         {% endif %}
 
                         {% if cafe_logo|default %}
                             <div class="col-3 col-lg-2">
-                                <img class="img-fluid" src="{{ cafe_logo }}" alt="{{ cafeDetail.cafe.title }}">
+                                <img class="img-fluid" src="{{ cafe_logo }}" alt="{{ (cafe_logo_alt ? cafe_logo_alt : cafeDetail.cafe.title) }}">
                             </div>
                         {% endif %}
 

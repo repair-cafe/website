@@ -26,7 +26,7 @@ is_hidden = 0
                     var repaircafe = {};
                     repaircafe['events'] = {{ eventList.eventsForMap|raw }};
                     repaircafe['config'] = {
-                        'mapboxAccessToken': '{{ eventList.mapboxAccessToken }}'
+                        'mapboxAccessToken': {{ eventList.mapboxAccessToken|raw }}
                     };
                 </script>
                 {% partial 'components/eventlist' eventList=eventList %}

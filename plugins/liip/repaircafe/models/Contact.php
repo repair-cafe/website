@@ -41,4 +41,18 @@ class Contact extends Model
      * @var string The database table used by the model.
      */
     public $table = 'liip_repaircafe_contacts';
+
+    public function getFullName()
+    {
+        if (!empty($this->firstname) && !empty($this->lastname)) {
+            return $this->firstname . ' ' . $this->lastname;
+        }
+        if (!empty($this->firstname)) {
+            return $this->firstname;
+        }
+        if (!empty($this->lastname)) {
+            return $this->lastname;
+        }
+        return '';
+    }
 }

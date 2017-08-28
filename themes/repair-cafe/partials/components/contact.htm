@@ -1,11 +1,13 @@
 <div class="contact">
     {% if contact.profile_picture %}
         {% set profile_picture_src = contact.profile_picture.getThumb(200,200,'crop') %}
+        {% set profile_picture_alt = contact.profile_picture.title %}
     {% else %}
         {% set profile_picture_src = 'assets/images/placeholder-contact@2x.jpg'|theme %}
+        {% set profile_picture_alt = '' %}
     {% endif %}
-    <img src="{{ profile_picture_src }}" class="img-fluid rounded-circle mb-3 profile-picture" />
-    <h3 class="h6">{{ contact.firstname }} {{ contact.lastname }}</h3>
+    <img src="{{ profile_picture_src }}" class="img-fluid rounded-circle mb-3 profile-picture" alt="{{ (profile_picture_alt ? profile_picture_alt : contact.getFullName) }}" />
+    <h3 class="h6">{{ contact.getFullName }}</h3>
     {% if contact.email or contact.phone or contact.facebook or contact.twitter %}
         <ul class="fa-ul small">
             {% if contact.email %}
