@@ -7,7 +7,6 @@ ROOT="$HERE/.."
 
 set +e
 
-cd $DOCKER_ROOT
 $ROOT/vendor/bin/phpunit -c $ROOT/phpunit.xml
 
 exit $?
