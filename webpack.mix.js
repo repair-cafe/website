@@ -31,3 +31,4 @@ mix.js('themes/repair-cafe/assets/js/events-map.js', 'js/events-map-compiled.js'
     ], 'themes/repair-cafe/assets/js/events-map.min.js');
 mix.copy('node_modules/jquery/dist/jquery.js', 'themes/repair-cafe/assets/js/jquery.min.js');
 mix.copy('node_modules/leaflet/dist/images', 'themes/repair-cafe/assets/images/vendor/leaflet/dist');
+mix.copy('node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js', 'themes/repair-cafe/assets/js/iframeResizer.contentWindow.min.js');
