@@ -135,7 +135,7 @@ class EventList extends ComponentBase
         $event_query->whereIn($event_query->getModel()->getQualifiedKeyName(), $event_ids);
         $event_query->orderBy('start', 'asc');
         $events = $event_query->paginate($this->events_per_page);
-        $events->appends(['category' => $category, 'searchterm' => $searchTerm]);
+        $events->appends(['category' => $category, 'searchterm' => $searchTerm, 'events_per_page' => (!empty(Input::get('events_per_page')) ? $this->events_per_page : null)]);
         $this->eventPaginator = new BootstrapFourPresenter($events);
 
         return $events;
