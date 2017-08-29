@@ -1,0 +1,11 @@
+title = "Cafe Embed"
+url = "/cafes/:slug/embed"
+layout = "cafe-embed"
+is_hidden = 0
+
+[eventList]
+cafe_slug = "{{ :slug }}"
+==
+<div class="container-fluid cafe-embed">
+    {% partial 'components/eventlist' eventList=eventList %}
+</div>

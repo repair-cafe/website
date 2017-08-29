@@ -92,7 +92,7 @@ class EventList extends ComponentBase
         setlocale(LC_TIME, $localeCode . '_' . strtoupper($localeCode) . '.UTF-8');
 
         $this->condensed = boolval($this->property('condensed'));
-        $this->events_per_page = intval($this->property('events_per_page'));
+        $this->events_per_page = intval(!empty($this->property('events_per_page')) ? $this->property('events_per_page') : Input::get('events_per_page'));
         $this->cafe_slug = $this->property('cafe_slug');
         $this->events = $this->queryEvents();
         $this->mapboxAccessToken = \json_encode(Settings::get('mapbox_access_token', ''));

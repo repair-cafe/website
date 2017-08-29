@@ -1,0 +1,10 @@
+.cafe-embed {
+    .eventlist {
+        > h2 {
+            display: none;
+        }
+        > *:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+}
