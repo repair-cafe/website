@@ -70,12 +70,40 @@ events_per_page = 5
                             {% if cafeDetail.cafe.instagram %}
                                 <li><i class="fa-li fa fa-instagram"></i><a href="{{ cafeDetail.cafe.instagram }}">{{ 'page.cafe.instagram'|_ }}</a></li>
                             {% endif %}
+                            <li><i class="fa-li fa fa-code"></i><a href="#" data-toggle="modal" data-target="#embedModal">{{ 'page.cafe.embed'|_ }}</a></li>
                         </ul>
                     {% endif %}
                 </div>
             </div>
             {% partial 'components/eventlist' eventList=eventList %}
             {% partial 'components/contacts' contacts=cafeDetail.cafe.contacts %}
+        </div>
+    </div>
+
+    <!-- Embed Modal -->
+    <div class="modal fade" id="embedModal" tabindex="-1" role="dialog" aria-labelledby="embedModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="embedModalTitle">{{ 'page.cafe.embed.modal.title'|_ }}</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'page.cafe.embed.modal.close'|_ }}">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% content 'cafe-embed-description'
+                        cafe_slug=cafeDetail.cafe.slug
+                        iframe_url=('cafe-embed'|page({ slug: ':cafe_slug' }))|replace({ ('/' ~ activeLocale ~ '/'): '/:language/' })
+                        iframe_url_current_cafe='cafe-embed'|page({ slug: cafeDetail.cafe.slug })
+                        events_per_page_default=eventList.events_per_page_default
+                        language_code_list=locales|keys|join(', ')
+                        website_origin='/'|app
+                    %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">{{ 'page.cafe.embed.modal.close'|_ }}</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
