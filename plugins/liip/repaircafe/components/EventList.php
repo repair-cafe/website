@@ -12,6 +12,7 @@ class EventList extends ComponentBase
 {
     private $cafe_slug;
     private $events_per_page;
+    public $events_per_page_default;
     public $events;
     public $condensed;
     public $eventPaginator;
@@ -92,7 +93,17 @@ class EventList extends ComponentBase
         setlocale(LC_TIME, $localeCode . '_' . strtoupper($localeCode) . '.UTF-8');
 
         $this->condensed = boolval($this->property('condensed'));
-        $this->events_per_page = intval($this->property('events_per_page'));
+        $this->events_per_page_default = Settings::get('events_per_page', 15);
+        if (!empty(Input::get('events_per_page'))) {
+            // if GET/POST parameter is set
+            $this->events_per_page = Input::get('events_per_page');
+        } elseif (!empty($this->property('events_per_page'))) {
+            // if component property is set
+            $this->events_per_page = $this->property('events_per_page');
+        } else {
+            // if none of the following are set use default configuration from settings
+            $this->events_per_page = $this->events_per_page_default;
+        }
         $this->cafe_slug = $this->property('cafe_slug');
         $this->events = $this->queryEvents();
         $this->mapboxAccessToken = \json_encode(Settings::get('mapbox_access_token', ''));
@@ -102,7 +113,6 @@ class EventList extends ComponentBase
     {
         $category = Input::get('category');
         $searchTerm = Input::get('searchterm');
-        $eventsPerPage = (!empty($this->events_per_page) ? $this->events_per_page : Settings::get('events_per_page', 15));
         $query = Db::table('liip_repaircafe_search_index_view');
 
         if (!empty($searchTerm)) {
@@ -127,8 +137,8 @@ class EventList extends ComponentBase
         $event_query = Event::query();
         $event_query->whereIn($event_query->getModel()->getQualifiedKeyName(), $event_ids);
         $event_query->orderBy('start', 'asc');
-        $events = $event_query->paginate($eventsPerPage);
-        $events->appends(['category' => $category, 'searchterm' => $searchTerm]);
+        $events = $event_query->paginate($this->events_per_page);
+        $events->appends(['category' => $category, 'searchterm' => $searchTerm, 'events_per_page' => (!empty(Input::get('events_per_page')) ? $this->events_per_page : null)]);
         $this->eventPaginator = new BootstrapFourPresenter($events);
 
         return $events;
