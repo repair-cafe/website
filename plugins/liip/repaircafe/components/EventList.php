@@ -94,11 +94,14 @@ class EventList extends ComponentBase
 
         $this->condensed = boolval($this->property('condensed'));
         $this->events_per_page_default = Settings::get('events_per_page', 15);
-        if (!empty($this->property('events_per_page'))) {
-            $this->events_per_page = $this->property('events_per_page');
-        } elseif (!empty(Input::get('events_per_page'))) {
+        if (!empty(Input::get('events_per_page'))) {
+            // if GET/POST parameter is set
             $this->events_per_page = Input::get('events_per_page');
+        } elseif (!empty($this->property('events_per_page'))) {
+            // if component property is set
+            $this->events_per_page = $this->property('events_per_page');
         } else {
+            // if none of the following are set use default configuration from settings
             $this->events_per_page = $this->events_per_page_default;
         }
         $this->cafe_slug = $this->property('cafe_slug');
