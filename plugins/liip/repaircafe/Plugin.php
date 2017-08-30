@@ -2,6 +2,7 @@
 
 use Backend\Models\User as BackendUserModel;
 use Backend\Controllers\Users as BackendUsersController;
+use Illuminate\Support\Facades\Event;
 use Liip\RepairCafe\Console\Seed;
 use Liip\RepairCafe\Models\Cafe;
 use RainLab\Translate\Classes\Translator;
@@ -101,6 +102,17 @@ class Plugin extends PluginBase
                     'tab' => 'liip.repaircafe::lang.user.tab.cafes'
                 ],
             ]);
+        });
+
+        // Remove complex content blocks from pages plugin
+        Event::listen('pages.content.templateList', function ($plugin, $templates) {
+            $ignoredTemplates = [
+                'cafe-embed-description.htm',
+                'cafe-embed-description.fr.htm',
+                'cafe-embed-description.it.htm',
+            ];
+            $templates->forget($ignoredTemplates);
+            return $templates;
         });
     }
 }
