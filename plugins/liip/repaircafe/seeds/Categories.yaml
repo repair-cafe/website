@@ -31,6 +31,10 @@
   slug: textilien
   description: Nähen, Stricken, usw.
 -
+  name: Leder
+  slug: leder
+  description: Alles aus Leder (Schuhe, Kleider)
+-
   name: Mechanik
   slug: mechanik
   description: Machnik Dinge, usw.
