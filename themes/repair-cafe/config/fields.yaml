@@ -1,29 +1,77 @@
 tabs:
     fields:
-        contact_email:
-            label: 'liip.repaircafe::lang.theme.fields.contact_email'
+        contact_email_de:
+            label: 'liip.repaircafe::lang.theme.fields.contact_email_de'
             span: full
             type: text
             default: 'repaircafe@konsumentenschutz.ch'
-            tab: 'liip.repaircafe::lang.theme.fields.tab.general'
-        social_facebook:
-            label: 'liip.repaircafe::lang.theme.fields.social_facebook'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_de'
+        contact_email_it:
+            label: 'liip.repaircafe::lang.theme.fields.contact_email_it'
+            span: full
+            type: text
+            default: 'repaircafe@konsmentenschutz.ch'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_it'
+        contact_email_fr:
+            label: 'liip.repaircafe::lang.theme.fields.contact_email_fr'
+            span: full
+            type: text
+            default: 'repaircafe@konsumentenschutz.ch'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_fr'
+        social_facebook_de:
+            label: 'liip.repaircafe::lang.theme.fields.social_facebook_de'
             span: full
             type: text
             default: 'https://www.facebook.com/stiftungfuerkonsumentenschutz/'
-            tab: 'liip.repaircafe::lang.theme.fields.tab.general'
-        social_twitter:
-            label: 'liip.repaircafe::lang.theme.fields.social_twitter'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_de'
+        social_facebook_it:
+            label: 'liip.repaircafe::lang.theme.fields.social_facebook_it'
+            span: full
+            type: text
+            default: 'https://www.facebook.com/stiftungfuerkonsumentenschutz/'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_it'
+        social_facebook_fr:
+            label: 'liip.repaircafe::lang.theme.fields.social_facebook_fr'
+            span: full
+            type: text
+            default: 'https://www.facebook.com/stiftungfuerkonsumentenschutz/'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_fr'
+        social_twitter_de:
+            label: 'liip.repaircafe::lang.theme.fields.social_twitter_de'
             span: full
             type: text
             default: 'https://twitter.com/KonsumSchutz'
-            tab: 'liip.repaircafe::lang.theme.fields.tab.general'
-        social_googleplus:
-            label: 'liip.repaircafe::lang.theme.fields.social_googleplus'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_de'
+        social_twitter_it:
+            label: 'liip.repaircafe::lang.theme.fields.social_twitter_it'
+            span: full
+            type: text
+            default: 'https://twitter.com/KonsumSchutz'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_it'
+        social_twitter_fr:
+            label: 'liip.repaircafe::lang.theme.fields.social_twitter_fr'
+            span: full
+            type: text
+            default: 'https://twitter.com/KonsumSchutz'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_fr'
+        social_googleplus_de:
+            label: 'liip.repaircafe::lang.theme.fields.social_googleplus_de'
             span: full
             type: text
             default: 'https://plus.google.com/+KonsumentenschutzCh'
-            tab: 'liip.repaircafe::lang.theme.fields.tab.general'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_de'
+        social_googleplus_it:
+            label: 'liip.repaircafe::lang.theme.fields.social_googleplus_it'
+            span: full
+            type: text
+            default: 'https://plus.google.com/+KonsumentenschutzCh'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_it'
+        social_googleplus_fr:
+            label: 'liip.repaircafe::lang.theme.fields.social_googleplus_fr'
+            span: full
+            type: text
+            default: 'https://plus.google.com/+KonsumentenschutzCh'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_fr'
         repair_cafe_default_image:
             label: 'liip.repaircafe::lang.theme.fields.repair_cafe_default_image'
             span: left

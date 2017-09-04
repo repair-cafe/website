@@ -2,7 +2,13 @@
     <div class="footer-content bg-dark py-5">
         <div class="container">
             <div class="footer-content-box text-center">
-                <p><a href="mailto:{{ this.theme.contact_email }}">{{ this.theme.contact_email }}</a></p>
+                {% if activeLocale == 'fr' %}
+                    <p><a href="mailto:{{ this.theme.contact_email_fr }}">{{ this.theme.contact_email_fr }}</a></p>
+                {% elseif activeLocale == 'it' %}
+                    <p><a href="mailto:{{ this.theme.contact_email_it }}">{{ this.theme.contact_email_it }}</a></p>
+                {% else %}
+                    <p><a href="mailto:{{ this.theme.contact_email_de }}">{{ this.theme.contact_email_de }}</a></p>
+                {% endif %}
                 {% partial 'components/footer-navigation' localized_menucode='footer_' ~ activeLocale %}
                 <div class="d-md-flex justify-content-md-center">
                     {% partial 'components/social-links' %}
