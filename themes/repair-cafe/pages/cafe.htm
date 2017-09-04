@@ -70,10 +70,13 @@ events_per_page = 5
                             {% if cafeDetail.cafe.instagram %}
                                 <li><i class="fa-li fa fa-instagram"></i><a href="{{ cafeDetail.cafe.instagram }}">{{ 'page.cafe.instagram'|_ }}</a></li>
                             {% endif %}
-                            <li><i class="fa-li fa fa-code"></i><a href="#" data-toggle="modal" data-target="#embedModal">{{ 'page.cafe.embed'|_ }}</a></li>
                         </ul>
                     {% endif %}
                 </div>
+            </div>
+            <div class="clearfix">
+                <h2 class="float-left">{{ 'page.cafe.eventlist.title'|_ }}</h2>
+                <a href="#" class="btn btn-outline-secondary btn-sm float-right" data-toggle="modal" data-target="#embedModal" title="{{ 'page.cafe.embed'|_ }}"><i class="fa fa-code"></i><span class="d-none d-sm-inline"> {{ 'page.cafe.embed'|_ }}</span></a>
             </div>
             {% partial 'components/eventlist' eventList=eventList %}
             {% partial 'components/contacts' contacts=cafeDetail.cafe.contacts %}

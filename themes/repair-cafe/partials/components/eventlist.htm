@@ -1,5 +1,4 @@
 <div class="eventlist">
-    <h2>{{ 'eventlist.title'|_ }}</h2>
     {% if eventList.eventsGroupedByMonth|length > 0 %}
         {% for month, events in eventList.eventsGroupedByMonth %}
             <h3>{{ month|localizeddate_formatted('MMMM Y') }}</h3>
