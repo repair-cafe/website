@@ -17,7 +17,7 @@ use Liip\RepairCafe\Models\Cafe;
 
 function onStart()
 {
-    $this['repair_cafe_count'] = Cafe::where('is_published', 1)->count();
+    $this['repair_cafe_count'] = Cafe::published()->count();
 }
 ?>
 ==
