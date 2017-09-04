@@ -1,6 +1,6 @@
 {{ form_open({ url: 'cafes'|page, method: 'GET', id: 'eventSearch' }) }}
 <div class="row">
-    <div class="form-group{{ showCategories|default ? ' col-md-8 pr-md-1 mb-2' : ' col-12' }}">
+    <div class="form-group{{ showCategories|default ? ' col-md-8 pr-md-1' : ' col-12' }}">
         <div class="has-btn-embed has-btn-embed-right">
             {{ form_label( 'searchterm', 'eventsearch.searchterm.label'|_, { class: 'sr-only' } ) }}
             {{ form_input( 'search', 'searchterm', input('searchterm'), { class: 'form-control text-truncate', placeholder: 'eventsearch.searchterm.placeholder'|_ } ) }}
@@ -8,7 +8,7 @@
         </div>
     </div>
     {% if showCategories|default %}
-        <div class="form-group col-md-4 pl-md-1 mb-0">
+        <div class="form-group col-md-4 pl-md-1">
             {{ form_label( 'category', 'eventsearch.category.label'|_, { class: 'sr-only' } ) }}
             {{ form_select( 'category', categories, input('category'), { class: 'form-control' } ) }}
         </div>
