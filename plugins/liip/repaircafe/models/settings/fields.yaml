@@ -21,3 +21,7 @@ fields:
         label: 'liip.repaircafe::lang.settings.news_per_page'
         span: right
         type: number
+    cafes_per_page:
+        label: 'liip.repaircafe::lang.settings.cafes_per_page'
+        span: left
+        type: number
