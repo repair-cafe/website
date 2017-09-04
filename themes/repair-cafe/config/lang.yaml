@@ -38,3 +38,6 @@ de:
     social_links.facebook: 'Konsumentenschutz auf Facebook'
     social_links.twitter: 'Konsumentenschutz auf Twitter'
     social_links.googleplus: 'Konsumentenschutz auf Google+'
+    share_buttons.header: 'Event teilen'
+    share_buttons.twitter: 'Twitter'
+    share_buttons.facebook: 'Facebook'

@@ -57,10 +57,11 @@
                                     {{ event.description|raw }}
                                 </div>
                                 {% if not eventList.condensed %}
-                                    <div>
+                                    <div class="mb-3">
                                         <a class="btn btn-primary" href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}" role="button">{{ 'eventlist.cafe_detail_button'|_ }}</a>
                                     </div>
                                 {% endif %}
+                                {% partial 'components/share' event=event %}
                             </div>
                         </div>
                     </li>

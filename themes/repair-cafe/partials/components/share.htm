@@ -1,0 +1,16 @@
+{% set share_url = 'cafe'|page({ slug: event.cafe.slug }) ~ '#event' ~ event.id %}
+{% set share_text = event.getTitle %}
+
+<div class="share">
+    <p class="text-muted float-left mr-3 mb-0">{{ 'share_buttons.header'|_ }}</p>
+    <ul class="list-inline">
+        <li class="list-inline-item mr-2">
+            <i class="fa fa-twitter-square"></i>
+            <a href="https://twitter.com/share?hashtags=repaircafe&text={{ share_text|url_encode }}&url={{ share_url|url_encode }}" target="_blank" rel="noopener">{{ 'share_buttons.twitter'|_ }}</a>
+        </li>
+        <li class="list-inline-item">
+            <i class="fa fa-facebook-square"></i>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url|url_encode }}&quote={{ share_text|url_encode }}" target="_blank" rel="noopener">{{ 'share_buttons.facebook'|_ }}</a>
+        </li>
+    </ul>
+</div>
