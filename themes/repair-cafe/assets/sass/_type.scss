@@ -6,6 +6,9 @@ h3, h4, h5, h6,
 .btn {
     font-size: $font-size-sm;
 }
+.btn-sm {
+    font-size: .85rem;
+}
 
 code {
     &.block {
