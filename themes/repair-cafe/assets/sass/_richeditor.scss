@@ -66,5 +66,12 @@
     img {
         max-width: 100%;
         height: auto !important;
+
+        &.fr-dib{margin:5px auto;display:block;float:none;vertical-align:top}
+        &.fr-dib.fr-fil{margin-left:0}
+        &.fr-dib.fr-fir{margin-right:0}
+        &.fr-dii{display:inline-block;float:none;vertical-align:bottom;margin-left:5px;margin-right:5px;max-width:calc(90%)}
+        &.fr-dii.fr-fil{float:left;margin:5px 5px 5px 0;max-width:calc(95%)}
+        &.fr-dii.fr-fir{float:right;margin:5px 0 5px 5px;max-width:calc(95%)}
     }
 }

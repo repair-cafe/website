@@ -114,5 +114,15 @@ class Plugin extends PluginBase
             $templates->forget($ignoredTemplates);
             return $templates;
         });
+
+        // Overwrite default buttons of richeditor
+        Event::listen('backend.form.extendFields', function ($form) {
+            foreach ($form->getFields() as $field) {
+                if (!empty($field->config['type']) && str_contains($field->config['type'], 'richeditor')) {
+                    $form->addJs('/plugins/liip/repaircafe/assets/js/froala.defaultButtons.js', 'Liip.RepairCafe');
+                    break;
+                }
+            }
+        });
     }
 }
