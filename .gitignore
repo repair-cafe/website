@@ -19,6 +19,8 @@ selenium.php
 # for netbeans
 nbproject
 
+.htaccess
+
 /node_modules
 /themes/repair-cafe/assets/mix-manifest.json
 /themes/repair-cafe/assets/css/app.min.css
