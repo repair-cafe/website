@@ -13,6 +13,14 @@
     # RewriteBase /
 
     ##
+    ## Force secure connection
+    ##
+    RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
+    RewriteCond %{HTTP:X-Forwarded-Proto} =""
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    ##
     ## Black listed folders
     ##
     RewriteRule ^bootstrap/.* index.php [L,NC]
@@ -49,13 +57,5 @@
     ##
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-
-    ##
-    ## Force secure connection
-    ##
-    RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
-    RewriteCond %{HTTP:X-Forwarded-Proto} =""
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 </IfModule>
