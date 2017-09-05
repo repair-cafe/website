@@ -33,7 +33,7 @@ function onStart()
 
 <!-- Content -->
 <section id="site-content" class="home">
-    {% partial 'components/page-header' title='homepage.title'|__(repair_cafe_count, { repair_cafe_count: repair_cafe_count }) lead_text=lead_text header_image_url=(header_image ? header_image|media) header_image_caption=header_image_caption %}
+    {% partial 'components/page-header' title='homepage.title'|__(repair_cafe_count, { repair_cafe_count: repair_cafe_count }) lead_text=lead_text header_image_url=(header_image ? header_image|media) header_image_caption=header_image_caption call_to_action_text=call_to_action_text call_to_action_url=call_to_action_url %}
     <div class="page-content">
         <section class="container mb-5">
             <h2>{{ 'homepage.category_list.title'|_ }}</h2>
