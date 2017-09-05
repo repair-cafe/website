@@ -108,6 +108,10 @@
     ],
     'component' => [
         'eventlist' => [
+            'details' => [
+                'name' => 'Eventliste',
+                'description' => 'Liste aller Events',
+            ],
             'properties' => [
                 'cafe_slug' => [
                     'title' => 'Cafe Slug',
@@ -125,6 +129,10 @@
             ],
         ],
         'newslist' => [
+            'details' => [
+                'name' => 'Newsliste',
+                'description' => 'Liste aller News',
+            ],
             'properties' => [
                 'max_items' => [
                     'title' => 'Maximale Anzahl an News-Einträgen',
@@ -134,7 +142,73 @@
             ],
         ],
         'categorylist' => [
+            'details' => [
+                'name' => 'Kategorieliste',
+                'description' => 'Liste aller Kategorien',
+            ],
             'all_categories' => 'Alle Kategorien',
+        ],
+        'cafe_detail' => [
+            'details' => [
+                'name' => 'Café Detail',
+                'description' => 'Detailansicht eines Repair Cafés',
+            ],
+        ],
+        'news_detail' => [
+            'details' => [
+                'name' => 'News Detail',
+                'description' => 'Detailansicht einer News',
+            ],
+        ],
+        'button' => [
+            'details' => [
+                'name' => 'Button',
+                'description' => 'Fügt einen Button ein',
+            ],
+            'label' => [
+                'title' => 'Label',
+                'description' => 'Button Text',
+            ],
+            'url' => [
+                'title' => 'Link',
+                'description' => 'Button Link',
+            ],
+            'target' => [
+                'title' => 'Link Ziel',
+                'description' => 'Button Link Ziel',
+                'option' => [
+                    'self' => 'Eigenes Fenster',
+                    'blank' => 'Neues Fenster',
+                ],
+            ],
+            'style' => [
+                'title' => 'Stil',
+                'description' => 'Button Stil',
+                'option' => [
+                    'btn_primary' => 'Primary Button',
+                    'btn_secondary' => 'Secondary Button',
+                    'btn_outline_primary' => 'Primary Outline Button',
+                    'btn_outline_secondary' => 'Secondary Outline Button',
+                ],
+            ],
+            'position' => [
+                'title' => 'Position',
+                'description' => 'Button Position',
+                'option' => [
+                    'left' => 'Links',
+                    'center' => 'Zentrieren',
+                    'right' => 'Rechts',
+                ],
+            ],
+            'size' => [
+                'title' => 'Grösse',
+                'description' => 'Button Grösse',
+                'option' => [
+                    'normal' => 'Normal',
+                    'large' => 'Gross',
+                    'small' => 'Klein',
+                ],
+            ],
         ],
     ],
     'theme' => [

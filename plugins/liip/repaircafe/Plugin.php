@@ -31,6 +31,19 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Register snippets with the RainLab.Pages plugin.
+     *
+     * @return array
+     * @see https://octobercms.com/plugin/rainlab-pages
+     */
+    public function registerPageSnippets()
+    {
+        return [
+            'Liip\RepairCafe\Components\Button' => 'button',
+        ];
+    }
+
     public function registerSettings()
     {
         return [
