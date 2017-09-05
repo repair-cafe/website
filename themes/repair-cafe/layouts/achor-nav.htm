@@ -1,0 +1,41 @@
+description = "Anchor Navigation layout"
+
+[staticPage]
+useContent = 0
+default = 0
+
+[localePicker]
+forceUrl = 1
+==
+{variable name="lead_text" label="liip.repaircafe::lang.theme.layout.default.variables.lead_text" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="richeditor" toolbarButtons="fullscreen|paragraphFormat|bold|italic|align|formatOL|formatUL|insertLink|insertImage|insertHR|clearFormatting"}{/variable}
+{variable name="call_to_action_text" label="liip.repaircafe::lang.theme.layout.default.variables.call_to_action_text" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="text" span="left"}{/variable}
+{variable name="call_to_action_url" label="liip.repaircafe::lang.theme.layout.default.variables.call_to_action_url" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="text" span="right"}{/variable}
+{variable name="header_image" label="liip.repaircafe::lang.theme.layout.default.variables.header_image" tab="liip.repaircafe::lang.theme.layout.default.tab.general" type="mediafinder" mode="image" span="left" comment="liip.repaircafe::lang.theme.layout.default.comments.header_image"}{/variable}
+{repeater name="content_sections" tab="liip.repaircafe::lang.theme.layout.default.tab.content" prompt="liip.repaircafe::lang.theme.layout.anchor_nav.variables.content_sections.prompt"}
+    {variable type="text" name="title" label="liip.repaircafe::lang.theme.layout.anchor_nav.variables.content_sections.title"}{/variable}
+    {variable type="text" name="nav_title" label="liip.repaircafe::lang.theme.layout.anchor_nav.variables.content_sections.nav_title"}{/variable}
+    {variable type="richeditor" name="content" label="liip.repaircafe::lang.theme.layout.anchor_nav.variables.content_sections.content"}{/variable}
+{/repeater}
+
+{% partial 'site/html-header' %}
+
+<!-- Header -->
+{% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
+
+<!-- Content -->
+<section id="site-content">
+    {% partial 'components/page-header' title=this.page.title lead_text=lead_text header_image_url=(header_image ? header_image|media) header_image_caption=header_image_caption call_to_action_text=call_to_action_text call_to_action_url=call_to_action_url %}
+    {% partial 'components/anchor-navigation' sections=content_sections %}
+    <div class="page-content">
+        <div class="container">
+            {% for section in content_sections %}
+                {% partial 'components/content-section' data=section index=loop.index %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+{% partial 'site/footer' %}
+
+{% partial 'site/html-footer' %}

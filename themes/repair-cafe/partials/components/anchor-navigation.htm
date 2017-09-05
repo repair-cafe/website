@@ -1,0 +1,11 @@
+{% if sections|length > 0 %}
+    <ul class="anchor-navigation nav justify-content-center bg-dark">
+        {% for section in sections %}
+            <li class="nav-item">
+                <a class="nav-link smooth-scroll" href="#contentSection{{ loop.index }}">
+                    {{ section.nav_title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -222,9 +222,20 @@
                 ],
                 'tab' => [
                     'general' => 'Allgemein',
+                    'content' => 'Inhalt',
                 ],
                 'comments' => [
                     'header_image' => 'Die optimale Bildgrösse beträgt 1110x450px, die Dateigrösse ist auf 1MB begrenzt',
+                ],
+            ],
+            'anchor_nav' => [
+                'variables' => [
+                    'content_sections' => [
+                        'prompt' => 'Neue Content Section hinzufügen',
+                        'title' => 'Titel',
+                        'nav_title' => 'Navigationstitel',
+                        'content' => 'Inhalt',
+                    ],
                 ],
             ],
         ],

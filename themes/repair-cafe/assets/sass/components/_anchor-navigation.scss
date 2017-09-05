@@ -1,0 +1,15 @@
+.anchor-navigation {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    color: $white;
+    font-weight: $font-weight-bold;
+
+    a {
+        color: $white;
+
+        @include hover-focus {
+            color: $gray-600;
+        }
+    }
+}
