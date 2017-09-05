@@ -10,8 +10,8 @@ class NewsDetail extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'News Detail',
-            'description' => 'Displays details of a news.'
+            'name'        => 'liip.repaircafe::lang.component.news_detail.details.name',
+            'description' => 'liip.repaircafe::lang.component.news_detail.details.description',
         ];
     }
 
