@@ -61,7 +61,7 @@
                                         <a class="btn btn-primary" href="{{ 'cafe'|page({ slug: event.cafe.slug }) }}" role="button">{{ 'eventlist.cafe_detail_button'|_ }}</a>
                                     </div>
                                 {% endif %}
-                                {% partial 'components/share' event=event %}
+                                {% partial 'components/event-share' event=event %}
                             </div>
                         </div>
                     </li>
