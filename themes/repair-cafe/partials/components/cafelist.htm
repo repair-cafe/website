@@ -1,0 +1,27 @@
+<div class="cafelist">
+    {% if cafeList.cafes|length > 0 %}
+        <ul class="cafes list-unstyled mb-5 small">
+            {% for cafe in cafeList.cafes %}
+                <li class="pt-3" id="cafe{{ cafe.id }}">
+                    <div class="row">
+                        <div class="col-md-2 mb-3">
+                            {% if cafe.logo is not empty %}
+                                <img class="img-fluid logo" src="{{ cafe.logo.path }}" alt="{{ (cafe.logo.title ? cafe.logo.title : cafe.title) }}">
+                            {% elseif this.theme.repair_cafe_default_logo is not empty %}
+                                <img class="img-fluid logo" src="{{ this.theme.repair_cafe_default_logo|media }}" alt="{{ cafe.title }}">
+                            {% endif%}
+                        </div>
+                        <div class="col-md-10 mb-3 information">
+                            <h4 class="h5"><a href="{{ 'cafe'|page({ slug: cafe.slug }) }}">{{ cafe.title }}</a></h4>
+                            <p>{{ html_strip(cafe.description|raw)|truncate(200) }}</p>
+                            <p class="text-muted">{{ cafe.getFormattedAddress }}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        {{ cafeList.cafe_paginator.render('justify-content-center')|raw }}
+    {% else %}
+        <p>{{ 'cafelist.no_cafes_found'|_ }}</p>
+    {% endif %}
+</div>

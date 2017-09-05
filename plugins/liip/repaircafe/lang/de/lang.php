@@ -32,7 +32,7 @@
         'deleted_at' => 'Gelöscht am',
         'comments' => [
             'image' => 'Die optimale Bildgrösse beträgt 1110x450px, die Dateigrösse ist auf 1MB begrenzt',
-            'logo' => 'Die optimale Bildgrösse beträgt 250x250px, die Dateigrösse ist auf 512KB begrenzt',
+            'logo' => 'Die optimale Bildgrösse beträgt 500x500px, die Dateigrösse ist auf 512KB begrenzt',
         ],
     ],
     'permissions' => [
@@ -202,6 +202,7 @@
         'mapbox_access_token' => 'Mapbox Access Token',
         'events_per_page' => 'Anzahl Events pro Seite',
         'news_per_page' => 'Anzahl News pro Seite',
+        'cafes_per_page' => 'Anzahl Cafes pro Seite',
         'comments' => [
             'static_map_api_url' => 'Die URL kann folgende Parameter beinhalten: {PIN_COLOR}, {LONGITUDE}, {LATITUDE}, {ACCESS_TOKEN}',
             'external_map_url' => 'Die URL kann folgende Parameter beinhalten: {ADDRESS}',

@@ -3,9 +3,7 @@ url = "/cafes"
 layout = "default"
 is_hidden = 0
 
-[eventList]
-
-[categoryList]
+[cafeList]
 ==
 {% put page %}
     <div class="events">
@@ -14,7 +12,9 @@ is_hidden = 0
                 <div class="page-header-content row justify-content-center">
                     <div class="col-lg-8">
                         <h1>{{ 'page.cafes.title'|_ }}</h1>
-                        {% partial 'components/event-search-form' showCategories=true categories=categoryList.categoryOptions %}
+                        <p class="small mb-0">
+                            <a href="{{ 'events'|page }}" class="link-important">{{ 'page.cafes.show_events'|_ }}</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -22,20 +22,9 @@ is_hidden = 0
         <div id="eventsMap"></div>
         <div class="page-content disable-map">
             <div class="container">
-                <script type="text/javascript">
-                    var repaircafe = {};
-                    repaircafe['events'] = {{ eventList.eventsForMap|raw }};
-                    repaircafe['config'] = {
-                        'mapboxAccessToken': {{ eventList.mapboxAccessToken|raw }}
-                    };
-                </script>
-                <h2>{{ 'page.cafes.eventlist.title'|_ }}</h2>
-                {% partial 'components/eventlist' eventList=eventList %}
+                <h2>{{ 'page.cafes.cafelist.title'|__(cafeList.cafe_count, { repair_cafe_count: cafeList.cafe_count }) }}</h2>
+                {% partial 'components/cafelist' cafeList=cafeList %}
             </div>
         </div>
     </div>
-{% endput %}
-
-{% put scripts %}
-    <script type="text/javascript" src="{{ 'assets/js/events-map.min.js'|theme }}"></script>
 {% endput %}
