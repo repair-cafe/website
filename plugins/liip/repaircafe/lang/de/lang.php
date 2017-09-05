@@ -171,11 +171,13 @@
             'social_googleplus_de' => 'Google+ Page (DE)',
             'social_googleplus_it' => 'Google+ Page (IT)',
             'social_googleplus_fr' => 'Google+ Page (FR)',
+            'google_analytics_tracking_id' => 'Tracking ID',
             'tab' => [
                 'general' => 'Allgemein',
                 'general_de' => 'Allgemein (DE)',
                 'general_it' => 'Allgemein (IT)',
                 'general_fr' => 'Allgemein (FR)',
+                'google_analytics' => 'Google Analytics',
                 'default_content' => 'Standardcontent',
             ],
         ],
