@@ -59,10 +59,9 @@ class Event extends Model
 
     public function getStaticMapURL()
     {
-        if (!empty($this->latitude) && !empty($this->longitude)) {
-            $access_token = Settings::get('mapbox_access_token', '');
-            $api_url = Settings::get('static_map_api_url', '');
-
+        $access_token = Settings::get('mapbox_access_token', '');
+        $api_url = Settings::get('static_map_api_url', '');
+        if (!empty($this->latitude) && !empty($this->longitude) && !empty($access_token) && !empty($api_url)) {
             $api_url = str_replace("{ACCESS_TOKEN}", $access_token, $api_url);
             $api_url = str_replace("{LATITUDE}", $this->latitude, $api_url);
             $api_url = str_replace("{LONGITUDE}", $this->longitude, $api_url);
