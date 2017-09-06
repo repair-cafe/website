@@ -1,20 +1,6 @@
-{% if activeLocale == 'fr' %}
-    {% set facebook = this.theme.social_facebook_fr %}
-    {% set twitter = this.theme.social_twitter_fr %}
-    {% set googleplus = this.theme.social_googleplus_fr %}
-{% elseif activeLocale == 'it' %}
-    {% set facebook = this.theme.social_facebook_it %}
-    {% set twitter = this.theme.social_twitter_it %}
-    {% set googleplus = this.theme.social_googleplus_it %}
-{% else %}
-    {% set facebook = this.theme.social_facebook_de %}
-    {% set twitter = this.theme.social_twitter_de %}
-    {% set googleplus = this.theme.social_googleplus_de %}
-{% endif %}
-
 <ul class="social-links list-inline">
     <li class="list-inline-item">
-        <a href="{{ facebook }}" target="_blank" rel="noopener" title="{{ 'social_links.facebook'|_ }}">
+        <a href="{{ attribute(this.theme, 'social_facebook_' ~ activeLocale) }}" target="_blank" rel="noopener" title="{{ 'social_links.facebook'|_ }}">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -22,7 +8,7 @@
         </a>
     </li>
     <li class="list-inline-item">
-        <a href="{{ twitter }}" target="_blank" rel="noopener" title="{{ 'social_links.twitter'|_ }}">
+        <a href="{{ attribute(this.theme, 'social_twitter_' ~ activeLocale) }}" target="_blank" rel="noopener" title="{{ 'social_links.twitter'|_ }}">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -30,7 +16,7 @@
         </a>
     </li>
     <li class="list-inline-item">
-        <a href="{{ googleplus }}" target="_blank" rel="noopener" title="{{ 'social_links.googleplus'|_ }}">
+        <a href="{{ attribute(this.theme, 'social_googleplus_' ~ activeLocale) }}" target="_blank" rel="noopener" title="{{ 'social_links.googleplus'|_ }}">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
