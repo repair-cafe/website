@@ -76,7 +76,6 @@ tabs:
             label: 'liip.repaircafe::lang.theme.fields.google_analytics_tracking_id'
             span: full
             type: text
-            default: 'UA-105831527-1'
             tab: 'liip.repaircafe::lang.theme.fields.tab.google_analytics'
         repair_cafe_default_image:
             label: 'liip.repaircafe::lang.theme.fields.repair_cafe_default_image'
