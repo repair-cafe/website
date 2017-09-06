@@ -2,13 +2,7 @@
     <div class="footer-content bg-dark py-5">
         <div class="container">
             <div class="footer-content-box text-center">
-                {% if activeLocale == 'fr' %}
-                    <p><a href="mailto:{{ this.theme.contact_email_fr }}">{{ this.theme.contact_email_fr }}</a></p>
-                {% elseif activeLocale == 'it' %}
-                    <p><a href="mailto:{{ this.theme.contact_email_it }}">{{ this.theme.contact_email_it }}</a></p>
-                {% else %}
-                    <p><a href="mailto:{{ this.theme.contact_email_de }}">{{ this.theme.contact_email_de }}</a></p>
-                {% endif %}
+                <p><a href="mailto:{{ attribute(this.theme, 'contact_email_' ~ activeLocale) }}">{{ attribute(this.theme, 'contact_email_' ~ activeLocale) }}</a></p>
                 {% partial 'components/footer-navigation' localized_menucode='footer_' ~ activeLocale %}
                 <div class="d-md-flex justify-content-md-center">
                     {% partial 'components/social-links' %}
@@ -20,5 +14,5 @@
         </div>
     </div>
 
-    {% partial 'components/newsletter-form' mailchimp_list_domain='konsumentenschutz.us7.list-manage.com' mailchimp_user_id='c30978ed9a831738f1881eb0f' mailchimp_list_id='4030adec7a' %}
+    {% partial 'components/newsletter-form' mailchimp_domain=attribute(this.theme, 'mailchimp_domain_' ~ activeLocale) mailchimp_user_id=attribute(this.theme, 'mailchimp_user_id_' ~ activeLocale) mailchimp_list_id=attribute(this.theme, 'mailchimp_list_id_' ~ activeLocale) %}
 </footer>

@@ -1,7 +1,7 @@
 <div class="newsletter-form">
     <div class="container">
         <h2 class="h4">{{ 'newsletter.title'|_ }}</h2>
-        <form action="//{{ mailchimp_list_domain }}/subscribe/post?u={{ mailchimp_user_id }}&amp;id={{ mailchimp_list_id }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+        <form action="//{{ mailchimp_domain }}/subscribe/post?u={{ mailchimp_user_id }}&amp;id={{ mailchimp_list_id }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
             <div class="row">
                 <div class="form-group col-md-3 mb-2 pr-md-1">
                     <label class="sr-only" for="mce-EMAIL">{{ 'newsletter.email'|_ }}</label>
