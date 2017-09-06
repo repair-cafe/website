@@ -6,7 +6,7 @@
                 {% partial 'components/footer-navigation' localized_menucode='footer_' ~ activeLocale %}
                 <div class="d-md-flex justify-content-md-center">
                     {% partial 'components/social-links' %}
-                    <a href="https://www.konsumentenschutz.ch/">
+                    <a href="{{ attribute(this.theme, 'logo_url_' ~ activeLocale) }}">
                         <img src="{{ ('assets/images/logo-footer.svg')|theme }}" onerror="this.onerror=null;this.src='{{ ('assets/images/logo-footer.png')|theme }}'" class="logo img-fluid ml-md-5" alt="{{ 'site.footer.sks_logo'|_ }}" />
                     </a>
                 </div>

@@ -18,6 +18,24 @@ tabs:
             type: text
             default: 'repaircafe@konsmentenschutz.ch'
             tab: 'liip.repaircafe::lang.theme.fields.tab.general_it'
+        logo_url_de:
+            label: 'liip.repaircafe::lang.theme.fields.logo_url_de'
+            span: full
+            type: text
+            default: 'https://www.konsumentenschutz.ch'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_de'
+        logo_url_fr:
+            label: 'liip.repaircafe::lang.theme.fields.logo_url_fr'
+            span: full
+            type: text
+            default: 'https://www.konsumentenschutz.ch'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_fr'
+        logo_url_it:
+            label: 'liip.repaircafe::lang.theme.fields.logo_url_it'
+            span: full
+            type: text
+            default: 'https://www.konsumentenschutz.ch'
+            tab: 'liip.repaircafe::lang.theme.fields.tab.general_it'
         social_facebook_de:
             label: 'liip.repaircafe::lang.theme.fields.social_facebook_de'
             span: full
