@@ -1,11 +1,27 @@
 {% if sections|length > 0 %}
-    <ul class="anchor-navigation nav justify-content-center bg-dark">
-        {% for section in sections %}
-            <li class="nav-item">
-                <a class="nav-link smooth-scroll" href="#contentSection{{ loop.index }}">
-                    {{ section.nav_title }}
+    <div class="anchor-navigation bg-dark sticky-top">
+        <nav class="navbar navbar-dark navbar-expand-lg" id="anchorNavigation">
+            <div class="container justify-content-center">
+                <a class="anchor-navigation-toggler d-lg-none collapsed" data-toggle="collapse" data-target="#anchorNavigationCollapse" aria-controls="anchorNavigationCollapse" aria-expanded="false" aria-label="{{ 'anchor_nav.anchor_navigation.toggler.aria_label'|_ }}">
+                    {{ 'anchor_nav.anchor_navigation.toggler.label'|_ }} <i class="fa fa-caret-down" aria-hidden="true"></i>
                 </a>
-            </li>
-        {% endfor %}
-    </ul>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse justify-content-center" id="anchorNavigationCollapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item scroll-to-top">
+                            <a href="#site-header" class="nav-link"><i class="fa fa-arrow-up"></i> <span class="d-lg-none">{{ 'anchor_nav.anchor_navigation.top_link'|_ }}</span></a>
+                        </li>
+                        {% for section in sections %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contentSection{{ loop.index }}">
+                                    {{ section.nav_title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 {% endif %}

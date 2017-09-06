@@ -1,0 +1,45 @@
+.anchor-nav {
+    // needed for scrollspy
+    position: relative;
+
+    .content-section {
+        // Fix hiding of anchor text when scrolling to it
+        $anchor-nav-height: 60px;
+        margin-top: -$anchor-nav-height - 20px;
+        padding-top: $anchor-nav-height + 20px;
+
+        .content-section-box {
+            border-bottom: solid 1px $hr-border-color;
+            padding-bottom: 2em;
+            margin-bottom: 2em;
+        }
+    }
+
+    .anchor-navigation {
+        font-weight: $font-weight-bold;
+
+        .navbar {
+            // add removed "padding" of navbar to all elements
+            .navbar-nav {
+                padding: ($spacer / 2) $spacer;
+            }
+
+            .anchor-navigation-toggler {
+                padding: 1rem;
+                color: $gray-600;
+                cursor: pointer;
+
+                @include hover-focus {
+                    color: $white;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                .navbar-nav .nav-link {
+                    padding-left: .75rem;
+                    padding-right: .75rem;
+                }
+            }
+        }
+    }
+}
