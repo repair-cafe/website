@@ -17,7 +17,7 @@ forceUrl = 1
     {variable type="richeditor" name="content" label="liip.repaircafe::lang.theme.layout.anchor_nav.variables.content_sections.content"}{/variable}
 {/repeater}
 
-{% partial 'site/html-header' %}
+{% partial 'site/html-header' body_class='anchor-nav' body_attributes='data-spy="scroll" data-target="#anchorNavigation" data-offset="20"' %}
 
 <!-- Header -->
 {% partial 'site/header' locales=localePicker.locales activeLocale=localePicker.activeLocale %}
