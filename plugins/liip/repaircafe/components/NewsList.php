@@ -15,8 +15,8 @@ class NewsList extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'News List',
-            'description' => 'Displays a list of news.'
+            'name'        => 'liip.repaircafe::lang.component.newslist.details.name',
+            'description' => 'liip.repaircafe::lang.component.newslist.details.description',
         ];
     }
 

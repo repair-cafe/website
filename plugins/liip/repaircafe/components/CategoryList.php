@@ -11,8 +11,8 @@ class CategoryList extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Category List',
-            'description' => 'Displays a list of categories.'
+            'name'        => 'liip.repaircafe::lang.component.categorylist.details.name',
+            'description' => 'liip.repaircafe::lang.component.categorylist.details.description',
         ];
     }
 

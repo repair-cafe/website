@@ -21,8 +21,8 @@ class EventList extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Event List',
-            'description' => 'Displays a list of events.'
+            'name'        => 'liip.repaircafe::lang.component.eventlist.details.name',
+            'description' => 'liip.repaircafe::lang.component.eventlist.details.description',
         ];
     }
 

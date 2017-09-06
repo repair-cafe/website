@@ -10,8 +10,8 @@ class CafeDetail extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => 'Cafe Detail',
-            'description' => 'Displays details of a cafe.'
+            'name'        => 'liip.repaircafe::lang.component.cafe_detail.details.name',
+            'description' => 'liip.repaircafe::lang.component.cafe_detail.details.description',
         ];
     }
 
