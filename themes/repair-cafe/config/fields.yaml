@@ -72,6 +72,11 @@ tabs:
             type: text
             default: 'https://plus.google.com/+KonsumentenschutzCh'
             tab: 'liip.repaircafe::lang.theme.fields.tab.general_fr'
+        google_analytics_tracking_id:
+            label: 'liip.repaircafe::lang.theme.fields.google_analytics_tracking_id'
+            span: full
+            type: text
+            tab: 'liip.repaircafe::lang.theme.fields.tab.google_analytics'
         repair_cafe_default_image:
             label: 'liip.repaircafe::lang.theme.fields.repair_cafe_default_image'
             span: left

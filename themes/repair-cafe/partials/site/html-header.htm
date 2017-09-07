@@ -12,6 +12,8 @@
     <link rel="icon" sizes="128x128" href="{{ 'assets/images/favicon-128.png'|theme }}">
     <link rel="icon" sizes="192x192" href="{{ 'assets/images/favicon-192.png'|theme }}">
     <link rel="apple-touch-icon-precomposed" sizes="128x128" href="{{ 'assets/images/favicon-128.png'|theme }}">
+    {% partial 'components/google-analytics' tracking_id=this.theme.google_analytics_tracking_id %}
+
     {% styles %}
     <link href="{{ 'assets/css/app.min.css'|theme }}" rel="stylesheet">
 </head>
