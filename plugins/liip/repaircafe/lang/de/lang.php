@@ -325,5 +325,7 @@
     'menuitem' => [
         'cafe' => 'Repair Café',
         'all_cafes' => 'Alle Repair Cafés',
+        'news' => 'News',
+        'all_news' => 'Alle News',
     ],
 ];
