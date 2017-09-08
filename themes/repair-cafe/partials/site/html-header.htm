@@ -17,4 +17,4 @@
     {% styles %}
     <link href="{{ 'assets/css/app.min.css'|theme }}" rel="stylesheet">
 </head>
-<body>
+<body{% if body_class %} class="{{ body_class }}"{% endif %}{% if body_attributes %} {{ body_attributes|raw }}{% endif %}>

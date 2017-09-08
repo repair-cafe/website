@@ -6,9 +6,25 @@ $( document ).ready(function() {
     // Smooth scrolling when clicking links with smooth-scroll class (requires jquery.easing plugin)
     $('a.smooth-scroll').bind('click', function(event) {
         var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+        smoothScroll($($anchor.attr('href')));
+        event.preventDefault();
+    });
+
+    // Close the anchor-navigation on item click
+    $('#anchorNavigationCollapse ul li a').click(function(event) {
+        var toggler = $('.anchor-navigation-toggler:visible');
+        var $anchor = $(this);
+        // if toggler is visible (= small screens)
+        if(toggler.length > 0) {
+            // close navigation
+            toggler.click();
+            // wait till navigation is closed before scrolling to avoid offset errors
+            $('#anchorNavigationCollapse').one('hidden.bs.collapse', function () {
+                smoothScroll($($anchor.attr('href')));
+            });
+        } else {
+            smoothScroll($($anchor.attr('href')));
+        }
         event.preventDefault();
     });
 
@@ -27,4 +43,10 @@ $( document ).ready(function() {
             image.attr('src', image.data('lazyLoadSrc'));
         }
     });
+
+    function smoothScroll(target) {
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1500, 'easeInOutExpo');
+    }
 });
