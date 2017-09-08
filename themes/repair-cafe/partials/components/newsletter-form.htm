@@ -1,0 +1,29 @@
+{# do not display form if settings are empty #}
+{% if mailchimp_domain and mailchimp_user_id and mailchimp_list_id %}
+    <div class="newsletter-form">
+        <div class="container">
+            <h2 class="h4">{{ 'newsletter.title'|_ }}</h2>
+            <form action="//{{ mailchimp_domain }}/subscribe/post?u={{ mailchimp_user_id }}&amp;id={{ mailchimp_list_id }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                <div class="row">
+                    <div class="form-group col-md-3 mb-2 pr-md-1">
+                        <label class="sr-only" for="mce-EMAIL">{{ 'newsletter.email'|_ }}</label>
+                        <input type="email" value="" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="{{ 'newsletter.email'|_ }}">
+                    </div>
+                    <div class="form-group col-md-3 mb-2 pl-md-1 pr-md-1">
+                        <label class="sr-only" for="mce-FNAME">{{ 'newsletter.firstname'|_ }}</label>
+                        <input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME" placeholder="{{ 'newsletter.firstname'|_ }}">
+                    </div>
+                    <div class="form-group col-md-3 mb-2 pl-md-1 pr-md-1">
+                        <label class="sr-only" for="mce-LNAME">{{ 'newsletter.lastname'|_ }}</label>
+                        <input type="text" value="" name="LNAME" class="form-control" id="mce-LNAME" placeholder="{{ 'newsletter.lastname'|_ }}">
+                    </div>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_{{ mailchimp_user_id }}_{{ mailchimp_list_id }}" tabindex="-1" value=""></div>
+                    <div class="form-group col-md-3 mb-2 pl-md-1">
+                        <button type="submit" class="btn btn-primary">{{ 'newsletter.submit'|_ }}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endif %}
