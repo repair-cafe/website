@@ -165,6 +165,12 @@
                 'name' => 'News Detail',
                 'description' => 'Detailansicht einer News',
             ],
+            'properties' => [
+                'slug' => [
+                    'title' => 'Slug',
+                    'description' => 'Slug der News, welche angezeigt werden soll.',
+                ],
+            ],
         ],
         'button' => [
             'details' => [

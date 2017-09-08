@@ -15,9 +15,21 @@ class NewsDetail extends ComponentBase
         ];
     }
 
+    public function defineProperties()
+    {
+        return [
+            'slug' => [
+                'title' => 'liip.repaircafe::lang.component.news_detail.properties.slug.title',
+                'description' => 'liip.repaircafe::lang.component.news_detail.properties.slug.description',
+                'default' => '{{ :slug }}',
+                'type' => 'string',
+            ],
+        ];
+    }
+
     public function onRun()
     {
-        $this->news = News::published()->where('slug', $this->param('slug'))->first();
+        $this->news = News::published()->where('slug', $this->property('slug'))->first();
         if (!$this->news) {
             return \Response::make($this->controller->run('404'), 404);
         }
