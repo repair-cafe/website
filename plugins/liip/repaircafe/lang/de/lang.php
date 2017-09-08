@@ -221,8 +221,8 @@
                     'call_to_action_url' => 'Call-to-action Link',
                 ],
                 'tab' => [
-                    'general' => 'Allgemein',
                     'content' => 'Inhalt',
+                    'header' => 'Header',
                 ],
                 'comments' => [
                     'header_image' => 'Die optimale Bildgrösse beträgt 1110x450px, die Dateigrösse ist auf 1MB begrenzt',
