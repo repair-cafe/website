@@ -153,6 +153,12 @@
                 'name' => 'Café Detail',
                 'description' => 'Detailansicht eines Repair Cafés',
             ],
+            'properties' => [
+                'slug' => [
+                    'title' => 'Slug',
+                    'description' => 'Slug des Cafés, welches angezeigt werden soll.',
+                ],
+            ],
         ],
         'news_detail' => [
             'details' => [
