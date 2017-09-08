@@ -19,3 +19,6 @@
 [submodule "plugins/excodus/translateextended"]
 	path = plugins/excodus/translateextended
 	url = https://github.com/Excodus/oc-translate-extended.git
+[submodule "plugins/rainlab/sitemap"]
+	path = plugins/rainlab/sitemap
+	url = https://github.com/rainlab/sitemap-plugin.git
