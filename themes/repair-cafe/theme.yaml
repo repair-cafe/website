@@ -10,6 +10,7 @@ require:
     - RainLab.Translate
     - RainLab.Pages
     - RainLab.Location
+    - RainLab.Sitemap
     - VojtaSvoboda.TwigExtensions
     - Krisawzm.Embed
     - Excodus.TranslateExtended
