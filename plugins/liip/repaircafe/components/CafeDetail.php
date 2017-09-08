@@ -30,7 +30,7 @@ class CafeDetail extends ComponentBase
     public function onRun()
     {
         $this->cafe = Cafe::published()->where('slug', $this->property('slug'))->first();
-        if (!$this->cafe || !$this->cafe->is_published) {
+        if (!$this->cafe) {
             return \Response::make($this->controller->run('404'), 404);
         }
     }
