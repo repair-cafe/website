@@ -322,4 +322,8 @@
             'external_map_url' => 'Die URL kann folgende Parameter beinhalten: {ADDRESS}',
         ],
     ],
+    'menuitem' => [
+        'cafe' => 'Repair Café',
+        'all_cafes' => 'Alle Repair Cafés',
+    ],
 ];

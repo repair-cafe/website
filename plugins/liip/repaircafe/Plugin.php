@@ -138,5 +138,24 @@ class Plugin extends PluginBase
                 }
             }
         });
+
+        Event::listen('pages.menuitem.listTypes', function () {
+            return [
+                'liip-repaircafe-cafe' => 'liip.repaircafe::lang.menuitem.cafe',
+                'liip-repaircafe-all-cafes' => 'liip.repaircafe::lang.menuitem.all_cafes',
+            ];
+        });
+
+        Event::listen('pages.menuitem.getTypeInfo', function ($type) {
+            if ($type === 'liip-repaircafe-cafe' || $type === 'liip-repaircafe-all-cafes') {
+                return Cafe::getMenuTypeInfo($type);
+            }
+        });
+
+        Event::listen('pages.menuitem.resolveItem', function ($type, $item, $url, $theme) {
+            if ($type === 'liip-repaircafe-cafe' || $type === 'liip-repaircafe-all-cafes') {
+                return Cafe::resolveMenuItem($item, $url, $theme);
+            }
+        });
     }
 }
