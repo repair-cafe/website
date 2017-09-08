@@ -291,7 +291,9 @@ class Cafe extends Model
      */
     protected static function listCafeMenuOptions()
     {
-        $cafes = self::published()->get();
+        $cafes = self::published()
+            ->orderBy('title', 'asc')
+            ->get();
         $cafe_menu_options = [];
         foreach ($cafes as $cafe) {
             $cafe_menu_options[$cafe->id] = $cafe->title;
