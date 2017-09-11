@@ -20,6 +20,7 @@ selenium.php
 nbproject
 
 .htaccess
+robots.txt
 
 /node_modules
 /themes/repair-cafe/assets/mix-manifest.json
@@ -34,3 +35,6 @@ nbproject
 /themes/repair-cafe/assets/images/vendor/*
 /themes/repair-cafe/content/*
 /themes/repair-cafe/meta/*
+
+# ignore paid plugins
+/plugins/renatio/seomanager
