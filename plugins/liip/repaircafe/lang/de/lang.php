@@ -254,12 +254,15 @@
         'pages' => [
             'events' => [
                 'title' => 'Events',
+                'meta_description' => 'Repair Café Events',
             ],
             'news' => [
                 'title' => 'Aktuelles',
+                'meta_description' => 'Repair Café News',
             ],
             'cafes' => [
                 'title' => 'Alle Repair Cafés',
+                'meta_description' => 'Alle Repair Cafés',
             ],
         ],
         'fields' => [

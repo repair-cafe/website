@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Lang;
 function onEnd()
 {
     $this->page->title = Lang::get('liip.repaircafe::lang.theme.pages.events.title');
+    $this['meta_description'] = Lang::get('liip.repaircafe::lang.theme.pages.events.meta_description');
 }
 ?>
 ==
