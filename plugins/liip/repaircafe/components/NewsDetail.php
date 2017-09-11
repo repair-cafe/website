@@ -30,6 +30,7 @@ class NewsDetail extends ComponentBase
     public function onRun()
     {
         $this->news = News::published()->where('slug', $this->property('slug'))->first();
+        $this->page['news'] = $this->news; // add news object to page context to make seo manager work
         if (!$this->news) {
             return \Response::make($this->controller->run('404'), 404);
         }
