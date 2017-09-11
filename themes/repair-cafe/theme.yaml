@@ -11,6 +11,7 @@ require:
     - RainLab.Pages
     - RainLab.Location
     - RainLab.Sitemap
+    - Renatio.SeoManager
     - VojtaSvoboda.TwigExtensions
     - Krisawzm.Embed
     - Excodus.TranslateExtended
