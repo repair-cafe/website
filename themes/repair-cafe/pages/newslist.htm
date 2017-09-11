@@ -9,15 +9,24 @@ robot_follow = "follow"
 
 [newsList]
 ==
+<?php
+use Illuminate\Support\Facades\Lang;
+
+function onEnd()
+{
+    $this->page->title = Lang::get('liip.repaircafe::lang.theme.pages.news.title');
+}
+?>
+==
 {% put page %}
 <div class="events">
     <div class="page-header">
         <div class="page-header-content-container container text-center py-5">
             <div class="page-header-content row justify-content-center">
                 <div class="col-lg-8">
-                    <h1>{{ 'newslist.title'|_ }}</h1>
+                    <h1>{{ 'page.newslist.title'|_ }}</h1>
                     <div class="lead">
-                        {{ 'newslist.lead'|_ }}
+                        {{ 'page.newslist.lead'|_ }}
                     </div>
                 </div>
             </div>

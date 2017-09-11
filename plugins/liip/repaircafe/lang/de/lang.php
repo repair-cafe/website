@@ -251,6 +251,17 @@
                 ],
             ],
         ],
+        'pages' => [
+            'events' => [
+                'title' => 'Events',
+            ],
+            'news' => [
+                'title' => 'Aktuelles',
+            ],
+            'cafes' => [
+                'title' => 'Alle Repair Cafés',
+            ],
+        ],
         'fields' => [
             'site_title' => 'Seitentitel',
             'contact_email_de' => 'Kontakt Email-Adresse (DE)',

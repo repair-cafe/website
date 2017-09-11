@@ -9,6 +9,15 @@ robot_follow = "follow"
 
 [cafeList]
 ==
+<?php
+use Illuminate\Support\Facades\Lang;
+
+function onEnd()
+{
+    $this->page->title = Lang::get('liip.repaircafe::lang.theme.pages.cafes.title');
+}
+?>
+==
 {% put page %}
     <div class="events">
         <div class="page-header disable-map">
