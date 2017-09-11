@@ -304,6 +304,9 @@
         'image' => 'Bild',
         'created_at' => 'Erstellt am',
         'updated_at' => 'Aktualisiert am',
+        'tab' => [
+            'general' => 'Allgemein',
+        ],
         'comments' => [
             'image' => 'Die optimale Bildgrösse beträgt 1110x450px, die Dateigrösse ist auf 1MB begrenzt',
         ],
