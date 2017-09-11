@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ 'site.title'|_ }} - {{ this.page.title }}</title>
-    <meta name="description" content="{{ this.page.meta_description }}">
-    <meta name="title" content="{{ this.page.meta_title }}">
-    <meta name="author" content="Team Jazz, Liip AG">
+    {% component 'seoTags' %}
     <link rel="icon" sizes="128x128" href="{{ 'assets/images/favicon-128.png'|theme }}">
     <link rel="icon" sizes="192x192" href="{{ 'assets/images/favicon-192.png'|theme }}">
     <link rel="apple-touch-icon-precomposed" sizes="128x128" href="{{ 'assets/images/favicon-128.png'|theme }}">
