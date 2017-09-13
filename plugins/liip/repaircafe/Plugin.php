@@ -2,10 +2,12 @@
 
 use Backend\Models\User as BackendUserModel;
 use Backend\Controllers\Users as BackendUsersController;
+use Cms\Classes\MediaLibrary;
 use Illuminate\Support\Facades\Event;
 use Liip\RepairCafe\Console\Seed;
 use Liip\RepairCafe\Models\Cafe;
 use Liip\RepairCafe\Models\News;
+use October\Rain\Support\Facades\Html;
 use RainLab\Translate\Classes\Translator;
 use System\Classes\PluginBase;
 
@@ -166,5 +168,59 @@ class Plugin extends PluginBase
                 return News::resolveMenuItem($item, $url, $theme);
             }
         });
+
+        // set default seo values if not set
+        Event::listen('seo.beforeComponentRender', function ($page, $seoTag) {
+            $metaDescription = '';
+            // currently og_image only works with images from the media manager
+            $ogImage = '';
+
+            if (!empty($page['news'])) {
+                // if current page uses newsDetail component
+                if (!empty($page['news']->lead)) {
+                    $metaDescription = $page['news']->lead;
+                }
+                if (!empty($page['news']->image)) {
+                    $ogImage = $page['news']->image;
+                }
+            } elseif (!empty($page['cafe'])) {
+                // if current page uses cafeDetail component
+                if (!empty($page['cafe']->description)) {
+                    $metaDescription = $page['cafe']->description;
+                }
+            } else {
+                if (!empty($page['lead_text'])) {
+                    $metaDescription = $page['lead_text'];
+                }
+                if (!empty($page['header_image'])) {
+                    $ogImage = $page['header_image'];
+                }
+            }
+
+            if (empty($seoTag->meta_description) && !empty($metaDescription)) {
+                $seoTag->meta_description = str_limit(Html::strip($metaDescription), 157);
+            }
+            if (empty($seoTag->og_image) && !empty($ogImage)) {
+                $seoTag->og_image = $ogImage;
+                list($width, $height) = $this->getOgImageDimensions($ogImage);
+                $seoTag->og_image_width = $width;
+                $seoTag->og_image_height = $height;
+            }
+        });
+    }
+
+    protected function getOgImageDimensions($og_image)
+    {
+        $filePath = base_path($this->getImagePath($og_image));
+
+        if (is_file($filePath)) {
+            return getimagesize($filePath);
+        }
+        return false;
+    }
+
+    protected function getImagePath($image)
+    {
+        return MediaLibrary::url($image);
     }
 }
