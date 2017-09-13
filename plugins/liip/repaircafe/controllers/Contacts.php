@@ -22,6 +22,6 @@ class Contacts extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Liip.RepairCafe', 'main-menu-cafe', 'side-menu-cafes');
+        BackendMenu::setContext('Liip.RepairCafe', 'cafe', 'cafes');
     }
 }

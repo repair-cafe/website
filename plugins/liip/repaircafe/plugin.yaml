@@ -21,34 +21,36 @@ permissions:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.settings'
 navigation:
-    main-menu-cafe:
+    cafe:
         label: 'liip.repaircafe::lang.plugin.name'
         url: liip/repaircafe/cafes
         icon: icon-coffee
         permissions:
             - 'liip.repaircafe.*'
+        order: '50'
         sideMenu:
-            side-menu-cafes:
+            cafes:
                 label: 'liip.repaircafe::lang.nav.cafes'
                 url: liip/repaircafe/cafes
                 icon: icon-coffee
                 permissions:
                     - liip.repaircafe.cafes
-            side-menu-events:
+            events:
                 label: 'liip.repaircafe::lang.nav.events'
                 url: liip/repaircafe/events
                 icon: icon-calendar
                 permissions:
                     - liip.repaircafe.events
-            side-menu-categories:
+            categories:
                 label: 'liip.repaircafe::lang.nav.categories'
                 url: liip/repaircafe/categories
                 icon: icon-tag
                 permissions:
                     - liip.repaircafe.categories
-    main-menu-news:
+    news:
         label: 'liip.repaircafe::lang.nav.news'
         url: liip/repaircafe/news
         icon: icon-bullhorn
         permissions:
             - liip.repaircafe.news
+        order: '60'

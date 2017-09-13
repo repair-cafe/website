@@ -17,6 +17,6 @@ class News extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Liip.RepairCafe', 'main-menu-news');
+        BackendMenu::setContext('Liip.RepairCafe', 'news');
     }
 }
