@@ -3,14 +3,18 @@ columns:
         label: 'liip.repaircafe::lang.contact.firstname'
         type: text
         searchable: false
+        sortable: false
     lastname:
         label: 'liip.repaircafe::lang.contact.lastname'
         type: text
         searchable: false
+        sortable: false
     email:
         label: 'liip.repaircafe::lang.contact.email'
         type: text
         searchable: false
+        sortable: false
     phone:
         label: 'liip.repaircafe::lang.contact.phone'
         type: text
+        sortable: false
