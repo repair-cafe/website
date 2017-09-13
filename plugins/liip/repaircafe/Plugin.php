@@ -118,6 +118,15 @@ class Plugin extends PluginBase
             ]);
         });
 
+        // Change backend menu order of pages plugin
+        Event::listen('backend.menu.extendItems', function ($manager) {
+            $manager->addMainMenuItems('RainLab.Pages', [
+                'pages' => [
+                    'order' => '110',
+                ],
+            ]);
+        });
+
         // Remove complex content blocks from pages plugin
         Event::listen('pages.content.templateList', function ($plugin, $templates) {
             $ignoredTemplates = [
