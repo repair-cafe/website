@@ -251,6 +251,20 @@
                 ],
             ],
         ],
+        'pages' => [
+            'events' => [
+                'title' => 'Events',
+                'meta_description' => 'Repair Café Events',
+            ],
+            'news' => [
+                'title' => 'Aktuelles',
+                'meta_description' => 'Repair Café News',
+            ],
+            'cafes' => [
+                'title' => 'Alle Repair Cafés',
+                'meta_description' => 'Alle Repair Cafés',
+            ],
+        ],
         'fields' => [
             'site_title' => 'Seitentitel',
             'contact_email_de' => 'Kontakt Email-Adresse (DE)',
@@ -304,6 +318,9 @@
         'image' => 'Bild',
         'created_at' => 'Erstellt am',
         'updated_at' => 'Aktualisiert am',
+        'tab' => [
+            'general' => 'Allgemein',
+        ],
         'comments' => [
             'image' => 'Die optimale Bildgrösse beträgt 1110x450px, die Dateigrösse ist auf 1MB begrenzt',
         ],

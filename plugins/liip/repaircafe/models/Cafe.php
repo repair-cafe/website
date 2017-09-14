@@ -24,6 +24,8 @@ class Cafe extends Model
 
     protected $dates = ['deleted_at'];
 
+    public $implement = ['@Renatio.SeoManager.Behaviors.SeoModel'];
+
     /**
      * The attributes that are mass assignable.
      *

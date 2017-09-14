@@ -30,6 +30,8 @@ class CafeDetail extends ComponentBase
     public function onRun()
     {
         $this->cafe = Cafe::published()->where('slug', $this->property('slug'))->first();
+        $this->page['cafe'] = $this->cafe; // add cafe object to page context to make seo manager work
+        $this->page->title = $this->cafe->title; // overwrite page title
         if (!$this->cafe) {
             return \Response::make($this->controller->run('404'), 404);
         }

@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                             {% endif %}
-                            <div class="col-md-6 mb-3 small">
+                            <div class="{{ static_map_url ? 'col-md-6' : 'col-12' }} mb-3 small">
                                 <div class="mb-3 richeditor-content">
                                     {{ event.description|raw }}
                                 </div>

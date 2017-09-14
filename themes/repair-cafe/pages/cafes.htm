@@ -2,8 +2,20 @@ title = "Cafes"
 url = "/cafes"
 layout = "default"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
 
 [cafeList]
+==
+<?php
+use Illuminate\Support\Facades\Lang;
+
+function onEnd()
+{
+    $this->page->title = Lang::get('liip.repaircafe::lang.theme.pages.cafes.title');
+    $this['meta_description'] = Lang::get('liip.repaircafe::lang.theme.pages.cafes.meta_description');
+}
+?>
 ==
 {% put page %}
     <div class="events">

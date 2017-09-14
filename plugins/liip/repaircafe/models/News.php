@@ -20,6 +20,8 @@ class News extends Model
      */
     protected $slugs = ['slug' => 'name'];
 
+    public $implement = ['@Renatio.SeoManager.Behaviors.SeoModel'];
+
     /**
      * The attributes that are mass assignable.
      *

@@ -2,8 +2,20 @@ title = "Newslist"
 url = "/news"
 layout = "default"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
 
 [newsList]
+==
+<?php
+use Illuminate\Support\Facades\Lang;
+
+function onEnd()
+{
+    $this->page->title = Lang::get('liip.repaircafe::lang.theme.pages.news.title');
+    $this['meta_description'] = Lang::get('liip.repaircafe::lang.theme.pages.news.meta_description');
+}
+?>
 ==
 {% put page %}
 <div class="events">
@@ -11,9 +23,9 @@ is_hidden = 0
         <div class="page-header-content-container container text-center py-5">
             <div class="page-header-content row justify-content-center">
                 <div class="col-lg-8">
-                    <h1>{{ 'newslist.title'|_ }}</h1>
+                    <h1>{{ 'page.newslist.title'|_ }}</h1>
                     <div class="lead">
-                        {{ 'newslist.lead'|_ }}
+                        {{ 'page.newslist.lead'|_ }}
                     </div>
                 </div>
             </div>

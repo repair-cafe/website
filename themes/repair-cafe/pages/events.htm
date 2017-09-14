@@ -2,10 +2,22 @@ title = "Events"
 url = "/events"
 layout = "default"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
 
 [eventList]
 
 [categoryList]
+==
+<?php
+use Illuminate\Support\Facades\Lang;
+
+function onEnd()
+{
+    $this->page->title = Lang::get('liip.repaircafe::lang.theme.pages.events.title');
+    $this['meta_description'] = Lang::get('liip.repaircafe::lang.theme.pages.events.meta_description');
+}
+?>
 ==
 {% put page %}
 <div class="events">
