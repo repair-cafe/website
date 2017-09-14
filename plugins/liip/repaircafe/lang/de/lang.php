@@ -153,11 +153,23 @@
                 'name' => 'Café Detail',
                 'description' => 'Detailansicht eines Repair Cafés',
             ],
+            'properties' => [
+                'slug' => [
+                    'title' => 'Slug',
+                    'description' => 'Slug des Cafés, welches angezeigt werden soll.',
+                ],
+            ],
         ],
         'news_detail' => [
             'details' => [
                 'name' => 'News Detail',
                 'description' => 'Detailansicht einer News',
+            ],
+            'properties' => [
+                'slug' => [
+                    'title' => 'Slug',
+                    'description' => 'Slug der News, welche angezeigt werden soll.',
+                ],
             ],
         ],
         'button' => [
@@ -309,5 +321,11 @@
             'static_map_api_url' => 'Die URL kann folgende Parameter beinhalten: {PIN_COLOR}, {LONGITUDE}, {LATITUDE}, {ACCESS_TOKEN}',
             'external_map_url' => 'Die URL kann folgende Parameter beinhalten: {ADDRESS}',
         ],
+    ],
+    'menuitem' => [
+        'cafe' => 'Repair Café',
+        'all_cafes' => 'Alle Repair Cafés',
+        'news' => 'News',
+        'all_news' => 'Alle News',
     ],
 ];

@@ -5,6 +5,7 @@ use Backend\Controllers\Users as BackendUsersController;
 use Illuminate\Support\Facades\Event;
 use Liip\RepairCafe\Console\Seed;
 use Liip\RepairCafe\Models\Cafe;
+use Liip\RepairCafe\Models\News;
 use RainLab\Translate\Classes\Translator;
 use System\Classes\PluginBase;
 
@@ -145,6 +146,33 @@ class Plugin extends PluginBase
                     $form->addJs('/plugins/liip/repaircafe/assets/js/froala.defaultButtons.js', 'Liip.RepairCafe');
                     break;
                 }
+            }
+        });
+
+        Event::listen('pages.menuitem.listTypes', function () {
+            return [
+                'liip-repaircafe-cafe' => 'liip.repaircafe::lang.menuitem.cafe',
+                'liip-repaircafe-all-cafes' => 'liip.repaircafe::lang.menuitem.all_cafes',
+                'liip-repaircafe-news' => 'liip.repaircafe::lang.menuitem.news',
+                'liip-repaircafe-all-news' => 'liip.repaircafe::lang.menuitem.all_news',
+            ];
+        });
+
+        Event::listen('pages.menuitem.getTypeInfo', function ($type) {
+            if ($type === 'liip-repaircafe-cafe' || $type === 'liip-repaircafe-all-cafes') {
+                return Cafe::getMenuTypeInfo($type);
+            }
+            if ($type === 'liip-repaircafe-news' || $type === 'liip-repaircafe-all-news') {
+                return News::getMenuTypeInfo($type);
+            }
+        });
+
+        Event::listen('pages.menuitem.resolveItem', function ($type, $item, $url, $theme) {
+            if ($type === 'liip-repaircafe-cafe' || $type === 'liip-repaircafe-all-cafes') {
+                return Cafe::resolveMenuItem($item, $url, $theme);
+            }
+            if ($type === 'liip-repaircafe-news' || $type === 'liip-repaircafe-all-news') {
+                return News::resolveMenuItem($item, $url, $theme);
             }
         });
     }
