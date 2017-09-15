@@ -7,9 +7,7 @@
                 {% endif %}
                 <h1>{{ title }}</h1>
                 {% if lead_text is not empty %}
-                    <div class="lead richeditor-content">
-                        {{ lead_text|raw }}
-                    </div>
+                    <p class="lead">{{ lead_text|nl2br }}</p>
                 {% endif %}
                 {% if call_to_action_text is not empty and call_to_action_url is not empty %}
                     <p><a href="{{ call_to_action_url }}" class="btn btn-outline-secondary">{{ call_to_action_text }}</a></p>

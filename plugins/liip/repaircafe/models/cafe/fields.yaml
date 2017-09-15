@@ -27,7 +27,7 @@ tabs:
             size: large
             oc.commentPosition: ''
             span: full
-            type: richeditor
+            type: textarea
             tab: 'liip.repaircafe::lang.cafe.tab.general'
         logo:
             label: 'liip.repaircafe::lang.cafe.logo'

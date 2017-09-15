@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-md-10 mb-3 information">
                             <h4 class="h5"><a href="{{ 'cafe'|page({ slug: cafe.slug }) }}">{{ cafe.title }}</a></h4>
-                            <p>{{ html_strip(cafe.description|raw)|truncate(200) }}</p>
+                            <p>{{ html_strip(cafe.description|nl2br)|truncate(200) }}</p>
                             <p class="text-muted">{{ cafe.getFormattedAddress }}</p>
                         </div>
                     </div>

@@ -16,9 +16,9 @@
                                 <h3 class="{{ loop.index == 1 ? 'h4' : 'h5' }} mb-0"><a href="{{ 'news'|page({ slug: news_entry.slug }) }}">{{ news_entry.title }}</a></h3>
                                 <p class="text-muted small">{{ news_entry.publish_date|localizeddate_formatted('cccc, dd. MMMM y') }}</p>
                                 <div class="richeditor-content{{ loop.index == 1 ? '' : ' small' }}">
-                                    {% set text = (news_entry.lead is not empty ? news_entry.lead : news_entry.content) %}
+                                    {% set text = (news_entry.lead is not empty ? news_entry.lead|nl2br : news_entry.content|raw) %}
                                     {% set text_length = (loop.index == 1 ? 500 : 200) %}
-                                    {{ html_strip(text|raw)|truncate(text_length) }}
+                                    {{ html_strip(text)|truncate(text_length) }}
                                 </div>
                             </div>
                         </div>
