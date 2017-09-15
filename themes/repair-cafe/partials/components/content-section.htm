@@ -3,7 +3,7 @@
         <div class="content-section-box">
             <h2>{{ data.title }}</h2>
             <div class="richeditor-content">
-                {{ data.content|raw }}
+                {{ data.content|parseSnippets }}
             </div>
         </div>
     </div>

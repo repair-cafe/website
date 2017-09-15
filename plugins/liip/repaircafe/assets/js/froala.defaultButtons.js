@@ -14,6 +14,7 @@
                 'insertImage',
                 'insertHR',
                 'clearFormatting',
+                'snippets',
                 'fullscreen'
             ]
         }

@@ -15,3 +15,4 @@ require:
     - VojtaSvoboda.TwigExtensions
     - Krisawzm.Embed
     - Excodus.TranslateExtended
+    - ToughDeveloper.RicheditorSnippets

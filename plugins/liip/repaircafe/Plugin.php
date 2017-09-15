@@ -32,6 +32,7 @@ class Plugin extends PluginBase
             'Liip\RepairCafe\Components\CafeDetail' => 'cafeDetail',
             'Liip\RepairCafe\Components\NewsList' => 'newsList',
             'Liip\RepairCafe\Components\NewsDetail' => 'newsDetail',
+            'Liip\RepairCafe\Components\Button' => 'button', // we need to add button as component to make snippets work everywhere
         ];
     }
 
