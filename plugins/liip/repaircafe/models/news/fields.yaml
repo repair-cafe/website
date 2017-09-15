@@ -36,7 +36,7 @@ tabs:
             size: medium
             oc.commentPosition: ''
             span: full
-            type: richeditor
+            type: textarea
             tab: 'liip.repaircafe::lang.news.tab.general'
         content:
             label: 'liip.repaircafe::lang.news.content'
