@@ -22,3 +22,6 @@
 [submodule "plugins/rainlab/sitemap"]
 	path = plugins/rainlab/sitemap
 	url = https://github.com/rainlab/sitemap-plugin.git
+[submodule "plugins/toughdeveloper/richeditorsnippets"]
+	path = plugins/toughdeveloper/richeditorsnippets
+	url = https://github.com/toughdeveloper/oc-richeditorsnippets-plugin.git
