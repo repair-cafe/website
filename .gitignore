@@ -25,12 +25,12 @@ robots.txt
 /node_modules
 /themes/repair-cafe/assets/mix-manifest.json
 /themes/repair-cafe/assets/css/app.min.css
-/themes/repair-cafe/assets/js/app-compiled.js
+/themes/repair-cafe/assets/css/framework.extras.min.css
 /themes/repair-cafe/assets/js/app.min.js
-/themes/repair-cafe/assets/js/events-map-compiled.js
 /themes/repair-cafe/assets/js/events-map.min.js
 /themes/repair-cafe/assets/js/jquery.min.js
 /themes/repair-cafe/assets/js/iframeResizer.contentWindow.min.js
+/themes/repair-cafe/assets/js/framework.extras.min.js
 /themes/repair-cafe/assets/fonts/vendor/*
 /themes/repair-cafe/assets/images/vendor/*
 /themes/repair-cafe/content/*

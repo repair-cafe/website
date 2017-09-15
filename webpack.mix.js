@@ -13,22 +13,32 @@ let mix = require('laravel-mix');
 
 mix.setResourceRoot('/themes/repair-cafe/assets/');
 mix.setPublicPath('themes/repair-cafe/assets/');
-mix.js('themes/repair-cafe/assets/js/app.js', 'js/app-compiled.js')
-    .sass('themes/repair-cafe/assets/sass/app.scss', 'css/app.min.css')
-    .combine([
-        'node_modules/popper.js/dist/umd/popper.js',
-        'node_modules/bootstrap/dist/js/bootstrap.js',
-        'node_modules/jquery.easing/jquery.easing.min.js',
-        'themes/repair-cafe/assets/js/app-compiled.js'
-    ], 'themes/repair-cafe/assets/js/app.min.js');
 
-mix.js('themes/repair-cafe/assets/js/events-map.js', 'js/events-map-compiled.js')
-    .combine([
-        'node_modules/leaflet/dist/leaflet.js',
-        'node_modules/leaflet.markercluster/dist/leaflet.markercluster.js',
-        'node_modules/leaflet.locatecontrol/dist/L.Control.Locate.min.js',
-        'themes/repair-cafe/assets/js/events-map-compiled.js'
-    ], 'themes/repair-cafe/assets/js/events-map.min.js');
-mix.copy('node_modules/jquery/dist/jquery.js', 'themes/repair-cafe/assets/js/jquery.min.js');
+// Styles
+mix.sass('themes/repair-cafe/assets/sass/app.scss', 'css/app.min.css');
+mix.styles([
+    'modules/system/assets/css/framework.extras.css'
+], 'themes/repair-cafe/assets/css/framework.extras.min.css');
+
+// Scripts
+mix.js([
+    'node_modules/popper.js/dist/umd/popper.js',
+    'node_modules/bootstrap/dist/js/bootstrap.js',
+    'node_modules/jquery.easing/jquery.easing.js',
+    'themes/repair-cafe/assets/js/app.js'
+], 'themes/repair-cafe/assets/js/app.min.js');
+mix.js([
+    'node_modules/leaflet/dist/leaflet-src.js',
+    'node_modules/leaflet.markercluster/dist/leaflet.markercluster-src.js',
+    'node_modules/leaflet.locatecontrol/src/L.Control.Locate.js',
+    'themes/repair-cafe/assets/js/events-map.js'
+], 'themes/repair-cafe/assets/js/events-map.min.js');
+mix.js([
+    'modules/system/assets/js/framework.js',
+    'modules/system/assets/js/framework.extras.js'
+], 'themes/repair-cafe/assets/js/framework.extras.min.js');
+
+// Directly copy assets
+mix.copy('node_modules/jquery/dist/jquery.min.js', 'themes/repair-cafe/assets/js/jquery.min.js');
 mix.copy('node_modules/leaflet/dist/images', 'themes/repair-cafe/assets/images/vendor/leaflet/dist');
 mix.copy('node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js', 'themes/repair-cafe/assets/js/iframeResizer.contentWindow.min.js');
