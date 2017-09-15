@@ -21,19 +21,19 @@ mix.styles([
 ], 'themes/repair-cafe/assets/css/framework.extras.min.css');
 
 // Scripts
-mix.js([
+mix.scripts([
     'node_modules/popper.js/dist/umd/popper.js',
     'node_modules/bootstrap/dist/js/bootstrap.js',
     'node_modules/jquery.easing/jquery.easing.js',
     'themes/repair-cafe/assets/js/app.js'
 ], 'themes/repair-cafe/assets/js/app.min.js');
-mix.js([
+mix.scripts([
     'node_modules/leaflet/dist/leaflet-src.js',
     'node_modules/leaflet.markercluster/dist/leaflet.markercluster-src.js',
     'node_modules/leaflet.locatecontrol/src/L.Control.Locate.js',
     'themes/repair-cafe/assets/js/events-map.js'
 ], 'themes/repair-cafe/assets/js/events-map.min.js');
-mix.js([
+mix.scripts([
     'modules/system/assets/js/framework.js',
     'modules/system/assets/js/framework.extras.js'
 ], 'themes/repair-cafe/assets/js/framework.extras.min.js');
