@@ -3,7 +3,6 @@
         init: function () {
             $.oc.richEditorButtons = [
                 'paragraphFormat',
-                'quote',
                 'bold',
                 'italic',
                 'align',
@@ -13,8 +12,8 @@
                 'insertLink',
                 'insertImage',
                 'insertHR',
-                'clearFormatting',
                 'snippets',
+                'clearFormatting',
                 'fullscreen'
             ]
         }
