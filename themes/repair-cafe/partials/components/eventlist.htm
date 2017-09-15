@@ -53,7 +53,7 @@
                             {% endif %}
                             <div class="{{ static_map_url ? 'col-md-6' : 'col-12' }} mb-3 small">
                                 <div class="mb-3 richeditor-content">
-                                    {{ event.description|raw }}
+                                    {{ event.description|parseSnippets }}
                                 </div>
                                 {% if not eventList.condensed %}
                                     <div class="mb-3">
