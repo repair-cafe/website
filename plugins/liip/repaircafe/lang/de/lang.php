@@ -126,6 +126,10 @@
                     'description' => 'Definiert wieviele Events pro Seite angezeigt werden sollen.',
                     'validationMessage' => 'Für die Anzahl Events pro Seite sind nur Zahlen erlaubt.',
                 ],
+                'is_embedded' => [
+                    'title' => 'Embed-Template',
+                    'description' => 'Markieren falls die Komponente im Embed-Template verwendet wird. Target aller Links wird dadurch auf _blank gesetzt.',
+                ],
             ],
         ],
         'newslist' => [
