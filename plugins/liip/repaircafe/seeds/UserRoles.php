@@ -32,6 +32,7 @@ class UserRoles
                 'code' => 'repaircafeOrganisator',
                 'description' => 'Members of this group can see and edit repair-cafes they are assigned to.',
                 'permissions' => [
+                    'media.manage_media' => true,
                     'liip.repaircafe.cafes' => true,
                     'liip.repaircafe.events' => true,
                 ],
