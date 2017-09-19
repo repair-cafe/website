@@ -15,6 +15,7 @@ class EventList extends ComponentBase
     public $events_per_page_default;
     public $events;
     public $condensed;
+    public $is_embedded;
     public $eventPaginator;
     public $mapboxAccessToken;
 
@@ -39,13 +40,18 @@ class EventList extends ComponentBase
                 'description'       => 'liip.repaircafe::lang.component.eventlist.properties.condensed.description',
                 'type'              => 'checkbox',
             ],
+            'is_embedded' => [
+                'title'             => 'liip.repaircafe::lang.component.eventlist.properties.is_embedded.title',
+                'description'       => 'liip.repaircafe::lang.component.eventlist.properties.is_embedded.description',
+                'type'              => 'checkbox',
+            ],
             'events_per_page' => [
                 'title'             => 'liip.repaircafe::lang.component.eventlist.properties.events_per_page.title',
                 'description'       => 'liip.repaircafe::lang.component.eventlist.properties.events_per_page.description',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'liip.repaircafe::lang.component.eventlist.properties.events_per_page.validationMessage',
-            ]
+            ],
         ];
     }
 
@@ -93,6 +99,7 @@ class EventList extends ComponentBase
         setlocale(LC_TIME, $localeCode . '_' . strtoupper($localeCode) . '.UTF-8');
 
         $this->condensed = boolval($this->property('condensed'));
+        $this->is_embedded = boolval($this->property('is_embedded'));
         $this->events_per_page_default = Settings::get('events_per_page', 15);
         if (!empty(Input::get('events_per_page'))) {
             // if GET/POST parameter is set
