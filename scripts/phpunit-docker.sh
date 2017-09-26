@@ -8,6 +8,6 @@ DOCKER_ROOT="$HERE/../.."
 set +e
 
 cd $DOCKER_ROOT
-docker-compose exec workspace /var/www/public/vendor/bin/phpunit -c /var/www/public/phpunit.xml
+docker-compose exec workspace /var/www/vendor/bin/phpunit -c /var/www/phpunit.xml
 
 exit $?
