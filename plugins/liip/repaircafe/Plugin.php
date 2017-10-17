@@ -10,6 +10,7 @@ use Liip\RepairCafe\Models\News;
 use October\Rain\Support\Facades\Html;
 use RainLab\Translate\Classes\Translator;
 use System\Classes\PluginBase;
+use Backend\Facades\BackendAuth;
 
 class Plugin extends PluginBase
 {
@@ -109,8 +110,8 @@ class Plugin extends PluginBase
             if (!$model instanceof BackendUserModel) {
                 return;
             }
-
-            if ($model->hasRole('owners')) {
+            $backend_user = BackendAuth::getUser();
+            if ($backend_user->hasRole('owners') && $model->hasRole('repaircafeOrganisator')) {
                 $form->addTabFields([
                     'cafes' => [
                         'label' => 'liip.repaircafe::lang.user.tab.cafe_label',
