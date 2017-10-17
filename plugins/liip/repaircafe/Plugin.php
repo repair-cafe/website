@@ -110,16 +110,18 @@ class Plugin extends PluginBase
                 return;
             }
 
-            $form->addTabFields([
-                'cafes' => [
-                    'label'   => 'liip.repaircafe::lang.user.tab.cafe_label',
-                    'comment' => 'liip.repaircafe::lang.user.tab.cafe_comment',
-                    'type' => 'relation',
-                    'list' => '$/liip/repaircafe/models/cafe/columns.yaml',
-                    'nameFrom' => 'title',
-                    'tab' => 'liip.repaircafe::lang.user.tab.cafes'
-                ],
-            ]);
+            if ($model->hasRole('owners')) {
+                $form->addTabFields([
+                    'cafes' => [
+                        'label' => 'liip.repaircafe::lang.user.tab.cafe_label',
+                        'comment' => 'liip.repaircafe::lang.user.tab.cafe_comment',
+                        'type' => 'relation',
+                        'list' => '$/liip/repaircafe/models/cafe/columns.yaml',
+                        'nameFrom' => 'title',
+                        'tab' => 'liip.repaircafe::lang.user.tab.cafes'
+                    ],
+                ]);
+            }
         });
 
         // Change backend menu order of pages plugin
