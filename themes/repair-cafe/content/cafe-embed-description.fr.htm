@@ -1,1 +1,55 @@
-<p>Embed description FR</p>
+<div class="small">
+	<p>
+		Vous avez la possibilité d'intégrer les événements de ce Repair Café sur votre site web.
+		Copier l'extrait de code suivant à l'endroit où vous souhaitez que les événements s'affichent sur votre site web^.
+	</p>
+	<code class="line">&lt;iframe src="{iframe_url_current_cafe}" id="repairCafe" width="100%" height="400" frameborder="0"&gt;&lt;/iframe&gt;</code>
+
+	<h3>Structure de l'URL</h3>
+	<code class="line">{iframe_url}</code>
+
+	<h4>Choix de la langue</h4>
+	<p>
+		La langue peut être choisie avec le paramètre URL <code>:language</code>. Les langues suivantes sont à disposition: <code>{language_code_list}</code>.
+	</p>
+
+	<h4>Choix du Repair Café</h4>
+	<p>
+		Changer le paramètre URL <code>:cafe_slug</code> permet de sélectionner le Repair Café dont les événements doivent être affichés.
+		Le <code>:cafe_slug</code> peut être retiré des URL respectifs de la page du Repair Café.
+	</p>
+
+	<h3>Options</h3>
+	<h4>Nombre d’événements par page</h4>
+	<p>
+		Habituellement, <strong>{events_per_page_default}</strong> événements sont affichés par page. Pour changer le nombre, un paramètre GET <code>events_per_page</code> peut être ajouté à l'URL.
+	</p>
+	<h5>Exemple:</h5>
+	<code class="line">{iframe_url_current_cafe}?events_per_page=5</code>
+
+	<h3>iFrame Resizer (optionnel)</h3>
+	<p>
+		Dans l'iFrame, le script <a href="https://github.com/davidjbradshaw/iframe-resizer">iFrame Resizer</a>- en version <code>3.5.14</code> a déjà été téléchargé.
+		Pour que l'iFrame s'adapte automatiquement à la taille du contenu.
+		Ainsi, des barres de navigation inesthétiques peuvent être évitées sur votre site web.
+		Tout ce que vous devez faire, c'est intégrer le script <code>iframeResizer.min.js</code> dans votre page et l'initialiser pour l'iFrame intégré:
+	</p>
+
+	<code class="block">
+		&lt;script&gt;<br />
+		iFrameResize({<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;checkOrigin: ['{website_origin}']<br />
+		}, '#repairCafe');<br />
+		&lt;/script&gt;
+	</code>
+
+	<p>
+		Lors de l'utilisation de l'iFrame Resizer, l’attribut <code>scrolling="no"</code> doit être ajouté à l'iFrame. Exemple:
+	</p>
+
+	<code class="line">&lt;iframe src="{iframe_url_current_cafe}" id="repairCafe" width="100%" height="400" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;</code>
+
+	<p>
+		Plus d'informations concernant l'intégration du script iFrame Resizer? Lien vers la documentation officielle: <a href="https://github.com/davidjbradshaw/iframe-resizer">https://github.com/davidjbradshaw/iframe-resizer</a>.
+	</p>
+</div>
