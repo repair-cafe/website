@@ -38,3 +38,8 @@ robots.txt
 
 # ignore paid plugins
 /plugins/renatio/seomanager
+
+# Exclude hardcoded content from gitignore
+!/themes/repair-cafe/content/cafe-embed-description.htm
+!/themes/repair-cafe/content/cafe-embed-description.fr.htm
+!/themes/repair-cafe/content/cafe-embed-description.it.htm
