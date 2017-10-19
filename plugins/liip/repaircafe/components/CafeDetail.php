@@ -31,7 +31,8 @@ class CafeDetail extends ComponentBase
     {
         $this->cafe = Cafe::published()->where('slug', $this->property('slug'))->first();
         if (!$this->cafe) {
-            return \Response::make($this->controller->run('404'), 404);
+            $this->setStatusCode(404);
+            return $this->controller->run('404');
         }
         $this->page['cafe'] = $this->cafe; // add cafe object to page context to make seo manager work
         $this->page->title = $this->cafe->title; // overwrite page title
