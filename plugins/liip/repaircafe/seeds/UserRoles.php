@@ -33,6 +33,7 @@ class UserRoles
                 'description' => 'Members of this group can see and edit repair-cafes they are assigned to.',
                 'permissions' => [
                     'media.manage_media' => true,
+                    'backend.manage_preferences' => true,
                     'liip.repaircafe.cafes' => true,
                     'liip.repaircafe.events' => true,
                 ],
@@ -61,6 +62,7 @@ class UserRoles
                 'permissions' => [
                     'cms.manage_themes' => true,
                     'media.manage_media' => true,
+                    'backend.manage_preferences' => true,
                     'system.manage_mail_templates' => true,
                     'rainlab.pages.manage_pages' => true,
                     'rainlab.pages.access_snippets' => true,
