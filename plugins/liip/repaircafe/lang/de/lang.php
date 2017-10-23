@@ -91,7 +91,7 @@
         'comments' => [
             'start' => 'Falls die Zeit nicht angegeben wird, wird automatisch die aktuelle Uhrzeit gesetzt.',
             'end' => 'Falls die Zeit nicht angegeben wird, wird automatisch die aktuelle Uhrzeit gesetzt.',
-            'addressfinder' => 'Dieses Feld dient lediglich zum Suchen und automatisierten Vervollständigen der Addressfelder.',
+            'addressfinder' => 'Bitte dieses Feld ausfüllen, damit der Repair Café-Event auf der Karte gefunden wird. Damit werden auch automatisch die anderen Adressfelder ausgefüllt.',
         ],
     ],
     'user' => [
