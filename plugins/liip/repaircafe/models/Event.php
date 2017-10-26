@@ -40,12 +40,16 @@ class Event extends Model
         'start' => 'required',
         'end' => 'after:start',
         'cafe' => 'required',
+        'latitude' => 'numeric',
+        'longitude' => 'numeric',
     ];
 
     public $attributeNames = [
         'start' => 'liip.repaircafe::lang.event.start',
         'end' => 'liip.repaircafe::lang.event.end',
         'cafe' => 'liip.repaircafe::lang.relation.cafe',
+        'latitude' => 'liip.repaircafe::lang.event.latitude',
+        'longitude' => 'liip.repaircafe::lang.event.longitude',
     ];
 
     public $belongsToMany = [
