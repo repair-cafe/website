@@ -1,4 +1,8 @@
 columns:
+    id:
+        label: 'liip.repaircafe::lang.category.id'
+        type: number
+        invisible: true
     name:
         label: 'liip.repaircafe::lang.category.name'
         type: text

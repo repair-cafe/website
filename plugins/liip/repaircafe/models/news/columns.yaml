@@ -2,6 +2,7 @@ columns:
     id:
         label: 'liip.repaircafe::lang.news.id'
         type: number
+        invisible: true
     title:
         label: 'liip.repaircafe::lang.news.title'
         type: text

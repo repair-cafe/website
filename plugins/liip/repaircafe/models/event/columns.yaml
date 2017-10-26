@@ -1,4 +1,8 @@
 columns:
+    id:
+        label: 'liip.repaircafe::lang.event.id'
+        type: number
+        invisible: true
     cafe_id:
         label: 'liip.repaircafe::lang.relation.cafe'
         type: text
