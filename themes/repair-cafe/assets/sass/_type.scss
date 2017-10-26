@@ -5,6 +5,7 @@ h3, h4, h5, h6,
 
 .btn {
     font-size: $font-size-sm;
+    white-space: normal; // allow multi-line button texts
 }
 .btn-lg {
      font-size: $font-size-base;
