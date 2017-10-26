@@ -2,6 +2,7 @@ list: $/liip/repaircafe/models/news/columns.yaml
 modelClass: Liip\RepairCafe\Models\News
 title: News
 noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: '20'
 defaultSort:
     column: publish_date
     direction: desc
