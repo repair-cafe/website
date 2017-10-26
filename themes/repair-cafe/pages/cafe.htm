@@ -31,7 +31,7 @@ events_per_page = 5
                     <div class="row">
                         {% set cafe_logo_alt = '' %}
                         {% if cafeDetail.cafe.logo is not empty %}
-                            {% set cafe_logo = cafeDetail.cafe.logo.path %}
+                            {% set cafe_logo = cafeDetail.cafe.logo.thumb(270, 270) %}
                             {% set cafe_logo_alt = cafeDetail.cafe.logo.title %}
                         {% elseif this.theme.repair_cafe_default_logo is not empty %}
                             {% set cafe_logo = this.theme.repair_cafe_default_logo|media %}

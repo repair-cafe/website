@@ -6,7 +6,7 @@
                     <div class="row">
                         <div class="col-md-2 mb-3">
                             {% if cafe.logo is not empty %}
-                                <img class="img-fluid logo" src="{{ cafe.logo.path }}" alt="{{ (cafe.logo.title ? cafe.logo.title : cafe.title) }}">
+                                <img class="img-fluid logo" src="{{ cafe.logo.thumb(360, 360) }}" alt="{{ (cafe.logo.title ? cafe.logo.title : cafe.title) }}">
                             {% elseif this.theme.repair_cafe_default_logo is not empty %}
                                 <img class="img-fluid logo" src="{{ this.theme.repair_cafe_default_logo|media }}" alt="{{ cafe.title }}">
                             {% endif%}
