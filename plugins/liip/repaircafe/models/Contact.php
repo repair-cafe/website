@@ -31,6 +31,11 @@ class Contact extends Model
         'lastname' => 'required',
     ];
 
+    public $attributeNames = [
+        'firstname' => 'liip.repaircafe::lang.contact.firstname',
+        'lastname' => 'liip.repaircafe::lang.contact.lastname',
+    ];
+
     public $attachOne = [
         'profile_picture' => [File::class]
     ];

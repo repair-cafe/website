@@ -55,6 +55,11 @@ class Cafe extends Model
         'slug' => 'required',
     ];
 
+    public $attributeNames = [
+        'title' => 'liip.repaircafe::lang.cafe.title',
+        'slug' => 'liip.repaircafe::lang.cafe.slug',
+    ];
+
     public $attachOne = [
         'logo' => [File::class],
         'image' => [File::class]

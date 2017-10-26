@@ -48,6 +48,11 @@ class Category extends Model
         'slug' => 'required',
     ];
 
+    public $attributeNames = [
+        'name' => 'liip.repaircafe::lang.category.name',
+        'slug' => 'liip.repaircafe::lang.category.slug',
+    ];
+
     public $hasMany = [
         'events' => [Event::class, 'table' => 'liip_repaircafe_event_category']
     ];

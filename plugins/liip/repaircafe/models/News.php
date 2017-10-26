@@ -43,7 +43,13 @@ class News extends Model
     public $rules = [
         'title' => 'required',
         'slug' => 'required',
-        'locale_id' => 'required',
+        'locale' => 'required',
+    ];
+
+    public $attributeNames = [
+        'title' => 'liip.repaircafe::lang.news.title',
+        'slug' => 'liip.repaircafe::lang.news.slug',
+        'locale' => 'liip.repaircafe::lang.relation.locale',
     ];
 
     /**

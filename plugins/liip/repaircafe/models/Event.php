@@ -39,7 +39,13 @@ class Event extends Model
     public $rules = [
         'start' => 'required',
         'end' => 'after:start',
-        'cafe_id' => 'required',
+        'cafe' => 'required',
+    ];
+
+    public $attributeNames = [
+        'start' => 'liip.repaircafe::lang.event.start',
+        'end' => 'liip.repaircafe::lang.event.end',
+        'cafe' => 'liip.repaircafe::lang.relation.cafe',
     ];
 
     public $belongsToMany = [
