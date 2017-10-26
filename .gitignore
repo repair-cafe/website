@@ -21,6 +21,7 @@ nbproject
 
 .htaccess
 robots.txt
+google*.html
 
 /node_modules
 /themes/repair-cafe/assets/mix-manifest.json
