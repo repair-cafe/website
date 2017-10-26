@@ -44,6 +44,13 @@ class Category extends Model
      * Validation
      */
     public $rules = [
+        'name' => 'required',
+        'slug' => 'required',
+    ];
+
+    public $attributeNames = [
+        'name' => 'liip.repaircafe::lang.category.name',
+        'slug' => 'liip.repaircafe::lang.category.slug',
     ];
 
     public $hasMany = [

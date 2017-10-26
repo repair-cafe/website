@@ -69,6 +69,7 @@
         ],
     ],
     'event' => [
+        'id' => 'ID',
         'title' => 'Titel',
         'description' => 'Beschreibung',
         'start' => 'Start',
@@ -102,6 +103,7 @@
         ],
     ],
     'category' => [
+        'id' => 'ID',
         'name' => 'Name',
         'slug' => 'Slug',
         'description' => 'Beschreibung',

@@ -2,6 +2,7 @@ list: $/liip/repaircafe/models/event/columns.yaml
 modelClass: Liip\RepairCafe\Models\Event
 title: Events
 noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: '20'
 defaultSort:
     column: 'start'
     direction: 'desc'

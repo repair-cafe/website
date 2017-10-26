@@ -13,6 +13,7 @@ use RainLab\Translate\Models\Locale;
  */
 class News extends Model
 {
+    use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Sluggable;
 
     /**
@@ -34,6 +35,21 @@ class News extends Model
         'lead',
         'content',
         'publish_date',
+    ];
+
+    /*
+     * Validation
+     */
+    public $rules = [
+        'title' => 'required',
+        'slug' => 'required',
+        'locale' => 'required',
+    ];
+
+    public $attributeNames = [
+        'title' => 'liip.repaircafe::lang.news.title',
+        'slug' => 'liip.repaircafe::lang.news.slug',
+        'locale' => 'liip.repaircafe::lang.relation.locale',
     ];
 
     /**

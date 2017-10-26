@@ -1,5 +1,5 @@
-<div class="newslist">
-    {% if news|length > 0 %}
+{% if news|length > 0 %}
+    <div class="newslist">
         <ul class="list-unstyled row mb-5">
             {% for news_entry in news %}
                 <li class="{{ loop.index == 1 ? 'col-12' : 'col-lg-6' }} news" id="{{ news_entry.slug }}">
@@ -29,7 +29,7 @@
         {% if newsPaginator|default is not empty %}
             {{ newsPaginator.render('justify-content-center')|raw }}
         {% endif %}
-    {% else %}
-        <p class="text-center">{{ 'newslist.no_news_found'|_ }}</p>
-    {% endif %}
-</div>
+    </div>
+{% else %}
+    <p class="text-center">{{ 'newslist.no_news_found'|_ }}</p>
+{% endif %}

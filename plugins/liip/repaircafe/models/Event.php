@@ -37,7 +37,15 @@ class Event extends Model
      * Validation
      */
     public $rules = [
+        'start' => 'required',
         'end' => 'after:start',
+        'cafe' => 'required',
+    ];
+
+    public $attributeNames = [
+        'start' => 'liip.repaircafe::lang.event.start',
+        'end' => 'liip.repaircafe::lang.event.end',
+        'cafe' => 'liip.repaircafe::lang.relation.cafe',
     ];
 
     public $belongsToMany = [

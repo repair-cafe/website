@@ -51,6 +51,13 @@ class Cafe extends Model
      * Validation
      */
     public $rules = [
+        'title' => 'required',
+        'slug' => 'required',
+    ];
+
+    public $attributeNames = [
+        'title' => 'liip.repaircafe::lang.cafe.title',
+        'slug' => 'liip.repaircafe::lang.cafe.slug',
     ];
 
     public $attachOne = [

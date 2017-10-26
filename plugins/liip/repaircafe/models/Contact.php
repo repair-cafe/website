@@ -27,6 +27,13 @@ class Contact extends Model
      * Validation
      */
     public $rules = [
+        'firstname' => 'required',
+        'lastname' => 'required',
+    ];
+
+    public $attributeNames = [
+        'firstname' => 'liip.repaircafe::lang.contact.firstname',
+        'lastname' => 'liip.repaircafe::lang.contact.lastname',
     ];
 
     public $attachOne = [
