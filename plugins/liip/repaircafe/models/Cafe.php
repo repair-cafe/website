@@ -51,6 +51,8 @@ class Cafe extends Model
      * Validation
      */
     public $rules = [
+        'title' => 'required',
+        'slug' => 'required',
     ];
 
     public $attachOne = [

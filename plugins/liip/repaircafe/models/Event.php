@@ -37,7 +37,9 @@ class Event extends Model
      * Validation
      */
     public $rules = [
+        'start' => 'required',
         'end' => 'after:start',
+        'cafe_id' => 'required',
     ];
 
     public $belongsToMany = [

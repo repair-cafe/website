@@ -44,6 +44,8 @@ class Category extends Model
      * Validation
      */
     public $rules = [
+        'name' => 'required',
+        'slug' => 'required',
     ];
 
     public $hasMany = [

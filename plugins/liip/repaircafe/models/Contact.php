@@ -27,6 +27,8 @@ class Contact extends Model
      * Validation
      */
     public $rules = [
+        'firstname' => 'required',
+        'lastname' => 'required',
     ];
 
     public $attachOne = [
