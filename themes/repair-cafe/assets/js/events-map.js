@@ -37,7 +37,7 @@ $( document ).ready(function() {
         for(var i = 0; i < repaircafe.events.length; i++) {
             if(repaircafe.events[i].latitude && repaircafe.events[i].longitude) {
                 var marker = L.marker(
-                    [repaircafe.events[i].latitude, repaircafe.events[i].longitude]
+                    [parseFloat(repaircafe.events[i].latitude), parseFloat(repaircafe.events[i].longitude)]
                 );
 
                 var popupContent = '';
