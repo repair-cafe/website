@@ -4,6 +4,7 @@ columns:
         type: text
         relation: cafe
         valueFrom: title
+        searchable: true
     title:
         label: 'liip.repaircafe::lang.event.title'
         type: text
