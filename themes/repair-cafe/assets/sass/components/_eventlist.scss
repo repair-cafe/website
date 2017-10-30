@@ -36,12 +36,13 @@
 
     .static-map {
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
         .fa-spinner {
             position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -25px;
+            margin-top: -25px;
             color: theme-color("primary");
         }
     }
