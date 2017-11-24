@@ -24,7 +24,7 @@ class Seed extends Command
      * Execute the console command.
      * @return void
      */
-    public function fire()
+    public function handle()
     {
         if ($this->option('userroles')) {
             $userData = new UserRoles();
