@@ -4,7 +4,7 @@ use Backend\Facades\BackendAuth;
 use Cms\Classes\Page;
 use Cms\Classes\Theme;
 use Illuminate\Support\Facades\URL;
-use October\Rain\Database\Model;
+use Model;
 use System\Models\File;
 use Backend\Models\User as BackendUserModel;
 
