@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
 use Liip\RepairCafe\Models\Event;
 use Liip\RepairCafe\Models\Settings;
-use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 
 class EventList extends ComponentBase
 {
@@ -16,7 +15,6 @@ class EventList extends ComponentBase
     public $events;
     public $condensed;
     public $is_embedded;
-    public $eventPaginator;
     public $mapboxAccessToken;
 
     public function componentDetails()
@@ -138,15 +136,15 @@ class EventList extends ComponentBase
         }
 
         $indexedResults = $query->distinct()->get(['event_id']);
-        $event_ids = array_map(function ($indexedResult) {
-            return $indexedResult->event_id;
-        }, $indexedResults);
+        $event_ids = array();
+        foreach ($indexedResults as $indexedResult) {
+            array_push($event_ids, $indexedResult->event_id);
+        }
         $event_query = Event::query();
         $event_query->whereIn($event_query->getModel()->getQualifiedKeyName(), $event_ids);
         $event_query->orderBy('start', 'asc');
         $events = $event_query->paginate($this->events_per_page);
         $events->appends(['category' => $category, 'searchterm' => $searchTerm, 'events_per_page' => (!empty(Input::get('events_per_page')) ? $this->events_per_page : null)]);
-        $this->eventPaginator = new BootstrapFourPresenter($events);
 
         return $events;
     }

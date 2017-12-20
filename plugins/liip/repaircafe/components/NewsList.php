@@ -4,12 +4,10 @@ use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Lang;
 use Liip\RepairCafe\Models\News;
 use Liip\RepairCafe\Models\Settings;
-use Liip\RepairCafe\Pagination\BootstrapFourPresenter;
 
 class NewsList extends ComponentBase
 {
     private $news;
-    public $newsPaginator;
     private $max_items;
 
     public function componentDetails()
@@ -47,7 +45,6 @@ class NewsList extends ComponentBase
             $news = $newsQuery->take(intval($this->max_items))->get();
         } else {
             $news = $newsQuery->paginate($newsPerPage);
-            $this->newsPaginator = new BootstrapFourPresenter($news);
         }
         $this->news = $news;
     }

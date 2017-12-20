@@ -20,7 +20,9 @@
                 </li>
             {% endfor %}
         </ul>
-        {{ cafeList.cafe_paginator.render('justify-content-center')|raw }}
+        <div class="d-flex justify-content-center">
+            {{ cafeList.cafes.render|raw }}
+        </div>
     {% else %}
         <p>{{ 'cafelist.no_cafes_found'|_ }}</p>
     {% endif %}

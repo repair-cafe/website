@@ -26,9 +26,9 @@
                 </li>
             {% endfor %}
         </ul>
-        {% if newsPaginator|default is not empty %}
-            {{ newsPaginator.render('justify-content-center')|raw }}
-        {% endif %}
+        <div class="d-flex justify-content-center">
+            {{ news.render|raw }}
+        </div>
     </div>
 {% else %}
     <p class="text-center">{{ 'newslist.no_news_found'|_ }}</p>
