@@ -109,4 +109,17 @@ return [
 
     'themesPathLocal' => base_path('tests/fixtures/themes'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Safe mode
+    |--------------------------------------------------------------------------
+    |
+    | If safe mode is enabled, the PHP code section is disabled in the CMS
+    | for security reasons. If set to null, safe mode is enabled when
+    | debug mode (app.debug) is disabled.
+    |
+    */
+
+    'enableSafeMode' => false,
+
 ];
