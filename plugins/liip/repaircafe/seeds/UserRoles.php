@@ -1,7 +1,7 @@
 <?php namespace Liip\RepairCafe\Seeds;
 
 use Backend\Models\User;
-use Backend\Models\UserGroup;
+use Backend\Models\UserRole;
 
 class UserRoles
 {
@@ -11,13 +11,13 @@ class UserRoles
     public static $firstName = 'Admin';
     public static $lastName = 'Person';
 
-    public static $cms_email = 'cms@repair-cafe.dev';
+    public static $cms_email = 'cms@repair-cafe.test';
     public static $cms_login = 'cms';
     public static $cms_password = 'cmscms';
     public static $cms_firstName = 'Content';
     public static $cms_lastName = 'Manager';
 
-    public static $rco_email = 'rco@repair-cafe.dev';
+    public static $rco_email = 'rco@repair-cafe.test';
     public static $rco_login = 'rco';
     public static $rco_password = 'rcorco';
     public static $rco_firstName = 'Repair Cafe';
@@ -26,8 +26,8 @@ class UserRoles
 
     public static function seedUserData()
     {
-        if (!UserGroup::where('name', 'RepaircafeOrganisator')->first()) {
-            $repaircafeOrganisatorGroup = UserGroup::create([
+        if (!UserRole::where('name', 'RepaircafeOrganisator')->first()) {
+            $repaircafeOrganisatorRole = UserRole::create([
                 'name' => 'RepaircafeOrganisator',
                 'code' => 'repaircafeOrganisator',
                 'description' => 'Members of this group can see and edit repair-cafes they are assigned to.',
@@ -37,7 +37,6 @@ class UserRoles
                     'liip.repaircafe.cafes' => true,
                     'liip.repaircafe.events' => true,
                 ],
-                'is_new_user_default' => true
             ]);
 
             $repaircafeOrganisator = User::create([
@@ -48,14 +47,13 @@ class UserRoles
                 'first_name' => static::$rco_firstName,
                 'last_name' => static::$rco_lastName,
                 'is_superuser' => false,
-                'is_activated' => true
+                'is_activated' => true,
+                'role_id' => $repaircafeOrganisatorRole->id,
             ]);
-
-            $repaircafeOrganisator->addGroup($repaircafeOrganisatorGroup);
         }
 
-        if (!UserGroup::where('name', 'ContentManager')->first()) {
-            $contentManagerGroup = UserGroup::create([
+        if (!UserRole::where('name', 'ContentManager')->first()) {
+            $contentManagerRole = UserRole::create([
                 'name' => 'ContentManager',
                 'code' => 'contentManager',
                 'description' => 'Members of this group can see and edit cms-content.',
@@ -75,7 +73,6 @@ class UserRoles
                     'liip.repaircafe.cafes' => true,
                     'liip.repaircafe.settings' => true,
                 ],
-                'is_new_user_default' => false
             ]);
 
             $contentManager = User::create([
@@ -86,10 +83,9 @@ class UserRoles
                 'first_name' => static::$cms_firstName,
                 'last_name' => static::$cms_lastName,
                 'is_superuser' => false,
-                'is_activated' => true
+                'is_activated' => true,
+                'role_id' => $contentManagerRole->id,
             ]);
-
-            $contentManager->addGroup($contentManagerGroup);
         }
     }
 }
