@@ -1,3 +1,14 @@
+/**
+ * Embed button for Bootstrap 4
+ *
+ * Description: Embed a button inside a Bootstrap 4 input field.
+ *
+ * Example (search field with embedded magnifying glass):
+ * <div class="has-btn-embed has-btn-embed-right">
+ *     <input type="search" class="form-control" id="s" name="s" />
+ *     <button type="submit" class="btn btn-embed" aria-label="Search"><i class="fa fa-search" aria-hidden="true"></i></button>
+ * </div>
+ */
 .has-btn-embed {
     $btn-embed-color: $input-placeholder-color !default;
     $btn-embed-padding-x: $input-btn-padding-x !default;
