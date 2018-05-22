@@ -2,13 +2,13 @@
 
 use Backend\Models\User as BackendUserModel;
 use Backend\Controllers\Users as BackendUsersController;
-use Cms\Classes\MediaLibrary;
 use Illuminate\Support\Facades\Event;
 use Liip\RepairCafe\Console\Seed;
 use Liip\RepairCafe\Models\Cafe;
 use Liip\RepairCafe\Models\News;
 use October\Rain\Support\Facades\Html;
 use RainLab\Translate\Classes\Translator;
+use System\Classes\MediaLibrary;
 use System\Classes\PluginBase;
 use Backend\Facades\BackendAuth;
 
