@@ -213,8 +213,7 @@ class Plugin extends PluginBase
                     $ogImage = $page['header_image'];
                 }
             }
-
-            if (empty($seoTag->meta_description) && !empty($metaDescription)) {
+            if ((empty($seoTag->meta_description) || is_null($seoTag->seo_tag_id)) && !empty($metaDescription)) {
                 $seoTag->meta_description = str_limit(Html::strip($metaDescription), 157);
             }
             if (empty($seoTag->og_image) && !empty($ogImage)) {
