@@ -26,7 +26,7 @@ class UserRoles
 
     public static function seedUserData()
     {
-        if (!UserRole::where('name', 'RepaircafeOrganisator')->first()) {
+        if (!UserRole::where('code', 'repaircafeOrganisator')->first()) {
             $repaircafeOrganisatorRole = UserRole::create([
                 'name' => 'RepaircafeOrganisator',
                 'code' => 'repaircafeOrganisator',
@@ -52,7 +52,7 @@ class UserRoles
             ]);
         }
 
-        if (!UserRole::where('name', 'ContentManager')->first()) {
+        if (!UserRole::where('code', 'contentManager')->first()) {
             $contentManagerRole = UserRole::create([
                 'name' => 'ContentManager',
                 'code' => 'contentManager',
