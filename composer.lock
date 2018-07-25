@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd1eb5c66ed589763588dc3341415cec",
+    "content-hash": "956aa3f2e941ffa8a96bb01b8a340dcb",
     "packages": [
         {
             "name": "composer/installers",
@@ -1686,16 +1686,16 @@
         },
         {
             "name": "october/backend",
-            "version": "v1.0.430",
+            "version": "v1.0.437",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octoberrain/backend.git",
-                "reference": "365a76d7e56b760c47f096ced61183adaaac7b63"
+                "reference": "aed3dcf1b10050417ed2d669021ee0ded2e3be02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octoberrain/backend/zipball/365a76d7e56b760c47f096ced61183adaaac7b63",
-                "reference": "365a76d7e56b760c47f096ced61183adaaac7b63",
+                "url": "https://api.github.com/repos/octoberrain/backend/zipball/aed3dcf1b10050417ed2d669021ee0ded2e3be02",
+                "reference": "aed3dcf1b10050417ed2d669021ee0ded2e3be02",
                 "shasum": ""
             },
             "require": {
@@ -1726,29 +1726,35 @@
                 {
                     "name": "Samuel Georges",
                     "email": "daftspunky@gmail.com"
+                },
+                {
+                    "name": "Luke Towers",
+                    "email": "octobercms@luketowers.ca",
+                    "homepage": "https://luketowers.ca",
+                    "role": "Maintainer"
                 }
             ],
             "description": "Backend module for October CMS",
-            "homepage": "http://octobercms.com",
+            "homepage": "https://octobercms.com",
             "keywords": [
                 "backend",
                 "october",
                 "october cms"
             ],
-            "time": "2017-11-30T21:01:43+00:00"
+            "time": "2018-06-22T12:57:38+00:00"
         },
         {
             "name": "october/cms",
-            "version": "v1.0.430",
+            "version": "v1.0.437",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octoberrain/cms.git",
-                "reference": "0059411ed68435fb312c7519720cd69582be1adf"
+                "reference": "1c16840cdb8d8412dcdd82b5aab5db0d355c4836"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octoberrain/cms/zipball/0059411ed68435fb312c7519720cd69582be1adf",
-                "reference": "0059411ed68435fb312c7519720cd69582be1adf",
+                "url": "https://api.github.com/repos/octoberrain/cms/zipball/1c16840cdb8d8412dcdd82b5aab5db0d355c4836",
+                "reference": "1c16840cdb8d8412dcdd82b5aab5db0d355c4836",
                 "shasum": ""
             },
             "require": {
@@ -1779,29 +1785,35 @@
                 {
                     "name": "Samuel Georges",
                     "email": "daftspunky@gmail.com"
+                },
+                {
+                    "name": "Luke Towers",
+                    "email": "octobercms@luketowers.ca",
+                    "homepage": "https://luketowers.ca",
+                    "role": "Maintainer"
                 }
             ],
             "description": "CMS module for October CMS",
-            "homepage": "http://octobercms.com",
+            "homepage": "https://octobercms.com",
             "keywords": [
                 "cms",
                 "october",
                 "october cms"
             ],
-            "time": "2017-11-25T10:17:07+00:00"
+            "time": "2018-06-22T12:57:38+00:00"
         },
         {
             "name": "october/rain",
-            "version": "v1.0.430",
+            "version": "v1.0.437",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octobercms/library.git",
-                "reference": "fdf770bd6df38ed1813996768271750e3fe03a1a"
+                "reference": "6eff938b1d4d8c794893e5ab35d4f8a817bf627b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octobercms/library/zipball/fdf770bd6df38ed1813996768271750e3fe03a1a",
-                "reference": "fdf770bd6df38ed1813996768271750e3fe03a1a",
+                "url": "https://api.github.com/repos/octobercms/library/zipball/6eff938b1d4d8c794893e5ab35d4f8a817bf627b",
+                "reference": "6eff938b1d4d8c794893e5ab35d4f8a817bf627b",
                 "shasum": ""
             },
             "require": {
@@ -1834,6 +1846,7 @@
                 "october/translation": "self.version"
             },
             "require-dev": {
+                "illuminate/cache": "5.5.*",
                 "illuminate/database": "5.5.*",
                 "illuminate/events": "5.5.*",
                 "illuminate/filesystem": "5.5.*",
@@ -1846,8 +1859,6 @@
                 "illuminate/validation": "5.5.*",
                 "illuminate/view": "5.5.*",
                 "phpunit/phpunit": "~5.7",
-                "swiftmailer/swiftmailer": "~5.1",
-                "symfony/config": "2.7.*",
                 "symfony/css-selector": "~3.1",
                 "symfony/dom-crawler": "~3.1"
             },
@@ -1887,20 +1898,20 @@
                 "october",
                 "rain"
             ],
-            "time": "2017-12-02T06:27:49+00:00"
+            "time": "2018-06-22T11:50:54+00:00"
         },
         {
             "name": "october/system",
-            "version": "v1.0.430",
+            "version": "v1.0.437",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octoberrain/system.git",
-                "reference": "1c1e11d2b7896a8c902caa76fbd1b5c06e1d0bd6"
+                "reference": "4f9e5559e47b53e31d043557a733769e0bf65b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octoberrain/system/zipball/1c1e11d2b7896a8c902caa76fbd1b5c06e1d0bd6",
-                "reference": "1c1e11d2b7896a8c902caa76fbd1b5c06e1d0bd6",
+                "url": "https://api.github.com/repos/octoberrain/system/zipball/4f9e5559e47b53e31d043557a733769e0bf65b75",
+                "reference": "4f9e5559e47b53e31d043557a733769e0bf65b75",
                 "shasum": ""
             },
             "require": {
@@ -1931,16 +1942,22 @@
                 {
                     "name": "Samuel Georges",
                     "email": "daftspunky@gmail.com"
+                },
+                {
+                    "name": "Luke Towers",
+                    "email": "octobercms@luketowers.ca",
+                    "homepage": "https://luketowers.ca",
+                    "role": "Maintainer"
                 }
             ],
             "description": "System module for October CMS",
-            "homepage": "http://octobercms.com",
+            "homepage": "https://octobercms.com",
             "keywords": [
                 "october",
                 "october cms",
                 "system"
             ],
-            "time": "2017-12-02T06:43:14+00:00"
+            "time": "2018-06-22T12:57:38+00:00"
         },
         {
             "name": "oyejorge/less.php",
