@@ -38,7 +38,7 @@ class UserRoles
             $managerRoleQuery->where('code', '=', 'contentManager');
         })->get();
 
-        $contentManagers->each(function($user, $key) use ($contentManagerRole) {
+        $contentManagers->each(function ($user, $key) use ($contentManagerRole) {
             $user->role = $contentManagerRole->id;
             $user->save();
         });
@@ -63,7 +63,7 @@ class UserRoles
             $organisatorRoleQuery->where('code', '=', 'repaircafeOrganisator');
         })->get();
 
-        $reparicafeOrganisators->each(function($user, $key) use ($organisatorRole) {
+        $reparicafeOrganisators->each(function ($user, $key) use ($organisatorRole) {
             $user->role = $organisatorRole->id;
             $user->save();
         });
