@@ -102,10 +102,9 @@ class Plugin extends PluginBase
             ];
 
             $model->addDynamicMethod('hasRole', function ($role) use ($model) {
-                return $model->whereHas('role', function($query) use ($role) {
+                return $model->whereHas('role', function ($query) use ($role) {
                     $query->where('code', $role);
                 })->exists();
-
             });
 
             $model->addDynamicMethod('isRepairCafeAdmin', function () use ($model) {
