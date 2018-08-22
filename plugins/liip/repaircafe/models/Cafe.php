@@ -98,7 +98,7 @@ class Cafe extends Model
     {
         $user = BackendAuth::getUser();
 
-        if (!$user->isRepairCafeAdmin()) {
+        if ($user->hasRole('repaircafeOrganisator')) {
             $query->whereHas('users', function ($user_query) use ($user) {
                 $user_query->where('user_id', $user->id);
             });

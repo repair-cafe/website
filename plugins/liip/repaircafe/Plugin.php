@@ -102,8 +102,8 @@ class Plugin extends PluginBase
             ];
 
             $model->addDynamicMethod('hasRole', function ($role) use ($model) {
-                return $model->whereHas('role', function ($query) use ($role) {
-                    $query->where('code', $role);
+                return $model->whereHas('role', function ($roleQuery) use ($role) {
+                    $roleQuery->where('code', $role);
                 })->exists();
             });
 
