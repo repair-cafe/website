@@ -4,7 +4,7 @@ use Backend\Facades\BackendAuth;
 use Cms\Classes\Page;
 use Cms\Classes\Theme;
 use Illuminate\Support\Facades\URL;
-use October\Rain\Database\Model;
+use Model;
 use System\Models\File;
 use Backend\Models\User as BackendUserModel;
 
@@ -98,7 +98,7 @@ class Cafe extends Model
     {
         $user = BackendAuth::getUser();
 
-        if (!$user->isRepairCafeAdmin()) {
+        if (!$user->hasAccess('liip.repaircafe.is_content_manager')) {
             $query->whereHas('users', function ($user_query) use ($user) {
                 $user_query->where('user_id', $user->id);
             });

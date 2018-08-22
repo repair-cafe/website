@@ -2,13 +2,14 @@
 
 use Backend\Models\User as BackendUserModel;
 use Backend\Controllers\Users as BackendUsersController;
-use Cms\Classes\MediaLibrary;
 use Illuminate\Support\Facades\Event;
+use Liip\RepairCafe\Console\MigrateUserRoles;
 use Liip\RepairCafe\Console\Seed;
 use Liip\RepairCafe\Models\Cafe;
 use Liip\RepairCafe\Models\News;
 use October\Rain\Support\Facades\Html;
 use RainLab\Translate\Classes\Translator;
+use System\Classes\MediaLibrary;
 use System\Classes\PluginBase;
 use Backend\Facades\BackendAuth;
 
@@ -22,6 +23,7 @@ class Plugin extends PluginBase
     public function register()
     {
         $this->registerConsoleCommand('repaircafe:seed', Seed::class);
+        $this->registerConsoleCommand('repaircafe:migrateUserRoles', MigrateUserRoles::class);
     }
 
     public function registerComponents()
@@ -91,19 +93,15 @@ class Plugin extends PluginBase
 
     public function boot()
     {
+        // Set default paginator template
+        \Illuminate\Pagination\AbstractPaginator::defaultView("pagination::bootstrap-4");
+        \Illuminate\Pagination\AbstractPaginator::defaultSimpleView("pagination::simple-bootstrap-4");
+
         BackendUserModel::extend(function ($model) {
             $model->belongsToMany['cafes'] = [
                 Cafe::class,
                 'table' => 'liip_repaircafe_cafe_user'
             ];
-
-            $model->addDynamicMethod('hasRole', function ($role) use ($model) {
-                return $model->groups()->whereName($role)->exists();
-            });
-
-            $model->addDynamicMethod('isRepairCafeAdmin', function () use ($model) {
-                return $model->hasRole('owners') || $model->hasRole('contentManager');
-            });
         });
 
         BackendUsersController::extendFormFields(function ($form, $model, $context) {
@@ -111,7 +109,7 @@ class Plugin extends PluginBase
                 return;
             }
             $backend_user = BackendAuth::getUser();
-            if ($backend_user->hasRole('owners') && $model->hasRole('repaircafeOrganisator')) {
+            if ($backend_user->is_superuser) {
                 $form->addTabFields([
                     'cafes' => [
                         'label' => 'liip.repaircafe::lang.user.tab.cafe_label',
@@ -209,8 +207,7 @@ class Plugin extends PluginBase
                     $ogImage = $page['header_image'];
                 }
             }
-
-            if (empty($seoTag->meta_description) && !empty($metaDescription)) {
+            if ((empty($seoTag->meta_description) || is_null($seoTag->seo_tag_id)) && !empty($metaDescription)) {
                 $seoTag->meta_description = str_limit(Html::strip($metaDescription), 157);
             }
             if (empty($seoTag->og_image) && !empty($ogImage)) {

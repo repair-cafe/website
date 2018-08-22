@@ -3,6 +3,7 @@
 use Illuminate\Console\Command;
 use Liip\RepairCafe\Seeds\NewsSeed;
 use Liip\RepairCafe\Seeds\UserRoles;
+use Liip\RepairCafe\Seeds\Users;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Liip\RepairCafe\Seeds\CafesSeed;
@@ -24,13 +25,20 @@ class Seed extends Command
      * Execute the console command.
      * @return void
      */
-    public function fire()
+    public function handle()
     {
         if ($this->option('userroles')) {
-            $userData = new UserRoles();
+            $userRoleData = new UserRoles();
+
+            $userRoleData->seedUserRoles();
+            $this->output->writeln('All Roles created');
+        }
+
+        if ($this->option('users')) {
+            $userData = new Users();
 
             $userData->seedUserData();
-            $this->output->writeln('All Users and Groups created');
+            $this->output->writeln('All Users created');
         }
 
         if ($this->option('masterdata')) {
@@ -74,7 +82,13 @@ class Seed extends Command
                 'userroles',
                 'userroles',
                 InputOption::VALUE_NONE,
-                'Activate this option to seed roles and default-user (e.g. repaircafeOwner, contentManager)'
+                'Activate this option to seed roles (repaircafeOwner, contentManager)'
+            ],
+            [
+                'users',
+                'users',
+                InputOption::VALUE_NONE,
+                'Activate this option to seed default-users'
             ],
             [
                 'masterdata',

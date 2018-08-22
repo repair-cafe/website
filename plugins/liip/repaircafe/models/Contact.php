@@ -1,7 +1,7 @@
 <?php namespace Liip\RepairCafe\Models;
 
 use System\Models\File;
-use October\Rain\Database\Model;
+use Model;
 
 /**
  * Model

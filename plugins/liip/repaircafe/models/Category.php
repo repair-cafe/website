@@ -1,6 +1,6 @@
 <?php namespace Liip\RepairCafe\Models;
 
-use October\Rain\Database\Model;
+use Model;
 use RainLab\Translate\Behaviors\TranslatableModel;
 
 /**

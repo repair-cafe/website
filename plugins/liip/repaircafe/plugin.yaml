@@ -20,6 +20,9 @@ permissions:
     liip.repaircafe.settings:
         tab: 'liip.repaircafe::lang.plugin.name'
         label: 'liip.repaircafe::lang.permissions.settings'
+    liip.repaircafe.is_content_manager:
+        tab: 'liip.repaircafe::lang.plugin.name'
+        label: 'liip.repaircafe::lang.permissions.is_content_manager'
 navigation:
     cafe:
         label: 'liip.repaircafe::lang.plugin.name'

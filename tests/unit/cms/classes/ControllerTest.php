@@ -12,6 +12,13 @@ class ControllerTest extends TestCase
 
         Model::clearBootedModels();
         Model::flushEventListeners();
+
+        include_once base_path() . '/tests/fixtures/plugins/october/tester/components/Archive.php';
+        include_once base_path() . '/tests/fixtures/plugins/october/tester/components/Post.php';
+        include_once base_path() . '/tests/fixtures/plugins/october/tester/components/MainMenu.php';
+        include_once base_path() . '/tests/fixtures/plugins/october/tester/components/ContentBlock.php';
+        include_once base_path() . '/tests/fixtures/plugins/october/tester/components/Comments.php';
+        include_once base_path() . '/tests/fixtures/plugins/october/tester/classes/Users.php';
     }
 
     public function testThemeUrl()
@@ -20,10 +27,10 @@ class ControllerTest extends TestCase
         $controller = new Controller($theme);
 
         $url = $controller->themeUrl();
-        $this->assertEquals('https://repair-cafe.ch/themes/test', $url);
+        $this->assertEquals('http://localhost/themes/test', $url);
 
         $url = $controller->themeUrl('foo/bar.css');
-        $this->assertEquals('https://repair-cafe.ch/themes/test/foo/bar.css', $url);
+        $this->assertEquals('http://localhost/themes/test/foo/bar.css', $url);
 
         //
         // These tests seem to bear different results
@@ -395,12 +402,33 @@ ESC;
         $this->assertEquals('<p>DEFAULT MARKUP: I am a post yay</p>', $response);
     }
 
+    public function testComponentPartialAliasOverride()
+    {
+        $theme = Theme::load('test');
+        $controller = new Controller($theme);
+        $response = $controller->run('/component-partial-alias-override')->getContent();
+
+        //
+        // Testing case sensitivity
+        //
+        // Component alias: overRide1
+        // Target path: partials\override1\default.htm
+        //
+        $this->assertEquals('<p>I am an override alias partial! Yay</p>', $response);
+    }
+
     public function testComponentPartialOverride()
     {
         $theme = Theme::load('test');
         $controller = new Controller($theme);
         $response = $controller->run('/component-partial-override')->getContent();
 
+        //
+        // Testing case sensitivity
+        //
+        // Component code: testPost
+        // Target path: partials\testpost\default.htm
+        //
         $this->assertEquals('<p>I am an override partial! Yay</p>', $response);
     }
 

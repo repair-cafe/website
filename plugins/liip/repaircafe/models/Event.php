@@ -1,6 +1,6 @@
 <?php namespace Liip\RepairCafe\Models;
 
-use October\Rain\Database\Model;
+use Model;
 use Backend\Facades\BackendAuth;
 
 /**
@@ -147,7 +147,7 @@ class Event extends Model
     {
         $user = BackendAuth::getUser();
 
-        if (!$user->isRepairCafeAdmin()) {
+        if (!$user->hasAccess('liip.repaircafe.is_content_manager')) {
             $query->whereHas('cafe', function ($cafe_query) use ($user) {
                 $cafe_query->whereHas('users', function ($user_query) use ($user) {
                     $user_query->where('user_id', $user->id);

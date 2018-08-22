@@ -66,7 +66,9 @@
                 {% endfor %}
             </ul>
         {% endfor %}
-        {{ eventList.eventPaginator.render('justify-content-center')|raw }}
+        <div class="d-flex justify-content-center">
+            {{ eventList.events.render|raw }}
+        </div>
     {% else %}
         <p>{{ 'eventlist.no_events_found'|_ }}</p>
     {% endif %}
