@@ -3,6 +3,7 @@
 use Backend\Models\User as BackendUserModel;
 use Backend\Controllers\Users as BackendUsersController;
 use Illuminate\Support\Facades\Event;
+use Liip\RepairCafe\Console\MigrateUserRoles;
 use Liip\RepairCafe\Console\Seed;
 use Liip\RepairCafe\Models\Cafe;
 use Liip\RepairCafe\Models\News;
@@ -22,6 +23,7 @@ class Plugin extends PluginBase
     public function register()
     {
         $this->registerConsoleCommand('repaircafe:seed', Seed::class);
+        $this->registerConsoleCommand('repaircafe:migrateUserRoles', MigrateUserRoles::class);
     }
 
     public function registerComponents()
