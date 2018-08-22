@@ -28,7 +28,7 @@ class UserRoles
     {
         if (!UserRole::where('code', 'repaircafeOrganisator')->first()) {
             $repaircafeOrganisatorRole = UserRole::create([
-                'name' => 'RepaircafeOrganisator',
+                'name' => 'Repaircafe Organisator',
                 'code' => 'repaircafeOrganisator',
                 'description' => 'Members of this group can see and edit repair-cafes they are assigned to.',
                 'permissions' => [
@@ -54,7 +54,7 @@ class UserRoles
 
         if (!UserRole::where('code', 'contentManager')->first()) {
             $contentManagerRole = UserRole::create([
-                'name' => 'ContentManager',
+                'name' => 'Content Manager',
                 'code' => 'contentManager',
                 'description' => 'Members of this group can see and edit cms-content.',
                 'permissions' => [
@@ -72,6 +72,7 @@ class UserRoles
                     'liip.repaircafe.categories' => true,
                     'liip.repaircafe.cafes' => true,
                     'liip.repaircafe.settings' => true,
+                    'liip.repaircafe.is_content_manager' => true,
                 ],
             ]);
 

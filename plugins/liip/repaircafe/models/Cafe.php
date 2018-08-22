@@ -98,7 +98,7 @@ class Cafe extends Model
     {
         $user = BackendAuth::getUser();
 
-        if ($user->hasRole('repaircafeOrganisator')) {
+        if (!$user->hasAccess('liip.repaircafe.is_content_manager')) {
             $query->whereHas('users', function ($user_query) use ($user) {
                 $user_query->where('user_id', $user->id);
             });

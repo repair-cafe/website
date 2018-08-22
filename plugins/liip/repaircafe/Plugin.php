@@ -100,16 +100,6 @@ class Plugin extends PluginBase
                 Cafe::class,
                 'table' => 'liip_repaircafe_cafe_user'
             ];
-
-            $model->addDynamicMethod('hasRole', function ($role) use ($model) {
-                return $model->whereHas('role', function ($roleQuery) use ($role) {
-                    $roleQuery->where('code', $role);
-                })->exists();
-            });
-
-            $model->addDynamicMethod('isRepairCafeAdmin', function () use ($model) {
-                return $model->is_superuser || $model->hasRole('contentManager');
-            });
         });
 
         BackendUsersController::extendFormFields(function ($form, $model, $context) {
@@ -117,7 +107,7 @@ class Plugin extends PluginBase
                 return;
             }
             $backend_user = BackendAuth::getUser();
-            if ($backend_user->is_superuser && $model->hasRole('repaircafeOrganisator')) {
+            if ($backend_user->is_superuser) {
                 $form->addTabFields([
                     'cafes' => [
                         'label' => 'liip.repaircafe::lang.user.tab.cafe_label',
