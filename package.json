@@ -16,8 +16,8 @@
     "license": "ISC",
     "devDependencies": {
         "axios": "^0.16.2",
-        "laravel-mix": "^1.2.2",
-        "lodash": "^4.17.4"
+        "laravel-mix": "^2.1.14",
+        "lodash": "^4.17.10"
     },
     "dependencies": {
         "bootstrap": "^4.0.0-beta",
