@@ -41,7 +41,7 @@
         'categories' => 'Kategorien',
         'news' => 'News',
         'settings' => 'Einstellungen',
-        'is_content_manager' => 'Content Manager',
+        'is_content_manager' => 'Ist Content Manager',
     ],
     'nav' => [
         'cafes' => 'Cafes',
