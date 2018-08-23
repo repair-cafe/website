@@ -7,10 +7,8 @@ class UserRoles
 {
     public function seedUserRoles()
     {
-        $contentManagerRole = UserRole::where('code', '=', 'contentManager')->first();
-
-        if (!$contentManagerRole) {
-            $contentManagerRole = UserRole::create([
+        if (!UserRole::where('code', '=', 'contentManager')->first()) {
+            UserRole::create([
                 'name' => 'Content Manager',
                 'code' => 'contentManager',
                 'description' => 'Members of this group can see and edit cms-content.',
@@ -34,10 +32,8 @@ class UserRoles
             ]);
         }
 
-        $organisatorRole = UserRole::where('code', '=', 'repaircafeOrganisator')->first();
-
-        if (!$organisatorRole) {
-            $organisatorRole = UserRole::create([
+        if (!UserRole::where('code', '=', 'repaircafeOrganisator')->first()) {
+            UserRole::create([
                 'name' => 'Repaircafe Organisator',
                 'code' => 'repaircafeOrganisator',
                 'description' => 'Members of this group can see and edit repair-cafes they are assigned to.',
