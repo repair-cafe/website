@@ -34,15 +34,6 @@ class UserRoles
             ]);
         }
 
-        $contentManagers = User::whereHas('groups', function ($managerRoleQuery) {
-            $managerRoleQuery->where('code', '=', 'contentManager');
-        })->get();
-
-        $contentManagers->each(function ($user, $key) use ($contentManagerRole) {
-            $user->role = $contentManagerRole->id;
-            $user->save();
-        });
-
         $organisatorRole = UserRole::where('code', '=', 'repaircafeOrganisator')->first();
 
         if (!$organisatorRole) {
@@ -58,14 +49,5 @@ class UserRoles
                 ],
             ]);
         }
-
-        $reparicafeOrganisators = User::whereHas('groups', function ($organisatorRoleQuery) {
-            $organisatorRoleQuery->where('code', '=', 'repaircafeOrganisator');
-        })->get();
-
-        $reparicafeOrganisators->each(function ($user, $key) use ($organisatorRole) {
-            $user->role = $organisatorRole->id;
-            $user->save();
-        });
     }
 }

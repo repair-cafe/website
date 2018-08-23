@@ -23,7 +23,6 @@ class Plugin extends PluginBase
     public function register()
     {
         $this->registerConsoleCommand('repaircafe:seed', Seed::class);
-        $this->registerConsoleCommand('repaircafe:migrateUserRoles', MigrateUserRoles::class);
     }
 
     public function registerComponents()
