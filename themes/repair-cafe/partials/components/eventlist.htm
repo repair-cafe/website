@@ -1,7 +1,7 @@
 <div class="eventlist">
     {% if eventList.eventsGroupedByMonth|length > 0 %}
         {% for month, events in eventList.eventsGroupedByMonth %}
-            <h3>{{ month|localizeddate_formatted('MMMM Y') }}</h3>
+            <h3>{{ month|localizeddate_formatted('MMMM y') }}</h3>
             <ul class="events list-unstyled mb-5">
                 {% for event in events %}
                     {% set static_map_url = event.getStaticMapURL %}
