@@ -29,7 +29,7 @@
         "ext-openssl": "*",
         "october/rain": "v1.0.440",
         "october/system": "v1.0.440",
-        "october/backend": "v1.0.440",
+        "october/backend": "v1.0.468",
         "october/cms": "v1.0.440",
         "laravel/framework": "5.5.*",
         "wikimedia/composer-merge-plugin": "dev-master"
