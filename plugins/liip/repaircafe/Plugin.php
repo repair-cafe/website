@@ -72,10 +72,10 @@ class Plugin extends PluginBase
 
     public function registerMarkupTags()
     {
-        $textExtension = new Twig_Extensions_Extension_Text();        
+        $textExtension = new Twig_Extensions_Extension_Text();
         $textFilters = $textExtension->getFilters();
         $intlExtension = new Twig_Extensions_Extension_Intl();
-        $intlFilters = $intlExtension->getFilters();        
+        $intlFilters = $intlExtension->getFilters();
         $twig = $this->app->make('twig.environment');
 
         return [
@@ -237,7 +237,7 @@ class Plugin extends PluginBase
         // bugfix: 'Streetname Number' format
         AddressFinder::extend(function ($widget) {
             $widget->addJs('/plugins/liip/repaircafe/assets/js/rainlab-location-autocomplete.js');
-        });        
+        });
     }
 
     protected function getOgImageDimensions($og_image)
