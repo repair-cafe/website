@@ -12,6 +12,9 @@ use RainLab\Translate\Classes\Translator;
 use System\Classes\MediaLibrary;
 use System\Classes\PluginBase;
 use Backend\Facades\BackendAuth;
+use Twig_Extensions_Extension_Text;
+use Twig_Extensions_Extension_Intl;
+use RainLab\Location\FormWidgets\AddressFinder;
 
 class Plugin extends PluginBase
 {
@@ -69,10 +72,24 @@ class Plugin extends PluginBase
 
     public function registerMarkupTags()
     {
+        $textExtension = new Twig_Extensions_Extension_Text();        
+        $textFilters = $textExtension->getFilters();
+        $intlExtension = new Twig_Extensions_Extension_Intl();
+        $intlFilters = $intlExtension->getFilters();        
+        $twig = $this->app->make('twig.environment');
+
         return [
             'filters' => [
-                'localizeddate_formatted' => [$this, 'localizeddateFormatted'],
-            ],
+                'truncate' => function ($value, $length = 30, $preserve = false, $separator = '...') use ($twig, $textFilters) {
+                    $callable = $textFilters[0]->getCallable();
+                    return $callable($twig, $value, $length, $preserve, $separator);
+                },
+                'localizeddate' => function ($date, $dateFormat = 'medium', $timeFormat = 'medium', $locale = null, $timezone = null, $format = null) use ($twig, $intlFilters) {
+                    $callable = $intlFilters[0]->getCallable();
+                    return $callable($twig, $date, $dateFormat, $timeFormat, $locale, $timezone, $format);
+                },
+                'localizeddate_formatted' => [$this, 'localizeddateFormatted']
+            ]
         ];
     }
 
@@ -180,7 +197,7 @@ class Plugin extends PluginBase
         });
 
         // set default seo values if not set
-        Event::listen('seo.beforeComponentRender', function ($page, $seoTag) {
+        Event::listen('seo.beforeComponentRender', function ($seoTag, $page) {
             $metaDescription = '';
             // currently og_image only works with images from the media manager
             $ogImage = '';
@@ -216,6 +233,11 @@ class Plugin extends PluginBase
                 $seoTag->og_image_height = $height;
             }
         });
+        
+        // bugfix: 'Streetname Number' format
+        AddressFinder::extend(function ($widget) {
+            $widget->addJs('/plugins/liip/repaircafe/assets/js/rainlab-location-autocomplete.js');
+        });        
     }
 
     protected function getOgImageDimensions($og_image)

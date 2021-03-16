@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5a38a42943e1123ea16cb4862ef204d",
+    "content-hash": "14560ca50019cc9f7dc143798eeaf0eb",
     "packages": [
         {
             "name": "composer/installers",
@@ -905,17 +905,112 @@
             "time": "2019-12-30T23:20:37+00:00"
         },
         {
-            "name": "laravel/framework",
-            "version": "v6.20.18",
+            "name": "excodus/oc-translate-extended",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "784f8ff1469a0bb288600d2bb9e02541c8e38a8d"
+                "url": "https://github.com/repair-cafe/oc-translate-extended.git",
+                "reference": "e9f58cf838cd6bdeda42c8cd22a7a9b45bdec033"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/784f8ff1469a0bb288600d2bb9e02541c8e38a8d",
-                "reference": "784f8ff1469a0bb288600d2bb9e02541c8e38a8d",
+                "url": "https://api.github.com/repos/repair-cafe/oc-translate-extended/zipball/e9f58cf838cd6bdeda42c8cd22a7a9b45bdec033",
+                "reference": "e9f58cf838cd6bdeda42c8cd22a7a9b45bdec033",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.5.9"
+            },
+            "default-branch": true,
+            "type": "october-plugin",
+            "extra": {
+                "installer-name": "translateextended"
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Plugin to October CMS that extends behavior of the default Translate Plugin",
+            "keywords": [
+                "october",
+                "octobercms",
+                "translate"
+            ],
+            "support": {
+                "source": "https://github.com/repair-cafe/oc-translate-extended/tree/master"
+            },
+            "time": "2021-03-16T08:10:21+00:00"
+        },
+        {
+            "name": "inetis/richeditorsnippets",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/repair-cafe/oc-richeditorsnippets-plugin.git",
+                "reference": "d5eb9225978bd101cc58d78a3df5a75befccf9d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/repair-cafe/oc-richeditorsnippets-plugin/zipball/d5eb9225978bd101cc58d78a3df5a75befccf9d5",
+                "reference": "d5eb9225978bd101cc58d78a3df5a75befccf9d5",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.5.9"
+            },
+            "default-branch": true,
+            "type": "october-plugin",
+            "license": [
+                "MIT"
+            ],
+            "description": "description",
+            "support": {
+                "source": "https://github.com/repair-cafe/oc-richeditorsnippets-plugin/tree/master"
+            },
+            "time": "2021-03-16T15:55:40+00:00"
+        },
+        {
+            "name": "krisawzm/embed",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/repair-cafe/embed-plugin.git",
+                "reference": "e27b2de14f1779acaa4c95503d4e66419b8a4c1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/repair-cafe/embed-plugin/zipball/e27b2de14f1779acaa4c95503d4e66419b8a4c1a",
+                "reference": "e27b2de14f1779acaa4c95503d4e66419b8a4c1a",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.5.9"
+            },
+            "default-branch": true,
+            "type": "october-plugin",
+            "license": [
+                "MIT"
+            ],
+            "description": "Plugin for OctoberCMS which provides easier-than-ever embedding of content from various sites and services. Optimized for Static Pages. See the Supported Providers list.",
+            "support": {
+                "source": "https://github.com/repair-cafe/embed-plugin/tree/master"
+            },
+            "time": "2021-03-16T13:52:16+00:00"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v6.20.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "c25308a00c7bbd38401a6254ab403146da9cfd69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c25308a00c7bbd38401a6254ab403146da9cfd69",
+                "reference": "c25308a00c7bbd38401a6254ab403146da9cfd69",
                 "shasum": ""
             },
             "require": {
@@ -1055,7 +1150,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-03-09T15:01:58+00:00"
+            "time": "2021-03-16T14:18:55+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2533,6 +2628,198 @@
                 "source": "https://github.com/rainlab/builder-plugin/tree/v1.0.27"
             },
             "time": "2021-01-21T05:57:50+00:00"
+        },
+        {
+            "name": "rainlab/location-plugin",
+            "version": "v1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rainlab/location-plugin.git",
+                "reference": "0dff32142c4c1fd6b6e56ad79807047aeba4fe8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rainlab/location-plugin/zipball/0dff32142c4c1fd6b6e56ad79807047aeba4fe8b",
+                "reference": "0dff32142c4c1fd6b6e56ad79807047aeba4fe8b",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.5.9"
+            },
+            "type": "october-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Co-founder"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Co-founder"
+                }
+            ],
+            "description": "Location plugin for October CMS",
+            "homepage": "https://octobercms.com/plugin/rainlab-location",
+            "keywords": [
+                "location",
+                "october",
+                "octobercms"
+            ],
+            "support": {
+                "issues": "https://github.com/rainlab/location-plugin/issues",
+                "source": "https://github.com/rainlab/location-plugin/tree/master"
+            },
+            "time": "2019-07-19T16:00:17+00:00"
+        },
+        {
+            "name": "rainlab/pages-plugin",
+            "version": "v1.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rainlab/pages-plugin.git",
+                "reference": "30477818baf5e9125504f2f14db8c062085f138b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rainlab/pages-plugin/zipball/30477818baf5e9125504f2f14db8c062085f138b",
+                "reference": "30477818baf5e9125504f2f14db8c062085f138b",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.5.9"
+            },
+            "type": "october-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Co-founder"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Co-founder"
+                }
+            ],
+            "description": "Pages plugin for October CMS",
+            "homepage": "https://octobercms.com/plugin/rainlab-pages",
+            "keywords": [
+                "october",
+                "octobercms",
+                "pages"
+            ],
+            "support": {
+                "issues": "https://github.com/rainlab/pages-plugin/issues",
+                "source": "https://github.com/rainlab/pages-plugin/tree/v1.3.6"
+            },
+            "time": "2020-10-07T07:45:38+00:00"
+        },
+        {
+            "name": "rainlab/sitemap-plugin",
+            "version": "v1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rainlab/sitemap-plugin.git",
+                "reference": "ce52e1d3537334650634c7c467bd085c40291d99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rainlab/sitemap-plugin/zipball/ce52e1d3537334650634c7c467bd085c40291d99",
+                "reference": "ce52e1d3537334650634c7c467bd085c40291d99",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.5.9"
+            },
+            "type": "october-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Co-founder"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Co-founder"
+                }
+            ],
+            "description": "Sitemap plugin for October CMS",
+            "homepage": "https://octobercms.com/plugin/rainlab-sitemap",
+            "keywords": [
+                "Sitemap",
+                "october",
+                "octobercms"
+            ],
+            "support": {
+                "issues": "https://github.com/rainlab/sitemap-plugin/issues",
+                "source": "https://github.com/rainlab/sitemap-plugin/tree/master"
+            },
+            "time": "2019-05-18T13:29:40+00:00"
+        },
+        {
+            "name": "rainlab/translate-plugin",
+            "version": "1.7.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rainlab/translate-plugin.git",
+                "reference": "1e8302b1922f61f429b8675106760e68f959c000"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rainlab/translate-plugin/zipball/1e8302b1922f61f429b8675106760e68f959c000",
+                "reference": "1e8302b1922f61f429b8675106760e68f959c000",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.5.9"
+            },
+            "type": "october-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Co-founder"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Co-founder"
+                }
+            ],
+            "description": "Translate plugin for October CMS",
+            "homepage": "https://octobercms.com/plugin/rainlab-translate",
+            "keywords": [
+                "october",
+                "octobercms",
+                "translate"
+            ],
+            "support": {
+                "issues": "https://github.com/rainlab/translate-plugin/issues",
+                "source": "https://github.com/rainlab/translate-plugin/tree/1.7.4"
+            },
+            "time": "2020-11-17T13:35:00+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -4939,6 +5226,66 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.3"
             },
             "time": "2020-07-13T06:12:54+00:00"
+        },
+        {
+            "name": "twig/extensions",
+            "version": "v1.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig-extensions.git",
+                "reference": "57873c8b0c1be51caa47df2cdb824490beb16202"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/57873c8b0c1be51caa47df2cdb824490beb16202",
+                "reference": "57873c8b0c1be51caa47df2cdb824490beb16202",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": "^1.27|^2.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3.4",
+                "symfony/translation": "^2.7|^3.4"
+            },
+            "suggest": {
+                "symfony/translation": "Allow the time_diff output to be translated"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_Extensions_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\Extensions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Common additional features for Twig that do not directly belong in core",
+            "keywords": [
+                "i18n",
+                "text"
+            ],
+            "support": {
+                "issues": "https://github.com/twigphp/Twig-extensions/issues",
+                "source": "https://github.com/twigphp/Twig-extensions/tree/master"
+            },
+            "abandoned": true,
+            "time": "2018-12-05T18:34:18+00:00"
         },
         {
             "name": "twig/twig",
@@ -7515,7 +7862,11 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "excodus/oc-translate-extended": 20,
+        "inetis/richeditorsnippets": 20,
+        "krisawzm/embed": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
