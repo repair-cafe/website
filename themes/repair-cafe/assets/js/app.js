@@ -8,17 +8,7 @@ $( document ).ready(function() {
         event.preventDefault();
 
         var $anchor = $(this);
-        var offsetTop = $($anchor.attr('href')).offset().top;
-
-        if ('scrollBehavior' in document.documentElement.style) {
-            window.scrollTo({
-                left: 0,
-                top: offsetTop,
-                behavior: 'smooth',
-            });
-        } else {
-            window.scrollTo(0, offsetTop);
-        }
+        smoothScroll($($anchor.attr('href')));
     });
 
     // Close the anchor-navigation on item click
@@ -54,4 +44,18 @@ $( document ).ready(function() {
             image.attr('src', image.data('lazyLoadSrc'));
         }
     });
+
+    function smoothScroll(target) {
+        var offsetTop = target.offset().top;
+
+        if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+                left: 0,
+                top: offsetTop,
+                behavior: 'smooth',
+            });
+        } else {
+            window.scrollTo(0, offsetTop);
+        }
+    }
 });
