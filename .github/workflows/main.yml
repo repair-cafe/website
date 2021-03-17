@@ -37,5 +37,11 @@ jobs:
           tools: composer:v2
       - run: composer install
       - run: npm i
-      - run: npm run production
-      
+      - run: npm run production            
+      - uses: appleboy/scp-action@master
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.KEY }}          
+            source: "./*,!./node_modules/*"
+            target: "/home/repairca/public_html/stage"
