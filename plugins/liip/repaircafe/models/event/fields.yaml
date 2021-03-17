@@ -58,7 +58,7 @@ tabs:
             span: auto
             type: relation
             tab: 'liip.repaircafe::lang.event.tab.general'
-        addressfinder:
+        _addressfinder:
             label: 'liip.repaircafe::lang.event.addressfinder'
             comment: 'liip.repaircafe::lang.event.comments.addressfinder'
             type: addressfinder

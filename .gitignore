@@ -44,3 +44,9 @@ google*.html
 !/themes/repair-cafe/content/cafe-embed-description.htm
 !/themes/repair-cafe/content/cafe-embed-description.fr.htm
 !/themes/repair-cafe/content/cafe-embed-description.it.htm
+
+/plugins/excodus
+/plugins/rainlab
+/plugins/renatio
+/plugins/krisawzm
+/plugins/inetis

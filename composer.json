@@ -1,7 +1,8 @@
 {
     "name": "october/october",
     "description": "October CMS",
-    "homepage": "http://octobercms.com",
+    "homepage": "https://octobercms.com",
+    "type": "project",
     "keywords": ["october", "cms", "octobercms", "laravel"],
     "license": "MIT",
     "authors": [
@@ -17,42 +18,75 @@
         }
     ],
     "support": {
+        "paid": "https://octobercms.com/premium-support",
         "issues": "https://github.com/octobercms/october/issues",
-        "forum": "http://octobercms.com/forum/",
-        "docs": "http://octobercms.com/docs/",
-        "irc": "irc://irc.freenode.net/october",
+        "forum": "https://octobercms.com/forum/",
+        "docs": "https://octobercms.com/docs/",
         "source": "https://github.com/octobercms/october"
     },
     "require": {
-        "php": ">=7.0",
-        "ext-mbstring": "*",
-        "ext-openssl": "*",
-        "october/rain": "v1.0.440",
-        "october/system": "v1.0.440",
-        "october/backend": "v1.0.440",
-        "october/cms": "v1.0.440",
-        "laravel/framework": "5.5.*",
-        "wikimedia/composer-merge-plugin": "dev-master"
+        "php": ">=7.2.9",
+        "october/rain": "1.1.*",
+        "october/system": "1.1.*",
+        "october/backend": "1.1.*",
+        "october/cms": "1.1.*",
+        "laravel/framework": "~6.0",
+        "wikimedia/composer-merge-plugin": "~2.0.1",
+        "rainlab/builder-plugin": "^1.0",
+        "rainlab/translate-plugin": "^1.7",
+        "rainlab/pages-plugin": "^1.3",
+        "rainlab/location-plugin": "^1.1",
+        "rainlab/sitemap-plugin": "^1.0",
+        "excodus/oc-translate-extended": "dev-master",
+        "inetis/richeditorsnippets": "dev-master",
+        "twig/extensions": "^1.5",
+        "krisawzm/embed": "dev-master"
     },
     "require-dev": {
-        "fzaninotto/faker": "~1.7",
-        "phpunit/phpunit": "~5.7",
-        "phpunit/phpunit-selenium": "~1.2",
-        "squizlabs/php_codesniffer": "^3.0"
+        "phpunit/phpunit": "^8.4|^9.3.3",
+        "mockery/mockery": "~1.3.3|^1.4.2",
+        "fzaninotto/faker": "~1.9",
+        "squizlabs/php_codesniffer": "3.*",
+        "php-parallel-lint/php-parallel-lint": "^1.0",
+        "dms/phpunit-arraysubset-asserts": "^0.1.0|^0.2.1"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/repair-cafe/oc-translate-extended"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/repair-cafe/oc-richeditorsnippets-plugin"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/repair-cafe/embed-plugin"
+        }
+    ],
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php",
-            "tests/UiTestCase.php",
             "tests/PluginTestCase.php"
         ]
     },
     "scripts": {
         "post-create-project-cmd": [
-            "php artisan key:generate"
+            "php artisan key:generate",
+            "php artisan package:discover"
         ],
         "post-update-cmd": [
-            "php artisan october:util set build"
+            "php artisan october:version",
+            "php artisan package:discover"
+        ],
+        "test": [
+            "phpunit --stop-on-failure"
+        ],
+        "lint": [
+            "parallel-lint --exclude vendor --exclude storage --exclude tests/fixtures/plugins/testvendor/goto/Plugin.php ."
+        ],
+        "sniff": [
+            "phpcs --colors -nq --report=\"full\" --extensions=\"php\""
         ]
     },
     "config": {
