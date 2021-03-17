@@ -36,3 +36,6 @@ jobs:
           php-version: '7.4'
           tools: composer:v2
       - run: composer install
+      - run: npm i
+      - run: npm run production
+      
