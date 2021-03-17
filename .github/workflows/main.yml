@@ -31,10 +31,10 @@ jobs:
         with:
           path: /tmp/composer-cache
           key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
-      - uses: php-actions/composer@v5
+      - uses: shivammathur/setup-php@v2
         with:
-          php_version: 7.4
-          version: 2
+          php-version: '7.4'
+          tools: composer:v2
       - run: npm -v
       - run: node -v
       - run: php --version
