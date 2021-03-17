@@ -35,7 +35,4 @@ jobs:
         with:
           php-version: '7.4'
           tools: composer:v2
-      - run: npm -v
-      - run: node -v
-      - run: php --version
-      - run: composer --version
+      - run: composer install
