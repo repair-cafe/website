@@ -43,5 +43,15 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}          
-          source: "./*,!./node_modules/*"
+          source: "./*,!node_modules/"
           target: "/home/repairca/public_html/stage"
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}          
+          script: |
+            cd /home/repairca/public_html/stage
+            php artisan october:up
+            php artisan cache:clear
+            
