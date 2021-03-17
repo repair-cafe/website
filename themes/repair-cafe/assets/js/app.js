@@ -3,11 +3,22 @@ $( document ).ready(function() {
         this.form.submit();
     });
 
-    // Smooth scrolling when clicking links with smooth-scroll class (requires jquery.easing plugin)
+    // Smooth scrolling when clicking links with smooth-scroll class
     $('a.smooth-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        smoothScroll($($anchor.attr('href')));
         event.preventDefault();
+
+        var $anchor = $(this);
+        var offsetTop = $($anchor.attr('href')).offset().top;
+
+        if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+                left: 0,
+                top: offsetTop,
+                behavior: 'smooth',
+            });
+        } else {
+            window.scrollTo(0, offsetTop);
+        }
     });
 
     // Close the anchor-navigation on item click
@@ -43,10 +54,4 @@ $( document ).ready(function() {
             image.attr('src', image.data('lazyLoadSrc'));
         }
     });
-
-    function smoothScroll(target) {
-        $('html, body').stop().animate({
-            scrollTop: target.offset().top
-        }, 1500, 'easeInOutExpo');
-    }
 });

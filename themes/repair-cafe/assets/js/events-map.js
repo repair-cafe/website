@@ -82,18 +82,26 @@ $( document ).ready(function() {
 
         // Popup content gets generated each time the popup is opened -> we need to attach smoothscrolling behaviour each time a popup opens
         eventsMap.on('popupopen', function (e) {
-            // Smooth scrolling when clicking links with smooth-scroll class (requires jquery.easing plugin)
+            // Smooth scrolling when clicking links with smooth-scroll class
             $('.leaflet-popup-content a.smooth-scroll').bind('click', function(event) {
+                event.preventDefault();
+
                 var $anchor = $(this);
+                var offsetTop = $($anchor.attr('href')).offset().top;
 
                 // open additional event info
                 var eventId = $anchor.data('eventId');
                 $('#eventAdditionalInfo' + eventId).collapse('show');
 
-                $('html, body').stop().animate({
-                    scrollTop: $($anchor.attr('href')).offset().top
-                }, 1500, 'easeInOutExpo');
-                event.preventDefault();
+                if ('scrollBehavior' in document.documentElement.style) {
+                    window.scrollTo({
+                        left: 0,
+                        top: offsetTop,
+                        behavior: 'smooth',
+                    });
+                } else {
+                    window.scrollTo(0, offsetTop);
+                }
             });
         });
 
