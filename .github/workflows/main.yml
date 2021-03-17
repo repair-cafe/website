@@ -24,8 +24,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v2     
         with:
           version: '14'
+      - uses: actions/cache@v2
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+      - uses: php-actions/composer@v5
+        with:
+          php_version: 7.4
+          version: 2
       - run: npm -v
       - run: node -v
+      - run: php --version
+      - run: composer --version
