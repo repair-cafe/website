@@ -19,6 +19,9 @@ h3, h4, h5, h6,
 }
 
 code {
+    background-color: $gray-200;
+    padding: .2rem .4rem;
+
     &.block {
         display: block;
         margin-bottom: $paragraph-margin-bottom;

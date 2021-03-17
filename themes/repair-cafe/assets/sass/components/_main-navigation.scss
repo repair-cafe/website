@@ -29,3 +29,8 @@
         }
     }
 }
+
+// TODO: Fixes bug introduced when upgrading to Bootstrap 4.6.0. Check why needed.
+.navbar .container-fluid {
+    display: block;
+}
