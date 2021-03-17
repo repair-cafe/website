@@ -24,7 +24,7 @@
         "sass-loader": "^10.1.1"
     },
     "dependencies": {
-        "bootstrap": "4.0.0-beta",
+        "bootstrap": "^4.6.0",
         "font-awesome": "^4.7.0",
         "iframe-resizer": "^3.6.6",
         "jquery": "^3.6.0",

@@ -1,10 +1,24 @@
-.page-link {
-    margin-left: $spacer / 2;
-    border-radius: 50%;
-    font-size: $font-size-sm;
+.pagination {
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
+.page-link {
+    font-size: $font-size-sm;
+    $page-link-size: 2.5rem;
+    margin-left: $spacer / 4;
+    margin-right: $spacer / 4;
+    margin-bottom: $spacer / 2;
+    border-radius: 50%;
+    width: $page-link-size;
+    height: $page-link-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
 .page-item:last-child .page-link,
 .page-item:first-child .page-link {
     border-radius: 50%;
+    margin-left: $spacer / 4;
+    margin-right: $spacer / 4;
 }
