@@ -7,8 +7,7 @@ on:
   # Triggers the workflow on tag on master
   push:
     tags:
-      - '*'
-    branches: [ master ]
+      - '*'    
   
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
