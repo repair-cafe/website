@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Build & Deploy Live
+name: Deploy to Live
 
 # Controls when the action will run.
 on:
@@ -36,7 +36,7 @@ jobs:
         run: scripts/phpcs.sh
 
   deploy:
-    name: Build & Deploy
+    name: Deploy
 
     needs: [ lint ]
 
