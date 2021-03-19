@@ -1,12 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Build & Deploy Stage
+name: Build & Deploy Live
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push events to master branch
+  # Triggers the workflow on tag on master
   push:
-    branches: [ master ]
+    tags:
+      - '*'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -73,7 +74,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           source: "./*,!node_modules/"
-          target: "/home/repairca/public_html/stage"
+          target: "/home/repairca/public_html/live"
       - name: Run update scripts on remote host
         uses: appleboy/ssh-action@master
         with:
@@ -82,6 +83,6 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             set -e
-            cd /home/repairca/public_html/stage
+            cd /home/repairca/public_html/live
             php artisan october:up
             php artisan cache:clear
