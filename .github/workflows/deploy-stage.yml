@@ -84,4 +84,7 @@ jobs:
             set -e
             cd /home/repairca/public_html/stage
             php artisan october:up
+            php artisan october:version
+            php artisan package:discover
+            php artisan translate:scan --purge
             php artisan cache:clear
