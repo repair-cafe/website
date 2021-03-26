@@ -4,7 +4,7 @@
 
 ## Assets
 
-There are the following NPM tasks to generate the CSS/JS assets
+There are the following NPM tasks (in themes/repair-cafe/) to generate the CSS/JS assets
 
 * Compile CSS/JS assets for development: `npm run dev`
 * Compile CSS/JS assets for production (incl. minify): `npm run prod`
