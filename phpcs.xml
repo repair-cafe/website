@@ -7,7 +7,6 @@
         <exclude name="Generic.Files.LineLength"/>
     </rule>
 
-    <exclude-pattern>themes/repair-cafe/assets</exclude-pattern>
     <exclude-pattern>plugins/liip/*/updates</exclude-pattern>
 
 </ruleset>
