@@ -63,8 +63,10 @@ jobs:
       - name: Install composer dependencies
         run: composer install
       - name: Install npm dependencies
+        working-directory: ./themes/repair-cafe
         run: npm i
       - name: Build assets
+        working-directory: ./themes/repair-cafe
         run: npm run production
       - name: Copy source files to remote host
         uses: appleboy/scp-action@master
@@ -72,7 +74,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: "./*,!node_modules/"
+          source: "./*,!themes/repair-cafe/node_modules/"
           target: "/home/repairca/public_html/stage"
       - name: Run update scripts on remote host
         uses: appleboy/ssh-action@master

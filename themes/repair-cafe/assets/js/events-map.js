@@ -1,8 +1,24 @@
+import L from 'leaflet';
+import 'leaflet.markercluster'
+import 'leaflet.locatecontrol'
+
+// stupid hack so that leaflet's images work after going through webpack
+// see: https://github.com/Leaflet/Leaflet/issues/4968
+import marker from 'leaflet/dist/images/marker-icon.png';
+import marker2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: marker2x,
+    iconUrl: marker,
+    shadowUrl: markerShadow
+});
+
 $( document ).ready(function() {
     var leafletAttribution = 'Map &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, Maptiles &copy; <a href="https://mapbox.com">Mapbox</a>';
     var mapboxAccessToken = repaircafe.config.mapboxAccessToken;
-    // set custom icon path for marker icons
-    L.Icon.Default.prototype.options.imagePath = '/themes/repair-cafe/assets/images/vendor/leaflet/dist/';
 
     // Initialize events map
     if(document.getElementById('eventsMap') && mapboxAccessToken !== '') {
