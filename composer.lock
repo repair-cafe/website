@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.10.0",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d"
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d",
-                "reference": "1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
                 "shasum": ""
             },
             "require": {
@@ -111,10 +111,12 @@
                 "majima",
                 "mako",
                 "mediawiki",
+                "miaoxing",
                 "modulework",
                 "modx",
                 "moodle",
                 "osclass",
+                "pantheon",
                 "phpbb",
                 "piwik",
                 "ppi",
@@ -128,6 +130,7 @@
                 "sydes",
                 "sylius",
                 "symfony",
+                "tastyigniter",
                 "typo3",
                 "wordpress",
                 "yawik",
@@ -136,7 +139,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.10.0"
+                "source": "https://github.com/composer/installers/tree/v1.12.0"
             },
             "funding": [
                 {
@@ -152,7 +155,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-14T11:07:16+00:00"
+            "time": "2021-09-13T08:19:44+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2106,22 +2109,20 @@
         },
         {
             "name": "october/system",
-            "version": "v1.1.3",
+            "version": "v1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octoberrain/system.git",
-                "reference": "8f66ed0054e4e61010ae494ab7728fcee96f0df2"
+                "reference": "82f3de391359b8eca5417a8e8907555b6f01486f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octoberrain/system/zipball/8f66ed0054e4e61010ae494ab7728fcee96f0df2",
-                "reference": "8f66ed0054e4e61010ae494ab7728fcee96f0df2",
+                "url": "https://api.github.com/repos/octoberrain/system/zipball/82f3de391359b8eca5417a8e8907555b6f01486f",
+                "reference": "82f3de391359b8eca5417a8e8907555b6f01486f",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
-                "laravel/framework": "~6.0",
-                "october/rain": "~1.1.0",
                 "php": ">=7.2"
             },
             "type": "october-module",
@@ -2149,12 +2150,6 @@
                     "name": "Samuel Georges",
                     "email": "daftspunky@gmail.com",
                     "role": "Co-founder"
-                },
-                {
-                    "name": "Luke Towers",
-                    "email": "octobercms@luketowers.ca",
-                    "homepage": "https://luketowers.ca",
-                    "role": "Maintainer"
                 }
             ],
             "description": "System module for October CMS",
@@ -2165,9 +2160,9 @@
                 "system"
             ],
             "support": {
-                "source": "https://github.com/octoberrain/system/tree/v1.1.3"
+                "source": "https://github.com/octoberrain/system/tree/v1.1.6"
             },
-            "time": "2021-03-05T23:04:00+00:00"
+            "time": "2021-05-29T05:00:08+00:00"
         },
         {
             "name": "opis/closure",
@@ -7873,5 +7868,5 @@
         "php": ">=7.2.9"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }
